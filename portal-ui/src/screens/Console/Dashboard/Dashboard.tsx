@@ -48,6 +48,7 @@ const Dashboard = ({ classes, displayErrorMessage }: IDashboardSimple) => {
       .then((res: Usage) => {
         setBasicResult(res);
         setLoading(false);
+        
       })
       .catch((err) => {
         displayErrorMessage(err);
@@ -58,12 +59,14 @@ const Dashboard = ({ classes, displayErrorMessage }: IDashboardSimple) => {
   useEffect(() => {
     if (loading) {
       fetchUsage();
+      
     }
   }, [loading, fetchUsage]);
 
   const widgets = get(basicResult, "widgets", null);
 
   return (
+    
     <Fragment>
       <PageHeader label="Dashboard" />
       <Grid container>
