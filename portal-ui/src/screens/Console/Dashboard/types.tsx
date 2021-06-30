@@ -18,5 +18,6 @@ export interface Usage {
   usage: number;
   buckets: number;
   objects: number;
+  servers: [index: number];
   widgets?: any;
 }

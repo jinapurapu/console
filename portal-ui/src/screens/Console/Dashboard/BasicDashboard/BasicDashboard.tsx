@@ -26,6 +26,10 @@ import { containerForHeader } from "../../Common/FormComponents/common/styleLibr
 import AllBucketsIcon from "../../../../icons/AllBucketsIcon";
 import UsageIcon from "../../../../icons/UsageIcon";
 import EgressIcon from "../../../../icons/EgressIcon";
+import DnsIcon from '@material-ui/icons/Dns';
+import StorageIcon from '@material-ui/icons/Storage';
+import AccountTreeIcon from '@material-ui/icons/AccountTree';
+
 
 const styles = (theme: Theme) =>
   createStyles({
@@ -35,6 +39,7 @@ const styles = (theme: Theme) =>
       display: "flex",
       overflow: "auto",
       flexDirection: "column",
+      
       border: "#eaedee 1px solid",
       borderRadius: 5,
       boxShadow: "none",
@@ -59,6 +64,7 @@ const styles = (theme: Theme) =>
     },
     notationContainer: {
       display: "flex",
+      flexWrap: "wrap",
     },
     dashboardBG: {
       width: 390,
@@ -109,7 +115,7 @@ const BasicDashboard = ({ classes, usage }: IDashboardProps) => {
     return (
       <Fragment>
         {niceBytesUsage[0]}
-        <span className={classes.smallUnit}>{niceBytesUsage[1]}</span>
+        <span className={classes.smallUnit}></span>
       </Fragment>
     );
   };
@@ -146,7 +152,7 @@ const BasicDashboard = ({ classes, usage }: IDashboardProps) => {
             <Paper className={fixedHeightPaper}>
               <Grid container direction="row" alignItems="center">
                 <Grid item className={classes.icon}>
-                  <UsageIcon />
+                 <UsageIcon />
                 </Grid>
                 <Grid item>
                   <Typography className={classes.elementTitle}>
@@ -159,6 +165,52 @@ const BasicDashboard = ({ classes, usage }: IDashboardProps) => {
               </Typography>
             </Paper>
             <Paper className={fixedHeightPaper}>
+              <Grid container direction="row" alignItems="center">
+                <Grid item className={classes.icon}>
+                 <StorageIcon />
+                </Grid>
+                <Grid item>
+                  <Typography className={classes.elementTitle}>
+                    Disks
+                  </Typography>
+                </Grid>
+              </Grid>
+              <Typography className={classes.consumptionValue}>
+                {usage ? prettyUsage(usage.usage + "") : 0}
+              </Typography>
+            </Paper>
+             <Paper className={fixedHeightPaper}>
+              <Grid container direction="row" alignItems="center">
+                <Grid item className={classes.icon}>
+                 <DnsIcon />
+                </Grid>
+                <Grid item>
+                  <Typography className={classes.elementTitle}>
+                    Servers
+                  </Typography>
+                </Grid>
+              </Grid>
+              <Typography className={classes.consumptionValue}>
+             {usage ? prettyUsage(usage.servers + "") : 0}
+              </Typography>
+            </Paper>
+             <Paper className={fixedHeightPaper}>
+              <Grid container direction="row" alignItems="center">
+                <Grid item className={classes.icon}>
+                 <AccountTreeIcon />
+                </Grid>
+                <Grid item>
+                  <Typography className={classes.elementTitle}>
+                    Pools
+                  </Typography>
+                </Grid>
+              </Grid>
+              <Typography className={classes.consumptionValue}>
+                {usage ? prettyUsage(usage.usage + "") : 0}
+              </Typography>
+            </Paper>
+       
+         <Paper className={fixedHeightPaper}>
               <Grid container direction="row" alignItems="center">
                 <Grid item className={classes.icon}>
                   <EgressIcon />
@@ -174,6 +226,8 @@ const BasicDashboard = ({ classes, usage }: IDashboardProps) => {
                 {usage ? prettyNumber(usage.objects) : 0}
               </Typography>
             </Paper>
+           
+           
           </Grid>
         </Grid>
       </Grid>
