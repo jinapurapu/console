@@ -95,10 +95,10 @@ const styles = (theme: Theme) =>
 
 interface IDashboardProps {
   classes: any;
-  usage: Usage | null;
+  testData: Usage | null;
 }
 
-const BasicDashboard = ({ classes, usage }: IDashboardProps) => {
+const BasicDashboard = ({ classes, testData }: IDashboardProps) => {
   const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
 
   const prettyUsage = (usage: string | undefined) => {
@@ -146,7 +146,7 @@ const BasicDashboard = ({ classes, usage }: IDashboardProps) => {
                 </Grid>
               </Grid>
               <Typography className={classes.consumptionValue}>
-                {usage ? prettyNumber(usage.buckets) : 0}
+                {testData ? prettyNumber(testData.buckets) : 0}
               </Typography>
             </Paper>
             <Paper className={fixedHeightPaper}>
@@ -161,7 +161,7 @@ const BasicDashboard = ({ classes, usage }: IDashboardProps) => {
                 </Grid>
               </Grid>
               <Typography className={classes.consumptionValue}>
-                {usage ? prettyUsage(usage.usage + "") : 0}
+                {testData ? prettyUsage(testData.usage + "") : 0}
               </Typography>
             </Paper>
             <Paper className={fixedHeightPaper}>
@@ -176,7 +176,7 @@ const BasicDashboard = ({ classes, usage }: IDashboardProps) => {
                 </Grid>
               </Grid>
               <Typography className={classes.consumptionValue}>
-                {usage ? prettyUsage(usage.usage + "") : 0}
+                {testData ? prettyUsage(testData.usage + "") : 0}
               </Typography>
             </Paper>
              <Paper className={fixedHeightPaper}>
@@ -191,7 +191,7 @@ const BasicDashboard = ({ classes, usage }: IDashboardProps) => {
                 </Grid>
               </Grid>
               <Typography className={classes.consumptionValue}>
-             {usage ? prettyUsage(usage.servers + "") : 0}
+             {testData ? prettyUsage(testData.servers + "") : 0}
               </Typography>
             </Paper>
              <Paper className={fixedHeightPaper}>
@@ -206,7 +206,7 @@ const BasicDashboard = ({ classes, usage }: IDashboardProps) => {
                 </Grid>
               </Grid>
               <Typography className={classes.consumptionValue}>
-                {usage ? prettyUsage(usage.usage + "") : 0}
+                {testData ? prettyUsage(testData.usage + "") : 0}
               </Typography>
             </Paper>
        
@@ -223,7 +223,7 @@ const BasicDashboard = ({ classes, usage }: IDashboardProps) => {
                 </Grid>
               </Grid>
               <Typography className={classes.consumptionValue}>
-                {usage ? prettyNumber(usage.objects) : 0}
+                {testData ? prettyNumber(testData.objects) : 0}
               </Typography>
             </Paper>
            

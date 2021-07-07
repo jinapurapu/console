@@ -25,8 +25,9 @@ import { createStyles, Theme, withStyles } from "@material-ui/core/styles";
 import BasicDashboard from "./BasicDashboard/BasicDashboard";
 import { LinearProgress } from "@material-ui/core";
 import api from "../../../common/api";
-import { Usage } from "./types";
+import { Usage, Servers, Drives } from "./types";
 import { setErrorSnackMessage } from "../../../actions";
+import data from "./data.json"
 
 interface IDashboardSimple {
   classes: any;
@@ -38,17 +39,22 @@ const styles = (theme: Theme) =>
     ...containerForHeader(theme.spacing(4)),
   });
 
-const Dashboard = ({ classes, displayErrorMessage }: IDashboardSimple) => {
-  const [loading, setLoading] = useState<boolean>(true);
-  const [basicResult, setBasicResult] = useState<Usage | null>(null);
+const getTestData = (data: Usage) => {
+ const testData = data;
+ };
 
-  const fetchUsage = useCallback(() => {
-    api
-      .invoke("GET", `/api/v1/admin/info`)
-      .then((res: Usage) => {
-        setBasicResult(res);
+
+const Dashboard = ({ classes, displayErrorMessage }: IDashboardSimple) => {
+ // const [loading, setLoading] = useState<boolean>(true);
+ /* const [basicResult, setBasicResult] = useState<Usage | null>(null);
+
+ const fetchUsage = useCallback(() => {
+   api
+     .invoke("GET", `/api/v1/admin/info`)
+     .then((res: Usage) => {
+       setBasicResult(res);
         setLoading(false);
-        
+       
       })
       .catch((err) => {
         displayErrorMessage(err);
@@ -64,24 +70,24 @@ const Dashboard = ({ classes, displayErrorMessage }: IDashboardSimple) => {
   }, [loading, fetchUsage]);
 
   const widgets = get(basicResult, "widgets", null);
-
+*/
   return (
     
     <Fragment>
       <PageHeader label="Dashboard" />
       <Grid container>
-        {loading ? (
+        {false ? (
           <Grid item xs={12} className={classes.container}>
             <LinearProgress />
           </Grid>
         ) : (
           <Fragment>
-            {widgets !== null ? (
+            {null !== null ? (
               <Grid container className={classes.container}>
                 <PrDashboard />
               </Grid>
             ) : (
-              <BasicDashboard usage={basicResult} />
+              <BasicDashboard testData={testData} />
             )}
           </Fragment>
         )}

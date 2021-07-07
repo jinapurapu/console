@@ -14,10 +14,28 @@
 // You should have received a copy of the GNU Affero General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+export interface Drives {
+  endpoint: string, 
+  state: string, 
+  totalspace: number, 
+  usedspace: number, 
+  availspace: number;
+}
+
+export interface Servers {
+  state: string, 
+  endpoint: string, 
+  uptime: number, 
+  drives: Drives[], 
+  poolNumber: number;
+}
+
 export interface Usage {
   usage: number;
   buckets: number;
   objects: number;
-  servers: [index: number];
+  servers: Servers[],
   widgets?: any;
 }
+
+
