@@ -19,7 +19,7 @@ import { Theme } from "@mui/material/styles";
 import createStyles from "@mui/styles/createStyles";
 import withStyles from "@mui/styles/withStyles";
 import { connect } from "react-redux";
-import { Grid } from "@mui/material";
+import { Grid, Button, Box } from "@mui/material";
 import moment from "moment/moment";
 import { AppState } from "../../../../store";
 import { logMessageReceived, logResetMessages } from "../actions";
@@ -35,6 +35,7 @@ import {
 import PageHeader from "../../Common/PageHeader/PageHeader";
 import PageLayout from "../../Common/Layout/PageLayout";
 import SearchBox from "../../Common/SearchBox";
+import InputBoxWrapper from "../../Common/FormComponents/InputBoxWrapper/InputBoxWrapper";
 
 const styles = (theme: Theme) =>
   createStyles({
@@ -86,6 +87,9 @@ const ErrorLogs = ({
   messages,
 }: ILogs) => {
   const [highlight, setHighlight] = useState("");
+  const [node, setNode] = useState("");
+  const [logKind, setLogKind] = useState("");
+  const [cluster, setCluster] = useState("");
 
   useEffect(() => {
     logResetMessages();
@@ -126,7 +130,7 @@ const ErrorLogs = ({
         console.log("closing websockets");
       };
     }
-  }, [logMessageReceived, logResetMessages]);
+  },  []); // [logMessageReceived, logResetMessages]);
 
   const renderError = (logElement: LogMessage) => {
     let errorElems = [];
@@ -323,13 +327,83 @@ const ErrorLogs = ({
 
   const renderLines = messages.map((m) => {
     return renderLog(m);
+    
   });
+
+  const submitSelectors = (event: React.FormEvent) => {
+    console.log("Submitting:", event)
+    console.log("Node:", node)
+    console.log("cluster:", cluster)
+    console.log("kind:", logKind)
+  }
 
   return (
     <Fragment>
       <PageHeader label="Logs" />
       <PageLayout>
         <Grid xs={12}>
+        <Box
+          sx={{
+            padding: "15px",
+            height: "100%",
+          }}
+        >
+          <form
+            noValidate
+            onSubmit={submitSelectors}
+            //className={classes.formBox}
+            style={{
+              height: "100%",
+              display: "flex",
+              flexFlow: "column",
+            }}
+          >
+          <Grid item xs={12} className={classes.formFieldRow}>
+            <InputBoxWrapper
+              id="node"
+              name="node"
+              label="Node"
+              autoFocus={true}
+              value={node}
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+                setNode(e.target.value);
+              }}
+            />
+          </Grid>
+          <Grid item xs={12} className={classes.formFieldRow}>
+            <InputBoxWrapper
+              id="log-kind"
+              name="log-kind"
+              label="Log Kind"
+              autoFocus={true}
+              value={logKind}
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+                setLogKind(e.target.value);
+              }}
+            />
+          </Grid>
+          <Grid item xs={12} className={classes.formFieldRow}>
+            <InputBoxWrapper
+              id="cluster"
+              name="cluster"
+              label="Cluster"
+              autoFocus={true}
+              value={cluster}
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+                setCluster(e.target.value);
+              }}
+            />
+          </Grid>
+          <Button
+                type="submit"
+                variant="contained"
+                color="primary"
+                disabled={false}
+              >
+                Submit
+              </Button>
+</form>
+</Box>
           <Grid item xs={12} className={classes.actionsTray}>
             <SearchBox
               placeholder="Highlight Line"
@@ -338,9 +412,10 @@ const ErrorLogs = ({
             />
           </Grid>
           <Grid item xs={12}>
-            <div id="logs-container" className={classes.logList}>
+     <div id="logs-container" className={classes.logList}>
               {renderLines}
-            </div>
+            </div>    
+           {/*        LOGS GO HERE*/}
           </Grid>
         </Grid>
       </PageLayout>
