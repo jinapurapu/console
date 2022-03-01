@@ -2553,6 +2553,21 @@ paths:
             $ref: "#/definitions/error"
       tags:
         - UserAPI
+  /nodes/labels:
+    get:
+      summary: List node labels
+      operationId: ListNodeLabels
+      responses:
+        200:
+          description: A successful response.
+          schema:
+            $ref: "#/definitions/nodeLabels"
+        default:
+          description: Generic error response.
+          schema:
+            $ref: "#/definitions/error"
+      tags:
+        - UserAPI      
 
 definitions:
   accountChangePasswordRequest:
@@ -4299,4 +4314,11 @@ definitions:
       company:
         type: string
       shortName:
+        type: string
+        
+  nodeLabels:
+    type: object
+    additionalProperties:
+      type: array
+      items:
         type: string

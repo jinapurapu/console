@@ -239,6 +239,9 @@ func NewConsoleAPI(spec *loads.Document) *ConsoleAPI {
 		AdminAPIListGroupsForPolicyHandler: admin_api.ListGroupsForPolicyHandlerFunc(func(params admin_api.ListGroupsForPolicyParams, principal *models.Principal) middleware.Responder {
 			return middleware.NotImplemented("operation admin_api.ListGroupsForPolicy has not yet been implemented")
 		}),
+		UserAPIListNodeLabelsHandler: user_api.ListNodeLabelsHandlerFunc(func(params user_api.ListNodeLabelsParams, principal *models.Principal) middleware.Responder {
+			return middleware.NotImplemented("operation user_api.ListNodeLabels has not yet been implemented")
+		}),
 		UserAPIListObjectsHandler: user_api.ListObjectsHandlerFunc(func(params user_api.ListObjectsParams, principal *models.Principal) middleware.Responder {
 			return middleware.NotImplemented("operation user_api.ListObjects has not yet been implemented")
 		}),
@@ -566,6 +569,8 @@ type ConsoleAPI struct {
 	AdminAPIListGroupsHandler admin_api.ListGroupsHandler
 	// AdminAPIListGroupsForPolicyHandler sets the operation handler for the list groups for policy operation
 	AdminAPIListGroupsForPolicyHandler admin_api.ListGroupsForPolicyHandler
+	// UserAPIListNodeLabelsHandler sets the operation handler for the list node labels operation
+	UserAPIListNodeLabelsHandler user_api.ListNodeLabelsHandler
 	// UserAPIListObjectsHandler sets the operation handler for the list objects operation
 	UserAPIListObjectsHandler user_api.ListObjectsHandler
 	// AdminAPIListPoliciesHandler sets the operation handler for the list policies operation
@@ -930,6 +935,9 @@ func (o *ConsoleAPI) Validate() error {
 	}
 	if o.AdminAPIListGroupsForPolicyHandler == nil {
 		unregistered = append(unregistered, "admin_api.ListGroupsForPolicyHandler")
+	}
+	if o.UserAPIListNodeLabelsHandler == nil {
+		unregistered = append(unregistered, "user_api.ListNodeLabelsHandler")
 	}
 	if o.UserAPIListObjectsHandler == nil {
 		unregistered = append(unregistered, "user_api.ListObjectsHandler")
@@ -1421,6 +1429,10 @@ func (o *ConsoleAPI) initHandlerCache() {
 		o.handlers["GET"] = make(map[string]http.Handler)
 	}
 	o.handlers["GET"]["/policies/{policy}/groups"] = admin_api.NewListGroupsForPolicy(o.context, o.AdminAPIListGroupsForPolicyHandler)
+	if o.handlers["GET"] == nil {
+		o.handlers["GET"] = make(map[string]http.Handler)
+	}
+	o.handlers["GET"]["/nodes/labels"] = user_api.NewListNodeLabels(o.context, o.UserAPIListNodeLabelsHandler)
 	if o.handlers["GET"] == nil {
 		o.handlers["GET"] = make(map[string]http.Handler)
 	}
