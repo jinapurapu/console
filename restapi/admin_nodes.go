@@ -18,15 +18,20 @@ package restapi
 
 import (
 	"context"
+	"fmt"
+	"time"
 
 	"github.com/minio/minio-go/v7/pkg/set"
 
 	"github.com/minio/console/cluster"
 
+	"github.com/minio/madmin-go"
+
 	"github.com/go-openapi/runtime/middleware"
 	"github.com/minio/console/models"
 	"github.com/minio/console/restapi/operations"
 	"github.com/minio/console/restapi/operations/admin_api"
+	"github.com/minio/console/restapi/operations/user_api"
 
 	//corev1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
@@ -35,12 +40,13 @@ import (
 
 func registerAdminNodesHandlers(api *operations.ConsoleAPI) {
 	// return usage stats
-	api.AdminAPIAdminInfoHandler = admin_api.ListNodeLabelsHandlerFunc(func(params admin_api.AdminInfoParams, session *models.Principal) middleware.Responder {
-		infoResp, err := getAdminInfoResponse(session, params)
+	api.UserAPIListNodeLabelsHandler = user_api.ListNodeLabelsHandlerFunc(func(params user_api.ListNodeLabelsParams, session *models.Principal) middleware.Responder {
+
+		nodeLabelsResp, err := getNodeLabelsResponse(params, principal)
 		if err != nil {
 			return admin_api.NewAdminInfoDefault(int(err.Code)).WithPayload(err)
 		}
-		return admin_api.NewAdminInfoOK().WithPayload(infoResp)
+		return user_api.NewListNodeLabelsOK().WithPayload(*nodeLabelsResp)
 	})
 }
 
@@ -77,13 +83,55 @@ func getNodeLabels(ctx context.Context, clientset v1.CoreV1Interface) (*models.N
 	return &res, nil
 }
 
-func getNodeLabelsResponse(ctx context.Context, session *models.Principal) (*models.NodeLabels, *models.Error) {
+func getAdminResources(ctx context.Context, mAdmin *madmin.AdminClient) ([]*models.ServerDrives, error) {
+
+	serverInfo, err := mAdmin.ServerInfo(ctx)
+	if err != nil {
+		return nil, err
+	}
+
+	var drives = []*models.ServerDrives{}
+	for _, serv := range serverInfo.Servers {
+
+		for _, drive := range serv.Disks {
+			drives = append(drives, &models.ServerDrives{
+				State:          drive.State,
+				UUID:           drive.UUID,
+				Endpoint:       drive.Endpoint,
+				RootDisk:       drive.RootDisk,
+				DrivePath:      drive.DrivePath,
+				Healing:        drive.Healing,
+				Model:          drive.Model,
+				TotalSpace:     int64(drive.TotalSpace),
+				UsedSpace:      int64(drive.UsedSpace),
+				AvailableSpace: int64(drive.AvailableSpace),
+			})
+		}
+
+	}
+	return drives, nil
+}
+
+func getNodeLabelsResponse(params *models.ListNodeLabelsParams, session *models.Principal) (*models.NodeLabels, *models.Error) {
+
+	ctx, cancel := context.WithTimeout(context.Background(), 2*time.Second)
+	defer cancel()
+
 	client, err := cluster.K8sClient(session.STSSessionToken)
 	if err != nil {
 		return nil, prepareError(err)
 	}
 
+	mAdmin, err := NewMinioAdminClient(session)
+	if err != nil {
+		return nil, prepareError(err)
+	}
+
 	clusterResources, err := getNodeLabels(ctx, client.CoreV1())
+	adminResources, err := getAdminResources(ctx, mAdmin)
+
+	fmt.Println("Admin resources is: ", adminResources)
+
 	if err != nil {
 		return nil, prepareError(err)
 	}
