@@ -113,10 +113,10 @@ func getAdminResources(ctx context.Context, mAdmin *madmin.AdminClient) ([]*mode
 }
 
 func getNodeLabelsResponse(params user_api.ListNodeLabelsParams, session *models.Principal) (*models.NodeLabels, *models.Error) {
-
+	fmt.Println("You hit the function!")
 	ctx, cancel := context.WithTimeout(context.Background(), 2*time.Second)
 	defer cancel()
-
+	fmt.Println("You got the context! Context:", ctx)
 	//client, err := cluster.K8sClient(session.STSSessionToken)
 	//if err != nil {
 	//	return nil, prepareError(err)
@@ -127,25 +127,24 @@ func getNodeLabelsResponse(params user_api.ListNodeLabelsParams, session *models
 		return nil, prepareError(err)
 	}
 
-	//clusterResources, err := getNodeLabels(ctx, client.CoreV1())
 	adminResources, err := mAdmin.ServerInfo(ctx)
-	//var logNodeLabels []string
+	fmt.Println("adminresources.Servers[0].Endpont is: ", adminResources.Servers[0].Endpoint)
+	var nodeList []string
+	var payload models.NodeLabels
+	//var tempArray []string
 
-	//for d := range adminResources.Servers {
-	//	logNodeLabels = append(logNodeLabels, adminResources.Servers[d])
-	//}
-	var nodeList map[string]string
-	var payload *models.NodeLabels
-	/*
+	if adminResources.Servers != nil {
 		for s := range adminResources.Servers {
-			fmt.Println("Adding node: ", adminResources.Servers[s].Endpoint)
-			nodeList[strconv.Itoa(s)] = adminResources.Servers[s].Endpoint
+			nodeList = append(nodeList, adminResources.Servers[s].Endpoint)
 		}
-	*/
+	}
+	//for n := range nodeList {
+	//	payload[nodeList[n]] = tempArray
+	//}
 	fmt.Println("NodeList is: ", nodeList)
-	fmt.Println("adminresources is: ", adminResources)
+
 	if err != nil {
 		return nil, prepareError(err)
 	}
-	return payload, nil
+	return &payload, nil
 }

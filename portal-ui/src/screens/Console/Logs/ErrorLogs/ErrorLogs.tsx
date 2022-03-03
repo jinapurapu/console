@@ -133,7 +133,7 @@ const ErrorLogs = ({
         console.log("closing websockets");
       };
     }
-  }, []); // [logMessageReceived, logResetMessages]);
+  }, [logMessageReceived, logResetMessages]);
 
   const renderError = (logElement: LogMessage) => {
     let errorElems = [];
@@ -337,11 +337,11 @@ const ErrorLogs = ({
       .invoke("GET", `/api/v1/nodes/labels`)
       .then((res: logNodes) => {
         console.log("Log nodes are:", res);
-        setNodeLabels(res);
+        //setNodeLabels(res);
         //setLoading(false);
       })
       .catch((err: ErrorResponseHandler) => {
-        console.log(err);
+        console.log("There was an error here!!!", err);
         //setLoading(false);
       });
   }, [setNodeLabels]);
