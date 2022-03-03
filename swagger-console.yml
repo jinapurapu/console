@@ -4309,7 +4309,7 @@ definitions:
         type: integer
       subscriptionStatus:
         type: string
-      isAccountOwner:
+      isAccountOwner: 
         type: boolean
       company:
         type: string
@@ -4318,7 +4318,8 @@ definitions:
         
   nodeLabels:
     type: object
-    additionalProperties:
-      type: array
-      items:
-        type: string
+    properties:
+      nodeLabels:
+        type: array
+        items:
+          type: string
