@@ -23,7 +23,7 @@ import (
 
 	"github.com/minio/minio-go/v7/pkg/set"
 
-	"github.com/minio/console/cluster"
+	//	"github.com/minio/console/cluster"
 
 	"github.com/minio/madmin-go"
 
@@ -42,11 +42,11 @@ func registerAdminNodesHandlers(api *operations.ConsoleAPI) {
 	// return usage stats
 	api.UserAPIListNodeLabelsHandler = user_api.ListNodeLabelsHandlerFunc(func(params user_api.ListNodeLabelsParams, session *models.Principal) middleware.Responder {
 
-		nodeLabelsResp, err := getNodeLabelsResponse(params, principal)
+		nodeLabelsResp, err := getNodeLabelsResponse(params, session)
 		if err != nil {
 			return admin_api.NewAdminInfoDefault(int(err.Code)).WithPayload(err)
 		}
-		return user_api.NewListNodeLabelsOK().WithPayload(*nodeLabelsResp)
+		return user_api.NewListNodeLabelsOK().WithPayload(nodeLabelsResp)
 	})
 }
 
@@ -112,28 +112,40 @@ func getAdminResources(ctx context.Context, mAdmin *madmin.AdminClient) ([]*mode
 	return drives, nil
 }
 
-func getNodeLabelsResponse(params *models.ListNodeLabelsParams, session *models.Principal) (*models.NodeLabels, *models.Error) {
+func getNodeLabelsResponse(params user_api.ListNodeLabelsParams, session *models.Principal) (*models.NodeLabels, *models.Error) {
 
 	ctx, cancel := context.WithTimeout(context.Background(), 2*time.Second)
 	defer cancel()
 
-	client, err := cluster.K8sClient(session.STSSessionToken)
-	if err != nil {
-		return nil, prepareError(err)
-	}
+	//client, err := cluster.K8sClient(session.STSSessionToken)
+	//if err != nil {
+	//	return nil, prepareError(err)
+	//}
 
 	mAdmin, err := NewMinioAdminClient(session)
 	if err != nil {
 		return nil, prepareError(err)
 	}
 
-	clusterResources, err := getNodeLabels(ctx, client.CoreV1())
-	adminResources, err := getAdminResources(ctx, mAdmin)
+	//clusterResources, err := getNodeLabels(ctx, client.CoreV1())
+	adminResources, err := mAdmin.ServerInfo(ctx)
+	//var logNodeLabels []string
 
-	fmt.Println("Admin resources is: ", adminResources)
-
+	//for d := range adminResources.Servers {
+	//	logNodeLabels = append(logNodeLabels, adminResources.Servers[d])
+	//}
+	var nodeList map[string]string
+	var payload *models.NodeLabels
+	/*
+		for s := range adminResources.Servers {
+			fmt.Println("Adding node: ", adminResources.Servers[s].Endpoint)
+			nodeList[strconv.Itoa(s)] = adminResources.Servers[s].Endpoint
+		}
+	*/
+	fmt.Println("NodeList is: ", nodeList)
+	fmt.Println("adminresources is: ", adminResources)
 	if err != nil {
 		return nil, prepareError(err)
 	}
-	return clusterResources, nil
+	return payload, nil
 }

@@ -42,7 +42,7 @@ type ListNodeLabelsOK struct {
 	/*
 	  In: Body
 	*/
-	Payload models.NodeLabels `json:"body,omitempty"`
+	Payload *models.NodeLabels `json:"body,omitempty"`
 }
 
 // NewListNodeLabelsOK creates ListNodeLabelsOK with default headers values
@@ -52,13 +52,13 @@ func NewListNodeLabelsOK() *ListNodeLabelsOK {
 }
 
 // WithPayload adds the payload to the list node labels o k response
-func (o *ListNodeLabelsOK) WithPayload(payload models.NodeLabels) *ListNodeLabelsOK {
+func (o *ListNodeLabelsOK) WithPayload(payload *models.NodeLabels) *ListNodeLabelsOK {
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the list node labels o k response
-func (o *ListNodeLabelsOK) SetPayload(payload models.NodeLabels) {
+func (o *ListNodeLabelsOK) SetPayload(payload *models.NodeLabels) {
 	o.Payload = payload
 }
 
@@ -66,14 +66,11 @@ func (o *ListNodeLabelsOK) SetPayload(payload models.NodeLabels) {
 func (o *ListNodeLabelsOK) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
 
 	rw.WriteHeader(200)
-	payload := o.Payload
-	if payload == nil {
-		// return empty map
-		payload = models.NodeLabels{}
-	}
-
-	if err := producer.Produce(rw, payload); err != nil {
-		panic(err) // let the recovery middleware deal with this
+	if o.Payload != nil {
+		payload := o.Payload
+		if err := producer.Produce(rw, payload); err != nil {
+			panic(err) // let the recovery middleware deal with this
+		}
 	}
 }
 

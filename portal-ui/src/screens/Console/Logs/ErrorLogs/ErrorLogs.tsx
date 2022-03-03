@@ -13,7 +13,7 @@
 //
 // You should have received a copy of the GNU Affero General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
-import React, { Fragment, useEffect, useState } from "react";
+import React, { Fragment, useEffect, useState, useCallback } from "react";
 import { IMessageEvent, w3cwebsocket as W3CWebSocket } from "websocket";
 import { Theme } from "@mui/material/styles";
 import createStyles from "@mui/styles/createStyles";
@@ -21,9 +21,11 @@ import withStyles from "@mui/styles/withStyles";
 import { connect } from "react-redux";
 import { Grid, Button, Box } from "@mui/material";
 import moment from "moment/moment";
+import api from "../../../../../src/common/api";
+import { ErrorResponseHandler } from "../../../../../src/common/types";
 import { AppState } from "../../../../store";
 import { logMessageReceived, logResetMessages } from "../actions";
-import { LogMessage } from "../types";
+import { LogMessage, logNodes } from "../types";
 import { timeFromDate } from "../../../../common/utils";
 import { wsProtocol } from "../../../../utils/wsUtils";
 import {
@@ -87,9 +89,10 @@ const ErrorLogs = ({
   messages,
 }: ILogs) => {
   const [highlight, setHighlight] = useState("");
-  const [node, setNode] = useState("");
-  const [logKind, setLogKind] = useState("");
-  const [cluster, setCluster] = useState("");
+  const [node, setNode] = useState<string>("");
+  const [logKind, setLogKind] = useState<string>("");
+  const [cluster, setCluster] = useState<string>("");
+  const [nodeLabels, setNodeLabels] = useState<logNodes | null>(null);
 
   useEffect(() => {
     logResetMessages();
@@ -130,7 +133,7 @@ const ErrorLogs = ({
         console.log("closing websockets");
       };
     }
-  },  []); // [logMessageReceived, logResetMessages]);
+  }, []); // [logMessageReceived, logResetMessages]);
 
   const renderError = (logElement: LogMessage) => {
     let errorElems = [];
@@ -327,74 +330,87 @@ const ErrorLogs = ({
 
   const renderLines = messages.map((m) => {
     return renderLog(m);
-    
   });
 
+  const fetchNodes = useEffect(() => {
+    api
+      .invoke("GET", `/api/v1/nodes/labels`)
+      .then((res: logNodes) => {
+        console.log("Log nodes are:", res);
+        setNodeLabels(res);
+        //setLoading(false);
+      })
+      .catch((err: ErrorResponseHandler) => {
+        console.log(err);
+        //setLoading(false);
+      });
+  }, [setNodeLabels]);
+
   const submitSelectors = (event: React.FormEvent) => {
-    console.log("Submitting:", event)
-    console.log("Node:", node)
-    console.log("cluster:", cluster)
-    console.log("kind:", logKind)
-  }
+    console.log("Submitting:", event);
+    console.log("Node:", node);
+    console.log("cluster:", cluster);
+    console.log("kind:", logKind);
+  };
 
   return (
     <Fragment>
       <PageHeader label="Logs" />
       <PageLayout>
         <Grid xs={12}>
-        <Box
-          sx={{
-            padding: "15px",
-            height: "100%",
-          }}
-        >
-          <form
-            noValidate
-            onSubmit={submitSelectors}
-            //className={classes.formBox}
-            style={{
+          <Box
+            sx={{
+              padding: "15px",
               height: "100%",
-              display: "flex",
-              flexFlow: "column",
             }}
           >
-          <Grid item xs={12} className={classes.formFieldRow}>
-            <InputBoxWrapper
-              id="node"
-              name="node"
-              label="Node"
-              autoFocus={true}
-              value={node}
-              onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-                setNode(e.target.value);
+            <form
+              noValidate
+              onSubmit={submitSelectors}
+              //className={classes.formBox}
+              style={{
+                height: "100%",
+                display: "flex",
+                flexFlow: "column",
               }}
-            />
-          </Grid>
-          <Grid item xs={12} className={classes.formFieldRow}>
-            <InputBoxWrapper
-              id="log-kind"
-              name="log-kind"
-              label="Log Kind"
-              autoFocus={true}
-              value={logKind}
-              onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-                setLogKind(e.target.value);
-              }}
-            />
-          </Grid>
-          <Grid item xs={12} className={classes.formFieldRow}>
-            <InputBoxWrapper
-              id="cluster"
-              name="cluster"
-              label="Cluster"
-              autoFocus={true}
-              value={cluster}
-              onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-                setCluster(e.target.value);
-              }}
-            />
-          </Grid>
-          <Button
+            >
+              <Grid item xs={12} className={classes.formFieldRow}>
+                <InputBoxWrapper
+                  id="node"
+                  name="node"
+                  label="Node"
+                  autoFocus={true}
+                  value={node}
+                  onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+                    setNode(e.target.value);
+                  }}
+                />
+              </Grid>
+              <Grid item xs={12} className={classes.formFieldRow}>
+                <InputBoxWrapper
+                  id="log-kind"
+                  name="log-kind"
+                  label="Log Kind"
+                  autoFocus={true}
+                  value={logKind}
+                  onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+                    setLogKind(e.target.value);
+                  }}
+                />
+              </Grid>
+              <Grid item xs={12} className={classes.formFieldRow}>
+                <InputBoxWrapper
+                  id="cluster"
+                  name="cluster"
+                  label="Cluster"
+                  autoFocus={true}
+                  value={cluster}
+                  onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+                    setCluster(e.target.value);
+                  }}
+                />
+              </Grid>
+              <Button
                 type="submit"
                 variant="contained"
                 color="primary"
@@ -402,8 +418,8 @@ const ErrorLogs = ({
               >
                 Submit
               </Button>
-</form>
-</Box>
+            </form>
+          </Box>
           <Grid item xs={12} className={classes.actionsTray}>
             <SearchBox
               placeholder="Highlight Line"
@@ -412,10 +428,10 @@ const ErrorLogs = ({
             />
           </Grid>
           <Grid item xs={12}>
-     <div id="logs-container" className={classes.logList}>
+            <div id="logs-container" className={classes.logList}>
               {renderLines}
-            </div>    
-           {/*        LOGS GO HERE*/}
+            </div>
+            {/*        LOGS GO HERE*/}
           </Grid>
         </Grid>
       </PageLayout>

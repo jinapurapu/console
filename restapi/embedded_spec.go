@@ -5068,10 +5068,12 @@ func init() {
     },
     "nodeLabels": {
       "type": "object",
-      "additionalProperties": {
-        "type": "array",
-        "items": {
-          "type": "string"
+      "properties": {
+        "nodeLabels": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         }
       }
     },
@@ -11476,10 +11478,12 @@ func init() {
     },
     "nodeLabels": {
       "type": "object",
-      "additionalProperties": {
-        "type": "array",
-        "items": {
-          "type": "string"
+      "properties": {
+        "nodeLabels": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         }
       }
     },

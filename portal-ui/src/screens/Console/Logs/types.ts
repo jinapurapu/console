@@ -42,3 +42,7 @@ export interface LogMessage {
   ConsoleMsg: string;
   key: number;
 }
+
+export interface logNodes {
+  nodeLabels: string[];
+}
