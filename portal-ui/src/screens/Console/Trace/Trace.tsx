@@ -138,6 +138,7 @@ const Trace = ({
   const [internal, setInternal] = useState<boolean>(false);
   const [storage, setStorage] = useState<boolean>(false);
   const [os, setOS] = useState<boolean>(false);
+  const [filterConsole, setFilterConsole] = useState<boolean>(false);
   const [errors, setErrors] = useState<boolean>(false);
 
   const [toggleFilter, setToggleFilter] = useState<boolean>(false);
@@ -150,7 +151,7 @@ const Trace = ({
 
     let calls = `${s3 ? "s3," : ""}${internal ? "internal," : ""}${
       storage ? "storage," : ""
-    }${os ? "os," : ""}`;
+    }${os ? "os," : ""}${filterConsole ? "console," : ""}`;
 
     if (all) {
       calls = "all";
@@ -328,6 +329,22 @@ const Trace = ({
                     setOS(item.target.checked);
                   }}
                   value={"os"}
+                  disabled={all || traceStarted}
+                  overrideLabelClasses="trace-checkbox-label"
+                  classes={{
+                    checkedIcon: classes.traceCheckedIcon,
+                    unCheckedIcon: classes.unCheckedIcon,
+                  }}
+                />
+                 <CheckboxWrapper
+                  checked={os || all}
+                  id={"console_calls"}
+                  name={"console_calls"}
+                  label={"Console"}
+                  onChange={(item) => {
+                    setFilterConsole(item.target.checked);
+                  }}
+                  value={"console"}
                   disabled={all || traceStarted}
                   overrideLabelClasses="trace-checkbox-label"
                   classes={{
