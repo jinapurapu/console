@@ -92,6 +92,7 @@ type TraceRequest struct {
 	internal   bool
 	storage    bool
 	os         bool
+	console    bool
 	threshold  int64
 	onlyErrors bool
 	statusCode int64
@@ -176,6 +177,7 @@ func serveWS(w http.ResponseWriter, req *http.Request) {
 			internal:   strings.Contains(calls, "internal") || strings.Contains(calls, "all"),
 			storage:    strings.Contains(calls, "storage") || strings.Contains(calls, "all"),
 			os:         strings.Contains(calls, "os") || strings.Contains(calls, "all"),
+			console:    strings.Contains(calls, "console") || strings.Contains(calls, "all"),
 			onlyErrors: onlyErrors == "yes",
 			threshold:  threshold,
 			statusCode: statusCode,
