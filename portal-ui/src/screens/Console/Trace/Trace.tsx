@@ -336,8 +336,8 @@ const Trace = ({
                     unCheckedIcon: classes.unCheckedIcon,
                   }}
                 />
-                 <CheckboxWrapper
-                  checked={os || all}
+                <CheckboxWrapper
+                  checked={filterConsole || all}
                   id={"console_calls"}
                   name={"console_calls"}
                   label={"Console"}

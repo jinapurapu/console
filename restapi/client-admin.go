@@ -84,7 +84,7 @@ type MinioAdmin interface {
 	serverInfo(ctx context.Context) (madmin.InfoMessage, error)
 	startProfiling(ctx context.Context, profiler madmin.ProfilerType) ([]madmin.StartProfilingResult, error)
 	stopProfiling(ctx context.Context) (io.ReadCloser, error)
-	serviceTrace(ctx context.Context, threshold int64, s3, internal, storage, os, errTrace bool) <-chan madmin.ServiceTraceInfo
+	serviceTrace(ctx context.Context, threshold int64, s3, internal, storage, os, errTrace, console bool) <-chan madmin.ServiceTraceInfo
 	getLogs(ctx context.Context, node string, lineCnt int, logKind string) <-chan madmin.LogInfo
 	AccountInfo(ctx context.Context) (madmin.AccountInfo, error)
 	heal(ctx context.Context, bucket, prefix string, healOpts madmin.HealOpts, clientToken string,
@@ -267,16 +267,17 @@ func (ac AdminClient) stopProfiling(ctx context.Context) (io.ReadCloser, error) 
 }
 
 // implements madmin.ServiceTrace()
-func (ac AdminClient) serviceTrace(ctx context.Context, threshold int64, s3, internal, storage, os, errTrace bool) <-chan madmin.ServiceTraceInfo {
+func (ac AdminClient) serviceTrace(ctx context.Context, threshold int64, s3, internal, storage, os, errTrace, console bool) <-chan madmin.ServiceTraceInfo {
 	thresholdT := time.Duration(threshold)
 
 	tracingOptions := madmin.ServiceTraceOpts{
-		S3:         true,
+		S3:         s3,
 		OnlyErrors: errTrace,
 		Internal:   internal,
 		Storage:    storage,
 		OS:         os,
 		Threshold:  thresholdT,
+		Console:    console,
 	}
 
 	return ac.Client.ServiceTrace(ctx, tracingOptions)

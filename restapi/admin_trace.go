@@ -94,7 +94,7 @@ func matchTrace(opts TraceRequest, traceInfo madmin.ServiceTraceInfo) bool {
 // startTraceInfo starts trace of the servers
 func startTraceInfo(ctx context.Context, conn WSConn, client MinioAdmin, opts TraceRequest) error {
 	// Start listening on all trace activity.
-	traceCh := client.serviceTrace(ctx, opts.threshold, opts.s3, opts.internal, opts.storage, opts.os, opts.onlyErrors)
+	traceCh := client.serviceTrace(ctx, opts.threshold, opts.s3, opts.internal, opts.storage, opts.os, opts.onlyErrors, opts.console)
 	for {
 		select {
 		case <-ctx.Done():
