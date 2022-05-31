@@ -84,7 +84,7 @@ const styles = (theme: Theme) =>
     ...wizardCommon,
   });
 
-const TenantEncryption = ({ classes }: ITenantEncryption) => {
+const EditSecurityContext = () => {
   const dispatch = useDispatch();
 
   const tenant = useSelector(
@@ -118,10 +118,10 @@ const TenantEncryption = ({ classes }: ITenantEncryption) => {
             </Grid>
             <Grid item xs={12}>
               <div
-                className={`${classes.multiContainer} ${classes.responsiveContainer}`}
+                //className={`${classes.multiContainer} ${classes.responsiveContainer}`}
               >
                 <div
-                  className={`${classes.formFieldRow} ${classes.rightSpacer}`}
+                  //className={`${classes.formFieldRow} ${classes.rightSpacer}`}
                 >
                   <InputBoxWrapper
                     type="number"
@@ -143,7 +143,7 @@ const TenantEncryption = ({ classes }: ITenantEncryption) => {
                   />
                 </div>
                 <div
-                  className={`${classes.formFieldRow} ${classes.rightSpacer}`}
+                 // className={`${classes.formFieldRow} ${classes.rightSpacer}`}
                 >
                   <InputBoxWrapper
                     type="number"
@@ -165,7 +165,7 @@ const TenantEncryption = ({ classes }: ITenantEncryption) => {
                   />
                 </div>
                 <div
-                  className={`${classes.formFieldRow} ${classes.rightSpacer}`}
+                 // className={`${classes.formFieldRow} ${classes.rightSpacer}`}
                 >
                   <InputBoxWrapper
                     type="number"
@@ -208,4 +208,4 @@ const TenantEncryption = ({ classes }: ITenantEncryption) => {
         </React.Fragment>
 )
             }
-export default withStyles(styles)(TenantEncryption);
+export default withStyles(styles)(EditSecurityContext);

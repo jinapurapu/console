@@ -41,6 +41,7 @@ import ConfirmDialog from "../../Common/ModalWrapper/ConfirmDialog";
 import RBIconButton from "../../Buckets/BucketDetails/SummaryItems/RBIconButton";
 import Loader from "../../Common/Loader/Loader";
 import { setErrorSnackMessage } from "../../../../systemSlice";
+import EditSecurityContext from "../TenantDetails/EditSecurityContext"
 
 interface ITenantMonitoring {
   classes: any;
@@ -340,6 +341,7 @@ const TenantMonitoring = ({
               </table>
             </Grid>
           </Grid>
+          <EditSecurityContext />
         </Paper>
       )}
     </Fragment>
