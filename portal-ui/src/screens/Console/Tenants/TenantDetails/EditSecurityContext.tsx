@@ -77,6 +77,15 @@ const styles = (theme: Theme) =>
         flexFlow: "column",
       },
     },
+    formFieldRow: {
+        marginBottom: ".8rem",
+        "& .MuiInputLabel-root": {
+          fontWeight: "normal",
+        },
+      },
+      rightSpacer: {
+        marginRight: 15,
+      },
     ...containerForHeader(theme.spacing(4)),
     ...createTenantCommon,
     ...formFieldStyles,
@@ -117,12 +126,8 @@ const EditSecurityContext = () => {
               <SectionTitle>Security Context for KES</SectionTitle>
             </Grid>
             <Grid item xs={12}>
-              <div
-                //className={`${classes.multiContainer} ${classes.responsiveContainer}`}
-              >
-                <div
-                  //className={`${classes.formFieldRow} ${classes.rightSpacer}`}
-                >
+              <div style={{ marginBottom: 10, display: "flex", }}>
+                <div style={{   marginRight: 15,  marginBottom: ".8rem"}}  >
                   <InputBoxWrapper
                     type="number"
                     id="kes_securityContext_runAsUser"
@@ -142,9 +147,7 @@ const EditSecurityContext = () => {
                     min="0"
                   />
                 </div>
-                <div
-                 // className={`${classes.formFieldRow} ${classes.rightSpacer}`}
-                >
+                <div style={{ marginRight: 15, marginBottom: 10}} >
                   <InputBoxWrapper
                     type="number"
                     id="kes_securityContext_runAsGroup"
@@ -165,7 +168,7 @@ const EditSecurityContext = () => {
                   />
                 </div>
                 <div
-                 // className={`${classes.formFieldRow} ${classes.rightSpacer}`}
+                 style={{marginRight: 15, marginBottom: 10}}
                 >
                   <InputBoxWrapper
                     type="number"
