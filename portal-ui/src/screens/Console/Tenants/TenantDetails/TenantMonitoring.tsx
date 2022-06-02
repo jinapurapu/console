@@ -341,7 +341,8 @@ const TenantMonitoring = ({
               </table>
             </Grid>
           </Grid>
-          <EditSecurityContext />
+          <EditSecurityContext 
+          entity="Prometheus Monitoring"/>
         </Paper>
       )}
     </Fragment>

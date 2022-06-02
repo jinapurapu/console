@@ -56,8 +56,9 @@ import TLSCertificate from "../../Common/TLSCertificate/TLSCertificate";
 import SectionTitle from "../../Common/SectionTitle";
 import { setErrorSnackMessage } from "../../../../systemSlice";
 
-interface ITenantEncryption {
+interface IEditSecurityContext {
   classes: any;
+  entity: string;
 }
 
 const styles = (theme: Theme) =>
@@ -93,45 +94,31 @@ const styles = (theme: Theme) =>
     ...wizardCommon,
   });
 
-const EditSecurityContext = () => {
+const EditSecurityContext = ({entity}: IEditSecurityContext) => {
   const dispatch = useDispatch();
 
-  const tenant = useSelector(
-    (state: AppState) => state.tenants.tenantDetails.tenantInfo
-  );
-
-  const [encryptionEnabled, setEncryptionEnabled] = useState<boolean>(false);
-  const [encryptionType, setEncryptionType] = useState<string>("vault");
-  const [replicas, setReplicas] = useState<string>("2");
-  const [image, setImage] = useState<string>("");
-  const [refreshEncryptionInfo, setRefreshEncryptionInfo] =
-    useState<boolean>(false);
+  
   const [securityContext, setSecurityContext] = useState<ISecurityContext>({
     fsGroup: "1000",
     runAsGroup: "1000",
     runAsNonRoot: true,
     runAsUser: "1000",
   });
-  const [updatingEncryption, setUpdatingEncryption] = useState<boolean>(false);
-  
+ 
   const [validationErrors, setValidationErrors] = useState<any>({});
-  const cleanValidation = (fieldName: string) => {
-    setValidationErrors(clearValidationError(validationErrors, fieldName));
-  };
-  const [confirmOpen, setConfirmOpen] = useState<boolean>(false);
 
   return (
     <React.Fragment>
             <Grid item xs={12}>
-              <SectionTitle>Security Context for KES</SectionTitle>
+              <SectionTitle>{"Security Context for "+entity}</SectionTitle>
             </Grid>
             <Grid item xs={12}>
               <div style={{ marginBottom: 10, display: "flex", }}>
                 <div style={{   marginRight: 15,  marginBottom: ".8rem"}}  >
                   <InputBoxWrapper
                     type="number"
-                    id="kes_securityContext_runAsUser"
-                    name="kes_securityContext_runAsUser"
+                    id={`${entity}_securityContext_runAsUser` }
+                    name={`${entity}_securityContext_runAsUser`}
                     onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
                       setSecurityContext({
                         ...securityContext,
@@ -142,7 +129,7 @@ const EditSecurityContext = () => {
                     value={securityContext.runAsUser}
                     required
                     error={
-                      validationErrors["kes_securityContext_runAsUser"] || ""
+                      validationErrors[`${entity}_securityContext_runAsUser`] || ""
                     }
                     min="0"
                   />
@@ -150,8 +137,8 @@ const EditSecurityContext = () => {
                 <div style={{ marginRight: 15, marginBottom: 10}} >
                   <InputBoxWrapper
                     type="number"
-                    id="kes_securityContext_runAsGroup"
-                    name="kes_securityContext_runAsGroup"
+                    id={`${entity}_securityContext_runAsGroup`}
+                    name={`${entity}_securityContext_runAsGroup`}
                     onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
                       setSecurityContext({
                         ...securityContext,
@@ -162,7 +149,7 @@ const EditSecurityContext = () => {
                     value={securityContext.runAsGroup}
                     required
                     error={
-                      validationErrors["kes_securityContext_runAsGroup"] || ""
+                      validationErrors[`${entity}_securityContext_runAsGroup`] || ""
                     }
                     min="0"
                   />
@@ -172,8 +159,8 @@ const EditSecurityContext = () => {
                 >
                   <InputBoxWrapper
                     type="number"
-                    id="kes_securityContext_fsGroup"
-                    name="kes_securityContext_fsGroup"
+                    id={`${entity}_securityContext_fsGroup`}
+                    name={`${entity}_securityContext_fsGroup`}
                     onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
                       setSecurityContext({
                         ...securityContext,
@@ -184,7 +171,7 @@ const EditSecurityContext = () => {
                     value={securityContext.fsGroup}
                     required
                     error={
-                      validationErrors["kes_securityContext_fsGroup"] || ""
+                      validationErrors[`${entity}_securityContext_fsGroup`] || ""
                     }
                     min="0"
                   />
@@ -193,9 +180,9 @@ const EditSecurityContext = () => {
             </Grid>
             <Grid item xs={12}>
               <FormSwitchWrapper
-                value="kesSecurityContextRunAsNonRoot"
-                id="kes_securityContext_runAsNonRoot"
-                name="kes_securityContext_runAsNonRoot"
+                value={`${entity}_securityContext_runAsNonRoot`}
+                id={`${entity}_securityContext_runAsNonRoot`}
+                name={`${entity}_securityContext_runAsNonRoot`}
                 checked={securityContext.runAsNonRoot}
                 onChange={(e) => {
                   const targetD = e.target;
