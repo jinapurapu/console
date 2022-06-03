@@ -103,7 +103,6 @@ const SetPolicy = ({
 
   const fetchGroupInformation = () => {
     if (selectedGroups?.length === 1) {
-      console.log("Fetching grouppolicies")
       api
         .invoke("GET", `/api/v1/group/${encodeURLString(selectedGroups[0])}`)
         .then((res: any) => {
@@ -121,10 +120,7 @@ const SetPolicy = ({
   const resetSelection = () => {
     setSelectedPolicy(actualPolicy);
   };
-  useEffect(() => {
-    console.log("selectedGroups.length:", selectedGroups?.length)
-  }, []);
-
+ 
   useEffect(() => {
     if (open) {
       if (selectedGroups?.length === 1) {
@@ -137,7 +133,7 @@ const SetPolicy = ({
       setSelectedPolicy(userPolicy);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [open, selectedGroups, selectedUser]);
+  }, [open, selectedGroups?.length, selectedUser]);
 
   const userName = get(selectedUser, "accessKey", "");
 
