@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ModalWrapper from "../../Common/ModalWrapper/ModalWrapper";
+import { useDispatch, useSelector } from "react-redux";
 import createStyles from "@mui/styles/createStyles";
 import withStyles from "@mui/styles/withStyles";
 import { Theme } from "@mui/material/styles";
@@ -19,8 +20,9 @@ import {
   IValidation,
 } from "../../../../utils/validationFunctions";
 import InputUnitMenu from "../../Common/FormComponents/InputUnitMenu/InputUnitMenu";
-import { useDispatch } from "react-redux";
+import { AppState } from "../../../../../src/store"
 import { setModalErrorSnackMessage } from "../../../../systemSlice";
+import EditSecurityContext from "../TenantDetails/EditSecurityContext"
 
 interface IEditTenantMonitoringProps {
   tenant: ITenant;
@@ -102,6 +104,10 @@ const EditTenantMonitoringModal = ({
   const [labelsError, setLabelsError] = useState<any>({});
   const [annotationsError, setAnnotationsError] = useState<any>({});
   const [nodeSelectorError, setNodeSelectorError] = useState<any>({});
+
+  const prometheusSecurityContext = useSelector(
+    (state: AppState) => state.tenants.tenantDetails
+  );
 
   const trim = (x: IKeyValue[]): IKeyValue[] => {
     let retval: IKeyValue[] = [];
@@ -406,6 +412,14 @@ const EditTenantMonitoringModal = ({
                 error={nodeSelectorError}
                 setError={setNodeSelectorError}
               />
+            </Grid>
+            <Grid>
+            <EditSecurityContext 
+          entity="Prometheus Monitoring"/>
+            </Grid>
+            <Grid>
+            <EditSecurityContext 
+          entity="Prometheus Monitoring"/>
             </Grid>
           </Grid>
           <Grid xs={12} className={classes.buttonContainer}>
