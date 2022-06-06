@@ -18,6 +18,7 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import {
   IAddPoolFields,
   IEditPoolFields,
+  ISecurityContext,
   ITenantState,
   LabelKeyPair,
 } from "./types";
@@ -27,9 +28,9 @@ import {
   ITolerationOperator,
 } from "../../../common/types";
 import get from "lodash/get";
-import { has } from "lodash";
+import { has, startCase } from "lodash";
 import { Opts } from "./ListTenants/utils";
-import { IPool, ITenant } from "./ListTenants/types";
+import { IPool, ITenant, ITenantMonitoringStruct } from "./ListTenants/types";
 
 export interface FileValue {
   fileName: string;
@@ -292,6 +293,11 @@ export const tenantSlice = createSlice({
     setSelectedPool: (state, action: PayloadAction<string | null>) => {
       state.tenantDetails.selectedPool = action.payload;
     },
+    setPrometheusSecurityContext: (state, action: PayloadAction<ISecurityContext | null>) => {
+      if(action.payload && state.tenantDetails.tenantInfo?.prometheus){
+        state.tenantDetails.tenantInfo.prometheus.prometheusSecurityContext = action.payload;
+      }
+    },
     setOpenPoolDetails: (state, action: PayloadAction<boolean>) => {
       state.tenantDetails.poolDetailsOpen = action.payload;
     },
@@ -545,6 +551,7 @@ export const {
   addNewEditPoolToleration,
   removeEditPoolToleration,
   setEditPoolKeyValuePairs,
+  setPrometheusSecurityContext,
 } = tenantSlice.actions;
 
 export default tenantSlice.reducer;
