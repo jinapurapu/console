@@ -44,6 +44,8 @@ import { setErrorSnackMessage } from "../../../../../systemSlice";
 import { useAppDispatch } from "../../../../../store";
 import { WidgetDownloadButton } from "../Widgets/WidgetDownloadButton";
 
+import { WidgetPNGDownloadButton } from "../Widgets/WidgetPNGDownloadButton";
+
 interface ILinearGraphWidget {
   classes: any;
   title: string;
@@ -196,6 +198,7 @@ const LinearGraphWidget = ({
       {!zoomActivated && (
         <div className={classes.titleContainer}>
           <WidgetDownloadButton title={title} data={data} />
+          <WidgetPNGDownloadButton title={title} data={data} />
           {title}
           <ExpandGraphLink panelItem={panelItem} />
         </div>

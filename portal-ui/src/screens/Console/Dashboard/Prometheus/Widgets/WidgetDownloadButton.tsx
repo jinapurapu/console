@@ -46,12 +46,14 @@ export const WidgetDownloadButton = ({
   };
 
   const convertToCSV = (objectToConvert: any) => {
-    const array = [Object.keys(objectToConvert[0])].concat(objectToConvert);
-    return array
-      .map((it) => {
-        return Object.values(it).toString();
-      })
-      .join(",");
+    if (objectToConvert !== null && objectToConvert !== undefined) {
+      const array = [Object.keys(objectToConvert[0])].concat(objectToConvert);
+      return array
+        .map((it) => {
+          return Object.values(it).toString();
+        })
+        .join(",");
+    }
   };
 
   const widgetDataFileName = () => {
@@ -66,8 +68,9 @@ export const WidgetDownloadButton = ({
   };
 
   const downloadWidgetData = () => {
-    if (data !== null) {
-      download(widgetDataFileName(), convertToCSV(data));
+    if (data !== null && data !== undefined && data.length > 0) {
+      console.log("data is:", data);
+      //download(widgetDataFileName(), convertToCSV(data));
     } else {
       let err: ErrorResponseHandler;
       err = {
