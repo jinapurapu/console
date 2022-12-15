@@ -2,6 +2,10 @@ module github.com/minio/console
 
 go 1.19
 
+replace github.com/minio/minio-go/v7 => /Users/jillii/minio-go
+
+replace github.com/minio/mc => /Users/jillii/mc
+
 require (
 	github.com/blang/semver/v4 v4.0.0
 	github.com/cheggaaa/pb/v3 v3.1.0
