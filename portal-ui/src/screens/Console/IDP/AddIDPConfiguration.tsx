@@ -37,6 +37,7 @@ import useApi from "../Common/Hooks/useApi";
 import SectionTitle from "../Common/SectionTitle";
 import FormSwitchWrapper from "../Common/FormComponents/FormSwitchWrapper/FormSwitchWrapper";
 import PageHeaderWrapper from "../Common/PageHeaderWrapper/PageHeaderWrapper";
+import HelpMenu from "../HelpMenu";
 
 type AddIDPConfigurationProps = {
   classes?: any;
@@ -168,6 +169,7 @@ const AddIDPConfiguration = ({
     <Grid item xs={12}>
       <PageHeaderWrapper
         label={<BackLink onClick={() => navigate(backLink)} label={header} />}
+        actions={<HelpMenu helpName="add_idp_config" />}
       />
       <PageLayout>
         <Box

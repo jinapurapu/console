@@ -42,6 +42,7 @@ import AButton from "../../Common/AButton/AButton";
 import { useAppDispatch } from "../../../../store";
 import TooltipWrapper from "../../Common/TooltipWrapper/TooltipWrapper";
 import PageHeaderWrapper from "../../Common/PageHeaderWrapper/PageHeaderWrapper";
+import HelpMenu from "../../HelpMenu";
 
 export type ReplicationSite = {
   deploymentID: string;
@@ -112,7 +113,11 @@ const SiteReplication = () => {
 
   return (
     <Fragment>
-      <PageHeaderWrapper label={"Site Replication"} />
+      <PageHeaderWrapper
+        label={"Site Replication"}
+        actions={<HelpMenu helpName="site-replication" />}
+      />
+
       <PageLayout>
         <Box
           sx={{

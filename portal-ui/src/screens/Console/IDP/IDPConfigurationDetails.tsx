@@ -49,6 +49,7 @@ import DeleteIDPConfigurationModal from "./DeleteIDPConfigurationModal";
 import FormSwitchWrapper from "../Common/FormComponents/FormSwitchWrapper/FormSwitchWrapper";
 import LabelValuePair from "../Common/UsageBarWrapper/LabelValuePair";
 import PageHeaderWrapper from "../Common/PageHeaderWrapper/PageHeaderWrapper";
+import HelpMenu from "../HelpMenu";
 
 type IDPConfigurationDetailsProps = {
   classes?: any;
@@ -375,6 +376,7 @@ const IDPConfigurationDetails = ({
       )}
       <PageHeaderWrapper
         label={<BackLink onClick={() => navigate(backLink)} label={header} />}
+        actions={<HelpMenu helpName="idp_config_details" />}
       />
       <PageLayout className={classes.pageContainer}>
         <Box>

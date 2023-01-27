@@ -63,6 +63,7 @@ import {
 import { api } from "../../../api";
 import { errorToHandler } from "../../../api/errors";
 import { setLoadingObjects } from "./objectBrowserSlice";
+import HelpMenu from "../HelpMenu";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -145,7 +146,13 @@ const OBListBuckets = () => {
 
   return (
     <Fragment>
-      {!obOnly && <PageHeaderWrapper label={"Object Browser"} />}
+      {!obOnly && (
+        <PageHeaderWrapper
+          label={"Object Browser"}
+          actions={<HelpMenu helpName="ob_bucket_list" />}
+        />
+      )}
+
       <PageLayout>
         <Grid item xs={12} className={classes.actionsTray} display="flex">
           {obOnly && (

@@ -49,6 +49,7 @@ import {
 import { useNavigate, useParams } from "react-router-dom";
 import { useAppDispatch } from "../../../store";
 import PageHeaderWrapper from "../Common/PageHeaderWrapper/PageHeaderWrapper";
+import HelpMenu from "../HelpMenu";
 
 const ConfMySql = withSuspense(
   React.lazy(() => import("./CustomForms/ConfMySql"))
@@ -190,7 +191,7 @@ const AddEventDestination = ({
             />
           </Fragment>
         }
-        actions={<React.Fragment />}
+        actions={<HelpMenu helpName="add_notification_endpoint" />}
       />
 
       <PageLayout>

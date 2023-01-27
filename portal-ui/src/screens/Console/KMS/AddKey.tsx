@@ -23,8 +23,9 @@ import { setErrorSnackMessage } from "../../../systemSlice";
 import { useNavigate } from "react-router-dom";
 import { useAppDispatch } from "../../../store";
 import AddKeyForm from "./AddKeyForm";
-import { BackLink } from "mds";
 import PageHeaderWrapper from "../Common/PageHeaderWrapper/PageHeaderWrapper";
+import { BackLink, PageHeader } from "mds";
+import HelpMenu from "../HelpMenu";
 
 const AddKey = () => {
   const dispatch = useAppDispatch();
@@ -45,6 +46,7 @@ const AddKey = () => {
               onClick={() => navigate(IAM_PAGES.KMS_KEYS)}
             />
           }
+          actions={<HelpMenu helpName="add_key" />}
         />
         <AddKeyForm onError={onError} onSuccess={onSuccess} />
       </Grid>

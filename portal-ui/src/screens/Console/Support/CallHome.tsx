@@ -28,6 +28,7 @@ import CallHomeConfirmation from "./CallHomeConfirmation";
 import RegisterCluster from "./RegisterCluster";
 import FormSwitchWrapper from "../Common/FormComponents/FormSwitchWrapper/FormSwitchWrapper";
 import PageHeaderWrapper from "../Common/PageHeaderWrapper/PageHeaderWrapper";
+import HelpMenu from "../HelpMenu";
 
 const PromoLabels = ({ title, text }: { title: string; text: string }) => {
   return (
@@ -115,7 +116,10 @@ const CallHome = () => {
           disable={disableMode}
         />
       )}
-      <PageHeaderWrapper label="Call Home" />
+      <PageHeaderWrapper
+        label="Call Home"
+        actions={<HelpMenu helpName="call_home" />}
+      />
       <PageLayout>
         {!clusterRegistered && <RegisterCluster compactMode />}
         <Box

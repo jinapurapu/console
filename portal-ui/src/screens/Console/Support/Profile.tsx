@@ -16,6 +16,7 @@ import { useNavigate } from "react-router-dom";
 import RegisterCluster from "./RegisterCluster";
 import { registeredCluster } from "../../../config";
 import PageHeaderWrapper from "../Common/PageHeaderWrapper/PageHeaderWrapper";
+import HelpMenu from "../HelpMenu";
 
 const styles = (theme: Theme) =>
   createStyles({
@@ -140,7 +141,11 @@ const Profile = ({ classes }: IProfileProps) => {
 
   return (
     <Fragment>
-      <PageHeaderWrapper label="Profile" />
+      <PageHeaderWrapper
+        label="Profile"
+        actions={<HelpMenu helpName="profile" />}
+      />
+
       <PageLayout>
         {!clusterRegistered && <RegisterCluster compactMode />}
         <Grid item xs={12} className={classes.boxy}>

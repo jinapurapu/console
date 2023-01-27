@@ -27,6 +27,8 @@ import { getUsageAsync } from "./dashboardThunks";
 import { useSelector } from "react-redux";
 import PageHeaderWrapper from "../Common/PageHeaderWrapper/PageHeaderWrapper";
 import { selFeatures } from "../consoleSlice";
+import { PageHeader } from "mds";
+import HelpMenu from "../HelpMenu";
 
 interface IDashboardSimple {
   classes: any;
@@ -60,7 +62,12 @@ const Dashboard = ({ classes }: IDashboardSimple) => {
 
   return (
     <Fragment>
-      {!hideMenu && <PageHeaderWrapper label="Metrics" />}
+      {!hideMenu && (
+        <PageHeaderWrapper
+          label="Metrics"
+          actions={<HelpMenu helpName="metrics" />}
+        />
+      )}
       {loading ? (
         <Grid container>
           <Grid item xs={12} className={classes.container}>

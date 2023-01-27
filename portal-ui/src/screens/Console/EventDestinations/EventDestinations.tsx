@@ -18,6 +18,7 @@ import React, { Fragment } from "react";
 
 import withSuspense from "../Common/Components/withSuspense";
 import PageHeaderWrapper from "../Common/PageHeaderWrapper/PageHeaderWrapper";
+import HelpMenu from "../HelpMenu";
 
 const ListNotificationEndpoints = withSuspense(
   React.lazy(() => import("./ListEventDestinations"))
@@ -26,7 +27,10 @@ const ListNotificationEndpoints = withSuspense(
 const EventDestinations = () => {
   return (
     <Fragment>
-      <PageHeaderWrapper label="Event Destinations" />
+      <PageHeaderWrapper
+        label="Event Destinations"
+        actions={<HelpMenu helpName="event_destinations" />}
+      />
       <ListNotificationEndpoints />
     </Fragment>
   );

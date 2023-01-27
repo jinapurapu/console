@@ -14,7 +14,13 @@
 // You should have received a copy of the GNU Affero General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-import React, { Fragment, useCallback, useEffect, useState } from "react";
+import React, {
+  Fragment,
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { Theme } from "@mui/material/styles";
 import {
@@ -52,7 +58,7 @@ import VerticalTabs from "../Common/VerticalTabs/VerticalTabs";
 import FormSwitchWrapper from "../Common/FormComponents/FormSwitchWrapper/FormSwitchWrapper";
 
 import { decodeURLString, encodeURLString } from "../../../common/utils";
-import { setModalErrorSnackMessage } from "../../../systemSlice";
+import { setHelpName, setModalErrorSnackMessage } from "../../../systemSlice";
 import {
   assignGroupPermissions,
   assignIAMPolicyPermissions,
@@ -67,10 +73,12 @@ import {
   permissionTooltipHelper,
 } from "../../../common/SecureComponent/permissions";
 import { hasPermission } from "../../../common/SecureComponent";
-import { useAppDispatch } from "../../../store";
+import { AppState, useAppDispatch } from "../../../store";
 import { policyDetailsSort } from "../../../utils/sortFunctions";
 import TooltipWrapper from "../Common/TooltipWrapper/TooltipWrapper";
 import PageHeaderWrapper from "../Common/PageHeaderWrapper/PageHeaderWrapper";
+import HelpMenu from "../HelpMenu";
+import { useSelector } from "react-redux";
 
 const styles = (theme: Theme) =>
   createStyles({
@@ -109,7 +117,7 @@ const UserDetails = ({ classes }: IUserDetailsProps) => {
   const [addGroupOpen, setAddGroupOpen] = useState<boolean>(false);
   const [policyOpen, setPolicyOpen] = useState<boolean>(false);
   const [addLoading, setAddLoading] = useState<boolean>(false);
-
+  const [helpTopicName, setHelpTopicName] = useState<string>("Groups");
   const [enabled, setEnabled] = useState<boolean>(false);
   const [selectedGroups, setSelectedGroups] = useState<string[]>([]);
   const [currentGroups, setCurrentGroups] = useState<IGroupItem[]>([]);
@@ -223,6 +231,28 @@ const UserDetails = ({ classes }: IUserDetailsProps) => {
     navigate(`${IAM_PAGES.GROUPS}/${encodeURLString(group.group)}`);
   };
 
+  const systemHelpName = useSelector(
+    (state: AppState) => state.system.helpName
+  );
+
+  const systemHelpTabName = useSelector(
+    (state: AppState) => state.system.helpTabName
+  );
+
+  const firstUpdate = useRef(true);
+  useEffect(() => {
+    firstUpdate.current = true;
+    setHelpTopicName("Summary");
+  }, []);
+
+  useEffect(() => {
+    if (firstUpdate.current) {
+      setHelpTopicName("Groups");
+      firstUpdate.current = false;
+    }
+    setHelpTopicName("user_" + systemHelpTabName);
+  }, [systemHelpTabName]);
+
   const groupTableActions = [
     {
       type: "view",
@@ -242,7 +272,7 @@ const UserDetails = ({ classes }: IUserDetailsProps) => {
             />
           </Fragment>
         }
-        actions={<React.Fragment></React.Fragment>}
+        actions={<HelpMenu helpName={helpTopicName} />}
       />
       {addGroupOpen && (
         <ChangeUserGroups

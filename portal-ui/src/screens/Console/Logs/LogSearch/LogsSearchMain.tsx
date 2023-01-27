@@ -48,6 +48,7 @@ import { setErrorSnackMessage } from "../../../../systemSlice";
 import { selFeatures } from "../../consoleSlice";
 import { useAppDispatch } from "../../../../store";
 import PageHeaderWrapper from "../../Common/PageHeaderWrapper/PageHeaderWrapper";
+import HelpMenu from "../../HelpMenu";
 
 interface ILogSearchProps {
   classes: any;
@@ -285,7 +286,11 @@ const LogsSearchMain = ({ classes }: ILogSearchProps) => {
         />
       )}
 
-      <PageHeaderWrapper label="Audit Logs" />
+      <PageHeaderWrapper
+        label="Audit Logs"
+        actions={<HelpMenu helpName="audit_logs" />}
+      />
+     
       <PageLayout>
         {!logSearchEnabled ? (
           <MissingIntegration

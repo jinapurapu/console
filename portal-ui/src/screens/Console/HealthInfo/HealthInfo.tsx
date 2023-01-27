@@ -54,6 +54,7 @@ import {
 import RegisterCluster from "../Support/RegisterCluster";
 import PageHeaderWrapper from "../Common/PageHeaderWrapper/PageHeaderWrapper";
 import { registeredCluster } from "../../../config";
+import HelpMenu from "../HelpMenu";
 
 const styles = (theme: Theme) =>
   createStyles({
@@ -257,7 +258,11 @@ const HealthInfo = ({ classes }: IHealthInfo) => {
 
   return (
     <Fragment>
-      <PageHeaderWrapper label="Health" />
+      <PageHeaderWrapper
+        label="Health"
+        actions={<HelpMenu helpName="health_info" />}
+      />
+
       <PageLayout>
         {!clusterRegistered && <RegisterCluster compactMode />}
         <Grid item xs={12} className={classes.boxy}>

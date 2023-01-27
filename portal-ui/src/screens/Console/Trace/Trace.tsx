@@ -43,6 +43,7 @@ import {
 } from "./traceSlice";
 import TooltipWrapper from "../Common/TooltipWrapper/TooltipWrapper";
 import PageHeaderWrapper from "../Common/PageHeaderWrapper/PageHeaderWrapper";
+import HelpMenu from "../HelpMenu";
 
 const styles = (theme: Theme) =>
   createStyles({
@@ -167,7 +168,11 @@ const Trace = ({ classes }: ITrace) => {
 
   return (
     <Fragment>
-      <PageHeaderWrapper label={"Trace"} />
+      <PageHeaderWrapper
+        label={"Trace"}
+        actions={<HelpMenu helpName="trace" />}
+      />
+
       <PageLayout>
         <Grid container spacing={1} className={classes.formBox}>
           <Grid

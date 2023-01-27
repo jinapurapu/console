@@ -45,6 +45,7 @@ import ClusterRegistrationForm from "./ClusterRegistrationForm";
 import OnlineRegistration from "./OnlineRegistration";
 import PageHeaderWrapper from "../Common/PageHeaderWrapper/PageHeaderWrapper";
 import { PageLayout } from "mds";
+import HelpMenu from "../HelpMenu";
 
 interface IRegister {
   classes: any;
@@ -186,7 +187,7 @@ const Register = ({ classes }: IRegister) => {
     <Fragment>
       <PageHeaderWrapper
         label="Register to MinIO Subscription Network"
-        actions={<React.Fragment />}
+        actions={<HelpMenu helpName="register" />}
       />
 
       <PageLayout>

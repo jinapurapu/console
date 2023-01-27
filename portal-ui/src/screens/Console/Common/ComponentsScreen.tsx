@@ -20,12 +20,17 @@ import SectionTitle from "./SectionTitle";
 import { Button, ConfirmDeleteIcon, PageLayout } from "mds";
 import ConfirmDialog from "./ModalWrapper/ConfirmDialog";
 import PageHeaderWrapper from "./PageHeaderWrapper/PageHeaderWrapper";
+import HelpMenu from "../HelpMenu";
 
 const ComponentsScreen = () => {
   const [dialogOpen, setDialogOpen] = useState<boolean>(false);
   return (
     <Fragment>
-      <PageHeaderWrapper label={"Components"} />
+      <PageHeaderWrapper
+        label={"Components"}
+        actions={<HelpMenu helpName="components" />}
+      />
+
       <PageLayout>
         <Grid container spacing={1}>
           <Grid item xs={12}>

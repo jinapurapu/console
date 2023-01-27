@@ -36,6 +36,7 @@ import PageHeaderWrapper from "../../Common/PageHeaderWrapper/PageHeaderWrapper"
 import ExportConfigButton from "./ExportConfigButton";
 import ImportConfigButton from "./ImportConfigButton";
 import { Box } from "@mui/material";
+import HelpMenu from "../../HelpMenu";
 
 interface IConfigurationOptions {
   classes: any;
@@ -69,7 +70,10 @@ const ConfigurationOptions = ({ classes }: IConfigurationOptions) => {
 
   return (
     <Fragment>
-      <PageHeaderWrapper label={"Settings"} />
+      <PageHeaderWrapper
+        label={"Settings"}
+        actions={<HelpMenu helpName="settings" />}
+      />
 
       <PageLayout>
         <Grid item xs={12}>

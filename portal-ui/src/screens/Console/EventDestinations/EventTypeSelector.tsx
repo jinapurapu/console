@@ -28,7 +28,10 @@ import { IAM_PAGES } from "../../../common/SecureComponent/permissions";
 import { Box } from "@mui/material";
 import NotificationEndpointTypeSelectorHelpBox from "../Account/NotificationEndpointTypeSelectorHelpBox";
 import { BackLink, PageLayout } from "mds";
+
 import PageHeaderWrapper from "../Common/PageHeaderWrapper/PageHeaderWrapper";
+
+import HelpMenu from "../HelpMenu";
 
 interface INotificationTypeSelector {
   classes: any;
@@ -64,7 +67,7 @@ const EventTypeSelector = ({ classes }: INotificationTypeSelector) => {
             />
           </Fragment>
         }
-        actions={<React.Fragment />}
+        actions={<HelpMenu helpName="notification_type_selector" />}
       />
       <PageLayout>
         <Box

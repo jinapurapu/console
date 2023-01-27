@@ -45,6 +45,7 @@ import ResetConfigurationModal from "../../EventDestinations/CustomForms/ResetCo
 import { IConfigurationSys, IElementValue } from "../../Configurations/types";
 import { TabPanel } from "../../../shared/tabs";
 import TabSelector from "../../Common/TabSelector/TabSelector";
+import HelpMenu from "../../HelpMenu";
 
 const enabledConfigLDAP = [
   "server_addr",
@@ -263,7 +264,10 @@ const IDPLDAPConfigurationDetails = () => {
           resetOpen={resetOpen}
         />
       )}
-      <PageHeaderWrapper label={"LDAP"} />
+      <PageHeaderWrapper
+        label={"LDAP"}
+        actions={<HelpMenu helpName="LDAP" />}
+      />
       <PageLayout variant={"constrained"}>
         <TabSelector
           selectedTab={curTab}

@@ -3,9 +3,15 @@ import { IAM_PAGES } from "../../../common/SecureComponent/permissions";
 import { BackLink } from "mds";
 import { useNavigate } from "react-router-dom";
 import PageHeaderWrapper from "../Common/PageHeaderWrapper/PageHeaderWrapper";
+import HelpMenu from "../HelpMenu";
+import { useSelector } from "react-redux";
+import { AppState } from "../../../store";
 
 const GroupDetailsHeader = () => {
   const navigate = useNavigate();
+  const systemHelpName = useSelector(
+    (state: AppState) => state.system.helpName
+  );
   return (
     <PageHeaderWrapper
       label={
@@ -16,7 +22,7 @@ const GroupDetailsHeader = () => {
           />
         </Fragment>
       }
-      actions={<React.Fragment />}
+      actions={<HelpMenu helpName={`group_details`} />}
     />
   );
 };

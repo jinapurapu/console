@@ -53,6 +53,7 @@ import { setErrorSnackMessage } from "../../../systemSlice";
 import { useAppDispatch } from "../../../store";
 import PageHeaderWrapper from "../Common/PageHeaderWrapper/PageHeaderWrapper";
 import { getRandomString } from "../../../common/utils";
+import HelpMenu from "../HelpMenu";
 
 interface IAddServiceAccountProps {
   classes: any;
@@ -146,6 +147,15 @@ const AddServiceAccount = ({ classes }: IAddServiceAccountProps) => {
             <BackLink
               label={"Access Keys"}
               onClick={() => navigate(IAM_PAGES.ACCOUNT)}
+            />
+          }
+          actions={
+            <HelpMenu
+              helpName={
+                isRestrictedByPolicy
+                  ? "add_service_account_policy"
+                  : "add_service_account"
+              }
             />
           }
         />

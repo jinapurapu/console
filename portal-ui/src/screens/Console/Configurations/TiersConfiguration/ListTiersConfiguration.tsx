@@ -68,6 +68,7 @@ import { useAppDispatch } from "../../../../store";
 import TooltipWrapper from "../../Common/TooltipWrapper/TooltipWrapper";
 import PageHeaderWrapper from "../../Common/PageHeaderWrapper/PageHeaderWrapper";
 
+import HelpMenu from "../../HelpMenu";
 const UpdateTierCredentialsModal = withSuspense(
   React.lazy(() => import("./UpdateTierCredentialsModal"))
 );
@@ -311,7 +312,11 @@ const ListTiersConfiguration = ({ classes }: IListTiersConfig) => {
           closeModalAndRefresh={closeTierCredentials}
         />
       )}
-      <PageHeaderWrapper label="Tiers" />
+      <PageHeaderWrapper
+        label="Tiers"
+        actions={<HelpMenu helpName="list-tiers-configuration" />}
+      />
+
       <PageLayout>
         {!distributedSetup ? (
           <DistributedOnly

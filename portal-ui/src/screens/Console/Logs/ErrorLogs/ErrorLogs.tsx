@@ -46,6 +46,7 @@ import {
 } from "../logsSlice";
 import makeStyles from "@mui/styles/makeStyles";
 import PageHeaderWrapper from "../../Common/PageHeaderWrapper/PageHeaderWrapper";
+import HelpMenu from "../../HelpMenu";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -76,7 +77,7 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 
-const SelectStyled = withStyles((theme: Theme) =>
+export const SelectStyled = withStyles((theme: Theme) =>
   createStyles({
     root: {
       lineHeight: "50px",
@@ -233,7 +234,11 @@ const ErrorLogs = () => {
 
   return (
     <Fragment>
-      <PageHeaderWrapper label="Logs" />
+      <PageHeaderWrapper
+        label="Logs"
+        actions={<HelpMenu helpName="error_logs" />}
+      />
+
       <PageLayout>
         <Grid container spacing={1}>
           <Grid item xs={4}>
