@@ -31,6 +31,7 @@ import { emptyPolicy } from "./utils";
 import PageHeaderWrapper from "../Common/PageHeaderWrapper/PageHeaderWrapper";
 import { api } from "../../../api";
 import { Error, HttpResponse, Policy } from "../../../api/consoleApi";
+import HelpMenu from "../HelpMenu";
 
 const AddPolicyScreen = () => {
   const dispatch = useAppDispatch();
@@ -95,6 +96,7 @@ const AddPolicyScreen = () => {
               onClick={() => navigate(IAM_PAGES.POLICIES)}
             />
           }
+          actions={<HelpMenu helpName="add_policy" />}
         />
         <PageLayout>
           <FormLayout

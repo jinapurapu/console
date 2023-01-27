@@ -18,6 +18,7 @@ import React, { Fragment } from "react";
 
 import withSuspense from "../Common/Components/withSuspense";
 import PageHeaderWrapper from "../Common/PageHeaderWrapper/PageHeaderWrapper";
+import HelpMenu from "../HelpMenu";
 
 const ListNotificationEndpoints = withSuspense(
   React.lazy(() => import("./ListEventDestinations"))

@@ -36,6 +36,7 @@ import EntityReplicationLookup from "./EntityReplicationLookup";
 import TooltipWrapper from "../../Common/TooltipWrapper/TooltipWrapper";
 import { useNavigate } from "react-router-dom";
 import PageHeaderWrapper from "../../Common/PageHeaderWrapper/PageHeaderWrapper";
+import HelpMenu from "../../HelpMenu";
 
 export type StatsResponseType = {
   maxBuckets?: number;
@@ -127,7 +128,9 @@ const SiteReplicationStatus = () => {
             onClick={() => navigate(IAM_PAGES.SITE_REPLICATION)}
           />
         }
+        actions={<HelpMenu helpName="replication_status" />}
       />
+
       <PageLayout>
         <ScreenTitle
           title={"Replication status from all Sites"}

@@ -45,6 +45,9 @@ import SubnetMFAToken from "./SubnetMFAToken";
 import ClusterRegistrationForm from "./ClusterRegistrationForm";
 import OnlineRegistration from "./OnlineRegistration";
 import PageHeaderWrapper from "../Common/PageHeaderWrapper/PageHeaderWrapper";
+import CopyToClipboard from "react-copy-to-clipboard";
+import TooltipWrapper from "../Common/TooltipWrapper/TooltipWrapper";
+import HelpMenu from "../HelpMenu";
 
 interface IRegister {
   classes: any;
@@ -186,7 +189,7 @@ const Register = ({ classes }: IRegister) => {
     <Fragment>
       <PageHeaderWrapper
         label="Register to MinIO Subscription Network"
-        actions={<React.Fragment />}
+        actions={<HelpMenu helpName="register" />}
       />
 
       <PageLayout>

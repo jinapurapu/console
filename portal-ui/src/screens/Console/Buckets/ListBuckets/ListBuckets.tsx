@@ -71,6 +71,7 @@ import {
   ListBucketsResponse,
 } from "../../../../api/consoleApi";
 import { errorToHandler } from "../../../../api/errors";
+import HelpMenu from "../../HelpMenu";
 
 const useStyles = makeStyles((theme: Theme) => ({
   bucketList: {
@@ -236,7 +237,8 @@ const ListBuckets = () => {
           open={lifecycleModalOpen}
         />
       )}
-      {!obOnly && <PageHeaderWrapper label={"Buckets"} />}
+      {!obOnly && <PageHeaderWrapper label={"Buckets"} actions={<HelpMenu helpName="list-buckets" />} />}
+      
       <PageLayout>
         <Grid item xs={12} className={classes.actionsTray} display="flex">
           {obOnly && (

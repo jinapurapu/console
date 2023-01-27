@@ -13,7 +13,8 @@
 // You should have received a copy of the GNU Affero General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-import React, { Fragment, useEffect, useState } from "react";
+import React, { Fragment, useEffect, useRef, useState } from "react";
+import { IAMPolicy, IAMStatement} from "./types";
 import { useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
 import {
@@ -69,9 +70,9 @@ import withSuspense from "../Common/Components/withSuspense";
 
 import PolicyView from "./PolicyView";
 import { decodeURLString, encodeURLString } from "../../../common/utils";
-import { setErrorSnackMessage, setSnackBarMessage } from "../../../systemSlice";
+import { setErrorSnackMessage, setHelpName, setSnackBarMessage } from "../../../systemSlice";
 import { selFeatures } from "../consoleSlice";
-import { useAppDispatch } from "../../../store";
+import { AppState, useAppDispatch } from "../../../store";
 import TooltipWrapper from "../Common/TooltipWrapper/TooltipWrapper";
 import PageHeaderWrapper from "../Common/PageHeaderWrapper/PageHeaderWrapper";
 import {
@@ -81,7 +82,7 @@ import {
   ServiceAccounts,
 } from "../../../api/consoleApi";
 import { api } from "../../../api";
-import { IAMPolicy, IAMStatement } from "./types";
+import HelpMenu from "../HelpMenu";
 
 const DeletePolicy = withSuspense(React.lazy(() => import("./DeletePolicy")));
 
@@ -131,12 +132,14 @@ const PolicyDetails = ({ classes }: IPolicyDetailsProps) => {
   const [policyDefinition, setPolicyDefinition] = useState<string>("");
   const [loadingPolicy, setLoadingPolicy] = useState<boolean>(true);
   const [filterUsers, setFilterUsers] = useState<string>("");
+  const [helpTopicName, setHelpTopicName] = useState<string>("Summary");
   const [loadingUsers, setLoadingUsers] = useState<boolean>(true);
   const [filterGroups, setFilterGroups] = useState<string>("");
   const [loadingGroups, setLoadingGroups] = useState<boolean>(true);
   const [deleteOpen, setDeleteOpen] = useState<boolean>(false);
 
   const ldapIsEnabled = (features && features.includes("ldap-idp")) || false;
+  
 
   const displayGroups = hasPermission(
     CONSOLE_UI_RESOURCE,
@@ -206,6 +209,7 @@ const PolicyDetails = ({ classes }: IPolicyDetailsProps) => {
     }
   };
 
+ 
   useEffect(() => {
     const loadUsersForPolicy = () => {
       if (loadingUsers) {
@@ -340,6 +344,33 @@ const PolicyDetails = ({ classes }: IPolicyDetailsProps) => {
   const filteredGroups = groupList.filter((elementItem) =>
     elementItem.includes(filterGroups)
   );
+  const systemHelpName = useSelector(
+    (state: AppState) => state.system.helpName
+  );
+
+  const firstUpdate = useRef(true);
+  useEffect(() => {
+    firstUpdate.current = true;
+    setHelpTopicName("Summary");
+  }, []);
+
+  useEffect(() => {
+    if (firstUpdate.current) {
+      setHelpTopicName("Summary");
+      firstUpdate.current = false;
+      console.log(
+        "first time through PolicyDetails helpTopicName: ",
+        helpTopicName
+      );
+    }
+    setHelpTopicName(systemHelpName);
+    console.log(
+      "update PolicyDetails helpTopicName: ",
+      helpTopicName,
+      "systemHelpName: ",
+      systemHelpName
+    );
+  }, [systemHelpName]);
 
   const refreshPolicyDetails = () => {
     setLoadingUsers(true);
@@ -364,6 +395,15 @@ const PolicyDetails = ({ classes }: IPolicyDetailsProps) => {
               onClick={() => navigate(IAM_PAGES.POLICIES)}
             />
           </Fragment>
+        }
+        actions={
+          <HelpMenu
+            helpName={
+              firstUpdate.current
+                ? `policy_${helpTopicName}`
+                : `policy_${systemHelpName}`
+            }
+          />
         }
       />
 

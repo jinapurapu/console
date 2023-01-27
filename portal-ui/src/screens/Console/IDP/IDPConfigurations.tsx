@@ -40,6 +40,7 @@ import { AddIcon, Button, RefreshIcon } from "mds";
 import TableWrapper from "../Common/TableWrapper/TableWrapper";
 import DeleteIDPConfigurationModal from "./DeleteIDPConfigurationModal";
 import PageHeaderWrapper from "../Common/PageHeaderWrapper/PageHeaderWrapper";
+import HelpMenu from "../HelpMenu";
 
 type IDPConfigurationsProps = {
   classes?: any;
@@ -148,7 +149,8 @@ const IDPConfigurations = ({ classes, idpType }: IDPConfigurationsProps) => {
           closeDeleteModalAndRefresh={closeDeleteModalAndRefresh}
         />
       )}
-      <PageHeaderWrapper label={`${idpType.toUpperCase()} Configurations`} />
+      <PageHeaderWrapper label={`${idpType.toUpperCase()} Configurations`} actions={<HelpMenu helpName="idp_configs" />} />
+     
       <PageLayout className={classes.pageContainer}>
         <Grid container spacing={1}>
           <Grid

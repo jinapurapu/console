@@ -24,6 +24,7 @@ import TierTypeCard from "./TierTypeCard";
 import { BackLink, HelpBox, TiersIcon } from "mds";
 import FormLayout from "../../Common/FormLayout";
 import PageHeaderWrapper from "../../Common/PageHeaderWrapper/PageHeaderWrapper";
+import HelpMenu from "../../HelpMenu";
 
 const TierTypeSelector = () => {
   const navigate = useNavigate();
@@ -43,7 +44,7 @@ const TierTypeSelector = () => {
             />
           </Fragment>
         }
-        actions={<React.Fragment />}
+        actions={<HelpMenu helpName="tier-type-selector" />}
       />
 
       <PageLayout>

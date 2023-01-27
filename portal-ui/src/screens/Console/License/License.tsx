@@ -28,6 +28,7 @@ import RegistrationStatusBanner from "../Support/RegistrationStatusBanner";
 import withSuspense from "../Common/Components/withSuspense";
 import { getLicenseConsent } from "./utils";
 import PageHeaderWrapper from "../Common/PageHeaderWrapper/PageHeaderWrapper";
+import HelpMenu from "../HelpMenu";
 
 const LicenseConsentModal = withSuspense(
   React.lazy(() => import("./LicenseConsentModal"))
@@ -136,6 +137,7 @@ const License = () => {
                 Register your cluster
               </Button>
             )}
+            <HelpMenu helpName="license" />
           </Fragment>
         }
       />

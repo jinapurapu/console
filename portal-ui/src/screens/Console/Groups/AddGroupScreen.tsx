@@ -38,6 +38,7 @@ import FormLayout from "../Common/FormLayout";
 import { setErrorSnackMessage } from "../../../systemSlice";
 import { useAppDispatch } from "../../../store";
 import PageHeaderWrapper from "../Common/PageHeaderWrapper/PageHeaderWrapper";
+import HelpMenu from "../HelpMenu";
 
 interface IAddGroupProps {
   classes: any;
@@ -105,6 +106,7 @@ const AddGroupScreen = ({ classes }: IAddGroupProps) => {
               onClick={() => navigate(IAM_PAGES.GROUPS)}
             />
           }
+          actions={<HelpMenu helpName="add_group" />}
         />
         <PageLayout>
           <FormLayout

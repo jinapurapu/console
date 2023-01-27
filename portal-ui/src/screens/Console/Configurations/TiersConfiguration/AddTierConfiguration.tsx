@@ -49,6 +49,7 @@ import RegionSelectWrapper from "./RegionSelectWrapper";
 import { setErrorSnackMessage } from "../../../../systemSlice";
 import { useAppDispatch } from "../../../../store";
 import PageHeaderWrapper from "../../Common/PageHeaderWrapper/PageHeaderWrapper";
+import HelpMenu from "../../HelpMenu";
 
 const styles = (theme: Theme) =>
   createStyles({
@@ -321,7 +322,7 @@ const AddTierConfiguration = ({ classes }: IAddNotificationEndpointProps) => {
             />
           </Fragment>
         }
-        actions={<React.Fragment />}
+        actions={<HelpMenu helpName="add-tier-configuration" />}
       />
 
       <PageLayout>

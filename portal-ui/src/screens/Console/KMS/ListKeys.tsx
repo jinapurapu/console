@@ -42,6 +42,7 @@ import SearchBox from "../Common/SearchBox";
 import TableWrapper from "../Common/TableWrapper/TableWrapper";
 import TooltipWrapper from "../Common/TooltipWrapper/TooltipWrapper";
 import PageHeaderWrapper from "../Common/PageHeaderWrapper/PageHeaderWrapper";
+import HelpMenu from "../HelpMenu";
 
 const DeleteKMSModal = withSuspense(
   React.lazy(() => import("./DeleteKMSModal"))
@@ -140,7 +141,8 @@ const ListKeys = ({ classes }: IKeysProps) => {
           closeDeleteModalAndRefresh={closeDeleteModalAndRefresh}
         />
       )}
-      <PageHeaderWrapper label="Key Management Service Keys" />
+      <PageHeaderWrapper label="Key Management Service Keys" actions={<HelpMenu helpName="list_keys" />} />
+
       <PageLayout className={classes.pageContainer}>
         <Grid container spacing={1}>
           <Grid

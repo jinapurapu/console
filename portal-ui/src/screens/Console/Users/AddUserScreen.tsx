@@ -48,6 +48,7 @@ import {
   setSendEnabled,
 } from "./AddUsersSlice";
 import PageHeaderWrapper from "../Common/PageHeaderWrapper/PageHeaderWrapper";
+import HelpMenu from "../HelpMenu";
 
 interface IAddUserProps {
   classes: any;
@@ -110,6 +111,7 @@ const AddUser = ({ classes }: IAddUserProps) => {
               onClick={() => navigate(IAM_PAGES.USERS)}
             />
           }
+          actions={<HelpMenu helpName="add_user" />}
         />
         <PageLayout>
           <FormLayout

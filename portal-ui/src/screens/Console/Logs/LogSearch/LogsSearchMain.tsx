@@ -49,6 +49,7 @@ import { setErrorSnackMessage } from "../../../../systemSlice";
 import { selFeatures } from "../../consoleSlice";
 import { useAppDispatch } from "../../../../store";
 import PageHeaderWrapper from "../../Common/PageHeaderWrapper/PageHeaderWrapper";
+import HelpMenu from "../../HelpMenu";
 
 interface ILogSearchProps {
   classes: any;
@@ -286,7 +287,15 @@ const LogsSearchMain = ({ classes }: ILogSearchProps) => {
         />
       )}
 
-      <PageHeaderWrapper label="Audit Logs" />
+<<<<<<< HEAD
+      <PageHeaderWrapper label="Audit Logs" actions={<HelpMenu helpName="audit_logs" />} />
+      
+=======
+      <PageHeader
+        label="Audit Logs"
+        actions={<HelpMenu helpName="audit_logs" />}
+      />
+>>>>>>> bfec5d82a (Added bucket_detail tab to helpName)
       <PageLayout>
         {!logSearchEnabled ? (
           <MissingIntegration

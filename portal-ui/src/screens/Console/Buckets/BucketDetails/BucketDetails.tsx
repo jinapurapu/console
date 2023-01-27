@@ -14,7 +14,7 @@
 // You should have received a copy of the GNU Affero General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-import React, { Fragment, useEffect, useState } from "react";
+import React, { Fragment, useEffect, useRef, useState } from "react";
 import {
   Link,
   Navigate,
@@ -67,6 +67,7 @@ import {
   selDistSet,
   selSiteRep,
   setErrorSnackMessage,
+  setHelpName,
 } from "../../../../systemSlice";
 import {
   selBucketDetailsInfo,
@@ -74,9 +75,10 @@ import {
   setBucketDetailsLoad,
   setBucketInfo,
 } from "./bucketDetailsSlice";
-import { useAppDispatch } from "../../../../store";
+import { AppState, useAppDispatch } from "../../../../store";
 import TooltipWrapper from "../../Common/TooltipWrapper/TooltipWrapper";
 import PageHeaderWrapper from "../../Common/PageHeaderWrapper/PageHeaderWrapper";
+import HelpMenu from "../../HelpMenu";
 
 const DeleteBucket = withSuspense(
   React.lazy(() => import("../ListBuckets/DeleteBucket"))
@@ -129,6 +131,7 @@ const BucketDetails = ({ classes }: IBucketDetailsProps) => {
 
   const [iniLoad, setIniLoad] = useState<boolean>(false);
   const [deleteOpen, setDeleteOpen] = useState<boolean>(false);
+  const [helpTopicName, setHelpTopicName] = useState<string>("Summary");
   const bucketName = params.bucketName || "";
 
   let selTab = params["0"] || "";
@@ -138,8 +141,28 @@ const BucketDetails = ({ classes }: IBucketDetailsProps) => {
   const canDelete = hasPermission(bucketName, deleteBucketPermissions);
   const canBrowse = hasPermission(bucketName, browseBucketPermissions);
 
+  const systemHelpName = useSelector(
+    (state: AppState) => state.system.helpName
+  );
+
+  const firstUpdate = useRef(true);
   useEffect(() => {
+    firstUpdate.current = true;
+    setHelpTopicName("Summary");
+  }, []);
+
+  useEffect(() => {
+    if (firstUpdate.current) {
+      setHelpTopicName("Summary");
+      firstUpdate.current = false;
+    }
+    setHelpTopicName(systemHelpName);
+  }, [systemHelpName]);
+
+  useEffect(() => {
+    console.log("setting active tab")
     setActiveTab(selTab);
+    setHelpName(selTab);
   }, [selTab]);
 
   useEffect(() => {
@@ -208,31 +231,37 @@ const BucketDetails = ({ classes }: IBucketDetailsProps) => {
           <BackLink label={"Buckets"} onClick={() => navigate("/buckets")} />
         }
         actions={
-          <TooltipWrapper
-            tooltip={
-              canBrowse
-                ? "Browse Bucket"
-                : permissionTooltipHelper(
-                    IAM_PERMISSIONS[IAM_ROLES.BUCKET_VIEWER],
-                    "browsing this bucket"
-                  )
-            }
-          >
-            <Button
-              id={"switch-browse-view"}
-              aria-label="Browse Bucket"
-              onClick={() => {
-                navigate(`/browser/${bucketName}`);
-              }}
-              icon={
-                <FolderIcon style={{ width: 20, height: 20, marginTop: -3 }} />
+          <Fragment>
+            <TooltipWrapper
+              tooltip={
+                canBrowse
+                  ? "Browse Bucket"
+                  : permissionTooltipHelper(
+                      IAM_PERMISSIONS[IAM_ROLES.BUCKET_VIEWER],
+                      "browsing this bucket"
+                    )
               }
-              style={{
-                padding: "0 10px",
-              }}
-              disabled={!canBrowse}
-            />
-          </TooltipWrapper>
+            >
+              <Button
+                id={"switch-browse-view"}
+                aria-label="Browse Bucket"
+                onClick={() => {
+                  navigate(`/browser/${bucketName}`);
+                }}
+                icon={
+                  <FolderIcon
+                    style={{ width: 20, height: 20, marginTop: -3 }}
+                  />
+                }
+                style={{
+                  padding: "0 10px",
+                }}
+                disabled={!canBrowse}
+              />
+            </TooltipWrapper>
+            <HelpMenu helpName={firstUpdate.current ? `bucket_${helpTopicName}` : `bucket_${systemHelpName}`} />
+             
+          </Fragment>
         }
       />
       <PageLayout className={classes.pageContainer}>

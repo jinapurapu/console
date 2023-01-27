@@ -62,6 +62,7 @@ import {
   YAxis,
 } from "recharts";
 import { Legend } from "recharts";
+import HelpMenu from "../HelpMenu";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -269,7 +270,8 @@ const Heal = () => {
 
   return (
     <Fragment>
-      <PageHeaderWrapper label="Drives" />
+      <PageHeaderWrapper label="Drives" actions={<HelpMenu helpName="heal" />} />
+      
       <PageLayout>
         {!distributedSetup ? (
           <DistributedOnly entity={"Heal"} iconComponent={<HealIcon />} />

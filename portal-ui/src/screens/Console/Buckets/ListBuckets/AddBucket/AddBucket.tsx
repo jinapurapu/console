@@ -71,6 +71,7 @@ import {
 } from "../../../../../api/consoleApi";
 import { errorToHandler } from "../../../../../api/errors";
 import makeStyles from "@mui/styles/makeStyles";
+import HelpMenu from "../../../HelpMenu";
 
 const useStyles = makeStyles((theme: Theme) => ({
   buttonContainer: {
@@ -238,6 +239,7 @@ const AddBucket = () => {
         label={
           <BackLink label={"Buckets"} onClick={() => navigate("/buckets")} />
         }
+        actions={<HelpMenu helpName="add_bucket" />}
       />
       <PageLayout>
         <FormLayout
