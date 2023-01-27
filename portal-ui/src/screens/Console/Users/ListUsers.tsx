@@ -66,6 +66,7 @@ import { setErrorSnackMessage } from "../../../systemSlice";
 import { useAppDispatch } from "../../../store";
 import TooltipWrapper from "../Common/TooltipWrapper/TooltipWrapper";
 import PageHeaderWrapper from "../Common/PageHeaderWrapper/PageHeaderWrapper";
+import HelpMenu from "../HelpMenu";
 
 const DeleteUser = withSuspense(React.lazy(() => import("./DeleteUser")));
 const AddToGroup = withSuspense(React.lazy(() => import("./BulkAddToGroup")));
@@ -209,7 +210,8 @@ const ListUsers = ({ classes }: IUsersProps) => {
           }}
         />
       )}
-      <PageHeaderWrapper label={"Users"} />
+      <PageHeaderWrapper label={"Users"}  actions={<HelpMenu helpName="list_users" />}/>
+     
       <PageLayout>
         <Grid item xs={12} className={classes.actionsTray}>
           <SearchBox

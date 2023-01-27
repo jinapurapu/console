@@ -33,6 +33,7 @@ import { selSession } from "../../consoleSlice";
 import SRSiteInputRow from "./SRSiteInputRow";
 import { SiteInputRow } from "./Types";
 import PageHeaderWrapper from "../../Common/PageHeaderWrapper/PageHeaderWrapper";
+import HelpMenu from "../../HelpMenu";
 
 const isValidEndPoint = (ep: string) => {
   let isValidEndPointUrl = false;
@@ -400,6 +401,7 @@ const AddReplicationSites = () => {
             onClick={() => navigate(IAM_PAGES.SITE_REPLICATION)}
           />
         }
+        actions={<HelpMenu helpName="add-replication-sites" />}
       />
       <PageLayout>
         <Box

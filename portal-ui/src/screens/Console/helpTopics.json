@@ -1,0 +1,126 @@
+{
+  "help": ["Default help"],
+  "Users": ["Help for Users", "More help for users", "Keep helping users"],
+  "list_policies": [
+    "Help for List Policies",
+    "[Policy based access control](https://min.io/docs/minio/linux/administration/identity-access-management/policy-based-access-control.html#)",
+    "[IAM Policies](https://min.io/docs/minio/linux/administration/identity-access-management.html#minio-authentication-and-identity-management)"
+  ],
+  "add_bucket": [
+    "Help for Add buckets",
+    "[![(https://i.ytimg.com/vi/-PjTSwLB8ZA/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLAFOggpFKrODT6Wi5ZZVRpudjVAWg)](https://i.ytimg.com/vi/-PjTSwLB8ZA/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLAFOggpFKrODT6Wi5ZZVRpudjVAWg)](https://www.youtube.com/watch?v=-PjTSwLB8ZA)",
+    "Keep helping List Policies",
+    "![(https://i.ytimg.com/vi/-PjTSwLB8ZA/hqdefault.jpg?sqp=-oaymwEjCPYBEIoBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLAoqacYnWXW-6GucmOES3GgtUNNBg][(https://i.ytimg.com/vi/-PjTSwLB8ZA/hqdefault.jpg?sqp=-oaymwEjCPYBEIoBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLAoqacYnWXW-6GucmOES3GgtUNNBg)](https://www.youtube.com/watch?v=-PjTSwLB8ZA&list=PLFOIsHSSYIK1gsQFfFnu9KE1qfhCTCMMM&index=3)"
+  ],
+  "ob_bucket_list": [
+    "Help for OB Bucket list",
+    "All buckets on the cluster are listed here.",
+    "Click on a bucket to browse its contents.",
+    "You can use the Filter Buckets field to narrow your selection. "
+  ],
+  "accessKeys": [
+    "What are Access Keys?",
+    "How do I set Access Keys?",
+    "What can I do with an accessKey?"
+  ],
+  "add_service_account": [
+    "What are Service Accounts/ Access Keys?",
+    "How do I set Service Accounts/ Access Keys?",
+    "What can I do with aService Accounts/ Access Keys?"
+  ],
+  "list-buckets": ["List Buckets  help goes here"],
+  "settings": ["Settings help going here - make nice for the tabs"],
+  "add-replication-sites": ["Add Replication Site help goes here"],
+  "site-replication": ["site-replication help goes here"],
+  "site-replication-status": ["site-replication-status help goes here"],
+  "add-tier-configuration": [
+    "add-tier-configuration help goes here - make nice to specific types"
+  ],
+  "list-tiers-configuration": ["list-tiers-configuration help goes here"],
+  "tier-type-selector": ["tier-type-selector help goes here"],
+  "replication_status": ["replication_status help goes here"],
+  "metrics": ["metrics help goes here"],
+  "local_drives": ["local_drives help goes here"],
+  "volumes": ["volumes help goes here"],
+  "add_group": [
+    "add_group help",
+    "[Groups docs](https://min.io/docs/minio/linux/administration/identity-access-management/minio-group-management.html)"
+  ],
+  "groups": [
+    "groups help",
+    "[Groups docs](https://min.io/docs/minio/linux/administration/identity-access-management/minio-group-management.html)"
+  ],
+  "heal": ["heal help"],
+  "health_info": ["health_info help"],
+  "add_idp_config": ["add idp help"],
+  "idp_config_details": ["idp config details"],
+  "idp_configs": ["idp config help"],
+  "add_key": ["add key help"],
+  "import_key": ["import key help"],
+  "list_keys": ["list keys help"],
+  "kms_status": ["kms status help"],
+  "license": ["license help"],
+  "error_logs": ["error log help"],
+  "audit_logs": ["audit log help"],
+  "marketplace": ["marketplace help"],
+  "add_notification_endpoint": ["add notification endpoint help"],
+  "notification_endpoints": ["notification endpoint help"],
+  "notification_type_selector": ["notification type selector help"],
+  "object_browser": [
+    "object browser help",
+    "[What are Objects?](https://min.io/docs/minio/linux/administration/object-management.html)"
+  ],
+  "add_policy": ["add policy help"],
+  "policy_details": ["policy details help"],
+  "performance": ["performance help"],
+  "pvcs": ["pvcs help"],
+  "profile": ["profile help"],
+  "register": ["register help"],
+  "register_operator": ["register operator help"],
+  "add_tenant": ["add tenant help"],
+  "list_tenants": ["list tenants help"],
+  "tenant_details": ["tenant details help"],
+  "hop": ["hop help"],
+  "add_pool": ["add pool help"],
+  "edit_pool": ["edit pool help"],
+  "inspect": ["inspect help"],
+  "trace": ["trace help"],
+  "add_user": [
+    "add user help",
+    "![(https://i.ytimg.com/vi/zqjsw4O2-4U/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLDdKQS4ydVogrlzeyFn1-MEWsvLew)](https://i.ytimg.com/vi/zqjsw4O2-4U/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLDdKQS4ydVogrlzeyFn1-MEWsvLew)[Youtube video adding useers/buckets - make a thumbnail here](https://www.youtube.com/watch?v=0PgMxz0HauA)"
+  ],
+  "add_user_SA": ["add user SA help"],
+  "list_users": [
+    "list users help",
+    "[Users help link here](https://min.io/docs/minio/linux/administration/identity-access-management/minio-user-management.html#)"
+  ],
+  "watch": ["watch help"],
+  "policy_Summary": [
+    "policy summary tab help",
+    "[Policy based access control](https://min.io/docs/minio/linux/administration/identity-access-management/policy-based-access-control.html#)",
+    "[IAM Policies](https://min.io/docs/minio/linux/administration/identity-access-management.html#minio-authentication-and-identity-management)"
+  ],
+  "policy_Users": ["policy users tab help"],
+  "policy_Groups": [
+    "policy groups tab help",
+    "[Groups docs](https://min.io/docs/minio/linux/administration/identity-access-management/minio-group-management.html)"
+  ],
+  "policy_Raw Policy": ["policy raw policy tab help"],
+  "user_Groups": ["Users Groups tab help"],
+  "user_Service Accounts": ["Users SA tab help"],
+  "user_Policies": ["Users Policies tab help"],
+  "group_Members": [
+    "Group detail member help",
+    "[Groups docs](https://min.io/docs/minio/linux/administration/identity-access-management/minio-group-management.html)"
+  ],
+  "group_Policies": [
+    "Group detail policy help",
+    "[Groups docs](https://min.io/docs/minio/linux/administration/identity-access-management/minio-group-management.html)"
+  ],
+  "bucket_Summary": ["bucket summarry help"],
+  "bucket_Events": ["bucket events help"],
+  "bucket_Replication": ["bucket replaiction help"],
+  "bucket_Lifecycle": ["bucket lifecycle help"],
+  "bucket_Access": ["bucket access help"],
+  "bucket_Anonymous": ["Bucket anonymous help"]
+}

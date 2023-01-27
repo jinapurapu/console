@@ -56,6 +56,7 @@ import {
 import { setErrorSnackMessage } from "../../../systemSlice";
 import { useAppDispatch } from "../../../store";
 import PageHeaderWrapper from "../Common/PageHeaderWrapper/PageHeaderWrapper";
+import HelpMenu from "../HelpMenu";
 
 interface IAddServiceAccountProps {
   classes: any;
@@ -174,6 +175,7 @@ const AddServiceAccount = ({ classes }: IAddServiceAccountProps) => {
               label={"User Details - " + userName}
             />
           }
+          actions={<HelpMenu helpName="add_user_SA" />}
         />
         <PageLayout>
           <Box

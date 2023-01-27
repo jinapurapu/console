@@ -48,6 +48,7 @@ import makeStyles from "@mui/styles/makeStyles";
 import RegisterCluster from "../Support/RegisterCluster";
 import { registeredCluster } from "../../../config";
 import PageHeaderWrapper from "../Common/PageHeaderWrapper/PageHeaderWrapper";
+import HelpMenu from "../HelpMenu";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -200,7 +201,8 @@ const Speedtest = () => {
 
   return (
     <Fragment>
-      <PageHeaderWrapper label="Performance" />
+      <PageHeaderWrapper label="Performance" actions={<HelpMenu helpName="performance" />} />
+      
       <PageLayout>
         {!clusterRegistered && <RegisterCluster compactMode />}
         {!distributedSetup ? (

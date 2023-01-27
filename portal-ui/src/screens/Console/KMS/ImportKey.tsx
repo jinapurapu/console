@@ -30,6 +30,7 @@ import useApi from "../Common/Hooks/useApi";
 import KMSHelpBox from "./KMSHelpbox";
 import CodeMirrorWrapper from "../Common/FormComponents/CodeMirrorWrapper/CodeMirrorWrapper";
 import PageHeaderWrapper from "../Common/PageHeaderWrapper/PageHeaderWrapper";
+import HelpMenu from "../HelpMenu";
 
 export const emptyContent = '{\n    "bytes": ""\n}';
 
@@ -75,6 +76,7 @@ const ImportKey = () => {
               label={"Keys"}
             />
           }
+          actions={<HelpMenu helpName="import_key" />}
         />
         <PageLayout>
           <FormLayout

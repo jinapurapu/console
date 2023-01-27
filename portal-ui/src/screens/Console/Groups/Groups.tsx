@@ -68,6 +68,7 @@ import { setErrorSnackMessage } from "../../../systemSlice";
 import { useAppDispatch } from "../../../store";
 import TooltipWrapper from "../Common/TooltipWrapper/TooltipWrapper";
 import PageHeaderWrapper from "../Common/PageHeaderWrapper/PageHeaderWrapper";
+import HelpMenu from "../HelpMenu";
 
 const DeleteGroup = withSuspense(React.lazy(() => import("./DeleteGroup")));
 const SetPolicy = withSuspense(
@@ -222,7 +223,8 @@ const Groups = ({ classes }: IGroupsProps) => {
           }}
         />
       )}
-      <PageHeaderWrapper label={"Groups"} />
+      <PageHeaderWrapper label={"Groups"} actions={<HelpMenu helpName="groups" />} />
+   
 
       <PageLayout>
         <Grid item xs={12} className={classes.actionsTray}>

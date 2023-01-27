@@ -61,6 +61,7 @@ import {
   ListPoliciesResponse,
   Policy,
 } from "../../../api/consoleApi";
+import HelpMenu from "../HelpMenu";
 
 const DeletePolicy = withSuspense(React.lazy(() => import("./DeletePolicy")));
 
@@ -197,7 +198,8 @@ const ListPolicies = ({ classes }: IPoliciesProps) => {
           closeDeleteModalAndRefresh={closeDeleteModalAndRefresh}
         />
       )}
-      <PageHeaderWrapper label="IAM Policies" />
+      <PageHeaderWrapper label="IAM Policies" actions={<HelpMenu helpName="list_policies" />} />
+      
       <PageLayout className={classes.pageContainer}>
         <Grid container spacing={1}>
           <Grid item xs={12} className={classes.actionsTray}>

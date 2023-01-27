@@ -49,6 +49,8 @@ import {
 import { DisabledIcon, EnabledIcon } from "mds";
 import PageHeaderWrapper from "../Common/PageHeaderWrapper/PageHeaderWrapper";
 
+import HelpMenu from "../HelpMenu";
+
 const Status = () => {
   const dispatch = useAppDispatch();
   const [curTab, setCurTab] = useState<number>(0);
@@ -353,8 +355,8 @@ const Status = () => {
     <Fragment>
       <PageHeaderWrapper
         label="Key Management Service"
-        actions={<React.Fragment />}
-      />
+        actions={<HelpMenu helpName="kms_status" />}
+     />
 
       <PageLayout>
         <Tabs

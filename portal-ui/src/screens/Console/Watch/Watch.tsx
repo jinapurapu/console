@@ -45,6 +45,7 @@ import PageLayout from "../Common/Layout/PageLayout";
 import makeStyles from "@mui/styles/makeStyles";
 import { watchMessageReceived, watchResetMessages } from "./watchSlice";
 import PageHeaderWrapper from "../Common/PageHeaderWrapper/PageHeaderWrapper";
+import HelpMenu from "../HelpMenu";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -173,7 +174,8 @@ const Watch = () => {
 
   return (
     <React.Fragment>
-      <PageHeaderWrapper label="Watch" />
+      <PageHeaderWrapper label="Watch" actions={<HelpMenu helpName="watch" />}/>
+     
       <PageLayout>
         <Grid item xs={12}>
           <Grid item xs={12} className={classes.actionsTray}>

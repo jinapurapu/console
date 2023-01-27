@@ -43,6 +43,7 @@ import { useAppDispatch } from "../../../store";
 import RegisterCluster from "../Support/RegisterCluster";
 import { registeredCluster } from "../../../config";
 import PageHeaderWrapper from "../Common/PageHeaderWrapper/PageHeaderWrapper";
+import HelpMenu from "../HelpMenu";
 
 const styles = (theme: Theme) =>
   createStyles({
@@ -193,7 +194,8 @@ const Inspect = ({ classes }: { classes: any }) => {
 
   return (
     <Fragment>
-      <PageHeaderWrapper label={"Inspect"} />
+      <PageHeaderWrapper label={"Inspect"} actions={<HelpMenu helpName="inspect" />}/>
+     
       <PageLayout>
         {!clusterRegistered && <RegisterCluster compactMode />}
         {!distributedSetup ? (

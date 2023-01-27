@@ -6,6 +6,9 @@ import { Theme, useTheme } from "@mui/material/styles";
 import createStyles from "@mui/styles/createStyles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { useLocation } from "react-router-dom";
+import { setHelpName } from "../../../../systemSlice";
+import { AppState, useAppDispatch } from "../../../../store";
+import { useSelector } from "react-redux";
 
 export type TabItemProps = {
   tabConfig: TabProps | any;
@@ -94,6 +97,7 @@ const VerticalTabs = ({
 }: VerticalTabsProps) => {
   const theme = useTheme();
   const { pathname = "" } = useLocation();
+  const dispatch = useAppDispatch();
 
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("md"));
 
@@ -111,8 +115,17 @@ const VerticalTabs = ({
       if (tabConfigElement) {
         setValue(tabConfigElement.tabConfig.value);
       }
+      
     }
   }, [isRouteTabs, children, pathname]);
+
+  useEffect(() => {
+    console.log(
+      "setting systemHelpName in VerticalTabs on refresh: ",
+      String(headerList[0].label) || "bad"
+    );
+    setHelpName(String(headerList[0].label) || "bad");
+  }, []);
 
   if (!children) return null;
 
@@ -122,6 +135,13 @@ const VerticalTabs = ({
   });
 
   const handleChange = (event: React.SyntheticEvent, newValue: string) => {
+    console.log(
+      "setting systemHelpName in VerticalTabs: ",
+      String(headerList[parseInt(newValue, 10)].label)
+    );
+    dispatch(
+      setHelpName(String(headerList[parseInt(newValue, 10)].label) || "bad")
+    );
     setValue(newValue);
   };
 
