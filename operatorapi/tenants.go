@@ -17,6 +17,7 @@
 package operatorapi
 
 import (
+	"archive/zip"
 	"bytes"
 	"context"
 	"crypto/x509"
@@ -27,6 +28,7 @@ import (
 	"fmt"
 	"net"
 	"net/http"
+	"os"
 	"sort"
 	"strconv"
 	"strings"
@@ -1598,7 +1600,24 @@ func getPodLogsResponse(session *models.Principal, params operator_api.GetPodLog
 	if err != nil {
 		return "", restapi.ErrorWithContext(ctx, err)
 	}
+	makeLogReport(buff)
 	return string(buff), nil
+}
+
+func makeLogReport(logs []byte) error {
+	tempTenantName := "TEMPTENANTNAME"
+	w, err := os.Create(tempTenantName + "-report.zip")
+	if err != nil {
+		return err
+	}
+	zipw := zip.NewWriter(w)
+	tempName := "TEMPNAME"
+	f, err := zipw.Create(tempName + ".log")
+	if err != nil {
+		return err
+	}
+	f.Write(logs)
+	return nil
 }
 
 func getPodEventsResponse(session *models.Principal, params operator_api.GetPodEventsParams) (models.EventListWrapper, *models.Error) {
