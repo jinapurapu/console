@@ -34,8 +34,9 @@ import { AppState, useAppDispatch } from "../../../../store";
 import { ErrorResponseHandler } from "../../../../common/types";
 import DeletePod from "./DeletePod";
 import { Grid, InputAdornment, TextField } from "@mui/material";
-import { SearchIcon } from "mds";
+import { Button, SearchIcon } from "mds";
 import { setErrorSnackMessage } from "../../../../systemSlice";
+import TooltipWrapper from "../../Common/TooltipWrapper/TooltipWrapper";
 
 interface IPodsSummary {
   classes: any;
@@ -138,7 +139,20 @@ const PodsSummary = ({ classes }: IPodsSummary) => {
           closeDeleteModalAndRefresh={closeDeleteModalAndRefresh}
         />
       )}
+      <Grid container>
+        <Grid item xs={6}>
       <h1 className={classes.sectionTitle}>Pods</h1>
+      </Grid>
+      <Grid item xs={6}
+      display={"flex"}
+      justifyContent={"flex-end"}>
+        <TooltipWrapper tooltip="A report of all tenant logs will be generated as a .zip file, which can be uploaded to SUBNET to enable our team to best assist you in troubleshooting">
+      <Button id="log_report">
+Generate tenant log report
+      </Button>
+      </TooltipWrapper>
+      </Grid>
+      </Grid>
       <Grid item xs={12} className={classes.actionsTray}>
         <TextField
           placeholder="Search Pods"
