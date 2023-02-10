@@ -217,7 +217,7 @@ func serveWS(w http.ResponseWriter, req *http.Request) {
 		}
 		go wsAdminClient.console(ctx, logRequestItem)
 	case strings.HasPrefix(wsPath, `/health-info`):
-		deadline, err := getHealthInfoOptionsFromReq(req)
+		deadline, err := getDurationFromReq(req)
 		if err != nil {
 			ErrorWithContext(ctx, fmt.Errorf("error getting health info options: %v", err))
 			closeWsConn(conn)
@@ -296,6 +296,16 @@ func serveWS(w http.ResponseWriter, req *http.Request) {
 		}
 
 		go wsMinioClient.objectManager(session)
+	case strings.HasPrefix(wsPath, `/log-report`):
+		fmt.Println("hit the websocket handler")
+		wsAdminClient, err := newWebSocketAdminClient(conn, session)
+		if err != nil {
+			ErrorWithContext(ctx, err)
+			closeWsConn(conn)
+			return
+		}
+		deadline, err := getDurationFromReq(req)
+		go wsAdminClient.logReport(ctx, deadline)
 	default:
 		// path not found
 		closeWsConn(conn)
@@ -500,6 +510,21 @@ func (wsc *wsAdminClient) healthInfo(ctx context.Context, deadline *time.Duratio
 		wsc.conn.close()
 	}()
 	LogInfo("health info started")
+
+	ctx = wsReadClientCtx(ctx, wsc.conn)
+
+	err := startHealthInfo(ctx, wsc.conn, wsc.client, deadline)
+
+	sendWsCloseMessage(wsc.conn, err)
+}
+
+func (wsc *wsAdminClient) logReport(ctx context.Context, deadline *time.Duration) {
+	defer func() {
+		LogInfo("log report stopped")
+		// close connection after return
+		wsc.conn.close()
+	}()
+	LogInfo("log report started")
 
 	ctx = wsReadClientCtx(ctx, wsc.conn)
 

@@ -22,10 +22,13 @@ import (
 	b64 "encoding/base64"
 	"encoding/json"
 	"errors"
+	"fmt"
 	"net/http"
+	"os"
 	"time"
 
 	"github.com/klauspost/compress/gzip"
+	"github.com/klauspost/compress/zip"
 
 	"github.com/minio/madmin-go/v2"
 	"github.com/minio/websocket"
@@ -110,10 +113,69 @@ func tarGZ(healthInfo interface{}, version string) ([]byte, error) {
 
 // getHealthInfoOptionsFromReq gets duration for startHealthInfo request
 // path come as : `/health-info?deadline=2h`
-func getHealthInfoOptionsFromReq(req *http.Request) (*time.Duration, error) {
+func getDurationFromReq(req *http.Request) (*time.Duration, error) {
 	deadlineDuration, err := time.ParseDuration(req.FormValue("deadline"))
 	if err != nil {
 		return nil, err
 	}
 	return &deadlineDuration, nil
+}
+
+func makeLogReport(logs []byte) error {
+	tempTenantName := "TEMPTENANTNAME"
+	w, err := os.Create(tempTenantName + "-report.zip")
+	if err != nil {
+		return err
+	}
+	zipw := zip.NewWriter(w)
+	tempName := "TEMPNAME"
+	f, err := zipw.Create(tempName + ".log")
+	if err != nil {
+		return err
+	}
+	f.Write(logs)
+	return nil
+}
+
+// startLogReport generates the Tenant log report and
+// sends messages with the corresponding data on the websocket connection
+func startLogReport(ctx context.Context, conn WSConn, client MinioAdmin, deadline *time.Duration) error {
+	if deadline == nil {
+		return errors.New("duration can't be nil on startLogReport")
+	}
+
+	//do the thing here
+	fmt.Println("You hit this function - the thing should be put here")
+
+	var err error
+	/*
+		// Fetch info of all servers (cluster or single server)
+		healthInfo, version, err := client.serverHealthInfo(ctx, healthDataTypes, *deadline)
+		if err != nil {
+			return err
+		}
+
+		compressedDiag, err := tarGZ(healthInfo, version)
+		if err != nil {
+			return err
+		}
+		encodedDiag := b64.StdEncoding.EncodeToString(compressedDiag)
+
+		type messageReport struct {
+			Encoded          string      `json:"encoded"`
+			ServerHealthInfo interface{} `json:"serverHealthInfo"`
+		}
+
+		report := messageReport{
+			Encoded:          encodedDiag,
+			ServerHealthInfo: healthInfo,
+		}
+	*/
+	message, err := json.Marshal("this")
+	if err != nil {
+		return err
+	}
+
+	// Send Message through websocket connection
+	return conn.writeMessage(websocket.TextMessage, message)
 }

@@ -191,7 +191,6 @@ const HealthInfo = ({ classes }: IHealthInfo) => {
       // check if we are using base path, if not this always is `/`
       const baseLocation = new URL(document.baseURI);
       const baseUrl = baseLocation.pathname;
-
       const c = new W3CWebSocket(
         `${wsProt}://${url.hostname}:${port}${baseUrl}ws/health-info?deadline=1h`
       );

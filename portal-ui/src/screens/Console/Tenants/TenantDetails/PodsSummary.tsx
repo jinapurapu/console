@@ -17,6 +17,11 @@
 import React, { Fragment, useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
+import {
+  ICloseEvent,
+  IMessageEvent,
+  w3cwebsocket as W3CWebSocket,
+} from "websocket";
 import { Theme } from "@mui/material/styles";
 import createStyles from "@mui/styles/createStyles";
 import withStyles from "@mui/styles/withStyles";
@@ -37,6 +42,14 @@ import { Grid, InputAdornment, TextField } from "@mui/material";
 import { Button, SearchIcon } from "mds";
 import { setErrorSnackMessage } from "../../../../systemSlice";
 import TooltipWrapper from "../../Common/TooltipWrapper/TooltipWrapper";
+import {
+  wsProtocol,
+  WSCloseAbnormalClosure,
+  WSCloseInternalServerErr,
+  WSClosePolicyViolation,
+} from "../../../../utils/wsUtils";
+import { tenantLogReportResetMessage } from "./pods/tenantLogReportSlice";
+import { TenantLogReportMessage } from "../../HealthInfo/types";
 
 interface IPodsSummary {
   classes: any;
@@ -63,6 +76,9 @@ const PodsSummary = ({ classes }: IPodsSummary) => {
   const [deleteOpen, setDeleteOpen] = useState<boolean>(false);
   const [selectedPod, setSelectedPod] = useState<any>(null);
   const [filter, setFilter] = useState("");
+  const [localMessage, setLocalMessage] = useState<string>("");
+  const [logReportFileContent, setLogReportFileContent] = useState<string>("");
+  const [startLogReport, setStartLogReport] = useState<boolean>(false);
 
   const podViewAction = (pod: IPodListElement) => {
     navigate(
@@ -71,6 +87,22 @@ const PodsSummary = ({ classes }: IPodsSummary) => {
       }`
     );
     return;
+  };
+
+  const download = () => {
+    let element = document.createElement("a");
+    element.setAttribute(
+      "href",
+      `data:application/gzip;base64,${logReportFileContent}`
+    );
+    element.setAttribute("download", "diagnostic.json.gz");
+
+    element.style.display = "none";
+    document.body.appendChild(element);
+
+    element.click();
+
+    document.body.removeChild(element);
   };
 
   const closeDeleteModalAndRefresh = (reloadData: boolean) => {
@@ -130,6 +162,82 @@ const PodsSummary = ({ classes }: IPodsSummary) => {
     }
   }, [loadingPods, tenantName, tenantNamespace, dispatch]);
 
+  useEffect(() => {
+    if (startLogReport) {
+      dispatch(tenantLogReportResetMessage());
+      setLogReportFileContent("");
+      const url = new URL(window.location.toString());
+      const isDev = process.env.NODE_ENV === "development";
+      const port = isDev ? "9090" : url.port;
+
+      const wsProt = wsProtocol(url.protocol);
+
+      // check if we are using base path, if not this always is `/`
+      const baseLocation = new URL(document.baseURI);
+      const baseUrl = baseLocation.pathname;
+      
+      const c = new W3CWebSocket(
+        `${wsProt}://${url.hostname}:${port}${baseUrl}ws/log-report?deadline=1h`
+      );
+
+      let interval: any | null = null;
+      if (c !== null) {
+        c.onopen = () => {
+          console.log("WebSocket Client Connected");
+          c.send("ok");
+          interval = setInterval(() => {
+            c.send("ok");
+          }, 10 * 1000);
+          setLocalMessage(
+            "Generating Log Report. Please do not refresh page during diagnosis."
+          );
+          // dispatch(setServerDiagStat(DiagStatInProgress));
+        };
+        c.onmessage = (message: IMessageEvent) => {
+          let m: TenantLogReportMessage = JSON.parse(message.data.toString());
+          if (m.timestamp) {
+            m.logReport.timestamp = new Date(m.timestamp.toString());
+            // dispatch(healthInfoMessageReceived(m.serverHealthInfo));
+          }
+          if (m.logReport !== "") {
+            setLogReportFileContent(m.logReport);
+          }
+        };
+        c.onerror = (error: Error) => {
+          console.log("error closing websocket:", error.message);
+          c.close(1000);
+          clearInterval(interval);
+          // dispatch(setServerDiagStat(DiagStatError));
+        };
+        c.onclose = (event: ICloseEvent) => {
+          clearInterval(interval);
+          if (
+            event.code === WSCloseInternalServerErr ||
+            event.code === WSClosePolicyViolation ||
+            event.code === WSCloseAbnormalClosure
+          ) {
+            // handle close with error
+            console.log("connection closed by server with code:", event.code);
+            setLocalMessage("An error occurred while getting the log report.");
+            // dispatch(setServerDiagStat(DiagStatError));
+          } else {
+            console.log("connection closed by server");
+
+            setLocalMessage("Diagnostic file is ready to be downloaded.");
+            //dispatch(setServerDiagStat(DiagStatSuccess));
+          }
+        };
+      }
+    } else {
+      // reset start status
+      setStartLogReport(false);
+    }
+  }, [startLogReport, dispatch]);
+
+  const generateTenantLogReport = () => {
+    setStartLogReport(true);
+  };
+
   return (
     <Fragment>
       {deleteOpen && (
@@ -141,17 +249,15 @@ const PodsSummary = ({ classes }: IPodsSummary) => {
       )}
       <Grid container>
         <Grid item xs={6}>
-      <h1 className={classes.sectionTitle}>Pods</h1>
-      </Grid>
-      <Grid item xs={6}
-      display={"flex"}
-      justifyContent={"flex-end"}>
-        <TooltipWrapper tooltip="A report of all tenant logs will be generated as a .zip file, which can be uploaded to SUBNET to enable our team to best assist you in troubleshooting">
-      <Button id="log_report">
-Generate tenant log report
-      </Button>
-      </TooltipWrapper>
-      </Grid>
+          <h1 className={classes.sectionTitle}>Pods</h1>
+        </Grid>
+        <Grid item xs={6} display={"flex"} justifyContent={"flex-end"}>
+          <TooltipWrapper tooltip="A report of all tenant logs will be generated as a .zip file, which can be uploaded to SUBNET to enable our team to best assist you in troubleshooting">
+            <Button id="log_report" onClick={generateTenantLogReport}>
+              Generate tenant log report
+            </Button>
+          </TooltipWrapper>
+        </Grid>
       </Grid>
       <Grid item xs={12} className={classes.actionsTray}>
         <TextField
