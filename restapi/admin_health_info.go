@@ -142,6 +142,23 @@ func getPodLogsResponse(session *models.Principal, params operator_api.GetPodLog
 	return string(buff), nil
 }
 
+func getPodLogReportResponse(session *models.Principal, params operator_api.GetPodLogsParams) (string, *models.Error) {
+	ctx, cancel := context.WithCancel(params.HTTPRequest.Context())
+	defer cancel()
+	clientset, err := cluster.K8sClient(session.STSSessionToken)
+	if err != nil {
+		return "", ErrorWithContext(ctx, err)
+	}
+	listOpts := &corev1.PodLogOptions{}
+	logs := clientset.CoreV1().Pods(params.Namespace).GetLogs(params.PodName, listOpts)
+	buff, err := logs.DoRaw(ctx)
+	if err != nil {
+		return "", ErrorWithContext(ctx, err)
+	}
+	makeLogReport(buff, params.Tenant)
+	return string(buff), nil
+}
+
 func makeLogReport(logs []byte, name string) error {
 	w, err := os.Create(name + "-report.zip")
 	if err != nil {
@@ -158,7 +175,7 @@ func makeLogReport(logs []byte, name string) error {
 
 // startLogReport generates the Tenant log report and
 // sends messages with the corresponding data on the websocket connection
-func startLogReport(ctx context.Context, conn WSConn, client MinioAdmin, deadline *time.Duration) error {
+func startLogReport(ctx context.Context, conn WSConn, client MinioAdmin, deadline *time.Duration, session *models.Principal) error {
 	if deadline == nil {
 		return errors.New("duration can't be nil on startLogReport")
 	}
@@ -169,9 +186,7 @@ func startLogReport(ctx context.Context, conn WSConn, client MinioAdmin, deadlin
 	tempParams.Namespace = "ns-1"
 	tempParams.Tenant = "newtenant"
 
-	var tempSession *models.Principal
-
-	getPodLogsResponse(tempSession, tempParams)
+	getPodLogsResponse(session, tempParams)
 	var err error
 	/*
 		// Fetch info of all servers (cluster or single server)

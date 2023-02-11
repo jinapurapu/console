@@ -305,7 +305,7 @@ func serveWS(w http.ResponseWriter, req *http.Request) {
 			return
 		}
 		deadline, err := getDurationFromReq(req)
-		go wsAdminClient.logReport(ctx, deadline)
+		go wsAdminClient.logReport(ctx, deadline, session)
 	default:
 		// path not found
 		closeWsConn(conn)
@@ -518,7 +518,7 @@ func (wsc *wsAdminClient) healthInfo(ctx context.Context, deadline *time.Duratio
 	sendWsCloseMessage(wsc.conn, err)
 }
 
-func (wsc *wsAdminClient) logReport(ctx context.Context, deadline *time.Duration) {
+func (wsc *wsAdminClient) logReport(ctx context.Context, deadline *time.Duration, session *models.Principal) {
 	defer func() {
 		LogInfo("log report stopped")
 		// close connection after return
@@ -528,7 +528,7 @@ func (wsc *wsAdminClient) logReport(ctx context.Context, deadline *time.Duration
 
 	ctx = wsReadClientCtx(ctx, wsc.conn)
 
-	err := startLogReport(ctx, wsc.conn, wsc.client, deadline)
+	err := startLogReport(ctx, wsc.conn, wsc.client, deadline, session)
 
 	sendWsCloseMessage(wsc.conn, err)
 }
