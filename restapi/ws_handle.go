@@ -528,7 +528,7 @@ func (wsc *wsAdminClient) logReport(ctx context.Context, deadline *time.Duration
 
 	ctx = wsReadClientCtx(ctx, wsc.conn)
 
-	err := startHealthInfo(ctx, wsc.conn, wsc.client, deadline)
+	err := startLogReport(ctx, wsc.conn, wsc.client, deadline)
 
 	sendWsCloseMessage(wsc.conn, err)
 }

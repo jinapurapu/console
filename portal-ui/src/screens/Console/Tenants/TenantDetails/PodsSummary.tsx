@@ -175,7 +175,7 @@ const PodsSummary = ({ classes }: IPodsSummary) => {
       // check if we are using base path, if not this always is `/`
       const baseLocation = new URL(document.baseURI);
       const baseUrl = baseLocation.pathname;
-      
+
       const c = new W3CWebSocket(
         `${wsProt}://${url.hostname}:${port}${baseUrl}ws/log-report?deadline=1h`
       );

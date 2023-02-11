@@ -1600,19 +1600,17 @@ func getPodLogsResponse(session *models.Principal, params operator_api.GetPodLog
 	if err != nil {
 		return "", restapi.ErrorWithContext(ctx, err)
 	}
-	makeLogReport(buff)
+	makeLogReport(buff, params.Tenant)
 	return string(buff), nil
 }
 
-func makeLogReport(logs []byte) error {
-	tempTenantName := "TEMPTENANTNAME"
-	w, err := os.Create(tempTenantName + "-report.zip")
+func makeLogReport(logs []byte, name string) error {
+	w, err := os.Create(name + "-report.zip")
 	if err != nil {
 		return err
 	}
 	zipw := zip.NewWriter(w)
-	tempName := "TEMPNAME"
-	f, err := zipw.Create(tempName + ".log")
+	f, err := zipw.Create(name + ".log")
 	if err != nil {
 		return err
 	}
