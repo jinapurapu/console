@@ -126,14 +126,20 @@ func getDurationFromReq(req *http.Request) (*time.Duration, error) {
 	return &deadlineDuration, nil
 }
 func getPodLogsResponse(session *models.Principal, params operator_api.GetPodLogsParams) (string, *models.Error) {
+	fmt.Println("You hit getPodLogsResponse  ")
+	fmt.Println("params.HTTPRequest:", params.HTTPRequest)
 	ctx, cancel := context.WithCancel(params.HTTPRequest.Context())
+	fmt.Println("You got the new context ctx: ", ctx)
 	defer cancel()
+
 	clientset, err := cluster.K8sClient(session.STSSessionToken)
+	fmt.Println("You got the clientset: ", clientset)
 	if err != nil {
 		return "", ErrorWithContext(ctx, err)
 	}
 	listOpts := &corev1.PodLogOptions{}
 	logs := clientset.CoreV1().Pods(params.Namespace).GetLogs(params.PodName, listOpts)
+	fmt.Println("You got the logs: ", logs)
 	buff, err := logs.DoRaw(ctx)
 	if err != nil {
 		return "", ErrorWithContext(ctx, err)
@@ -142,9 +148,11 @@ func getPodLogsResponse(session *models.Principal, params operator_api.GetPodLog
 	return string(buff), nil
 }
 
-func getPodLogReportResponse(session *models.Principal, params operator_api.GetPodLogsParams) (string, *models.Error) {
-	ctx, cancel := context.WithCancel(params.HTTPRequest.Context())
-	defer cancel()
+func getPodLogReportResponse(ctx context.Context, session *models.Principal, params operator_api.GetPodLogsParams) (string, *models.Error) {
+	fmt.Println("params.HTTPRequest:", params.HTTPRequest)
+	fmt.Println("session.STSSessionToken:", session.STSSessionToken)
+	//ctx, cancel := context.WithCancel(params.HTTPRequest.Context())
+	//defer cancel()
 	clientset, err := cluster.K8sClient(session.STSSessionToken)
 	if err != nil {
 		return "", ErrorWithContext(ctx, err)
@@ -185,8 +193,9 @@ func startLogReport(ctx context.Context, conn WSConn, client MinioAdmin, deadlin
 	var tempParams operator_api.GetPodLogsParams
 	tempParams.Namespace = "ns-1"
 	tempParams.Tenant = "newtenant"
+	tempParams.HTTPRequest = &http.Request{}
 
-	getPodLogsResponse(session, tempParams)
+	getPodLogReportResponse(ctx, session, tempParams)
 	var err error
 	/*
 		// Fetch info of all servers (cluster or single server)
@@ -215,7 +224,7 @@ func startLogReport(ctx context.Context, conn WSConn, client MinioAdmin, deadlin
 	if err != nil {
 		return err
 	}
-
+	fmt.Println("let's return the message! message: ", message)
 	// Send Message through websocket connection
 	return conn.writeMessage(websocket.TextMessage, message)
 }

@@ -142,6 +142,7 @@ func serveWS(w http.ResponseWriter, req *http.Request) {
 	wsPath := strings.TrimPrefix(req.URL.Path, wsBasePath)
 	// Perform authentication before upgrading to a Websocket Connection
 	// authenticate WS connection with Console
+	fmt.Println("In wshandle req: ", req)
 	session, err := auth.GetClaimsFromTokenInRequest(req)
 	if err != nil && (errors.Is(err, auth.ErrReadingToken) && !strings.HasPrefix(wsPath, `/objectManager`)) {
 		ErrorWithContext(ctx, err)
@@ -297,7 +298,6 @@ func serveWS(w http.ResponseWriter, req *http.Request) {
 
 		go wsMinioClient.objectManager(session)
 	case strings.HasPrefix(wsPath, `/log-report`):
-		fmt.Println("hit the websocket handler")
 		wsAdminClient, err := newWebSocketAdminClient(conn, session)
 		if err != nil {
 			ErrorWithContext(ctx, err)
@@ -305,6 +305,7 @@ func serveWS(w http.ResponseWriter, req *http.Request) {
 			return
 		}
 		deadline, err := getDurationFromReq(req)
+		fmt.Println("in ws_handle session.Token: ", session.STSSessionToken)
 		go wsAdminClient.logReport(ctx, deadline, session)
 	default:
 		// path not found
@@ -520,11 +521,12 @@ func (wsc *wsAdminClient) healthInfo(ctx context.Context, deadline *time.Duratio
 
 func (wsc *wsAdminClient) logReport(ctx context.Context, deadline *time.Duration, session *models.Principal) {
 	defer func() {
-		LogInfo("log report stopped")
+		LogInfo("log report stopped over here")
 		// close connection after return
 		wsc.conn.close()
 	}()
 	LogInfo("log report started")
+	fmt.Println("let's get the context!")
 
 	ctx = wsReadClientCtx(ctx, wsc.conn)
 
