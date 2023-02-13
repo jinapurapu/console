@@ -289,15 +289,12 @@ func RejectS3Middleware(next http.Handler) http.Handler {
 
 func AuthenticationMiddleware(next http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		fmt.Println("Let's get the token")
 		token, err := auth.GetTokenFromRequest(r)
 		if err != nil && err != auth.ErrNoAuthToken {
 			http.Error(w, err.Error(), http.StatusUnauthorized)
 			return
 		}
-		//	fmt.Println("token: ", token)
 		sessionToken, _ := auth.DecryptToken(token)
-		fmt.Println("sessiontoken: ", sessionToken)
 		// All handlers handle appropriately to return errors
 		// based on their swagger rules, we do not need to
 		// additionally return error here, let the next ServeHTTPs
@@ -307,7 +304,6 @@ func AuthenticationMiddleware(next http.Handler) http.Handler {
 		} else {
 			r.Header.Add("Authorization", fmt.Sprintf("Bearer %s", "Anonymous"))
 		}
-		fmt.Println("in header string(sessionToken): ", string(sessionToken))
 		ctx := r.Context()
 		claims, _ := auth.ParseClaimsFromToken(string(sessionToken))
 		if claims != nil {

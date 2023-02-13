@@ -151,10 +151,13 @@ func getPodLogsResponse(session *models.Principal, params operator_api.GetPodLog
 func getPodLogReportResponse(ctx context.Context, session *models.Principal, params operator_api.GetPodLogsParams) (string, *models.Error) {
 	fmt.Println("params.HTTPRequest:", params.HTTPRequest)
 	fmt.Println("session.STSSessionToken:", session.STSSessionToken)
+	fmt.Println("ctx:", ctx)
 	//ctx, cancel := context.WithCancel(params.HTTPRequest.Context())
 	//defer cancel()
 	clientset, err := cluster.K8sClient(session.STSSessionToken)
+	fmt.Println("clientset: ", clientset)
 	if err != nil {
+		fmt.Println("this error here!!!: clientset ")
 		return "", ErrorWithContext(ctx, err)
 	}
 	listOpts := &corev1.PodLogOptions{}

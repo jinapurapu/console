@@ -1586,16 +1586,24 @@ func getTenantPods(pods *corev1.PodList) []*models.TenantPod {
 }
 
 func getPodLogsResponse(session *models.Principal, params operator_api.GetPodLogsParams) (string, *models.Error) {
+	fmt.Println("Let's see the podlogs!")
+	fmt.Println("session.STSSessionToken:", session.STSSessionToken)
 	ctx, cancel := context.WithCancel(params.HTTPRequest.Context())
+	fmt.Println("ctx: ", ctx)
 	defer cancel()
 	clientset, err := cluster.K8sClient(session.STSSessionToken)
+	fmt.Println("clientset: ", clientset)
 	if err != nil {
+		fmt.Println("this error here!!!: ")
 		return "", restapi.ErrorWithContext(ctx, err)
 	}
 	listOpts := &corev1.PodLogOptions{}
 	logs := clientset.CoreV1().Pods(params.Namespace).GetLogs(params.PodName, listOpts)
+	fmt.Println("logs: ", logs)
 	buff, err := logs.DoRaw(ctx)
+
 	if err != nil {
+		fmt.Println("it is this error here!!! ")
 		return "", restapi.ErrorWithContext(ctx, err)
 	}
 
