@@ -166,68 +166,20 @@ const PodsSummary = ({ classes }: IPodsSummary) => {
     if (startLogReport) {
       dispatch(tenantLogReportResetMessage());
       setLogReportFileContent("");
-      const url = new URL(window.location.toString());
-      const isDev = process.env.NODE_ENV === "development";
-      const port = isDev ? "9090" : url.port;
 
-      const wsProt = wsProtocol(url.protocol);
-
-      // check if we are using base path, if not this always is `/`
-      const baseLocation = new URL(document.baseURI);
-      const baseUrl = baseLocation.pathname;
-
-      const c = new W3CWebSocket(
-        `${wsProt}://${url.hostname}:${port}${baseUrl}ws/log-report?deadline=1h`
-      );
-
-      let interval: any | null = null;
-      if (c !== null) {
-        c.onopen = () => {
-          console.log("WebSocket Client Connected");
-          c.send("ok");
-          interval = setInterval(() => {
-            c.send("ok");
-          }, 10 * 1000);
-          setLocalMessage(
-            "Generating Log Report. Please do not refresh page during diagnosis."
-          );
-          // dispatch(setServerDiagStat(DiagStatInProgress));
-        };
-        c.onmessage = (message: IMessageEvent) => {
-          let m: TenantLogReportMessage = JSON.parse(message.data.toString());
-          if (m.timestamp) {
-            m.logReport.timestamp = new Date(m.timestamp.toString());
-            // dispatch(healthInfoMessageReceived(m.serverHealthInfo));
-          }
-          if (m.logReport !== "") {
-            setLogReportFileContent(m.logReport);
-          }
-        };
-        c.onerror = (error: Error) => {
-          console.log("error closing websocket:", error.message);
-          c.close(1000);
-          clearInterval(interval);
-          // dispatch(setServerDiagStat(DiagStatError));
-        };
-        c.onclose = (event: ICloseEvent) => {
-          clearInterval(interval);
-          if (
-            event.code === WSCloseInternalServerErr ||
-            event.code === WSClosePolicyViolation ||
-            event.code === WSCloseAbnormalClosure
-          ) {
-            // handle close with error
-            console.log("connection closed by server with code:", event.code);
-            setLocalMessage("An error occurred while getting the log report.");
-            // dispatch(setServerDiagStat(DiagStatError));
-          } else {
-            console.log("connection closed by server");
-
-            setLocalMessage("Diagnostic file is ready to be downloaded.");
-            //dispatch(setServerDiagStat(DiagStatSuccess));
-          }
-        };
-      }
+      api
+        .invoke(
+          "GET",
+          `/api/v1/namespaces/${tenantNamespace}/tenants/${tenantName}/log-report`
+        )
+        .then((res: any) => {
+          console.log("res: ", res);
+          setStartLogReport(false);
+        })
+        .catch((err: ErrorResponseHandler) => {
+          dispatch(setErrorSnackMessage(err));
+          setStartLogReport(false);
+        });
     } else {
       // reset start status
       setStartLogReport(false);

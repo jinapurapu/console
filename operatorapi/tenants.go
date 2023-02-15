@@ -17,6 +17,7 @@
 package operatorapi
 
 import (
+	"archive/zip"
 	"bytes"
 	"context"
 	"crypto/x509"
@@ -27,12 +28,14 @@ import (
 	"fmt"
 	"net"
 	"net/http"
+	"os"
 	"sort"
 	"strconv"
 	"strings"
 	"time"
 
 	utils2 "github.com/minio/console/pkg/http"
+	"gopkg.in/yaml.v2"
 
 	"github.com/minio/madmin-go/v2"
 
@@ -343,6 +346,14 @@ func registerTenantHandlers(api *operations.OperatorAPI) {
 			return operator_api.NewUpdateTenantDomainsDefault(int(err.Code)).WithPayload(err)
 		}
 		return operator_api.NewUpdateTenantDomainsNoContent()
+	})
+	// Get tenant log report
+	api.OperatorAPIGetTenantLogReportHandler = operator_api.GetTenantLogReportHandlerFunc(func(params operator_api.GetTenantLogReportParams, principal *models.Principal) middleware.Responder {
+		payload, err := getTenantLogReportResponse(principal, params)
+		if err != nil {
+			return operator_api.NewGetTenantLogReportDefault(int(err.Code)).WithPayload(err)
+		}
+		return operator_api.NewGetTenantLogReportOK().WithPayload(payload)
 	})
 }
 
@@ -2818,3 +2829,131 @@ func updateTenantDomains(ctx context.Context, operatorClient OperatorClientI, na
 
 	return err
 }
+
+func getTenantLogReportResponse(session *models.Principal, params operator_api.GetTenantLogReportParams) (*models.TenantLogReport, *models.Error) {
+	ctx, cancel := context.WithCancel(params.HTTPRequest.Context())
+	defer cancel()
+	payload := &models.TenantLogReport{}
+	clientset, err := cluster.K8sClient(session.STSSessionToken)
+	if err != nil {
+		return payload, restapi.ErrorWithContext(ctx, err)
+	}
+	podListOpts := metav1.ListOptions{
+		LabelSelector: fmt.Sprintf("v1.min.io/tenant=%s", params.Tenant),
+	}
+	pods, err := clientset.CoreV1().Pods(params.Namespace).List(ctx, podListOpts)
+	if err != nil {
+		return payload, restapi.ErrorWithContext(ctx, err)
+	}
+	events := clientset.CoreV1().Events(params.Namespace)
+	w, err := os.Create(params.Tenant + "-report.zip")
+	if err != nil {
+		return payload, restapi.ErrorWithContext(ctx, err)
+	}
+	zipw := zip.NewWriter(w)
+	operatorCli, err := cluster.OperatorClient(session.STSSessionToken)
+	if err != nil {
+		return payload, restapi.ErrorWithContext(ctx, err)
+	}
+
+	opClient := &operatorClient{
+		client: operatorCli,
+	}
+	minTenant, err := getTenant(ctx, opClient, params.Namespace, params.Tenant)
+	if err != nil {
+		return payload, restapi.ErrorWithContext(ctx, err)
+	}
+	tenantAsYaml, err := yaml.Marshal(minTenant)
+	if err == nil {
+		f, err := zipw.Create(params.Tenant + ".yaml")
+		if err == nil {
+			f.Write(tenantAsYaml)
+		}
+	}
+	for i := 0; i < len(pods.Items); i++ {
+		//	toWrite, err := podsSet.GetLogs(pods.Items[i].Name, &corev1.PodLogOptions{}).DoRaw(ctx)
+		listOpts := &corev1.PodLogOptions{}
+		toWrite, err := clientset.CoreV1().Pods(params.Namespace).GetLogs(pods.Items[i].Name, listOpts).DoRaw(ctx)
+		if err == nil {
+			f, err := zipw.Create(pods.Items[i].Name + ".log")
+			if err == nil {
+				f.Write(toWrite)
+			}
+		}
+		podEvents, err := events.List(ctx, metav1.ListOptions{FieldSelector: fmt.Sprintf("involvedObject.uid=%s", pods.Items[i].UID)})
+		if err == nil {
+			podEventsJSON, err := json.Marshal(podEvents)
+			if err == nil {
+				f, err := zipw.Create(pods.Items[i].Name + "-events.txt")
+				if err == nil {
+					f.Write(podEventsJSON)
+				}
+			}
+		}
+		status := pods.Items[i].Status
+		statusJSON, err := json.Marshal(status)
+		if err == nil {
+			f, err := zipw.Create(pods.Items[i].Name + "-status.txt")
+			if err == nil {
+				f.Write(statusJSON)
+			}
+		}
+	}
+	zipw.Close()
+	fmt.Println("Data stored in " + params.Tenant + "-report.zip")
+
+	payload.Filename = params.Tenant + "-report.zip"
+
+	return payload, nil
+}
+
+/*
+// startLogReport generates the Tenant log report and
+// sends messages with the corresponding data on the websocket connection
+func startLogReport(ctx context.Context, conn restapi.WSConn, client restapi.MinioAdmin, deadline *time.Duration, session *models.Principal) error {
+	if deadline == nil {
+		return errors.New("duration can't be nil on startLogReport")
+	}
+
+	//do the thing here
+	fmt.Println("You hit this function - the thing should be put here")
+	var tempParams operator_api.GetPodLogsParams
+	tempParams.Namespace = "ns-1"
+	tempParams.Tenant = "newtenant"
+	tempParams.HTTPRequest = &http.Request{}
+	tempParams.PodName = "newtenant-pool-0-0"
+
+	getPodLogReportResponse(ctx, session, tempParams)
+	var err error
+	/*
+		// Fetch info of all servers (cluster or single server)
+		healthInfo, version, err := client.serverHealthInfo(ctx, healthDataTypes, *deadline)
+		if err != nil {
+			return err
+		}
+
+		compressedDiag, err := tarGZ(healthInfo, version)
+		if err != nil {
+			return err
+		}
+		encodedDiag := b64.StdEncoding.EncodeToString(compressedDiag)
+
+		type messageReport struct {
+			Encoded          string      `json:"encoded"`
+			ServerHealthInfo interface{} `json:"serverHealthInfo"`
+		}
+
+		report := messageReport{
+			Encoded:          encodedDiag,
+			ServerHealthInfo: healthInfo,
+		}
+
+	message, err := json.Marshal("this")
+	if err != nil {
+		return err
+	}
+	fmt.Println("this is the message: ", message)
+
+	return nil
+}
+*/

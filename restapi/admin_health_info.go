@@ -24,18 +24,12 @@ import (
 	"errors"
 	"fmt"
 	"net/http"
-	"os"
 	"time"
 
 	"github.com/klauspost/compress/gzip"
-	"github.com/klauspost/compress/zip"
 
-	"github.com/minio/console/cluster"
-	"github.com/minio/console/models"
-	"github.com/minio/console/operatorapi/operations/operator_api"
 	"github.com/minio/madmin-go/v2"
 	"github.com/minio/websocket"
-	corev1 "k8s.io/api/core/v1"
 )
 
 // startHealthInfo starts fetching mc.ServerHealthInfo and
@@ -124,110 +118,4 @@ func getDurationFromReq(req *http.Request) (*time.Duration, error) {
 		return nil, err
 	}
 	return &deadlineDuration, nil
-}
-func getPodLogsResponse(session *models.Principal, params operator_api.GetPodLogsParams) (string, *models.Error) {
-	fmt.Println("You hit getPodLogsResponse  ")
-	fmt.Println("params.HTTPRequest:", params.HTTPRequest)
-	ctx, cancel := context.WithCancel(params.HTTPRequest.Context())
-	fmt.Println("You got the new context ctx: ", ctx)
-	defer cancel()
-
-	clientset, err := cluster.K8sClient(session.STSSessionToken)
-	fmt.Println("You got the clientset: ", clientset)
-	if err != nil {
-		return "", ErrorWithContext(ctx, err)
-	}
-	listOpts := &corev1.PodLogOptions{}
-	logs := clientset.CoreV1().Pods(params.Namespace).GetLogs(params.PodName, listOpts)
-	fmt.Println("You got the logs: ", logs)
-	buff, err := logs.DoRaw(ctx)
-	if err != nil {
-		return "", ErrorWithContext(ctx, err)
-	}
-	makeLogReport(buff, params.Tenant)
-	return string(buff), nil
-}
-
-func getPodLogReportResponse(ctx context.Context, session *models.Principal, params operator_api.GetPodLogsParams) (string, *models.Error) {
-	fmt.Println("params.HTTPRequest:", params.HTTPRequest)
-	fmt.Println("session.STSSessionToken:", session.STSSessionToken)
-	fmt.Println("ctx:", ctx)
-	//ctx, cancel := context.WithCancel(params.HTTPRequest.Context())
-	//defer cancel()
-	clientset, err := cluster.K8sClient(session.STSSessionToken)
-	fmt.Println("clientset: ", clientset)
-	if err != nil {
-		fmt.Println("this error here!!!: clientset ")
-		return "", ErrorWithContext(ctx, err)
-	}
-	listOpts := &corev1.PodLogOptions{}
-	logs := clientset.CoreV1().Pods(params.Namespace).GetLogs(params.PodName, listOpts)
-	buff, err := logs.DoRaw(ctx)
-	if err != nil {
-		return "", ErrorWithContext(ctx, err)
-	}
-	makeLogReport(buff, params.Tenant)
-	return string(buff), nil
-}
-
-func makeLogReport(logs []byte, name string) error {
-	w, err := os.Create(name + "-report.zip")
-	if err != nil {
-		return err
-	}
-	zipw := zip.NewWriter(w)
-	f, err := zipw.Create(name + ".log")
-	if err != nil {
-		return err
-	}
-	f.Write(logs)
-	return nil
-}
-
-// startLogReport generates the Tenant log report and
-// sends messages with the corresponding data on the websocket connection
-func startLogReport(ctx context.Context, conn WSConn, client MinioAdmin, deadline *time.Duration, session *models.Principal) error {
-	if deadline == nil {
-		return errors.New("duration can't be nil on startLogReport")
-	}
-
-	//do the thing here
-	fmt.Println("You hit this function - the thing should be put here")
-	var tempParams operator_api.GetPodLogsParams
-	tempParams.Namespace = "ns-1"
-	tempParams.Tenant = "newtenant"
-	tempParams.HTTPRequest = &http.Request{}
-
-	getPodLogReportResponse(ctx, session, tempParams)
-	var err error
-	/*
-		// Fetch info of all servers (cluster or single server)
-		healthInfo, version, err := client.serverHealthInfo(ctx, healthDataTypes, *deadline)
-		if err != nil {
-			return err
-		}
-
-		compressedDiag, err := tarGZ(healthInfo, version)
-		if err != nil {
-			return err
-		}
-		encodedDiag := b64.StdEncoding.EncodeToString(compressedDiag)
-
-		type messageReport struct {
-			Encoded          string      `json:"encoded"`
-			ServerHealthInfo interface{} `json:"serverHealthInfo"`
-		}
-
-		report := messageReport{
-			Encoded:          encodedDiag,
-			ServerHealthInfo: healthInfo,
-		}
-	*/
-	message, err := json.Marshal("this")
-	if err != nil {
-		return err
-	}
-	fmt.Println("let's return the message! message: ", message)
-	// Send Message through websocket connection
-	return conn.writeMessage(websocket.TextMessage, message)
 }
