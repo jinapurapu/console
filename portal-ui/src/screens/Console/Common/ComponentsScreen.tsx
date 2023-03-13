@@ -27,8 +27,11 @@ const ComponentsScreen = () => {
   const [dialogOpen, setDialogOpen] = useState<boolean>(false);
   return (
     <Fragment>
-      <PageHeaderWrapper label={"Components"}  actions={<HelpMenu helpName="components" />} />
-      
+      <PageHeaderWrapper
+        label={"Components"}
+        actions={<HelpMenu helpName="components" />}
+      />
+
       <PageLayout>
         <Grid container spacing={1}>
           <Grid item xs={12}>

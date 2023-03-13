@@ -223,8 +223,10 @@ const Groups = ({ classes }: IGroupsProps) => {
           }}
         />
       )}
-      <PageHeaderWrapper label={"Groups"} actions={<HelpMenu helpName="groups" />} />
-   
+      <PageHeaderWrapper
+        label={"Groups"}
+        actions={<HelpMenu helpName="groups" />}
+      />
 
       <PageLayout>
         <Grid item xs={12} className={classes.actionsTray}>

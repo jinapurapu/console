@@ -220,7 +220,6 @@ const UserDetails = ({ classes }: IUserDetailsProps) => {
     getUserInformation();
   }, [getUserInformation]);
 
-
   const closeDeleteModalAndRefresh = (refresh: boolean) => {
     setDeleteOpen(false);
     if (refresh) {
@@ -257,9 +256,6 @@ const UserDetails = ({ classes }: IUserDetailsProps) => {
       disableButtonFunction: () => !viewGroup,
     },
   ];
-
-
- 
 
   return (
     <Fragment>

@@ -141,7 +141,10 @@ const ListKeys = ({ classes }: IKeysProps) => {
           closeDeleteModalAndRefresh={closeDeleteModalAndRefresh}
         />
       )}
-      <PageHeaderWrapper label="Key Management Service Keys" actions={<HelpMenu helpName="list_keys" />} />
+      <PageHeaderWrapper
+        label="Key Management Service Keys"
+        actions={<HelpMenu helpName="list_keys" />}
+      />
 
       <PageLayout className={classes.pageContainer}>
         <Grid container spacing={1}>

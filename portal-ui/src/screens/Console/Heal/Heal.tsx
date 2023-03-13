@@ -270,8 +270,11 @@ const Heal = () => {
 
   return (
     <Fragment>
-      <PageHeaderWrapper label="Drives" actions={<HelpMenu helpName="heal" />} />
-      
+      <PageHeaderWrapper
+        label="Drives"
+        actions={<HelpMenu helpName="heal" />}
+      />
+
       <PageLayout>
         {!distributedSetup ? (
           <DistributedOnly entity={"Heal"} iconComponent={<HealIcon />} />

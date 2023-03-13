@@ -235,8 +235,11 @@ const ErrorLogs = () => {
 
   return (
     <Fragment>
-      <PageHeaderWrapper label="Logs" actions={<HelpMenu helpName="error_logs" />} />
-      
+      <PageHeaderWrapper
+        label="Logs"
+        actions={<HelpMenu helpName="error_logs" />}
+      />
+
       <PageLayout>
         <Grid container spacing={1}>
           <Grid item xs={4}>

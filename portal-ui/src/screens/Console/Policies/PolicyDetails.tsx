@@ -70,7 +70,11 @@ import withSuspense from "../Common/Components/withSuspense";
 
 import PolicyView from "./PolicyView";
 import { decodeURLString, encodeURLString } from "../../../common/utils";
-import { setErrorSnackMessage, setHelpName, setSnackBarMessage } from "../../../systemSlice";
+import {
+  setErrorSnackMessage,
+  setHelpName,
+  setSnackBarMessage,
+} from "../../../systemSlice";
 import { selFeatures } from "../consoleSlice";
 import { AppState, useAppDispatch } from "../../../store";
 import TooltipWrapper from "../Common/TooltipWrapper/TooltipWrapper";
@@ -139,7 +143,6 @@ const PolicyDetails = ({ classes }: IPolicyDetailsProps) => {
   const [deleteOpen, setDeleteOpen] = useState<boolean>(false);
 
   const ldapIsEnabled = (features && features.includes("ldap-idp")) || false;
-  
 
   const displayGroups = hasPermission(
     CONSOLE_UI_RESOURCE,
@@ -209,7 +212,6 @@ const PolicyDetails = ({ classes }: IPolicyDetailsProps) => {
     }
   };
 
- 
   useEffect(() => {
     const loadUsersForPolicy = () => {
       if (loadingUsers) {

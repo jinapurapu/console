@@ -194,8 +194,11 @@ const Inspect = ({ classes }: { classes: any }) => {
 
   return (
     <Fragment>
-      <PageHeaderWrapper label={"Inspect"} actions={<HelpMenu helpName="inspect" />}/>
-     
+      <PageHeaderWrapper
+        label={"Inspect"}
+        actions={<HelpMenu helpName="inspect" />}
+      />
+
       <PageLayout>
         {!clusterRegistered && <RegisterCluster compactMode />}
         {!distributedSetup ? (

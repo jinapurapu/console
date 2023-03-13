@@ -141,8 +141,13 @@ const OBListBuckets = () => {
 
   return (
     <Fragment>
-      {!obOnly && <PageHeaderWrapper label={"Object Browser"}  actions={<HelpMenu helpName="ob_bucket_list" />} />}
-     
+      {!obOnly && (
+        <PageHeaderWrapper
+          label={"Object Browser"}
+          actions={<HelpMenu helpName="ob_bucket_list" />}
+        />
+      )}
+
       <PageLayout>
         <Grid item xs={12} className={classes.actionsTray} display="flex">
           {obOnly && (
