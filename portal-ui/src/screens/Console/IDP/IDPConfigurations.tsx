@@ -149,8 +149,11 @@ const IDPConfigurations = ({ classes, idpType }: IDPConfigurationsProps) => {
           closeDeleteModalAndRefresh={closeDeleteModalAndRefresh}
         />
       )}
-      <PageHeaderWrapper label={`${idpType.toUpperCase()} Configurations`} actions={<HelpMenu helpName="idp_configs" />} />
-     
+      <PageHeaderWrapper
+        label={`${idpType.toUpperCase()} Configurations`}
+        actions={<HelpMenu helpName="idp_configs" />}
+      />
+
       <PageLayout className={classes.pageContainer}>
         <Grid container spacing={1}>
           <Grid

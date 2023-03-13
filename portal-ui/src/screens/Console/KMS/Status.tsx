@@ -356,7 +356,7 @@ const Status = () => {
       <PageHeaderWrapper
         label="Key Management Service"
         actions={<HelpMenu helpName="kms_status" />}
-     />
+      />
 
       <PageLayout>
         <Tabs

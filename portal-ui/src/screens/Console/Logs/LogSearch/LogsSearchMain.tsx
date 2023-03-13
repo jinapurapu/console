@@ -287,15 +287,11 @@ const LogsSearchMain = ({ classes }: ILogSearchProps) => {
         />
       )}
 
-<<<<<<< HEAD
-      <PageHeaderWrapper label="Audit Logs" actions={<HelpMenu helpName="audit_logs" />} />
-      
-=======
-      <PageHeader
+      <PageHeaderWrapper
         label="Audit Logs"
         actions={<HelpMenu helpName="audit_logs" />}
       />
->>>>>>> bfec5d82a (Added bucket_detail tab to helpName)
+
       <PageLayout>
         {!logSearchEnabled ? (
           <MissingIntegration

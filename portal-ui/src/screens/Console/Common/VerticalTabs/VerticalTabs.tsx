@@ -115,7 +115,6 @@ const VerticalTabs = ({
       if (tabConfigElement) {
         setValue(tabConfigElement.tabConfig.value);
       }
-      
     }
   }, [isRouteTabs, children, pathname]);
 

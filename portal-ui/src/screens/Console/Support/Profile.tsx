@@ -142,8 +142,11 @@ const Profile = ({ classes }: IProfileProps) => {
 
   return (
     <Fragment>
-      <PageHeaderWrapper label="Profile" actions={<HelpMenu helpName="profile" />} />
-      
+      <PageHeaderWrapper
+        label="Profile"
+        actions={<HelpMenu helpName="profile" />}
+      />
+
       <PageLayout>
         {!clusterRegistered && <RegisterCluster compactMode />}
         <Grid item xs={12} className={classes.boxy}>

@@ -210,8 +210,11 @@ const ListUsers = ({ classes }: IUsersProps) => {
           }}
         />
       )}
-      <PageHeaderWrapper label={"Users"}  actions={<HelpMenu helpName="list_users" />}/>
-     
+      <PageHeaderWrapper
+        label={"Users"}
+        actions={<HelpMenu helpName="list_users" />}
+      />
+
       <PageLayout>
         <Grid item xs={12} className={classes.actionsTray}>
           <SearchBox

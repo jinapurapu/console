@@ -198,8 +198,11 @@ const ListPolicies = ({ classes }: IPoliciesProps) => {
           closeDeleteModalAndRefresh={closeDeleteModalAndRefresh}
         />
       )}
-      <PageHeaderWrapper label="IAM Policies" actions={<HelpMenu helpName="list_policies" />} />
-      
+      <PageHeaderWrapper
+        label="IAM Policies"
+        actions={<HelpMenu helpName="list_policies" />}
+      />
+
       <PageLayout className={classes.pageContainer}>
         <Grid container spacing={1}>
           <Grid item xs={12} className={classes.actionsTray}>

@@ -204,8 +204,11 @@ const Account = () => {
         open={changePasswordModalOpen}
         closeModal={() => setChangePasswordModalOpen(false)}
       />
-      <PageHeaderWrapper label="Access Keys" actions={<HelpMenu helpName="accessKeys" />} />
-      
+      <PageHeaderWrapper
+        label="Access Keys"
+        actions={<HelpMenu helpName="accessKeys" />}
+      />
+
       <PageLayout>
         <Grid item={true} xs={12} className={classes.actionsTray}>
           <SearchBox

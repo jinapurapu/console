@@ -312,8 +312,11 @@ const ListTiersConfiguration = ({ classes }: IListTiersConfig) => {
           closeModalAndRefresh={closeTierCredentials}
         />
       )}
-      <PageHeaderWrapper label="Tiers"  actions={<HelpMenu helpName="list-tiers-configuration" />} />
-    
+      <PageHeaderWrapper
+        label="Tiers"
+        actions={<HelpMenu helpName="list-tiers-configuration" />}
+      />
+
       <PageLayout>
         {!distributedSetup ? (
           <DistributedOnly

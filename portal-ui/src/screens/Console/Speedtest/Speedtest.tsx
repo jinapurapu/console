@@ -201,8 +201,11 @@ const Speedtest = () => {
 
   return (
     <Fragment>
-      <PageHeaderWrapper label="Performance" actions={<HelpMenu helpName="performance" />} />
-      
+      <PageHeaderWrapper
+        label="Performance"
+        actions={<HelpMenu helpName="performance" />}
+      />
+
       <PageLayout>
         {!clusterRegistered && <RegisterCluster compactMode />}
         {!distributedSetup ? (

@@ -237,8 +237,13 @@ const ListBuckets = () => {
           open={lifecycleModalOpen}
         />
       )}
-      {!obOnly && <PageHeaderWrapper label={"Buckets"} actions={<HelpMenu helpName="list-buckets" />} />}
-      
+      {!obOnly && (
+        <PageHeaderWrapper
+          label={"Buckets"}
+          actions={<HelpMenu helpName="list-buckets" />}
+        />
+      )}
+
       <PageLayout>
         <Grid item xs={12} className={classes.actionsTray} display="flex">
           {obOnly && (

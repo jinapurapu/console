@@ -113,8 +113,11 @@ const SiteReplication = () => {
 
   return (
     <Fragment>
-      <PageHeaderWrapper label={"Site Replication"} actions={<HelpMenu helpName="site-replication" />} />
-      
+      <PageHeaderWrapper
+        label={"Site Replication"}
+        actions={<HelpMenu helpName="site-replication" />}
+      />
+
       <PageLayout>
         <Box
           sx={{

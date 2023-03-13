@@ -174,8 +174,11 @@ const Watch = () => {
 
   return (
     <React.Fragment>
-      <PageHeaderWrapper label="Watch" actions={<HelpMenu helpName="watch" />}/>
-     
+      <PageHeaderWrapper
+        label="Watch"
+        actions={<HelpMenu helpName="watch" />}
+      />
+
       <PageLayout>
         <Grid item xs={12}>
           <Grid item xs={12} className={classes.actionsTray}>

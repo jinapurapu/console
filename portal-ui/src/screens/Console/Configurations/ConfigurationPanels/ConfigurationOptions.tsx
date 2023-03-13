@@ -71,8 +71,10 @@ const ConfigurationOptions = ({ classes }: IConfigurationOptions) => {
 
   return (
     <Fragment>
-      <PageHeaderWrapper label={"Settings"}  actions={<HelpMenu helpName="settings" />} />
-      
+      <PageHeaderWrapper
+        label={"Settings"}
+        actions={<HelpMenu helpName="settings" />}
+      />
 
       <PageLayout>
         <Grid item xs={12}>

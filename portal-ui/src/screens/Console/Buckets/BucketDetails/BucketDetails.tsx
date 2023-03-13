@@ -160,7 +160,7 @@ const BucketDetails = ({ classes }: IBucketDetailsProps) => {
   }, [systemHelpName]);
 
   useEffect(() => {
-    console.log("setting active tab")
+    console.log("setting active tab");
     setActiveTab(selTab);
     setHelpName(selTab);
   }, [selTab]);
@@ -259,8 +259,13 @@ const BucketDetails = ({ classes }: IBucketDetailsProps) => {
                 disabled={!canBrowse}
               />
             </TooltipWrapper>
-            <HelpMenu helpName={firstUpdate.current ? `bucket_${helpTopicName}` : `bucket_${systemHelpName}`} />
-             
+            <HelpMenu
+              helpName={
+                firstUpdate.current
+                  ? `bucket_${helpTopicName}`
+                  : `bucket_${systemHelpName}`
+              }
+            />
           </Fragment>
         }
       />
