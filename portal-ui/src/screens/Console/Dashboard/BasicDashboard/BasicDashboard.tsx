@@ -14,7 +14,7 @@
 // You should have received a copy of the GNU Affero General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-import React from "react";
+import React, { useEffect } from "react";
 import { Box, Grid } from "@mui/material";
 import {
   ArrowRightIcon,
@@ -115,7 +115,12 @@ const BasicDashboard = ({ usage }: IDashboardProps) => {
   const { offline: offlineServers = [], online: onlineServers = [] } =
     serversGroup;
   const drivesGroup = groupBy(allDrivesArray, "state");
-  const { offline: offlineDrives = [], ok: onlineDrives = [] } = drivesGroup;
+  const {
+    offline: offlineDrives = [],
+    ok: onlineDrives = [],
+    unformatted: unformattedDrives = [],
+  } = drivesGroup;
+
   return (
     <Box>
       <Box
@@ -201,7 +206,7 @@ const BasicDashboard = ({ usage }: IDashboardProps) => {
             </BoxItem>
             <BoxItem>
               <StatusCountCard
-                offlineCount={offlineDrives.length}
+                offlineCount={offlineDrives.length + unformattedDrives.length}
                 onlineCount={onlineDrives.length}
                 label={"Drives"}
                 icon={<DrivesIcon />}
