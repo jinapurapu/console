@@ -22,9 +22,12 @@ import (
 	"fmt"
 	"net/http"
 	"strconv"
+	"strings"
 	"time"
 
 	"github.com/dustin/go-humanize"
+	xhttp "github.com/minio/console/pkg/http"
+	subnet "github.com/minio/console/pkg/subnet"
 	"github.com/minio/madmin-go/v2"
 	"github.com/minio/websocket"
 )
@@ -97,6 +100,7 @@ func getSpeedtestOptionsFromReq(req *http.Request) (*madmin.SpeedtestOpts, error
 }
 
 func startSpeedtest(ctx context.Context, conn WSConn, client MinioAdmin, speedtestOpts *madmin.SpeedtestOpts) error {
+	fmt.Println("Starting speedtest")
 	speedtestRes, err := client.speedtest(ctx, *speedtestOpts)
 	if err != nil {
 		LogError("error initializing speedtest: %v", err)
@@ -104,12 +108,15 @@ func startSpeedtest(ctx context.Context, conn WSConn, client MinioAdmin, speedte
 	}
 
 	for result := range speedtestRes {
+		subnetResp, err := sendPerfInfoToSubnet(ctx, result, client)
+		fmt.Println("Sent to tsubnet! subnetresp: ", subnetResp, " err: ", err)
 		// Serializing message
 		bytes, err := json.Marshal(result)
 		if err != nil {
 			LogError("error serializing json: %v", err)
 			return err
 		}
+
 		// Send Message through websocket connection
 		err = conn.writeMessage(websocket.TextMessage, bytes)
 		if err != nil {
@@ -119,4 +126,36 @@ func startSpeedtest(ctx context.Context, conn WSConn, client MinioAdmin, speedte
 	}
 
 	return nil
+}
+
+func sendPerfInfoToSubnet(ctx context.Context, perfInfo interface{}, client MinioAdmin) (string, error) {
+	filename := fmt.Sprintf("health_%d.json", time.Now().Unix())
+
+	subnetUploadURL := subnet.UploadURL("perf", filename)
+	subnetHTTPClient := &xhttp.Client{Client: GetConsoleHTTPClient("")}
+	subnetTokenConfig, e := GetSubnetKeyFromMinIOConfig(ctx, client)
+	if e != nil {
+		return "", e
+	}
+	apiKey := subnetTokenConfig.APIKey
+	headers := subnet.UploadAuthHeaders(apiKey)
+	resp, e := subnet.UploadFileToSubnet(perfInfo, subnetHTTPClient, filename, subnetUploadURL, headers)
+	if e != nil {
+		return "", e
+	}
+	type SubnetResponse struct {
+		ClusterURL string `json:"cluster_url,omitempty"`
+	}
+
+	var subnetResp SubnetResponse
+	e = json.Unmarshal([]byte(resp), &subnetResp)
+	if e != nil {
+		return "", e
+	}
+	if len(subnetResp.ClusterURL) != 0 {
+		subnetClusterURL := strings.ReplaceAll(subnetResp.ClusterURL, "%2f", "/")
+		return subnetClusterURL, nil
+	}
+
+	return "", ErrSubnetUploadFail
 }

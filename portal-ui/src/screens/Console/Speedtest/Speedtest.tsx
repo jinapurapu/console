@@ -131,7 +131,7 @@ const Speedtest = () => {
       let interval: any | null = null;
       if (c !== null) {
         c.onopen = () => {
-          console.log("WebSocket Client Connected");
+          console.log("WebSocket Client Connected - YAY!");
           c.send("ok");
           interval = setInterval(() => {
             c.send("ok");
