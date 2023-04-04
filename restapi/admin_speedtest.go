@@ -26,6 +26,7 @@ import (
 	"time"
 
 	"github.com/dustin/go-humanize"
+	"github.com/minio/console/models"
 	xhttp "github.com/minio/console/pkg/http"
 	subnet "github.com/minio/console/pkg/subnet"
 	"github.com/minio/madmin-go/v2"
@@ -129,7 +130,9 @@ func startSpeedtest(ctx context.Context, conn WSConn, client MinioAdmin, speedte
 }
 
 func sendPerfInfoToSubnet(ctx context.Context, perfInfo interface{}, client MinioAdmin) (string, error) {
-	filename := fmt.Sprintf("health_%d.json", time.Now().Unix())
+	perfUploadInfo := make([]interface{}, 2)
+
+	filename := fmt.Sprintf("perf_%d.json", time.Now().Unix())
 
 	subnetUploadURL := subnet.UploadURL("perf", filename)
 	subnetHTTPClient := &xhttp.Client{Client: GetConsoleHTTPClient("")}
@@ -137,9 +140,26 @@ func sendPerfInfoToSubnet(ctx context.Context, perfInfo interface{}, client Mini
 	if e != nil {
 		return "", e
 	}
+	session := models.Principal{
+		STSAccessKeyID: "accesskey",
+	}
+	mAdmin, err := NewMinioAdminClient(&session)
+	if err != nil {
+		return "", err
+	}
+	// create a minioClient interface implementation
+	// defining the client to be used
+	adminClient := AdminClient{Client: mAdmin}
 	apiKey := subnetTokenConfig.APIKey
 	headers := subnet.UploadAuthHeaders(apiKey)
-	resp, e := subnet.UploadFileToSubnet(perfInfo, subnetHTTPClient, filename, subnetUploadURL, headers)
+	serverInfo, err := adminClient.serverInfo(ctx)
+	if err != nil {
+		return "", err
+	}
+	clusterInfo := subnet.GetClusterRegInfo(serverInfo)
+	perfUploadInfo[0] = perfInfo
+	perfUploadInfo[1] = clusterInfo
+	resp, e := subnet.UploadFileToSubnet(perfUploadInfo, subnetHTTPClient, filename, subnetUploadURL, headers)
 	if e != nil {
 		return "", e
 	}

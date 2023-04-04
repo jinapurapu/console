@@ -74,7 +74,7 @@ func UploadAuthHeaders(apiKey string) map[string]string {
 	return map[string]string{"x-subnet-api-key": apiKey}
 }
 
-func UploadFileToSubnet(info interface{}, client *xhttp.Client, filename string, reqURL string, headers map[string]string) (string, error) {
+func UploadFileToSubnet(info []interface{}, client *xhttp.Client, filename string, reqURL string, headers map[string]string) (string, error) {
 	req, e := subnetUploadReq(info, reqURL, filename)
 	if e != nil {
 		return "", e
@@ -83,7 +83,7 @@ func UploadFileToSubnet(info interface{}, client *xhttp.Client, filename string,
 	return resp, e
 }
 
-func subnetUploadReq(info interface{}, url string, filename string) (*http.Request, error) {
+func subnetUploadReq(info []interface{}, url string, filename string) (*http.Request, error) {
 	var body bytes.Buffer
 	writer := multipart.NewWriter(&body)
 	zipWriter := gzip.NewWriter(&body)
@@ -97,9 +97,11 @@ func subnetUploadReq(info interface{}, url string, filename string) (*http.Reque
 	if e := enc.Encode(header); e != nil {
 		return nil, e
 	}
+	for i := range info {
 
-	if e := enc.Encode(info); e != nil {
-		return nil, e
+		if e := enc.Encode(info[i]); e != nil {
+			return nil, e
+		}
 	}
 	zipWriter.Close()
 	temp := body
@@ -226,4 +228,54 @@ func getDriveSpaceInfo(admInfo madmin.InfoMessage) (uint64, uint64) {
 		}
 	}
 	return total, used
+}
+
+// ClusterRegistrationInfo - Information stored in the cluster registration token
+type ClusterRegistrationInfo struct {
+	DeploymentID string      `json:"deployment_id"`
+	ClusterName  string      `json:"cluster_name"`
+	UsedCapacity uint64      `json:"used_capacity"`
+	Info         ClusterInfo `json:"info"`
+}
+
+// ClusterInfo - The "info" sub-node of the cluster registration information struct
+// Intended to be extensible i.e. more fields will be added as and when required
+type ClusterInfo struct {
+	MinioVersion    string `json:"minio_version"`
+	NoOfServerPools int    `json:"no_of_server_pools"`
+	NoOfServers     int    `json:"no_of_servers"`
+	NoOfDrives      int    `json:"no_of_drives"`
+	NoOfBuckets     uint64 `json:"no_of_buckets"`
+	NoOfObjects     uint64 `json:"no_of_objects"`
+	TotalDriveSpace uint64 `json:"total_drive_space"`
+	UsedDriveSpace  uint64 `json:"used_drive_space"`
+}
+
+func getClusterRegInfo(admInfo madmin.InfoMessage, clusterName string) ClusterRegistrationInfo {
+	noOfPools := 1
+	noOfDrives := 0
+	for _, srvr := range admInfo.Servers {
+		if srvr.PoolNumber > noOfPools {
+			noOfPools = srvr.PoolNumber
+		}
+		noOfDrives += len(srvr.Disks)
+	}
+
+	totalSpace, usedSpace := getDriveSpaceInfo(admInfo)
+
+	return ClusterRegistrationInfo{
+		DeploymentID: admInfo.DeploymentID,
+		ClusterName:  clusterName,
+		UsedCapacity: admInfo.Usage.Size,
+		Info: ClusterInfo{
+			MinioVersion:    admInfo.Servers[0].Version,
+			NoOfServerPools: noOfPools,
+			NoOfServers:     len(admInfo.Servers),
+			NoOfDrives:      noOfDrives,
+			TotalDriveSpace: totalSpace,
+			UsedDriveSpace:  usedSpace,
+			NoOfBuckets:     admInfo.Buckets.Count,
+			NoOfObjects:     admInfo.Objects.Count,
+		},
+	}
 }
