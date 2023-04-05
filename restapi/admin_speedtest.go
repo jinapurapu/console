@@ -110,7 +110,7 @@ func startSpeedtest(ctx context.Context, conn WSConn, client MinioAdmin, speedte
 
 	for result := range speedtestRes {
 		subnetResp, err := sendPerfInfoToSubnet(ctx, result, client)
-		fmt.Println("Sent to tsubnet! subnetresp: ", subnetResp, " err: ", err)
+		fmt.Println("Sent to subnet! subnetresp: ", subnetResp, " err: ", err)
 		// Serializing message
 		bytes, err := json.Marshal(result)
 		if err != nil {
@@ -130,35 +130,46 @@ func startSpeedtest(ctx context.Context, conn WSConn, client MinioAdmin, speedte
 }
 
 func sendPerfInfoToSubnet(ctx context.Context, perfInfo interface{}, client MinioAdmin) (string, error) {
+	fmt.Println("Sending pefinfotosubnet")
 	perfUploadInfo := make([]interface{}, 2)
 
 	filename := fmt.Sprintf("perf_%d.json", time.Now().Unix())
 
 	subnetUploadURL := subnet.UploadURL("perf", filename)
 	subnetHTTPClient := &xhttp.Client{Client: GetConsoleHTTPClient("")}
+
 	subnetTokenConfig, e := GetSubnetKeyFromMinIOConfig(ctx, client)
 	if e != nil {
 		return "", e
 	}
+	apiKey := subnetTokenConfig.APIKey
 	session := models.Principal{
-		STSAccessKeyID: "accesskey",
+		STSSessionToken: apiKey,
 	}
+	fmt.Println(" subnet key: ", apiKey)
 	mAdmin, err := NewMinioAdminClient(&session)
 	if err != nil {
 		return "", err
 	}
+	fmt.Println("Got madmin: ", mAdmin)
 	// create a minioClient interface implementation
 	// defining the client to be used
 	adminClient := AdminClient{Client: mAdmin}
-	apiKey := subnetTokenConfig.APIKey
+	fmt.Println("Got AdminClient: ", adminClient)
 	headers := subnet.UploadAuthHeaders(apiKey)
+	fmt.Println("Getting serverinfo ")
+	//serverCtx, cancel := context.WithCancel(context.Background())
+	//defer cancel()
 	serverInfo, err := adminClient.serverInfo(ctx)
 	if err != nil {
+		//fmt.Println("this is the error! getting server info")
 		return "", err
 	}
+	//	fmt.Println("Getting clusterinfo ")
 	clusterInfo := subnet.GetClusterRegInfo(serverInfo)
 	perfUploadInfo[0] = perfInfo
 	perfUploadInfo[1] = clusterInfo
+	fmt.Println("lets upload to subnet! perfUploadInfo: ", perfUploadInfo, " subnetHTTPClient: ", subnetHTTPClient, " subnetUploadURL: ", subnetUploadURL, " headers: ", headers)
 	resp, e := subnet.UploadFileToSubnet(perfUploadInfo, subnetHTTPClient, filename, subnetUploadURL, headers)
 	if e != nil {
 		return "", e

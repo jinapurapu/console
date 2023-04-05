@@ -75,6 +75,7 @@ func UploadAuthHeaders(apiKey string) map[string]string {
 }
 
 func UploadFileToSubnet(info []interface{}, client *xhttp.Client, filename string, reqURL string, headers map[string]string) (string, error) {
+	fmt.Println("In UploadFiletoSubnet")
 	req, e := subnetUploadReq(info, reqURL, filename)
 	if e != nil {
 		return "", e
@@ -84,6 +85,7 @@ func UploadFileToSubnet(info []interface{}, client *xhttp.Client, filename strin
 }
 
 func subnetUploadReq(info []interface{}, url string, filename string) (*http.Request, error) {
+	fmt.Println("In subnetUploadReq")
 	var body bytes.Buffer
 	writer := multipart.NewWriter(&body)
 	zipWriter := gzip.NewWriter(&body)

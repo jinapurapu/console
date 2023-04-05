@@ -29,7 +29,8 @@ import {
   RemoveIcon,
   SearchIcon,
   SectionTitle,
-  TimeIcon,
+  TierOfflineIcon,
+  //TimeIcon,
 } from "mds";
 import PolicySelectors from "../../Policies/PolicySelectors";
 import { useSelector } from "react-redux";
@@ -249,7 +250,7 @@ const LDAPEntitiesQuery = () => {
                   >
                     {results?.timestamp ? (
                       <Fragment>
-                        <TimeIcon
+                        <TierOfflineIcon
                           style={{
                             width: 14,
                             height: 14,

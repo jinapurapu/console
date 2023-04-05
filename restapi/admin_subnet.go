@@ -244,16 +244,18 @@ func subnetLoginWithMFAResponse(ctx context.Context, minioClient MinioAdmin, par
 }
 
 func GetSubnetKeyFromMinIOConfig(ctx context.Context, minioClient MinioAdmin) (*subnet.LicenseTokenConfig, error) {
+	fmt.Println("in GetSubnetKeyFromMinIOConfig")
 	buf, err := minioClient.getConfigKV(ctx, madmin.SubnetSubSys)
 	if err != nil {
+		fmt.Println("this is the error!")
 		return nil, err
 	}
-
+	fmt.Println("getting subSysConfigs")
 	subSysConfigs, err := madmin.ParseServerConfigOutput(string(buf))
 	if err != nil {
 		return nil, err
 	}
-
+	fmt.Println("getting scfg")
 	for _, scfg := range subSysConfigs {
 		if scfg.Target == "" {
 			res := subnet.LicenseTokenConfig{}

@@ -20,6 +20,7 @@ import (
 	"bytes"
 	"context"
 	"encoding/json"
+	"fmt"
 	"io"
 	"net"
 	"net/http"
@@ -297,7 +298,9 @@ func (ac AdminClient) serviceRestart(ctx context.Context) (err error) {
 
 // implements madmin.ServerInfo()
 func (ac AdminClient) serverInfo(ctx context.Context) (madmin.InfoMessage, error) {
+	fmt.Println("in here! ctx: ", ctx)
 	return ac.Client.ServerInfo(ctx)
+
 }
 
 // implements madmin.StartProfiling()

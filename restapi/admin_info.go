@@ -66,6 +66,7 @@ type UsageInfo struct {
 
 // GetAdminInfo invokes admin info and returns a parsed `UsageInfo` structure
 func GetAdminInfo(ctx context.Context, client MinioAdmin) (*UsageInfo, error) {
+	fmt.Println("in adminInfo ctx: ", ctx)
 	serverInfo, err := client.serverInfo(ctx)
 	if err != nil {
 		return nil, err
@@ -909,7 +910,9 @@ func getAdminInfoResponse(session *models.Principal, params systemApi.AdminInfoP
 	if err != nil {
 		return nil, ErrorWithContext(ctx, err)
 	}
-
+	fmt.Println("madmin: ", mAdmin, "get the info adminClient: ", AdminClient{Client: mAdmin})
+	usage, err := GetAdminInfo(ctx, AdminClient{Client: mAdmin})
+	fmt.Println("got usage! usage: ", usage)
 	sessionResp, err2 := getUsageWidgetsForDeployment(ctx, prometheusURL, AdminClient{Client: mAdmin})
 	if err2 != nil {
 		return nil, ErrorWithContext(ctx, err2)
@@ -933,6 +936,7 @@ func getUsageWidgetsForDeployment(ctx context.Context, prometheusURL string, adm
 	go func() {
 		defer close(doneCh)
 		// serialize output
+		fmt.Println("get the info adminClient: ", adminClient)
 		usage, err := GetAdminInfo(ctx, adminClient)
 		if err != nil {
 			doneCh <- err
