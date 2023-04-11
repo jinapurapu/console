@@ -109,21 +109,26 @@ func startSpeedtest(ctx context.Context, conn WSConn, client MinioAdmin, speedte
 	}
 
 	for result := range speedtestRes {
-		subnetResp, err := sendPerfInfoToSubnet(ctx, result, client)
-		fmt.Println("Sent to subnet! subnetresp: ", subnetResp, " err: ", err)
-		// Serializing message
-		bytes, err := json.Marshal(result)
-		if err != nil {
-			LogError("error serializing json: %v", err)
-			return err
+		fmt.Println("Is it worth my time? result.Version: ", result.Version)
+		if len(result.Version) > 0 {
+			// Serializing message
+			bytes, err := json.Marshal(result)
+			if err != nil {
+				LogError("error serializing json: %v", err)
+				return err
+			}
+
+			// Send Message through websocket connection
+			err = conn.writeMessage(websocket.TextMessage, bytes)
+			if err != nil {
+				LogError("error writing speedtest response: %v", err)
+				return err
+			}
+			subnetResp, err := sendPerfInfoToSubnet(ctx, result, client)
+
+			fmt.Println("Sent to subnet! subnetresp: ", subnetResp, " err: ", err)
 		}
 
-		// Send Message through websocket connection
-		err = conn.writeMessage(websocket.TextMessage, bytes)
-		if err != nil {
-			LogError("error writing speedtest response: %v", err)
-			return err
-		}
 	}
 
 	return nil
