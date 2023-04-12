@@ -30,6 +30,7 @@ import (
 	xhttp "github.com/minio/console/pkg/http"
 	subnet "github.com/minio/console/pkg/subnet"
 	"github.com/minio/madmin-go/v2"
+	"github.com/minio/mc/cmd"
 	"github.com/minio/websocket"
 )
 
@@ -109,7 +110,6 @@ func startSpeedtest(ctx context.Context, conn WSConn, client MinioAdmin, speedte
 	}
 
 	for result := range speedtestRes {
-		fmt.Println("Is it worth my time? result.Version: ", result.Version)
 		if len(result.Version) > 0 {
 			// Serializing message
 			bytes, err := json.Marshal(result)
@@ -128,7 +128,6 @@ func startSpeedtest(ctx context.Context, conn WSConn, client MinioAdmin, speedte
 
 			fmt.Println("Sent to subnet! subnetresp: ", subnetResp, " err: ", err)
 		}
-
 	}
 
 	return nil
@@ -162,18 +161,34 @@ func sendPerfInfoToSubnet(ctx context.Context, perfInfo interface{}, client Mini
 	adminClient := AdminClient{Client: mAdmin}
 	fmt.Println("Got AdminClient: ", adminClient)
 	headers := subnet.UploadAuthHeaders(apiKey)
-	fmt.Println("Getting serverinfo ")
-	//serverCtx, cancel := context.WithCancel(context.Background())
-	//defer cancel()
-	serverInfo, err := adminClient.serverInfo(ctx)
-	if err != nil {
-		//fmt.Println("this is the error! getting server info")
-		return "", err
+	fmt.Println("Getting serverinfo ctx: ", ctx)
+	serverCtx, cancel := context.WithCancel(context.Background())
+	defer cancel()
+	fmt.Println("Getting serverinfo serverCtx: ", serverCtx)
+	//	serverInfo, err := mAdmin.ServerInfo(ctx)
+	//	if err != nil {
+	//		fmt.Println("this is the error! getting server info err: ", err)
+	//	return "", err
+	//}
+	//fmt.Println("Getting clusterinfo serverInfo: ", serverInfo)
+	//{"deployment_id":,"cluster_name":,"used_capacity":,"info":{"minio_version":"2023-04-11T18:17:46Z","no_of_server_pools":1,"no_of_servers":4,"no_of_drives":16,"no_of_buckets":1,"no_of_objects":5,"total_drive_space":952142528512,"used_drive_space":827428569088}}
+	clusterInfo := cmd.ClusterRegistrationInfo{
+		DeploymentID: "c7583a26-c52f-4be4-878c-505af35db0d5",
+		ClusterName:  "minio",
+		UsedCapacity: 76189,
+		Info: cmd.ClusterInfo{MinioVersion: "2023-04-11T18:17:46Z",
+			NoOfServerPools: 1,
+			NoOfServers:     4,
+			NoOfDrives:      16,
+			NoOfBuckets:     1,
+			NoOfObjects:     5,
+			TotalDriveSpace: 952142528512,
+			UsedDriveSpace:  827428569088},
 	}
-	//	fmt.Println("Getting clusterinfo ")
-	clusterInfo := subnet.GetClusterRegInfo(serverInfo)
-	perfUploadInfo[0] = perfInfo
+
+	//subnet.GetClusterRegInfo(serverInfo)
 	perfUploadInfo[1] = clusterInfo
+	perfUploadInfo[0] = perfInfo
 	fmt.Println("lets upload to subnet! perfUploadInfo: ", perfUploadInfo, " subnetHTTPClient: ", subnetHTTPClient, " subnetUploadURL: ", subnetUploadURL, " headers: ", headers)
 	resp, e := subnet.UploadFileToSubnet(perfUploadInfo, subnetHTTPClient, filename, subnetUploadURL, headers)
 	if e != nil {
