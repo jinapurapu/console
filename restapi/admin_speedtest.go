@@ -30,7 +30,6 @@ import (
 	xhttp "github.com/minio/console/pkg/http"
 	subnet "github.com/minio/console/pkg/subnet"
 	"github.com/minio/madmin-go/v2"
-	"github.com/minio/mc/cmd"
 	"github.com/minio/websocket"
 )
 
@@ -158,35 +157,22 @@ func sendPerfInfoToSubnet(ctx context.Context, perfInfo interface{}, client Mini
 	fmt.Println("Got madmin: ", mAdmin)
 	// create a minioClient interface implementation
 	// defining the client to be used
-	adminClient := AdminClient{Client: mAdmin}
-	fmt.Println("Got AdminClient: ", adminClient)
+	//adminClient := AdminClient{Client: mAdmin}
+	//fmt.Println("Got AdminClient: ", adminClient)
 	headers := subnet.UploadAuthHeaders(apiKey)
-	fmt.Println("Getting serverinfo ctx: ", ctx)
-	serverCtx, cancel := context.WithCancel(context.Background())
-	defer cancel()
-	fmt.Println("Getting serverinfo serverCtx: ", serverCtx)
-	//	serverInfo, err := mAdmin.ServerInfo(ctx)
-	//	if err != nil {
-	//		fmt.Println("this is the error! getting server info err: ", err)
-	//	return "", err
-	//}
-	//fmt.Println("Getting clusterinfo serverInfo: ", serverInfo)
-	//{"deployment_id":,"cluster_name":,"used_capacity":,"info":{"minio_version":"2023-04-11T18:17:46Z","no_of_server_pools":1,"no_of_servers":4,"no_of_drives":16,"no_of_buckets":1,"no_of_objects":5,"total_drive_space":952142528512,"used_drive_space":827428569088}}
-	clusterInfo := cmd.ClusterRegistrationInfo{
-		DeploymentID: "c7583a26-c52f-4be4-878c-505af35db0d5",
-		ClusterName:  "minio",
-		UsedCapacity: 76189,
-		Info: cmd.ClusterInfo{MinioVersion: "2023-04-11T18:17:46Z",
-			NoOfServerPools: 1,
-			NoOfServers:     4,
-			NoOfDrives:      16,
-			NoOfBuckets:     1,
-			NoOfObjects:     5,
-			TotalDriveSpace: 952142528512,
-			UsedDriveSpace:  827428569088},
+	//fmt.Println("Getting serverinfo ctx: ", ctx)
+	//serverCtx, cancel := context.WithCancel(context.Background())
+	//defer cancel()
+	//fmt.Println("Getting serverinfo serverCtx: ", serverCtx)
+	serverInfo, err := client.serverInfo(ctx)
+	//serverInfo, err := getServerInfo(ctx, adminClient)
+	if err != nil {
+		return "", err
 	}
-
-	//subnet.GetClusterRegInfo(serverInfo)
+	fmt.Println("Getting clusterinfo serverInfo: ", serverInfo)
+	//{"deployment_id":,"cluster_name":,"used_capacity":,"info":{"minio_version":"2023-04-11T18:17:46Z","no_of_server_pools":1,"no_of_servers":4,"no_of_drives":16,"no_of_buckets":1,"no_of_objects":5,"total_drive_space":952142528512,"used_drive_space":827428569088}}
+	clusterInfo := subnet.GetClusterRegInfo(serverInfo)
+	fmt.Println("clustrInfo: ", clusterInfo)
 	perfUploadInfo[1] = clusterInfo
 	perfUploadInfo[0] = perfInfo
 	fmt.Println("lets upload to subnet! perfUploadInfo: ", perfUploadInfo, " subnetHTTPClient: ", subnetHTTPClient, " subnetUploadURL: ", subnetUploadURL, " headers: ", headers)
@@ -209,4 +195,46 @@ func sendPerfInfoToSubnet(ctx context.Context, perfInfo interface{}, client Mini
 	}
 
 	return "", ErrSubnetUploadFail
+}
+func getServerInfo(ctx context.Context, adminClient MinioAdmin) (*models.AdminInfoResponse, error) {
+	/*
+		prometheusStatus := models.AdminInfoResponseAdvancedMetricsStatusAvailable
+		if prometheusURL == "" {
+			prometheusStatus = models.AdminInfoResponseAdvancedMetricsStatusNotConfigured
+		}
+		if prometheusURL != "" && !testPrometheusURL(ctx, prometheusURL) {
+			prometheusStatus = models.AdminInfoResponseAdvancedMetricsStatusUnavailable
+		}
+	*/
+	sessionResp := &models.AdminInfoResponse{}
+
+	doneCh := make(chan error)
+	go func() {
+		defer close(doneCh)
+		// serialize output
+		fmt.Println("get the info adminClient: ", adminClient)
+		usage, err := GetAdminInfo(ctx, adminClient)
+		if err != nil {
+			doneCh <- err
+		}
+		if usage != nil {
+			sessionResp.Buckets = usage.Buckets
+			sessionResp.Objects = usage.Objects
+			sessionResp.Usage = usage.Usage
+			sessionResp.Servers = usage.Servers
+			sessionResp.Backend = usage.Backend
+		}
+	}()
+
+	var wdgts []*models.Widget
+
+	sessionResp.Widgets = wdgts
+
+	// wait for mc admin info
+	err := <-doneCh
+	if err != nil {
+		return nil, err
+	}
+
+	return sessionResp, nil
 }
