@@ -146,33 +146,15 @@ func sendPerfInfoToSubnet(ctx context.Context, perfInfo interface{}, client Mini
 		return "", e
 	}
 	apiKey := subnetTokenConfig.APIKey
-	session := models.Principal{
-		STSSessionToken: apiKey,
-	}
-	fmt.Println(" subnet key: ", apiKey)
-	mAdmin, err := NewMinioAdminClient(&session)
-	if err != nil {
-		return "", err
-	}
-	fmt.Println("Got madmin: ", mAdmin)
-	// create a minioClient interface implementation
-	// defining the client to be used
-	//adminClient := AdminClient{Client: mAdmin}
-	//fmt.Println("Got AdminClient: ", adminClient)
+
 	headers := subnet.UploadAuthHeaders(apiKey)
-	//fmt.Println("Getting serverinfo ctx: ", ctx)
-	//serverCtx, cancel := context.WithCancel(context.Background())
-	//defer cancel()
-	//fmt.Println("Getting serverinfo serverCtx: ", serverCtx)
 	serverInfo, err := client.serverInfo(ctx)
-	//serverInfo, err := getServerInfo(ctx, adminClient)
 	if err != nil {
 		return "", err
 	}
 	fmt.Println("Getting clusterinfo serverInfo: ", serverInfo)
-	//{"deployment_id":,"cluster_name":,"used_capacity":,"info":{"minio_version":"2023-04-11T18:17:46Z","no_of_server_pools":1,"no_of_servers":4,"no_of_drives":16,"no_of_buckets":1,"no_of_objects":5,"total_drive_space":952142528512,"used_drive_space":827428569088}}
 	clusterInfo := subnet.GetClusterRegInfo(serverInfo)
-	fmt.Println("clustrInfo: ", clusterInfo)
+	fmt.Println("clusterInfo: ", clusterInfo)
 	perfUploadInfo[1] = clusterInfo
 	perfUploadInfo[0] = perfInfo
 	fmt.Println("lets upload to subnet! perfUploadInfo: ", perfUploadInfo, " subnetHTTPClient: ", subnetHTTPClient, " subnetUploadURL: ", subnetUploadURL, " headers: ", headers)
@@ -180,6 +162,7 @@ func sendPerfInfoToSubnet(ctx context.Context, perfInfo interface{}, client Mini
 	if e != nil {
 		return "", e
 	}
+	fmt.Println("You did it!")
 	type SubnetResponse struct {
 		ClusterURL string `json:"cluster_url,omitempty"`
 	}

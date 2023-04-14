@@ -26,6 +26,7 @@ import (
 	"io/ioutil"
 	"mime/multipart"
 	"net/http"
+	"os"
 
 	xhttp "github.com/minio/console/pkg/http"
 
@@ -75,7 +76,8 @@ func UploadAuthHeaders(apiKey string) map[string]string {
 }
 
 func UploadFileToSubnet(info []interface{}, client *xhttp.Client, filename string, reqURL string, headers map[string]string) (string, error) {
-	fmt.Println("In UploadFiletoSubnet")
+	fmt.Println("In UploadFiletoSubnet - this should br perfinfo -  info[0]: ", info[0])
+	fmt.Println("In UploadFiletoSubnet - this should be cluster info - info[1]: ", info[1])
 	req, e := subnetUploadReq(info, reqURL, filename)
 	if e != nil {
 		return "", e
@@ -86,11 +88,19 @@ func UploadFileToSubnet(info []interface{}, client *xhttp.Client, filename strin
 
 func subnetUploadReq(info []interface{}, url string, filename string) (*http.Request, error) {
 	fmt.Println("In subnetUploadReq")
+	tmpArchive, e := os.CreateTemp("", "mc-perf-")
+	if e != nil {
+		return nil, e
+	}
+	defer tmpArchive.Close()
+
 	var body bytes.Buffer
 	writer := multipart.NewWriter(&body)
 	zipWriter := gzip.NewWriter(&body)
+	zipFileWriter := gzip.NewWriter(tmpArchive)
 	version := "3"
 	enc := json.NewEncoder(zipWriter)
+	fileEnc := json.NewEncoder(zipFileWriter)
 
 	header := struct {
 		Version string `json:"version"`
@@ -105,7 +115,17 @@ func subnetUploadReq(info []interface{}, url string, filename string) (*http.Req
 			return nil, e
 		}
 	}
+	if e := fileEnc.Encode(header); e != nil {
+		return nil, e
+	}
+	for i := range info {
+
+		if e := fileEnc.Encode(info[i]); e != nil {
+			return nil, e
+		}
+	}
 	zipWriter.Close()
+	zipFileWriter.Close()
 	temp := body
 	part, e := writer.CreateFormFile("file", filename)
 	if e != nil {
@@ -116,13 +136,13 @@ func subnetUploadReq(info []interface{}, url string, filename string) (*http.Req
 	}
 
 	writer.Close()
-
+	fmt.Println("making the request body: ", body)
 	r, e := http.NewRequest(http.MethodPost, url, &body)
 	if e != nil {
 		return nil, e
 	}
 	r.Header.Add("Content-Type", writer.FormDataContentType())
-
+	fmt.Println("in request r.body: ", r.Body)
 	return r, nil
 }
 
