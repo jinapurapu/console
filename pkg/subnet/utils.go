@@ -88,7 +88,7 @@ func UploadFileToSubnet(info []interface{}, client *xhttp.Client, filename strin
 
 func subnetUploadReq(info []interface{}, url string, filename string) (*http.Request, error) {
 	fmt.Println("In subnetUploadReq")
-	tmpArchive, e := os.CreateTemp("", "mc-perf-")
+	tmpArchive, e := os.CreateTemp("", "test-perf-")
 	if e != nil {
 		return nil, e
 	}
@@ -119,7 +119,6 @@ func subnetUploadReq(info []interface{}, url string, filename string) (*http.Req
 		return nil, e
 	}
 	for i := range info {
-
 		if e := fileEnc.Encode(info[i]); e != nil {
 			return nil, e
 		}
