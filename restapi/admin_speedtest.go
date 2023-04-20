@@ -132,9 +132,8 @@ func startSpeedtest(ctx context.Context, conn WSConn, client MinioAdmin, speedte
 	return nil
 }
 
-func sendPerfInfoToSubnet(ctx context.Context, perfInfo interface{}, client MinioAdmin) (string, error) {
+func sendPerfInfoToSubnet(ctx context.Context, speedtestInfo madmin.SpeedTestResult, client MinioAdmin) (string, error) {
 	fmt.Println("Sending pefinfotosubnet")
-	perfUploadInfo := make([]interface{}, 2)
 
 	filename := fmt.Sprintf("perf_%d.json", time.Now().Unix())
 
@@ -152,13 +151,15 @@ func sendPerfInfoToSubnet(ctx context.Context, perfInfo interface{}, client Mini
 	if err != nil {
 		return "", err
 	}
+
 	fmt.Println("Getting clusterinfo serverInfo: ", serverInfo)
 	clusterInfo := subnet.GetClusterRegInfo(serverInfo)
 	fmt.Println("clusterInfo: ", clusterInfo)
-	perfUploadInfo[1] = clusterInfo
-	perfUploadInfo[0] = perfInfo
-	fmt.Println("lets upload to subnet! perfUploadInfo: ", perfUploadInfo, " subnetHTTPClient: ", subnetHTTPClient, " subnetUploadURL: ", subnetUploadURL, " headers: ", headers)
-	resp, e := subnet.UploadFileToSubnet(perfUploadInfo, subnetHTTPClient, filename, subnetUploadURL, headers)
+	var perfUploadInfoNew subnet.SubnetPerfUploadInfo
+	perfUploadInfoNew.ClusterInfo = clusterInfo
+	perfUploadInfoNew.SpeedtestInfo = speedtestInfo
+	fmt.Println("lets upload to subnet! perfUploadInfoNew: ", perfUploadInfoNew, " subnetHTTPClient: ", subnetHTTPClient, " subnetUploadURL: ", subnetUploadURL, " headers: ", headers)
+	resp, e := subnet.UploadPerfFileToSubnet(perfUploadInfoNew, subnetHTTPClient, filename, subnetUploadURL, headers)
 	if e != nil {
 		return "", e
 	}

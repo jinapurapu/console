@@ -19,7 +19,6 @@ package subnet
 import (
 	"archive/zip"
 	"bytes"
-	"compress/gzip"
 	"encoding/base64"
 	"encoding/json"
 	"fmt"
@@ -27,7 +26,6 @@ import (
 	"io/ioutil"
 	"mime/multipart"
 	"net/http"
-	"os"
 
 	xhttp "github.com/minio/console/pkg/http"
 
@@ -77,15 +75,68 @@ func UploadAuthHeaders(apiKey string) map[string]string {
 	return map[string]string{"x-subnet-api-key": apiKey}
 }
 
-func UploadFileToSubnet(info []interface{}, client *xhttp.Client, filename string, reqURL string, headers map[string]string) (string, error) {
-	fmt.Println("In UploadFiletoSubnet - this should br perfinfo -  info[0]: ", info[0])
-	fmt.Println("In UploadFiletoSubnet - this should be cluster info - info[1]: ", info[1])
-	req, e := subnetUploadReq(info, reqURL, filename)
+/*
+	func UploadFileToSubnet(info []interface{}, client *xhttp.Client, filename string, reqURL string, headers map[string]string) (string, error) {
+		fmt.Println("In UploadFiletoSubnet - this should br perfinfo -  info[0]: ", info[0])
+		fmt.Println("In UploadFiletoSubnet - this should be cluster info - info[1]: ", info[1])
+		infoBody, e := zipResult(info, filename)
+		req, e := subnetUploadReq(info, reqURL, filename)
+		if e != nil {
+			return "", e
+		}
+		resp, e := subnetReqDo(client, req, headers)
+		return resp, e
+	}
+*/
+func UploadFileToSubnet(info interface{}, client *xhttp.Client, filename string, reqURL string, headers map[string]string) (string, error) {
+	infoBytes, e := json.Marshal(info)
+	r, w := io.Pipe()
+	w.Write(infoBytes)
+	req, e := subnetUploadReq(r, reqURL, filename)
 	if e != nil {
 		return "", e
 	}
 	resp, e := subnetReqDo(client, req, headers)
 	return resp, e
+}
+
+type SubnetPerfUploadInfo struct {
+	ClusterInfo   cmd.ClusterRegistrationInfo `json:"cluster_info,omitempty"`
+	SpeedtestInfo madmin.SpeedTestResult      `json:"speedtest_info,omitempty"`
+}
+
+func UploadPerfFileToSubnet(info SubnetPerfUploadInfo, client *xhttp.Client, filename string, reqURL string, headers map[string]string) (string, error) {
+	fmt.Println("In UploadFiletoSubnet - info: ", info)
+	infoBody, e := zipPerfResult(info, filename)
+	req, e := subnetUploadReq(infoBody, reqURL, filename)
+	if e != nil {
+		return "", e
+	}
+	resp, e := subnetReqDo(client, req, headers)
+	return resp, e
+}
+
+func convertObjStatServers(ss []madmin.SpeedTestStatServer) []mc.ObjStatServer {
+	out := []mc.ObjStatServer{}
+	for _, s := range ss {
+		out = append(out, mc.ObjStatServer{
+			Endpoint: s.Endpoint,
+			Perf: mc.ObjStats{
+				Throughput:    s.ThroughputPerSec,
+				ObjectsPerSec: s.ObjectsPerSec,
+			},
+			Error: s.Err,
+		})
+	}
+	return out
+}
+
+func convertPUTStats(stats madmin.SpeedTestStats) mc.ObjPUTStats {
+	return mc.ObjPUTStats{
+		Throughput:    stats.ThroughputPerSec,
+		ObjectsPerSec: stats.ObjectsPerSec,
+		Response:      stats.Response,
+	}
 }
 
 func writeJSONObjToZip(zipWriter *zip.Writer, obj interface{}, filename string) error {
@@ -96,33 +147,116 @@ func writeJSONObjToZip(zipWriter *zip.Writer, obj interface{}, filename string) 
 
 	return json.NewEncoder(writer).Encode(obj)
 }
-func zipPerfResult(perfOutput cmd.PerfTestOutput, resultFilename string, regInfo ClusterRegistrationInfo) (string, error) {
-	// Create profile zip file ############ Replace this to remove saved temp file and pipe it somehow
-	tmpArchive, e := os.CreateTemp("", "mc-perf-")
-
-	if e != nil {
-		return "", e
+func convertPUTResults(stats madmin.SpeedTestStats) mc.ObjPUTPerfResults {
+	fmt.Println("in convertPUTResults")
+	return mc.ObjPUTPerfResults{
+		Perf:    convertPUTStats(stats),
+		Servers: convertObjStatServers(stats.Servers),
 	}
-	defer tmpArchive.Close()
-	// #####################
-	zipWriter := zip.NewWriter(tmpArchive)
-	defer zipWriter.Close()
-
-	e = writeJSONObjToZip(zipWriter, perfOutput, resultFilename)
-	if e != nil {
-		return "", e
-	}
-
-	e = writeJSONObjToZip(zipWriter, regInfo, "cluster.info")
-	if e != nil {
-		return "", e
-	}
-
-	return tmpArchive.Name(), nil // should return reader for this data
 }
 
-func subnetUploadReq(info []interface{}, url string, filename string) (*http.Request, error) {
+func convertGETResults(stats madmin.SpeedTestStats) mc.ObjGETPerfResults {
+	fmt.Println("in convertgetResults  ")
+	return mc.ObjGETPerfResults{
+		Perf: mc.ObjGETStats{
+			ObjPUTStats: convertPUTStats(stats),
+			TTFB:        stats.TTFB,
+		},
+		Servers: convertObjStatServers(stats.Servers),
+	}
+}
+func convertObjTestResults(objResult *madmin.SpeedTestResult) mc.ObjTestResults {
+	fmt.Println("in convertobjTestResults objResult: ", objResult)
+	//if objResult == nil {
+	//	return nil
+	//}
+	result := mc.ObjTestResults{
+		ObjectSize: objResult.Size,
+		Threads:    objResult.Concurrent,
+	}
+	result.PUTResults = convertPUTResults(objResult.PUTStats)
+	result.GETResults = convertGETResults(objResult.GETStats)
+	fmt.Println("got all the stuuf result: ", result)
+	return result
+}
+
+func convertPerfResult(r mc.PerfTestResult) mc.PerfTestOutput {
+	var out mc.PerfTestOutput
+	fmt.Println("we made it to here! r: ", r)
+	thisThing := convertObjTestResults(r.ObjectResult)
+	fmt.Println("we made it to here! thisThing: ", thisThing)
+
+	out.ObjectResults = &thisThing
+	out.Error = "this is an error!"
+	outType := fmt.Sprintf("%T", out)
+	fmt.Println("we made it to here! outType: ", outType)
+
+	fmt.Println("we made it to here! out: ", out.Error)
+	return out
+}
+
+func zipPerfResult(perfOutput SubnetPerfUploadInfo, resultFilename string) (io.Reader, error) {
+	fmt.Println("in zipPerfResult")
+	var perfTestSubnetReport cmd.PerfTestResult
+	perfTestSubnetReport.ObjectResult = &perfOutput.SpeedtestInfo
+	fmt.Println("perfTestSubnetReport: ", perfTestSubnetReport)
+
+	perfTestOutput := convertPerfResult(perfTestSubnetReport)
+	fmt.Println("we got out! perfTestOutput: ", perfTestOutput)
+	r, w := io.Pipe()
+
+	zipWriter := zip.NewWriter(w)
+	defer zipWriter.Close()
+
+	e := writeJSONObjToZip(zipWriter, perfTestOutput, resultFilename)
+	if e != nil {
+		return nil, e
+	}
+
+	e = writeJSONObjToZip(zipWriter, perfOutput.ClusterInfo, "cluster.info")
+	if e != nil {
+		return nil, e
+	}
+
+	return r, nil // should return reader for this data
+}
+
+func subnetUploadReq(info io.Reader, url string, filename string) (*http.Request, error) {
 	fmt.Println("In subnetUploadReq")
+	r, w := io.Pipe()
+	mwriter := multipart.NewWriter(w)
+	contentType := mwriter.FormDataContentType()
+
+	go func() {
+		var (
+			part io.Writer
+			e    error
+		)
+		defer func() {
+			mwriter.Close()
+			w.CloseWithError(e)
+		}()
+
+		if e != nil {
+			return
+		}
+
+		//file, e := os.Open(filename)
+		//if e != nil {
+		//	return
+		//}
+		//defer file.Close()
+
+		_, e = io.Copy(part, info)
+	}()
+
+	req, e := http.NewRequest(http.MethodPost, url, r)
+	if e != nil {
+		return nil, e
+	}
+	req.Header.Add("Content-Type", contentType)
+	fmt.Println("in console perf &req.Body: ", req.Body)
+	return req, nil
 	//tmpArchive, e := os.CreateTemp("", "test-perf-")
 	//if e != nil {
 	//	return nil, e
@@ -130,16 +264,16 @@ func subnetUploadReq(info []interface{}, url string, filename string) (*http.Req
 	//defer tmpArchive.Close()
 
 	//var body bytes.Buffer
-	r, w := io.Pipe()
-	fmt.Println("made the pipe!")
-	writer := multipart.NewWriter(w)
-	fmt.Println("made the writer!")
-	zipWriter := gzip.NewWriter(w)
-	fmt.Println("made the zipwriter! I think something is wrong here!")
+	//r, w := io.Pipe()
+	//fmt.Println("made the pipe!")
+	//writer := multipart.NewWriter(w)
+	//fmt.Println("made the writer!")
+	//zipWriter := gzip.NewWriter(w)
+	//fmt.Println("made the zipwriter! I think something is wrong here!")
 	//zipFileWriter := gzip.NewWriter(tmpArchive)
 	//	version := "3"
-	fmt.Println("encode it!")
-	enc := json.NewEncoder(zipWriter)
+	//fmt.Println("encode it!")
+	//enc := json.NewEncoder(zipWriter)
 	//fileEnc := json.NewEncoder(zipFileWriter)
 
 	//	header := struct {
@@ -149,13 +283,13 @@ func subnetUploadReq(info []interface{}, url string, filename string) (*http.Req
 	//	if e := enc.Encode(header); e != nil {
 	//	return nil, e
 	//	}
-	fmt.Println("do the loop!")
-	for i := range info {
-
-		if e := enc.Encode(info[i]); e != nil {
-			return nil, e
-		}
-	}
+	//fmt.Println("do the loop!")
+	//for i := range info {
+	//
+	//	if e := enc.Encode(info[i]); e != nil {
+	//			return nil, e
+	//		}
+	//}
 	//if e := fileEnc.Encode(header); e != nil {
 	//	return nil, e
 	//}
@@ -164,27 +298,29 @@ func subnetUploadReq(info []interface{}, url string, filename string) (*http.Req
 	//		return nil, e
 	//	}
 	//}
-	zipWriter.Close()
+	//zipWriter.Close()
 	//zipFileWriter.Close()
-	temp := r
-	fmt.Println("make a part!")
-	part, e := writer.CreateFormFile("file", filename)
-	if e != nil {
-		return nil, e
-	}
-	if _, e = io.Copy(part, temp); e != nil {
-		return nil, e
-	}
+	//	temp := r
+	//	fmt.Println("make a part!")
+	//	part, e := writer.CreateFormFile("file", filename)
+	//if e != nil {
+	//		return nil, e
+	//	}
+	//	if _, e = io.Copy(part, temp); e != nil {
+	//		return nil, e
+	//	}
 
-	writer.Close()
-	fmt.Println("making the request body: ", r)
-	req, e := http.NewRequest(http.MethodPost, url, r)
-	if e != nil {
-		return nil, e
-	}
-	req.Header.Add("Content-Type", writer.FormDataContentType())
-	fmt.Println("in request req.body: ", req.Body)
-	return req, nil
+	// writer.Close()
+	// fmt.Println("making the request body: ", r)
+	// req, e := http.NewRequest(http.MethodPost, url, r)
+	//
+	//	if e != nil {
+	//		return nil, e
+	//	}
+	//
+	// req.Header.Add("Content-Type", writer.FormDataContentType())
+	// fmt.Println("in request req.body: ", req.Body)
+	// return req, nil
 }
 
 func GenerateRegToken(clusterRegInfo mc.ClusterRegistrationInfo) (string, error) {
