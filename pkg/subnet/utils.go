@@ -17,6 +17,7 @@
 package subnet
 
 import (
+	"archive/zip"
 	"bytes"
 	"compress/gzip"
 	"encoding/base64"
@@ -31,6 +32,7 @@ import (
 	xhttp "github.com/minio/console/pkg/http"
 
 	"github.com/minio/madmin-go/v2"
+	"github.com/minio/mc/cmd"
 	mc "github.com/minio/mc/cmd"
 	"github.com/minio/pkg/env"
 )
@@ -86,63 +88,103 @@ func UploadFileToSubnet(info []interface{}, client *xhttp.Client, filename strin
 	return resp, e
 }
 
-func subnetUploadReq(info []interface{}, url string, filename string) (*http.Request, error) {
-	fmt.Println("In subnetUploadReq")
-	tmpArchive, e := os.CreateTemp("", "test-perf-")
+func writeJSONObjToZip(zipWriter *zip.Writer, obj interface{}, filename string) error {
+	writer, e := zipWriter.Create(filename)
 	if e != nil {
-		return nil, e
+		return e
+	}
+
+	return json.NewEncoder(writer).Encode(obj)
+}
+func zipPerfResult(perfOutput cmd.PerfTestOutput, resultFilename string, regInfo ClusterRegistrationInfo) (string, error) {
+	// Create profile zip file ############ Replace this to remove saved temp file and pipe it somehow
+	tmpArchive, e := os.CreateTemp("", "mc-perf-")
+
+	if e != nil {
+		return "", e
 	}
 	defer tmpArchive.Close()
+	// #####################
+	zipWriter := zip.NewWriter(tmpArchive)
+	defer zipWriter.Close()
 
-	var body bytes.Buffer
-	writer := multipart.NewWriter(&body)
-	zipWriter := gzip.NewWriter(&body)
-	zipFileWriter := gzip.NewWriter(tmpArchive)
-	version := "3"
-	enc := json.NewEncoder(zipWriter)
-	fileEnc := json.NewEncoder(zipFileWriter)
-
-	header := struct {
-		Version string `json:"version"`
-	}{Version: version}
-
-	if e := enc.Encode(header); e != nil {
-		return nil, e
+	e = writeJSONObjToZip(zipWriter, perfOutput, resultFilename)
+	if e != nil {
+		return "", e
 	}
+
+	e = writeJSONObjToZip(zipWriter, regInfo, "cluster.info")
+	if e != nil {
+		return "", e
+	}
+
+	return tmpArchive.Name(), nil // should return reader for this data
+}
+
+func subnetUploadReq(info []interface{}, url string, filename string) (*http.Request, error) {
+	fmt.Println("In subnetUploadReq")
+	//tmpArchive, e := os.CreateTemp("", "test-perf-")
+	//if e != nil {
+	//	return nil, e
+	//}
+	//defer tmpArchive.Close()
+
+	//var body bytes.Buffer
+	r, w := io.Pipe()
+	fmt.Println("made the pipe!")
+	writer := multipart.NewWriter(w)
+	fmt.Println("made the writer!")
+	zipWriter := gzip.NewWriter(w)
+	fmt.Println("made the zipwriter! I think something is wrong here!")
+	//zipFileWriter := gzip.NewWriter(tmpArchive)
+	//	version := "3"
+	fmt.Println("encode it!")
+	enc := json.NewEncoder(zipWriter)
+	//fileEnc := json.NewEncoder(zipFileWriter)
+
+	//	header := struct {
+	//		Version string `json:"version"`
+	//	}{Version: version}
+	//	fmt.Println("encode the header! header: ", header)
+	//	if e := enc.Encode(header); e != nil {
+	//	return nil, e
+	//	}
+	fmt.Println("do the loop!")
 	for i := range info {
 
 		if e := enc.Encode(info[i]); e != nil {
 			return nil, e
 		}
 	}
-	if e := fileEnc.Encode(header); e != nil {
-		return nil, e
-	}
-	for i := range info {
-		if e := fileEnc.Encode(info[i]); e != nil {
-			return nil, e
-		}
-	}
+	//if e := fileEnc.Encode(header); e != nil {
+	//	return nil, e
+	//}
+	//for i := range info {
+	//	if e := fileEnc.Encode(info[i]); e != nil {
+	//		return nil, e
+	//	}
+	//}
 	zipWriter.Close()
-	zipFileWriter.Close()
-	temp := body
+	//zipFileWriter.Close()
+	temp := r
+	fmt.Println("make a part!")
 	part, e := writer.CreateFormFile("file", filename)
 	if e != nil {
 		return nil, e
 	}
-	if _, e = io.Copy(part, &temp); e != nil {
+	if _, e = io.Copy(part, temp); e != nil {
 		return nil, e
 	}
 
 	writer.Close()
-	fmt.Println("making the request body: ", body)
-	r, e := http.NewRequest(http.MethodPost, url, &body)
+	fmt.Println("making the request body: ", r)
+	req, e := http.NewRequest(http.MethodPost, url, r)
 	if e != nil {
 		return nil, e
 	}
-	r.Header.Add("Content-Type", writer.FormDataContentType())
-	fmt.Println("in request r.body: ", r.Body)
-	return r, nil
+	req.Header.Add("Content-Type", writer.FormDataContentType())
+	fmt.Println("in request req.body: ", req.Body)
+	return req, nil
 }
 
 func GenerateRegToken(clusterRegInfo mc.ClusterRegistrationInfo) (string, error) {
