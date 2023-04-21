@@ -90,9 +90,9 @@ func UploadAuthHeaders(apiKey string) map[string]string {
 */
 func UploadFileToSubnet(info interface{}, client *xhttp.Client, filename string, reqURL string, headers map[string]string) (string, error) {
 	infoBytes, e := json.Marshal(info)
-	//r, w := io.Pipe()
-	//w.Write(infoBytes)
-	req, e := subnetUploadReq(infoBytes, reqURL, filename)
+	r, w := io.Pipe()
+	w.Write(infoBytes)
+	req, e := subnetUploadReq(r, reqURL, filename)
 	if e != nil {
 		return "", e
 	}
@@ -109,12 +109,13 @@ func UploadPerfFileToSubnet(info SubnetPerfUploadInfo, client *xhttp.Client, fil
 	fmt.Println("In UploadFiletoSubnet - info: ", info)
 	infoBody, e := zipPerfResult(info, filename)
 	if e != nil {
-		fmt.Println("THERE WAS AN ERROR  ", e)
-		return "", e
+		fmt.Println("THERE WAS AN ERROR  ", e, "infoBody: ", infoBody)
+		if e.Error() != "EOF " {
+			return "", e
+		}
+		fmt.Println("I should print if it's an EOF error! e: ", e)
 	}
 	fmt.Println("we made it! infoBody: ", infoBody)
-	//thisThing := new(bytes.Buffer)
-	//infoBody.Read(thisThing.Bytes())
 	req, e := subnetUploadReq(infoBody, reqURL, filename)
 	if e != nil {
 		return "", e
@@ -195,7 +196,7 @@ func convertPerfResult(r mc.PerfTestResult) mc.PerfTestOutput {
 	return out
 }
 
-func zipPerfResult(perfOutput SubnetPerfUploadInfo, resultFilename string) ([]byte, error) {
+func zipPerfResult(perfOutput SubnetPerfUploadInfo, resultFilename string) (*io.PipeReader, error) {
 	fmt.Println("in zipPerfResult")
 	var perfTestSubnetReport cmd.PerfTestResult
 	perfTestSubnetReport.ObjectResult = &perfOutput.SpeedtestInfo
@@ -210,27 +211,30 @@ func zipPerfResult(perfOutput SubnetPerfUploadInfo, resultFilename string) ([]by
 	if e != nil {
 		return nil, e
 	}
-	fmt.Println("let's write to the zip again! ")
 	e = writeJSONObjToZip(zipWriter, perfOutput.ClusterInfo, "cluster.info")
 	if e != nil {
 		return nil, e
 	}
-	w.Close()
+	//w.Close()
 
 	fmt.Println("you finished this part! good job! r: ", r)
-	fmt.Println("make a byte[]")
-	var bytesThing []byte
-	fmt.Println("read into it")
-	_, e = r.Read(bytesThing)
-	if e != nil {
-		return nil, e
-	}
+	//fmt.Println("make a byte[]")
+	//var bytesThing []byte
+
+	//fmt.Println("read into it")
+	//_, e = r.Read(bytesThing)
+	//if e != nil {
+	//	fmt.Println("THIS IS THE ERROR!")
+	//	if e.Error() != "EOF " {
+	//		return nil, e
+	//	}
+	//}
 	r.Close()
 	fmt.Println("try to return")
-	return bytesThing, nil
+	return r, nil
 }
 
-func subnetUploadReq(info []byte, url string, filename string) (*http.Request, error) {
+func subnetUploadReq(info *io.PipeReader, url string, filename string) (*http.Request, error) {
 	fmt.Println("In subnetUploadReq")
 	r, w := io.Pipe()
 	mwriter := multipart.NewWriter(w)
@@ -255,8 +259,8 @@ func subnetUploadReq(info []byte, url string, filename string) (*http.Request, e
 		//	return
 		//}
 		//defer file.Close()
-		_, e = w.Write(info)
-		_, e = io.Copy(part, r)
+		//_, e = w.Write(info)
+		_, e = io.Copy(part, info)
 		fmt.Println("I have a part! part: ", part)
 	}()
 
