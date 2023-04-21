@@ -229,7 +229,7 @@ func zipPerfResult(perfOutput SubnetPerfUploadInfo, resultFilename string) (*io.
 	//		return nil, e
 	//	}
 	//}
-	r.Close()
+	w.Close()
 	fmt.Println("try to return")
 	return r, nil
 }
@@ -242,8 +242,8 @@ func subnetUploadReq(info *io.PipeReader, url string, filename string) (*http.Re
 
 	go func() {
 		var (
-			part io.Writer
-			e    error
+			//	part io.Writer
+			e error
 		)
 		defer func() {
 			mwriter.Close()
@@ -260,10 +260,11 @@ func subnetUploadReq(info *io.PipeReader, url string, filename string) (*http.Re
 		//}
 		//defer file.Close()
 		//_, e = w.Write(info)
-		_, e = io.Copy(part, info)
-		fmt.Println("I have a part! part: ", part)
+		_, e = io.Copy(w, info)
+		fmt.Println("I have a thing! r: ", r, " info: ", info)
 	}()
-
+	_, e := io.Copy(w, info)
+	fmt.Println("I have no part! part: ", " info: ", info)
 	req, e := http.NewRequest(http.MethodPost, url, r)
 	if e != nil {
 		return nil, e
