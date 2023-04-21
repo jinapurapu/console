@@ -90,9 +90,9 @@ func UploadAuthHeaders(apiKey string) map[string]string {
 */
 func UploadFileToSubnet(info interface{}, client *xhttp.Client, filename string, reqURL string, headers map[string]string) (string, error) {
 	infoBytes, e := json.Marshal(info)
-	r, w := io.Pipe()
-	w.Write(infoBytes)
-	req, e := subnetUploadReq(r, reqURL, filename)
+	//r, w := io.Pipe()
+	//w.Write(infoBytes)
+	req, e := subnetUploadReq(infoBytes, reqURL, filename)
 	if e != nil {
 		return "", e
 	}
@@ -108,6 +108,13 @@ type SubnetPerfUploadInfo struct {
 func UploadPerfFileToSubnet(info SubnetPerfUploadInfo, client *xhttp.Client, filename string, reqURL string, headers map[string]string) (string, error) {
 	fmt.Println("In UploadFiletoSubnet - info: ", info)
 	infoBody, e := zipPerfResult(info, filename)
+	if e != nil {
+		fmt.Println("THERE WAS AN ERROR  ", e)
+		return "", e
+	}
+	fmt.Println("we made it! infoBody: ", infoBody)
+	//thisThing := new(bytes.Buffer)
+	//infoBody.Read(thisThing.Bytes())
 	req, e := subnetUploadReq(infoBody, reqURL, filename)
 	if e != nil {
 		return "", e
@@ -182,46 +189,48 @@ func convertObjTestResults(objResult *madmin.SpeedTestResult) mc.ObjTestResults 
 
 func convertPerfResult(r mc.PerfTestResult) mc.PerfTestOutput {
 	var out mc.PerfTestOutput
-	fmt.Println("we made it to here! r: ", r)
 	thisThing := convertObjTestResults(r.ObjectResult)
-	fmt.Println("we made it to here! thisThing: ", thisThing)
 
 	out.ObjectResults = &thisThing
-	out.Error = "this is an error!"
-	outType := fmt.Sprintf("%T", out)
-	fmt.Println("we made it to here! outType: ", outType)
-
-	fmt.Println("we made it to here! out: ", out.Error)
 	return out
 }
 
-func zipPerfResult(perfOutput SubnetPerfUploadInfo, resultFilename string) (io.Reader, error) {
+func zipPerfResult(perfOutput SubnetPerfUploadInfo, resultFilename string) ([]byte, error) {
 	fmt.Println("in zipPerfResult")
 	var perfTestSubnetReport cmd.PerfTestResult
 	perfTestSubnetReport.ObjectResult = &perfOutput.SpeedtestInfo
-	fmt.Println("perfTestSubnetReport: ", perfTestSubnetReport)
 
 	perfTestOutput := convertPerfResult(perfTestSubnetReport)
-	fmt.Println("we got out! perfTestOutput: ", perfTestOutput)
+	fmt.Println("we got out! perfTestOutput.Objectresults: ", perfTestOutput.ObjectResults)
 	r, w := io.Pipe()
 
 	zipWriter := zip.NewWriter(w)
 	defer zipWriter.Close()
-
-	e := writeJSONObjToZip(zipWriter, perfTestOutput, resultFilename)
+	e := writeJSONObjToZip(zipWriter, perfTestOutput.ObjectResults, resultFilename)
 	if e != nil {
 		return nil, e
 	}
-
+	fmt.Println("let's write to the zip again! ")
 	e = writeJSONObjToZip(zipWriter, perfOutput.ClusterInfo, "cluster.info")
 	if e != nil {
 		return nil, e
 	}
+	w.Close()
 
-	return r, nil // should return reader for this data
+	fmt.Println("you finished this part! good job! r: ", r)
+	fmt.Println("make a byte[]")
+	var bytesThing []byte
+	fmt.Println("read into it")
+	_, e = r.Read(bytesThing)
+	if e != nil {
+		return nil, e
+	}
+	r.Close()
+	fmt.Println("try to return")
+	return bytesThing, nil
 }
 
-func subnetUploadReq(info io.Reader, url string, filename string) (*http.Request, error) {
+func subnetUploadReq(info []byte, url string, filename string) (*http.Request, error) {
 	fmt.Println("In subnetUploadReq")
 	r, w := io.Pipe()
 	mwriter := multipart.NewWriter(w)
@@ -246,8 +255,9 @@ func subnetUploadReq(info io.Reader, url string, filename string) (*http.Request
 		//	return
 		//}
 		//defer file.Close()
-
-		_, e = io.Copy(part, info)
+		_, e = w.Write(info)
+		_, e = io.Copy(part, r)
+		fmt.Println("I have a part! part: ", part)
 	}()
 
 	req, e := http.NewRequest(http.MethodPost, url, r)
