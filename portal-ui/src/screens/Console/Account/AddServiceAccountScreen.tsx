@@ -149,7 +149,15 @@ const AddServiceAccount = ({ classes }: IAddServiceAccountProps) => {
               onClick={() => navigate(IAM_PAGES.ACCOUNT)}
             />
           }
-          actions={<HelpMenu helpName="add_service_account" />}
+          actions={
+            <HelpMenu
+              helpName={
+                isRestrictedByPolicy
+                  ? "add_service_account_policy"
+                  : "add_service_account"
+              }
+            />
+          }
         />
         <PageLayout>
           <Box
