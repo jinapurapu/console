@@ -19,6 +19,7 @@ package subnet
 import (
 	"archive/zip"
 	"bytes"
+	"crypto/rand"
 	"encoding/base64"
 	"encoding/json"
 	"fmt"
@@ -117,6 +118,11 @@ func UploadPerfFileToSubnet(info SubnetPerfUploadInfo, client *xhttp.Client, fil
 	}
 	fmt.Println("we made it! infoBody: ", infoBody)
 	req, e := subnetUploadReq(infoBody, reqURL, filename)
+	if e != nil {
+		fmt.Println("this is an error you have")
+		return "", e
+	}
+	fmt.Println("we made it out of subnetUploadReq! req.Body: ", req.Body)
 	if e != nil {
 		return "", e
 	}
@@ -235,108 +241,119 @@ func zipPerfResult(perfOutput SubnetPerfUploadInfo, resultFilename string) (*io.
 }
 
 func subnetUploadReq(info *io.PipeReader, url string, filename string) (*http.Request, error) {
+
 	fmt.Println("In subnetUploadReq")
 	r, w := io.Pipe()
 	mwriter := multipart.NewWriter(w)
 	contentType := mwriter.FormDataContentType()
 
-	go func() {
-		var (
-			//	part io.Writer
-			e error
-		)
-		defer func() {
-			mwriter.Close()
-			w.CloseWithError(e)
-		}()
-
-		if e != nil {
-			return
-		}
-
-		//file, e := os.Open(filename)
-		//if e != nil {
-		//	return
-		//}
-		//defer file.Close()
-		//_, e = w.Write(info)
-		_, e = io.Copy(w, info)
-		fmt.Println("I have a thing! r: ", r, " info: ", info)
+	defer func() {
+		mwriter.Close()
+		w.Close()
 	}()
+
+	//file, e := os.Open(filename)
+	//if e != nil {
+	//	return
+	//}
+	//defer file.Close()
+	//_, e = w.Write(info)
 	_, e := io.Copy(w, info)
-	fmt.Println("I have no part! part: ", " info: ", info)
+	fmt.Println("I have a thing! r: ", r, " info: ", info)
 	req, e := http.NewRequest(http.MethodPost, url, r)
 	if e != nil {
-		return nil, e
+		fmt.Println("There was an error here! e: ", e)
+
 	}
+	fmt.Println("There was no error here! ")
 	req.Header.Add("Content-Type", contentType)
-	fmt.Println("in console perf &req.Body: ", req.Body)
-	return req, nil
-	//tmpArchive, e := os.CreateTemp("", "test-perf-")
-	//if e != nil {
-	//	return nil, e
-	//}
-	//defer tmpArchive.Close()
-
-	//var body bytes.Buffer
-	//r, w := io.Pipe()
-	//fmt.Println("made the pipe!")
-	//writer := multipart.NewWriter(w)
-	//fmt.Println("made the writer!")
-	//zipWriter := gzip.NewWriter(w)
-	//fmt.Println("made the zipwriter! I think something is wrong here!")
-	//zipFileWriter := gzip.NewWriter(tmpArchive)
-	//	version := "3"
-	//fmt.Println("encode it!")
-	//enc := json.NewEncoder(zipWriter)
-	//fileEnc := json.NewEncoder(zipFileWriter)
-
-	//	header := struct {
-	//		Version string `json:"version"`
-	//	}{Version: version}
-	//	fmt.Println("encode the header! header: ", header)
-	//	if e := enc.Encode(header); e != nil {
-	//	return nil, e
-	//	}
-	//fmt.Println("do the loop!")
-	//for i := range info {
-	//
-	//	if e := enc.Encode(info[i]); e != nil {
-	//			return nil, e
-	//		}
-	//}
-	//if e := fileEnc.Encode(header); e != nil {
-	//	return nil, e
-	//}
-	//for i := range info {
-	//	if e := fileEnc.Encode(info[i]); e != nil {
-	//		return nil, e
-	//	}
-	//}
-	//zipWriter.Close()
-	//zipFileWriter.Close()
-	//	temp := r
-	//	fmt.Println("make a part!")
-	//	part, e := writer.CreateFormFile("file", filename)
-	//if e != nil {
-	//		return nil, e
-	//	}
-	//	if _, e = io.Copy(part, temp); e != nil {
-	//		return nil, e
-	//	}
-
-	// writer.Close()
-	// fmt.Println("making the request body: ", r)
-	// req, e := http.NewRequest(http.MethodPost, url, r)
-	//
-	//	if e != nil {
-	//		return nil, e
-	//	}
-	//
-	// req.Header.Add("Content-Type", writer.FormDataContentType())
-	// fmt.Println("in request req.body: ", req.Body)
-	// return req, nil
+	fmt.Println("made the header! req.Body: ", req.Body)
+	testR, testW := io.Pipe()
+	b := make([]byte, 50)
+	_, err := rand.Read(b)
+	// Note that err == nil only if we read len(b) bytes.
+	if err != nil {
+		return nil, err
+	}
+	testW.Write(b)
+	testReq, e := http.NewRequest(http.MethodGet, url, testR)
+	return testReq, nil
 }
+
+//_, e := io.Copy(w, info)
+//fmt.Println("I have no part! r: ", r)
+//req, e := http.NewRequest(http.MethodPost, url, r)
+//if e != nil {
+//	fmt.Println("There was an error here! e: ", e)
+
+//}
+//req.Header.Add("Content-Type", contentType)
+//fmt.Println("in console perf &req.Body: ", req.Body)
+//return req, nil
+//tmpArchive, e := os.CreateTemp("", "test-perf-")
+//if e != nil {
+//	return nil, e
+//}
+//defer tmpArchive.Close()
+
+//var body bytes.Buffer
+//r, w := io.Pipe()
+//fmt.Println("made the pipe!")
+//writer := multipart.NewWriter(w)
+//fmt.Println("made the writer!")
+//zipWriter := gzip.NewWriter(w)
+//fmt.Println("made the zipwriter! I think something is wrong here!")
+//zipFileWriter := gzip.NewWriter(tmpArchive)
+//	version := "3"
+//fmt.Println("encode it!")
+//enc := json.NewEncoder(zipWriter)
+//fileEnc := json.NewEncoder(zipFileWriter)
+
+//	header := struct {
+//		Version string `json:"version"`
+//	}{Version: version}
+//	fmt.Println("encode the header! header: ", header)
+//	if e := enc.Encode(header); e != nil {
+//	return nil, e
+//	}
+//fmt.Println("do the loop!")
+//for i := range info {
+//
+//	if e := enc.Encode(info[i]); e != nil {
+//			return nil, e
+//		}
+//}
+//if e := fileEnc.Encode(header); e != nil {
+//	return nil, e
+//}
+//for i := range info {
+//	if e := fileEnc.Encode(info[i]); e != nil {
+//		return nil, e
+//	}
+//}
+//zipWriter.Close()
+//zipFileWriter.Close()
+//	temp := r
+//	fmt.Println("make a part!")
+//	part, e := writer.CreateFormFile("file", filename)
+//if e != nil {
+//		return nil, e
+//	}
+//	if _, e = io.Copy(part, temp); e != nil {
+//		return nil, e
+//	}
+
+// writer.Close()
+// fmt.Println("making the request body: ", r)
+// req, e := http.NewRequest(http.MethodPost, url, r)
+//
+//	if e != nil {
+//		return nil, e
+//	}
+//
+// req.Header.Add("Content-Type", writer.FormDataContentType())
+// fmt.Println("in request req.body: ", req.Body)
+// return req, nil
 
 func GenerateRegToken(clusterRegInfo mc.ClusterRegistrationInfo) (string, error) {
 	token, e := json.Marshal(clusterRegInfo)

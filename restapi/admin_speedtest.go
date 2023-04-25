@@ -161,6 +161,7 @@ func sendPerfInfoToSubnet(ctx context.Context, speedtestInfo madmin.SpeedTestRes
 	fmt.Println("lets upload to subnet! perfUploadInfoNew: ", perfUploadInfoNew, " subnetHTTPClient: ", subnetHTTPClient, " subnetUploadURL: ", subnetUploadURL, " headers: ", headers)
 	resp, e := subnet.UploadPerfFileToSubnet(perfUploadInfoNew, subnetHTTPClient, filename, subnetUploadURL, headers)
 	if e != nil {
+		fmt.Println("this error is in subnet.UploadPerfFileToSubnet e: ", e)
 		return "", e
 	}
 	fmt.Println("You did it!")
