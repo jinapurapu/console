@@ -122,5 +122,8 @@
   "bucket_Replication": ["bucket replaiction help"],
   "bucket_Lifecycle": ["bucket lifecycle help"],
   "bucket_Access": ["bucket access help"],
-  "bucket_Anonymous": ["Bucket anonymous help"]
+  "bucket_Anonymous": ["Bucket anonymous help"],
+  "call_home": ["Call home help"],
+  "event_destinations": ["Event destinations help"],
+  "LDAP": ["LDAP help"]
 }
