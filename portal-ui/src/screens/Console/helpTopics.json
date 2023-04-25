@@ -1,95 +1,191 @@
 {
   "help": ["Default help"],
-  "Users": ["Help for Users", "More help for users", "Keep helping users"],
+  "Users": [
+    "[User management](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#minio-policy)",
+    "[Identity and Access Management](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management.html)"
+  ],
   "list_policies": [
-    "Help for List Policies",
+    "[Identity and Access Management](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management.html)",
     "[Policy based access control](https://min.io/docs/minio/linux/administration/identity-access-management/policy-based-access-control.html#)",
     "[IAM Policies](https://min.io/docs/minio/linux/administration/identity-access-management.html#minio-authentication-and-identity-management)"
   ],
   "add_bucket": [
-    "Help for Add buckets",
+    "[Bucket Versioning](https://min.io/docs/minio/kubernetes/upstream/administration/object-management/object-versioning.html#minio-bucket-versioning)",
     "[![(https://i.ytimg.com/vi/-PjTSwLB8ZA/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLAFOggpFKrODT6Wi5ZZVRpudjVAWg)](https://i.ytimg.com/vi/-PjTSwLB8ZA/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLAFOggpFKrODT6Wi5ZZVRpudjVAWg)](https://www.youtube.com/watch?v=-PjTSwLB8ZA)",
-    "Keep helping List Policies",
+    "[Buckets](https://min.io/docs/minio/kubernetes/upstream/administration/console/managing-objects.html#buckets)",
     "![(https://i.ytimg.com/vi/-PjTSwLB8ZA/hqdefault.jpg?sqp=-oaymwEjCPYBEIoBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLAoqacYnWXW-6GucmOES3GgtUNNBg][(https://i.ytimg.com/vi/-PjTSwLB8ZA/hqdefault.jpg?sqp=-oaymwEjCPYBEIoBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLAoqacYnWXW-6GucmOES3GgtUNNBg)](https://www.youtube.com/watch?v=-PjTSwLB8ZA&list=PLFOIsHSSYIK1gsQFfFnu9KE1qfhCTCMMM&index=3)"
   ],
   "ob_bucket_list": [
-    "Help for OB Bucket list",
-    "All buckets on the cluster are listed here.",
-    "Click on a bucket to browse its contents.",
-    "You can use the Filter Buckets field to narrow your selection. "
+    "[Bucket Versioning](https://min.io/docs/minio/kubernetes/upstream/administration/object-management/object-versioning.html#minio-bucket-versioning)",
+    "[Buckets](https://min.io/docs/minio/kubernetes/upstream/administration/console/managing-objects.html#buckets)"
   ],
   "accessKeys": [
-    "What are Access Keys?",
-    "How do I set Access Keys?",
-    "What can I do with an accessKey?"
+    "[Policy Document Structure](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#policy-document-structure)",
+
+    "[Identity and Access Management](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management.html)"
   ],
-  "add_service_account": [
-    "What are Service Accounts/ Access Keys?",
-    "How do I set Service Accounts/ Access Keys?",
-    "What can I do with aService Accounts/ Access Keys?"
+  "add_service_account": ["[Policy Variables](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#policy-variables)",
+  "[mc admin Policy Action Keys](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#mc-admin-policy-action-keys)",
+  "[mc admin Policy Condition Keys](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#mc-admin-policy-condition-keys)",
+  "[Supported S3 Policy Condition Keys](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#supported-s3-policy-condition-keys)",
+  "[Supported S3 Policy Actions](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#supported-s3-policy-actions)",
+  "[Policy Document Structure](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#policy-document-structure)",
+
+    "[Identity and Access Management](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management.html)"
   ],
-  "list-buckets": ["List Buckets  help goes here"],
-  "settings": ["Settings help going here - make nice for the tabs"],
+  "add_service_account_policy": [
+    "[Policy Variables](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#policy-variables)",
+    "[mc admin Policy Action Keys](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#mc-admin-policy-action-keys)",
+    "[mc admin Policy Condition Keys](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#mc-admin-policy-condition-keys)",
+    "[Supported S3 Policy Condition Keys](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#supported-s3-policy-condition-keys)",
+    "[Supported S3 Policy Actions](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#supported-s3-policy-actions)",
+    "[Policy Document Structure](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#policy-document-structure)",
+
+    "[Identity and Access Management](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management.html)"
+  ],
+  "list-buckets": [
+    "List Buckets  help goes here",
+    "[Bucket Versioning](https://min.io/docs/minio/kubernetes/upstream/administration/object-management/object-versioning.html#minio-bucket-versioning)"
+  ],
+  "settings": [
+    "Settings help going here - make nice for the tabs",
+    "[Configuration](https://min.io/docs/minio/kubernetes/upstream/operations/troubleshooting/encrypting-files.html)"
+  ],
   "add-replication-sites": ["Add Replication Site help goes here"],
   "site-replication": ["site-replication help goes here"],
   "site-replication-status": ["site-replication-status help goes here"],
   "add-tier-configuration": [
-    "add-tier-configuration help goes here - make nice to specific types"
+    "add-tier-configuration help goes here - make nice to specific types",
+    "[Transition form MinIO to Azure](https://min.io/docs/minio/kubernetes/upstream/administration/object-management/transition-objects-to-azure.html)",
+    "[Transition from MinIO to GCS](https://min.io/docs/minio/kubernetes/upstream/administration/object-management/transition-objects-to-gcs.html)",
+    "[Transition from MinIO to S3](https://min.io/docs/minio/kubernetes/upstream/administration/object-management/transition-objects-to-s3.html)",
+    "[Transition to remote MinIO deployment](https://min.io/docs/minio/kubernetes/upstream/administration/object-management/transition-objects-to-minio.html#minio-lifecycle-management-transition-to-minio)",
+    "[Object Lifecycle Management](https://min.io/docs/minio/kubernetes/upstream/administration/object-management/object-lifecycle-management.html#object-transition-tiering)",
+    "[Tiers](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#minio-policy)"
   ],
   "list-tiers-configuration": ["list-tiers-configuration help goes here"],
   "tier-type-selector": ["tier-type-selector help goes here"],
   "replication_status": ["replication_status help goes here"],
-  "metrics": ["metrics help goes here"],
-  "local_drives": ["local_drives help goes here"],
-  "volumes": ["volumes help goes here"],
+  "metrics": [
+    "[Console Metrics Dashboard](https://min.io/docs/minio/kubernetes/upstream/operations/monitoring/metrics-and-alerts.html#minio-console-metrics-dashboard)",
+    "[Available Metrics](https://min.io/docs/minio/kubernetes/upstream/operations/monitoring/metrics-and-alerts.html#available-metrics)",
+    "[Metrics and Alerts](https://min.io/docs/minio/kubernetes/upstream/operations/monitoring.html)",
+    "[Prometheus metrics](https://min.io/docs/minio/kubernetes/upstream/operations/monitoring/metrics-and-alerts.html#minio-console-metrics)"
+  ],
   "add_group": [
-    "add_group help",
+    "[Identity and Access Management](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management.html)",
+    "[User management](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#minio-policy)",
     "[Groups docs](https://min.io/docs/minio/linux/administration/identity-access-management/minio-group-management.html)"
   ],
   "groups": [
-    "groups help",
+    "[Identity and Access Management](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management.html)",
+    "[Group Management](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/minio-group-management.html)",
+    "[User management](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#minio-policy)",
     "[Groups docs](https://min.io/docs/minio/linux/administration/identity-access-management/minio-group-management.html)"
   ],
   "heal": ["heal help"],
   "health_info": ["health_info help"],
-  "add_idp_config": ["add idp help"],
-  "idp_config_details": ["idp config details"],
-  "idp_configs": ["idp config help"],
-  "add_key": ["add key help"],
-  "import_key": ["import key help"],
-  "list_keys": ["list keys help"],
-  "kms_status": ["kms status help"],
+  "add_idp_config": [
+    "[Identity and Access Management](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management.html)",
+    "[IDP Docs](https://min.io/docs/minio/kubernetes/upstream/operations/external-iam.html)",
+    "[User management](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#minio-policy)",
+
+    "[Built-in MinIO IDP](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/minio-identity-management.html)",
+    "[Active Directory / LDAP Access Management](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/ad-ldap-access-management.html)"
+  ],
+  "idp_config_details": [
+    "[Built-in MinIO IDP](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/minio-identity-management.html)",
+    "[Identity and Access Management](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management.html)",
+    "[IDP Docs](https://min.io/docs/minio/kubernetes/upstream/operations/external-iam.html)",
+    "[User management](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#minio-policy)",
+
+    "[Active Directory / LDAP Access Management](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/ad-ldap-access-management.html)",
+    "[Keycloak configuration](https://min.io/docs/minio/kubernetes/upstream/operations/external-iam/configure-keycloak-identity-management.html#minio-authenticate-using-keycloak)",
+    "[LDAP Configuration](https://min.io/docs/minio/kubernetes/upstream/operations/external-iam/configure-ad-ldap-external-identity-management.html)"
+  ],
+  "idp_configs": [
+    "[Built-in MinIO IDP](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/minio-identity-management.html)",
+    "[Identity and Access Management](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management.html)",
+    "[IDP Docs](https://min.io/docs/minio/kubernetes/upstream/operations/external-iam.html)",
+    "[User management](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#minio-policy)",
+
+    "[Active Directory / LDAP Access Management](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/ad-ldap-access-management.html)",
+    "[LDAP Configuration](https://min.io/docs/minio/kubernetes/upstream/operations/external-iam/configure-ad-ldap-external-identity-management.html)",
+    "[OIDC Configuration](https://min.io/docs/minio/kubernetes/upstream/operations/external-iam/configure-openid-external-identity-management.html)"
+  ],
+  "add_key": [
+    "[Identity and Access Management](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management.html)"
+  ],
+  "import_key": [
+    "[Identity and Access Management](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management.html)"
+  ],
+  "list_keys": [
+    "[Identity and Access Management](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management.html)"
+  ],
+  "kms_status": [
+    "[Identity and Access Management](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management.html)"
+  ],
   "license": ["license help"],
   "error_logs": ["error log help"],
-  "audit_logs": ["audit log help"],
+  "audit_logs": [
+    "[Audit log docs](https://min.io/docs/minio/kubernetes/upstream/operations/monitoring/minio-logging.html)"
+  ],
   "marketplace": ["marketplace help"],
-  "add_notification_endpoint": ["add notification endpoint help"],
-  "notification_endpoints": ["notification endpoint help"],
-  "notification_type_selector": ["notification type selector help"],
+  "add_notification_endpoint": [
+    "[Object Lambda](https://min.io/docs/minio/linux/developers/transforms-with-object-lambda.html?ref=docs)",
+    "[Bucket Notifications](https://min.io/docs/minio/kubernetes/upstream/administration/monitoring.html)"
+  ],
+  "notification_endpoints": [
+    "[Object Lambda](https://min.io/docs/minio/linux/developers/transforms-with-object-lambda.html)",
+    "[Bucket Notifications](https://min.io/docs/minio/kubernetes/upstream/administration/monitoring.html)"
+  ],
+  "notification_type_selector": [
+    "[Object Lambda](https://min.io/docs/minio/linux/developers/transforms-with-object-lambda.html)",
+    "[Bucket Notifications](https://min.io/docs/minio/kubernetes/upstream/administration/monitoring.html)"
+  ],
   "object_browser": [
     "object browser help",
-    "[What are Objects?](https://min.io/docs/minio/linux/administration/object-management.html)"
+    "[What are Objects?](https://min.io/docs/minio/linux/administration/object-management.html)",
+    "[Managing Objects](https://min.io/docs/minio/kubernetes/upstream/administration/console/managing-objects.html#minio-console-managing-objects)"
   ],
-  "add_policy": ["add policy help"],
-  "policy_details": ["policy details help"],
+  "add_policy": [
+    "add policy help",
+    "[Supported S3 Policy Condition Keys](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#supported-s3-policy-condition-keys)",
+    "[Supported S3 Policy Actions](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#supported-s3-policy-actions)",
+    "[Policy Document Structure](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#policy-document-structure)",
+
+    "[Identity and Access Management](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management.html)"
+  ],
+  "policy_details": [
+    "policy details help",
+    "[Supported S3 Policy Condition Keys](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#supported-s3-policy-condition-keys)",
+    "[Supported S3 Policy Actions](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#supported-s3-policy-actions)",
+    "[Policy Document Structure](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#policy-document-structure)",
+
+    "[Identity and Access Management](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management.html)"
+  ],
   "performance": ["performance help"],
-  "pvcs": ["pvcs help"],
   "profile": ["profile help"],
-  "register": ["register help"],
-  "register_operator": ["register operator help"],
-  "add_tenant": ["add tenant help"],
-  "list_tenants": ["list tenants help"],
-  "tenant_details": ["tenant details help"],
-  "hop": ["hop help"],
-  "add_pool": ["add pool help"],
-  "edit_pool": ["edit pool help"],
-  "inspect": ["inspect help"],
+  "register": [
+    "register help",
+    "[Register docs](https://min.io/docs/minio/kubernetes/upstream/operations/troubleshooting.html#registering-your-minio-deployment-with-subnet)"
+  ],
+  "inspect": [
+    "inspect help",
+    "[Encrypt inspect output](https://min.io/docs/minio/kubernetes/upstream/operations/troubleshooting/encrypting-files.html)"
+  ],
   "trace": ["trace help"],
   "add_user": [
     "add user help",
+    "[Identity and Access Management](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management.html)",
     "![(https://i.ytimg.com/vi/zqjsw4O2-4U/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLDdKQS4ydVogrlzeyFn1-MEWsvLew)](https://i.ytimg.com/vi/zqjsw4O2-4U/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLDdKQS4ydVogrlzeyFn1-MEWsvLew)[Youtube video adding useers/buckets - make a thumbnail here](https://www.youtube.com/watch?v=0PgMxz0HauA)"
   ],
-  "add_user_SA": ["add user SA help"],
+  "add_user_SA": [
+    "add user SA help",
+    "[Supported S3 Policy Condition Keys](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#supported-s3-policy-condition-keys)",
+    "[Supported S3 Policy Actions](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#supported-s3-policy-actions)",
+    "[Policy Document Structure](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#policy-document-structure)"
+  ],
   "list_users": [
     "list users help",
     "[Users help link here](https://min.io/docs/minio/linux/administration/identity-access-management/minio-user-management.html#)"
@@ -97,33 +193,95 @@
   "watch": ["watch help"],
   "policy_Summary": [
     "policy summary tab help",
+    "[Supported S3 Policy Condition Keys](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#supported-s3-policy-condition-keys)",
+    "[Supported S3 Policy Actions](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#supported-s3-policy-actions)",
+    "[Policy Document Structure](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#policy-document-structure)",
+
     "[Policy based access control](https://min.io/docs/minio/linux/administration/identity-access-management/policy-based-access-control.html#)",
+    "[Access Managemnt](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#minio-policy-actions)",
     "[IAM Policies](https://min.io/docs/minio/linux/administration/identity-access-management.html#minio-authentication-and-identity-management)"
   ],
-  "policy_Users": ["policy users tab help"],
+  "policy_Users": [
+    "policy users tab help",
+    "[Access Managemnt](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#minio-policy-actions)"
+  ],
   "policy_Groups": [
     "policy groups tab help",
+    "[Access Managemnt](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#minio-policy-actions)",
+    "[Group Management](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/minio-group-management.html)",
     "[Groups docs](https://min.io/docs/minio/linux/administration/identity-access-management/minio-group-management.html)"
   ],
-  "policy_Raw Policy": ["policy raw policy tab help"],
-  "user_Groups": ["Users Groups tab help"],
-  "user_Service Accounts": ["Users SA tab help"],
-  "user_Policies": ["Users Policies tab help"],
+  "policy_Raw Policy": [
+    "policy raw policy tab help",
+    "[Supported S3 Policy Condition Keys](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#supported-s3-policy-condition-keys)",
+    "[Supported S3 Policy Actions](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#supported-s3-policy-actions)",
+    "[Policy Document Structure](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#policy-document-structure)",
+    "[Access Managemnt](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#minio-policy-actions)"
+  ],
+  "user_Groups": [
+    "Users Groups tab help",
+    "[Group Management](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/minio-group-management.html)"
+  ],
+  "user_Service Accounts": [
+    "Users SA tab help",
+    "[Supported S3 Policy Actions](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#supported-s3-policy-actions)",
+    "[Policy Document Structure](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#policy-document-structure)"
+  ],
+  "user_Policies": [
+    "Users Policies tab help",
+    "[Access Managemnt](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#minio-policy-actions)"
+  ],
   "group_Members": [
     "Group detail member help",
+    "[Group Management](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/minio-group-management.html)",
     "[Groups docs](https://min.io/docs/minio/linux/administration/identity-access-management/minio-group-management.html)"
   ],
   "group_Policies": [
     "Group detail policy help",
+    "[Access Managemnt](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#minio-policy-actions)",
+    "[Group Management](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/minio-group-management.html)",
     "[Groups docs](https://min.io/docs/minio/linux/administration/identity-access-management/minio-group-management.html)"
   ],
-  "bucket_Summary": ["bucket summarry help"],
-  "bucket_Events": ["bucket events help"],
-  "bucket_Replication": ["bucket replaiction help"],
-  "bucket_Lifecycle": ["bucket lifecycle help"],
-  "bucket_Access": ["bucket access help"],
-  "bucket_Anonymous": ["Bucket anonymous help"],
+  "bucket_Summary": [
+    "[Object Locking](https://min.io/docs/minio/kubernetes/upstream/administration/object-management/object-retention.html)",
+    "[Encryption](https://min.io/docs/minio/kubernetes/upstream/administration/server-side-encryption.html)",
+    "[Bucket Versioning](https://min.io/docs/minio/kubernetes/upstream/administration/object-management/object-versioning.html#minio-bucket-versioning)",
+    "[Buckets](https://min.io/docs/minio/kubernetes/upstream/administration/console/managing-objects.html#buckets)"
+  ],
+  "bucket_Events": [
+    "bucket events help",
+    "[Object Lambda](https://min.io/docs/minio/linux/developers/transforms-with-object-lambda.html?ref=docs)",
+    "[Bucket Notifications](https://min.io/docs/minio/kubernetes/upstream/administration/monitoring/bucket-notifications.html#minio-bucket-notifications)",
+    "[Buckets](https://min.io/docs/minio/kubernetes/upstream/administration/console/managing-objects.html#buckets)"
+  ],
+  "bucket_Replication": [
+    "bucket replaiction help",
+    "[Bucket Replication](https://min.io/docs/minio/kubernetes/upstream/administration/bucket-replication.html#minio-bucket-replication-serverside)",
+    "[Buckets](https://min.io/docs/minio/kubernetes/upstream/administration/console/managing-objects.html#buckets)"
+  ],
+  "bucket_Lifecycle": [
+    "bucket lifecycle help",
+    "[Object Lifecycle Management](https://min.io/docs/minio/kubernetes/upstream/administration/object-management/object-lifecycle-management.html#minio-lifecycle-management)",
+    "[Buckets](https://min.io/docs/minio/kubernetes/upstream/administration/console/managing-objects.html#buckets)"
+  ],
+  "bucket_Access": [
+    "[Access management](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#minio-policy)",
+    "[User management](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#minio-policy)",
+    "[Buckets](https://min.io/docs/minio/kubernetes/upstream/administration/console/managing-objects.html#buckets)"
+  ],
+  "bucket_Anonymous": [
+    "[Buckets](https://min.io/docs/minio/kubernetes/upstream/administration/console/managing-objects.html#buckets)"
+  ],
   "call_home": ["Call home help"],
-  "event_destinations": ["Event destinations help"],
-  "LDAP": ["LDAP help"]
+  "event_destinations": [
+    "[Object Lambda](https://min.io/docs/minio/linux/developers/transforms-with-object-lambda.html?ref=docs)"
+  ],
+  "LDAP": [
+    "[Active Directory / LDAP Access Management](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/ad-ldap-access-management.html)",
+    "[IDP Docs](https://min.io/docs/minio/kubernetes/upstream/operations/external-iam.html)",
+    "[LDAP Configuration](https://min.io/docs/minio/kubernetes/upstream/operations/external-iam/configure-ad-ldap-external-identity-management.html)"
+  ],
+  "login": [
+    "[Login help](https://min.io/docs/minio/kubernetes/upstream/administration/minio-console.html#configuration)"
+  ]
 }

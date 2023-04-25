@@ -30,6 +30,7 @@ import { resetForm } from "./loginSlice";
 import StrategyForm from "./StrategyForm";
 import { redirectRules } from "../../utils/sortFunctions";
 import { getLogoVar } from "../../config";
+import HelpMenu from "../Console/HelpMenu";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -375,6 +376,7 @@ const Login = () => {
             >
               Download
             </a>
+            <HelpMenu helpName="login" />
           </Fragment>
         }
         promoHeader={
