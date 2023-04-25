@@ -239,7 +239,7 @@ const ListBuckets = () => {
       )}
       {!obOnly && (
         <PageHeaderWrapper
-          label={"Buckets"}
+          label={"Buckets TEST"}
           actions={<HelpMenu helpName="list-buckets" />}
         />
       )}

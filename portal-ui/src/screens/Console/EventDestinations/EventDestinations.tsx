@@ -27,7 +27,10 @@ const ListNotificationEndpoints = withSuspense(
 const EventDestinations = () => {
   return (
     <Fragment>
-      <PageHeaderWrapper label="Event Destinations" />
+      <PageHeaderWrapper
+        label="Event Destinations"
+        actions={<HelpMenu helpName="event_destinations" />}
+      />
       <ListNotificationEndpoints />
     </Fragment>
   );
