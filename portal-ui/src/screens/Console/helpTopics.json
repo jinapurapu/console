@@ -5,6 +5,8 @@
     "[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)"
   ],
   "Users": [
+    "[User management](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#minio-policy)",
+    "[Identity and Access Management](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management.html)",
     "[Video link - Console introduction - Demo add a Bucket and a User](https://www.youtube.com/watch?v=zqjsw4O2-4U)",
     "[Video link - Creating Buckets and Users through the MinIO Console](https://www.youtube.com/watch?v=0PgMxz0HauA)",
     "[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)"
@@ -29,6 +31,8 @@
     "[Video link - versioning](https://www.youtube.com/watch?v=-PjTSwLB8ZA)",
     "[Blog - Access Control best practices](https://blog.min.io/s3-security-access-control/)",
     "[Blog - Continuous Data protection with MinIO Versioning and Rewind](https://blog.min.io/continuous-data-protection-versioning-rewind/)",
+    "[![(https://i.ytimg.com/vi/-PjTSwLB8ZA/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLAFOggpFKrODT6Wi5ZZVRpudjVAWg)](https://i.ytimg.com/vi/-PjTSwLB8ZA/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLAFOggpFKrODT6Wi5ZZVRpudjVAWg)](https://www.youtube.com/watch?v=-PjTSwLB8ZA)",
+    "[Buckets](https://min.io/docs/minio/kubernetes/upstream/administration/console/managing-objects.html#buckets)",
     "![(https://i.ytimg.com/vi/-PjTSwLB8ZA/hqdefault.jpg?sqp=-oaymwEjCPYBEIoBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLAoqacYnWXW-6GucmOES3GgtUNNBg][(https://i.ytimg.com/vi/-PjTSwLB8ZA/hqdefault.jpg?sqp=-oaymwEjCPYBEIoBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLAoqacYnWXW-6GucmOES3GgtUNNBg)](https://www.youtube.com/watch?v=-PjTSwLB8ZA&list=PLFOIsHSSYIK1gsQFfFnu9KE1qfhCTCMMM&index=3)",
     "[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)"
   ],
@@ -44,6 +48,8 @@
     "[Identity and Access Management](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management.html)",
     "[Blog - Access Control best practices](https://blog.min.io/s3-security-access-control/)",
     "[Blog - Securing hybrid cloud storagew with MinIO IAM](https://blog.min.io/secure-hybrid-cloud-minio-iam/)",
+
+    "[Identity and Access Management](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management.html)",
     "[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)"
   ],
   "add_service_account": [
@@ -56,6 +62,8 @@
     "[Blog - Access Control best practices](https://blog.min.io/s3-security-access-control/)",
     "[Identity and Access Management](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management.html)",
     "[Blog - Securing hybrid cloud storagew with MinIO IAM](https://blog.min.io/secure-hybrid-cloud-minio-iam/)",
+
+    "[Identity and Access Management](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management.html)",
     "[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)"
   ],
   "add_service_account_policy": [
@@ -67,6 +75,7 @@
     "[Policy Document Structure](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#policy-document-structure)",
     "[Blog - Access Control best practices](https://blog.min.io/s3-security-access-control/)",
     "[Blog - Securing hybrid cloud storagew with MinIO IAM](https://blog.min.io/secure-hybrid-cloud-minio-iam/)",
+
     "[Identity and Access Management](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management.html)",
     "[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)"
   ],
@@ -99,6 +108,9 @@
     "[Blog - Faster multi-site replication and Resync](https://blog.min.io/multi-site-replication-resync/)",
     "[What is Site Replication?](https://min.io/docs/minio/linux/operations/install-deploy-manage/multi-site-replication.html)",
     "[Blog - Erasure Coding 101](https://blog.min.io/erasure-coding/)",
+    "[Site Replication Tutorial](https://min.io/docs/minio/linux/operations/install-deploy-manage/multi-site-replication.html#tutorials)",
+    "[Site Replication prerequisite](https://min.io/docs/minio/linux/operations/install-deploy-manage/multi-site-replication.html#prerequisites)",
+    "[What is Site Replication?](https://min.io/docs/minio/linux/operations/install-deploy-manage/multi-site-replication.html)",
     "[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)"
   ],
   "site-replication-status": [
@@ -193,6 +205,7 @@
     "[Health docs](https://min.io/docs/minio/linux/administration/console/subnet-registration.html#health)",
     "[Blog -  Subnet healthcheck](https://blog.min.io/subnet-healthcheck-and-performance/)",
     "[Blog - Introducing Subnet health](https://blog.min.io/introducing-subnet-health/)",
+    "[Healing](https://min.io/docs/minio/kubernetes/upstream/operations/concepts.html#minio-automatically-heals-corrupt-or-missing-data-on-the-fly)",
     "[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)"
   ],
   "add_idp_config": [
@@ -200,6 +213,7 @@
     "[IDP Docs](https://min.io/docs/minio/kubernetes/upstream/operations/external-iam.html)",
     "[User management](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#minio-policy)",
     "[Blog - Access Control best practices](https://blog.min.io/s3-security-access-control/)",
+
     "[Built-in MinIO IDP](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/minio-identity-management.html)",
     "[Active Directory / LDAP Access Management](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/ad-ldap-access-management.html)",
     "[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)"
@@ -210,6 +224,7 @@
     "[IDP Docs](https://min.io/docs/minio/kubernetes/upstream/operations/external-iam.html)",
     "[User management](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#minio-policy)",
     "[Blog - Access Control best practices](https://blog.min.io/s3-security-access-control/)",
+
     "[Active Directory / LDAP Access Management](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/ad-ldap-access-management.html)",
     "[Keycloak configuration](https://min.io/docs/minio/kubernetes/upstream/operations/external-iam/configure-keycloak-identity-management.html#minio-authenticate-using-keycloak)",
     "[LDAP Configuration](https://min.io/docs/minio/kubernetes/upstream/operations/external-iam/configure-ad-ldap-external-identity-management.html)",
@@ -221,6 +236,7 @@
     "[IDP Docs](https://min.io/docs/minio/kubernetes/upstream/operations/external-iam.html)",
     "[User management](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#minio-policy)",
     "[Blog - Access Control best practices](https://blog.min.io/s3-security-access-control/)",
+
     "[Active Directory / LDAP Access Management](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/ad-ldap-access-management.html)",
     "[LDAP Configuration](https://min.io/docs/minio/kubernetes/upstream/operations/external-iam/configure-ad-ldap-external-identity-management.html)",
     "[Policy Variables](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#policy-variables)",
@@ -311,6 +327,7 @@
     "[Policy Document Structure](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#policy-document-structure)",
     "[Blog - Access Control best practices](https://blog.min.io/s3-security-access-control/)",
     "[Blog - Securing hybrid cloud storagew with MinIO IAM](https://blog.min.io/secure-hybrid-cloud-minio-iam/)",
+
     "[Identity and Access Management](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management.html)",
     "[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)"
   ],
@@ -321,6 +338,7 @@
     "[Policy Document Structure](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#policy-document-structure)",
     "[Blog - Access Control best practices](https://blog.min.io/s3-security-access-control/)",
     "[Blog - Securing hybrid cloud storagew with MinIO IAM](https://blog.min.io/secure-hybrid-cloud-minio-iam/)",
+
     "[Identity and Access Management](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management.html)",
     "[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)"
   ],
@@ -381,6 +399,7 @@
     "[Identity and Access Management](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management.html)",
     "[Users help link here](https://min.io/docs/minio/linux/administration/identity-access-management/minio-user-management.html#)",
     "[Video link - Console introduction - add a Bucket and a User](https://www.youtube.com/watch?v=zqjsw4O2-4U)",
+    "[Users help link here](https://min.io/docs/minio/linux/administration/identity-access-management/minio-user-management.html#)",
     "[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)"
   ],
   "watch": [
@@ -395,6 +414,7 @@
     "[Policy Document Structure](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#policy-document-structure)",
     "[Blog - Access Control best practices](https://blog.min.io/s3-security-access-control/)",
     "[Blog - Securing hybrid cloud storagew with MinIO IAM](https://blog.min.io/secure-hybrid-cloud-minio-iam/)",
+
     "[Policy based access control](https://min.io/docs/minio/linux/administration/identity-access-management/policy-based-access-control.html#)",
     "[Access Managemnt](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#minio-policy-actions)",
     "[IAM Policies](https://min.io/docs/minio/linux/administration/identity-access-management.html#minio-authentication-and-identity-management)",
@@ -455,6 +475,7 @@
     "[Blog - Access Control best practices](https://blog.min.io/s3-security-access-control/)",
     "[Groups docs](https://min.io/docs/minio/linux/administration/identity-access-management/minio-group-management.html)",
     "[Blog - Securing hybrid cloud storagew with MinIO IAM](https://blog.min.io/secure-hybrid-cloud-minio-iam/)",
+    "[Groups docs](https://min.io/docs/minio/linux/administration/identity-access-management/minio-group-management.html)",
     "[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)"
   ],
   "group_Policies": [
@@ -464,6 +485,7 @@
     "[Blog - Access Control best practices](https://blog.min.io/s3-security-access-control/)",
     "[Groups docs](https://min.io/docs/minio/linux/administration/identity-access-management/minio-group-management.html)",
     "[Blog - Securing hybrid cloud storagew with MinIO IAM](https://blog.min.io/secure-hybrid-cloud-minio-iam/)",
+    "[Groups docs](https://min.io/docs/minio/linux/administration/identity-access-management/minio-group-management.html)",
     "[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)"
   ],
   "bucket_Summary": [
@@ -504,6 +526,9 @@
     "[Buckets](https://min.io/docs/minio/kubernetes/upstream/administration/console/managing-objects.html#buckets)",
     "[Blog - Replication best practices](https://blog.min.io/minio-replication-best-practices/)",
     "[Blog - Erasure Coding 101](https://blog.min.io/erasure-coding/)",
+    "[Bucket Replication requirements](https://min.io/docs/minio/kubernetes/upstream/administration/bucket-replication/bucket-replication-requirements.html)",
+    "[Bucket Replication](https://min.io/docs/minio/kubernetes/upstream/administration/bucket-replication.html#minio-bucket-replication-serverside)",
+    "[Buckets](https://min.io/docs/minio/kubernetes/upstream/administration/console/managing-objects.html#buckets)",
     "[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)"
   ],
   "bucket_Lifecycle": [
@@ -549,6 +574,7 @@
   "login": [
     "[Login help](https://min.io/docs/minio/kubernetes/upstream/administration/minio-console.html#logging-in)",
     "[Subnet registration and support](https://min.io/docs/minio/linux/administration/console/subnet-registration.html)",
+    "[Login help](https://min.io/docs/minio/kubernetes/upstream/administration/minio-console.html#configuration)",
     "[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)"
   ]
 }
