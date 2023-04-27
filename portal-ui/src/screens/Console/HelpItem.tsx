@@ -46,7 +46,7 @@ const HelpItem = ({ classes, helpItemMarkdown }: IHelpItemProps) => {
     <Fragment>
       <Grid container>
         <Grid item xs={12} className={classes.modalFormScrollable}>
-          <ReactMarkdown>{helpItemMarkdown}</ReactMarkdown>
+          <ReactMarkdown linkTarget="_blank">{helpItemMarkdown}</ReactMarkdown>
         </Grid>
       </Grid>
     </Fragment>
