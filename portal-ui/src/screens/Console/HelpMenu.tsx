@@ -31,6 +31,7 @@ import HelpItem from "./HelpItem";
 import { Button, HelpIcon } from "mds";
 import { useSelector } from "react-redux";
 import { AppState } from "../../store";
+import VerticalTabs from "./Common/VerticalTabs/VerticalTabs";
 
 const styles = (theme: Theme) =>
   createStyles({
@@ -59,18 +60,13 @@ const HelpMenu = ({ classes, helpName }: IHelpMenuProps) => {
 
   function useOutsideAlerter(ref: any) {
     useEffect(() => {
-      /**
-       * Alert if clicked on outside of element
-       */
       function handleClickOutside(event: any) {
         if (ref.current && !ref.current.contains(event.target)) {
           setHelpMenuOpen(false);
         }
       }
-      // Bind the event listener
       document.addEventListener("mousedown", handleClickOutside);
       return () => {
-        // Unbind the event listener on clean up
         document.removeEventListener("mousedown", handleClickOutside);
       };
     }, [ref]);
@@ -87,6 +83,17 @@ const HelpMenu = ({ classes, helpName }: IHelpMenuProps) => {
       : setHelpItems(helpTopics[helpName]);
   }, [systemHelpName]);
 
+  const helpContent = (
+    <React.Fragment>
+      {helpItems &&
+        helpItems.map((aHelpItem) => (
+          <MenuItem value={aHelpItem} key={`help-item-${aHelpItem}`}>
+            <HelpItem helpItemMarkdown={aHelpItem} />
+          </MenuItem>
+        ))}
+    </React.Fragment>
+  );
+
   return (
     <Fragment>
       {helpMenuOpen && (
@@ -99,12 +106,16 @@ const HelpMenu = ({ classes, helpName }: IHelpMenuProps) => {
             opacity: "0.95",
           }}
         >
-          {helpItems &&
-            helpItems.map((aHelpItem) => (
-              <MenuItem value={aHelpItem} key={`help-item-${aHelpItem}`}>
-                <HelpItem helpItemMarkdown={aHelpItem} />
-              </MenuItem>
-            ))}
+          <VerticalTabs>
+            {{
+              tabConfig: { label: "label1" },
+              content: helpContent,
+            }}
+            {{
+              tabConfig: { label: "label2" },
+              content: helpContent,
+            }}
+          </VerticalTabs>
         </div>
       )}
       <Button
