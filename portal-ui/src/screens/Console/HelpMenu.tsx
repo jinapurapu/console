@@ -48,6 +48,8 @@ interface IHelpMenuProps {
 
 const HelpMenu = ({ classes, helpName }: IHelpMenuProps) => {
   const [helpItems, setHelpItems] = useState<string[]>([]);
+  const [helpItemsVideo, setHelpItemsVideo] = useState<string[]>([]);
+  const [helpItemsBlog, setHelpItemsBlog] = useState<string[]>([]);
   const [helpMenuOpen, setHelpMenuOpen] = useState<boolean>(false);
 
   const systemHelpName = useSelector(
@@ -83,10 +85,45 @@ const HelpMenu = ({ classes, helpName }: IHelpMenuProps) => {
       : setHelpItems(helpTopics[helpName]);
   }, [systemHelpName]);
 
+  useEffect(() => {
+    !helpName
+      ? systemHelpName
+        ? assignHelpItems(systemHelpName)
+        : assignHelpItems("help")
+      : assignHelpItems(helpName);
+  }, [systemHelpName]);
+
+  const assignHelpItems = (boop: string) => {
+    let helpTopics = require("../Console/helpTopics.json");
+    helpTopics[boop]["docs"] && setHelpItems(helpTopics[boop]["docs"]);
+    helpTopics[boop]["blog"] && setHelpItemsBlog(helpTopics[boop]["blog"]);
+    helpTopics[boop]["video"] && setHelpItemsVideo(helpTopics[boop]["video"]);
+  };
+
   const helpContent = (
     <React.Fragment>
       {helpItems &&
         helpItems.map((aHelpItem) => (
+          <MenuItem value={aHelpItem} key={`help-item-${aHelpItem}`}>
+            <HelpItem helpItemMarkdown={aHelpItem} />
+          </MenuItem>
+        ))}
+    </React.Fragment>
+  );
+  const helpContentVideo = (
+    <React.Fragment>
+      {helpItemsVideo &&
+        helpItemsVideo.map((aHelpItem) => (
+          <MenuItem value={aHelpItem} key={`help-item-${aHelpItem}`}>
+            <HelpItem helpItemMarkdown={aHelpItem} />
+          </MenuItem>
+        ))}
+    </React.Fragment>
+  );
+  const helpContentBlog = (
+    <React.Fragment>
+      {helpItemsBlog &&
+        helpItemsBlog.map((aHelpItem) => (
           <MenuItem value={aHelpItem} key={`help-item-${aHelpItem}`}>
             <HelpItem helpItemMarkdown={aHelpItem} />
           </MenuItem>
@@ -108,12 +145,16 @@ const HelpMenu = ({ classes, helpName }: IHelpMenuProps) => {
         >
           <VerticalTabs>
             {{
-              tabConfig: { label: "label1" },
+              tabConfig: { label: "Documents" },
               content: helpContent,
             }}
             {{
-              tabConfig: { label: "label2" },
-              content: helpContent,
+              tabConfig: { label: "Video" },
+              content: helpContentVideo,
+            }}
+            {{
+              tabConfig: { label: "Blogs" },
+              content: helpContentBlog,
             }}
           </VerticalTabs>
         </div>

@@ -22,7 +22,7 @@ const GroupDetailsHeader = () => {
           />
         </Fragment>
       }
-      actions={<HelpMenu helpName={`group_${systemHelpName}`} />}
+      actions={<HelpMenu helpName={`group_details`} />}
     />
   );
 };
