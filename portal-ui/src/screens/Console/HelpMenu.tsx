@@ -145,15 +145,24 @@ const HelpMenu = ({ classes, helpName }: IHelpMenuProps) => {
         >
           <VerticalTabs>
             {{
-              tabConfig: { label: "Documents" },
+              tabConfig: {
+                label: "Documents",
+                disabled: helpItems.length === 0,
+              },
               content: helpContent,
             }}
             {{
-              tabConfig: { label: "Video" },
+              tabConfig: {
+                label: "Video",
+                disabled: helpItemsVideo.length === 0,
+              },
               content: helpContentVideo,
             }}
             {{
-              tabConfig: { label: "Blogs" },
+              tabConfig: {
+                label: "Blogs",
+                disabled: helpItemsBlog.length === 0,
+              },
               content: helpContentBlog,
             }}
           </VerticalTabs>
