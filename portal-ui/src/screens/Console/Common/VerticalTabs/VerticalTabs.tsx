@@ -118,13 +118,13 @@ const VerticalTabs = ({
     }
   }, [isRouteTabs, children, pathname]);
 
-  useEffect(() => {
-    console.log(
-      "setting systemHelpName in VerticalTabs on refresh: ",
-      String(headerList[0].label) || "bad"
-    );
-    setHelpName(String(headerList[0].label) || "bad");
-  }, []);
+  // useEffect(() => {
+  //   console.log(
+  //     "setting systemHelpName in VerticalTabs on refresh: ",
+  //     String(headerList[0].label) || "bad"
+  //   );
+  // setHelpName(String(headerList[0].label) || "bad");
+  // }, []);
 
   if (!children) return null;
 

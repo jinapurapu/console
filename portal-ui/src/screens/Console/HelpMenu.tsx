@@ -28,7 +28,7 @@ import {
 } from "../Console/Common/FormComponents/common/styleLibrary";
 import { MenuItem, Select } from "@mui/material";
 import HelpItem from "./HelpItem";
-import { Button, HelpIcon } from "mds";
+import { Box, Button, HelpIcon } from "mds";
 import { useSelector } from "react-redux";
 import { AppState } from "../../store";
 import VerticalTabs from "./Common/VerticalTabs/VerticalTabs";
@@ -143,29 +143,32 @@ const HelpMenu = ({ classes, helpName }: IHelpMenuProps) => {
             opacity: "0.95",
           }}
         >
-          <VerticalTabs>
-            {{
-              tabConfig: {
-                label: "Documents",
-                disabled: helpItems.length === 0,
-              },
-              content: helpContent,
-            }}
-            {{
-              tabConfig: {
-                label: "Video",
-                disabled: helpItemsVideo.length === 0,
-              },
-              content: helpContentVideo,
-            }}
-            {{
-              tabConfig: {
-                label: "Blogs",
-                disabled: helpItemsBlog.length === 0,
-              },
-              content: helpContentBlog,
-            }}
-          </VerticalTabs>
+          <Box>
+            Help Menu
+            <VerticalTabs>
+              {{
+                tabConfig: {
+                  label: "Documents",
+                  disabled: helpItems.length === 0,
+                },
+                content: helpContent,
+              }}
+              {{
+                tabConfig: {
+                  label: "Video",
+                  disabled: helpItemsVideo.length === 0,
+                },
+                content: helpContentVideo,
+              }}
+              {{
+                tabConfig: {
+                  label: "Blogs",
+                  disabled: helpItemsBlog.length === 0,
+                },
+                content: helpContentBlog,
+              }}
+            </VerticalTabs>
+          </Box>
         </div>
       )}
       <Button

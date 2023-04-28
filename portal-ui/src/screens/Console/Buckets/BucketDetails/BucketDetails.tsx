@@ -160,9 +160,8 @@ const BucketDetails = ({ classes }: IBucketDetailsProps) => {
   }, [systemHelpName]);
 
   useEffect(() => {
-    console.log("setting active tab");
     setActiveTab(selTab);
-    setHelpName(selTab);
+    // setHelpName(selTab);
   }, [selTab]);
 
   useEffect(() => {
@@ -261,9 +260,10 @@ const BucketDetails = ({ classes }: IBucketDetailsProps) => {
             </TooltipWrapper>
             <HelpMenu
               helpName={
-                firstUpdate.current
-                  ? `bucket_${helpTopicName}`
-                  : `bucket_${systemHelpName}`
+                "bucket_detail"
+                // firstUpdate.current
+                // ? `bucket_${helpTopicName}`
+                //: `bucket_${systemHelpName}`
               }
             />
           </Fragment>

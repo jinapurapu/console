@@ -772,6 +772,55 @@
       "[Blog - Securing hybrid cloud storagew with MinIO IAM](https://blog.min.io/secure-hybrid-cloud-minio-iam/)"
     ]
   },
+  "bucket_detail": {
+    "docs": [
+      "[Object Locking](https://min.io/docs/minio/kubernetes/upstream/administration/object-management/object-retention.html)",
+      "[Encryption](https://min.io/docs/minio/kubernetes/upstream/administration/server-side-encryption.html)",
+      "[Bucket Versioning](https://min.io/docs/minio/kubernetes/upstream/administration/object-management/object-versioning.html#minio-bucket-versioning)",
+      "[Buckets](https://min.io/docs/minio/kubernetes/upstream/administration/console/managing-objects.html#buckets)",
+      "[Access management](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#minio-policy)",
+      "[User management](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#minio-policy)",
+      "[Object Lifecycle Management](https://min.io/docs/minio/kubernetes/upstream/administration/object-management/object-lifecycle-management.html#minio-lifecycle-management)",
+
+      "[Bucket Replication](https://min.io/docs/minio/kubernetes/upstream/administration/bucket-replication.html#minio-bucket-replication-serverside)",
+      "[Object Lambda](https://min.io/docs/minio/linux/developers/transforms-with-object-lambda.html?ref=docs)",
+      "[Bucket Notifications](https://min.io/docs/minio/kubernetes/upstream/administration/monitoring/bucket-notifications.html#minio-bucket-notifications)",
+      "[Bucket Replication requirements](https://min.io/docs/minio/kubernetes/upstream/administration/bucket-replication/bucket-replication-requirements.html)",
+      "[Bucket Replication](https://min.io/docs/minio/kubernetes/upstream/administration/bucket-replication.html#minio-bucket-replication-serverside)",
+      "[Buckets](https://min.io/docs/minio/kubernetes/upstream/administration/console/managing-objects.html#buckets)",
+      "[Bucket Replication requirements](https://min.io/docs/minio/kubernetes/upstream/administration/bucket-replication/bucket-replication-requirements.html)",
+      "[Bucket Replication](https://min.io/docs/minio/kubernetes/upstream/administration/bucket-replication.html#minio-bucket-replication-serverside)",
+
+      "[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)"
+    ],
+    "video": [
+      "[Video link - Object locking and Retention](https://www.youtube.com/watch?v=Hk9Z-sltUu8)",
+      "[Video link - Console introduction - add a Bucket and a User](https://www.youtube.com/watch?v=zqjsw4O2-4U)",
+      "[Video link - Object locking and retention Lab](https://www.youtube.com/watch?v=thNus-DL1u4)",
+      "[Video link - versioning](https://www.youtube.com/watch?v=-PjTSwLB8ZA)",
+      "[Video link - Versioning](https://www.youtube.com/watch?v=XGOiwV6Cbuk)",
+      "[Video link - Lifecycle Management lab](https://www.youtube.com/watch?v=5fz3rE3wjGg)",
+      "[Video link - Versioning lab](https://www.youtube.com/watch?v=nFUI2N5zH34)",
+      "[Video link - Creating Buckets and Users through the MinIO Console](https://www.youtube.com/watch?v=0PgMxz0HauA)",
+      "[Video link - Bucket Replication Overview](https://www.youtube.com/watch?v=G4wQZEsIxcU)",
+      "[Video link- Replication lab I](https://www.youtube.com/watch?v=89vnToCcoAw)",
+      "[Video link- replication lab II](https://www.youtube.com/watch?v=BLTlaOvVCSg)"
+    ],
+    "blog": [
+      "[Blog - Replication best practices](https://blog.min.io/minio-replication-best-practices/)",
+      "[Blog - Access Control best practices](https://blog.min.io/s3-security-access-control/)",
+      "[Blog - Securing hybrid cloud storagew with MinIO IAM](https://blog.min.io/secure-hybrid-cloud-minio-iam/)",
+
+      "[Blog - Erasure Coding 101](https://blog.min.io/erasure-coding/)",
+      "[Blog - Continuous Data protection with MinIO Versioning and Rewind](https://blog.min.io/continuous-data-protection-versioning-rewind/)",
+      "[Blog - Versioning, Metadata and Storage](https://blog.min.io/minio-versioning-metadata-deep-dive/)",
+      "[Blog - Replication best practices](https://blog.min.io/minio-replication-best-practices/)",
+      "[Blog - Erasure Coding 101](https://blog.min.io/erasure-coding/)",
+      "[Blog - Access Control best practices](https://blog.min.io/s3-security-access-control/)",
+      "[Blog - Securing hybrid cloud storage with MinIO IAM](https://blog.min.io/secure-hybrid-cloud-minio-iam/)"
+    ]
+  },
+
   "bucket_Summary": {
     "docs": [
       "[Object Locking](https://min.io/docs/minio/kubernetes/upstream/administration/object-management/object-retention.html)",
@@ -856,7 +905,7 @@
     "video": [],
     "blog": [
       "[Blog - Access Control best practices](https://blog.min.io/s3-security-access-control/)",
-      "[Blog - Securing hybrid cloud storagew with MinIO IAM](https://blog.min.io/secure-hybrid-cloud-minio-iam/)"
+      "[Blog - Securing hybrid cloud storage with MinIO IAM](https://blog.min.io/secure-hybrid-cloud-minio-iam/)"
     ]
   },
   "bucket_Anonymous": {
