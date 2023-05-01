@@ -26,11 +26,12 @@ import {
   modalStyleUtils,
   spacingUtils,
 } from "../Console/Common/FormComponents/common/styleLibrary";
-import { MenuItem, Tab, Tabs } from "@mui/material";
+import { MenuItem, Paper, Tab, Tabs } from "@mui/material";
 import HelpItem from "./HelpItem";
 import { Box, Button, HelpIcon } from "mds";
 import { useSelector } from "react-redux";
 import { AppState } from "../../store";
+import { TabPanel } from "../shared/tabs";
 
 const styles = (theme: Theme) =>
   createStyles({
@@ -172,6 +173,18 @@ const HelpMenu = ({ classes, helpName }: IHelpMenuProps) => {
                 <Tab label="Blog" {...a11yProps(2)} />
               )}
             </Tabs>
+            <Paper>
+              <TabPanel index={0} value={helpTab}>
+                {helpContent}
+              </TabPanel>
+
+              <TabPanel index={1} value={helpTab}>
+                {helpContentVideo}
+              </TabPanel>
+              <TabPanel index={2} value={helpTab}>
+                {helpContentBlog}
+              </TabPanel>
+            </Paper>
           </Box>
         </div>
       )}
