@@ -15,8 +15,8 @@
       "[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)"
     ],
     "video": [
-      "[Video link - Console introduction - Demo add a Bucket and a User](https://www.youtube.com/watch?v=zqjsw4O2-4U)",
-      "[Video link - Creating Buckets and Users through the MinIO Console](https://www.youtube.com/watch?v=0PgMxz0HauA)"
+      "[Console Demo add a Bucket and a User](https://www.youtube.com/watch?v=zqjsw4O2-4U)",
+      "[Creating Buckets and Users through the MinIO Console](https://www.youtube.com/watch?v=0PgMxz0HauA)"
     ],
     "blog": []
   },
@@ -27,11 +27,11 @@
       "[IAM Policies](https://min.io/docs/minio/linux/administration/identity-access-management.html#minio-authentication-and-identity-management)",
       "[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)"
     ],
-    "video": [],
     "blog": [
-      "[Blog - Access Control best practices](https://blog.min.io/s3-security-access-control/)",
-      "[Blog - Securing hybrid cloud storagew with MinIO IAM](https://blog.min.io/secure-hybrid-cloud-minio-iam/)"
-    ]
+      "[Access Control best practices](https://blog.min.io/s3-security-access-control/)",
+      "[Securing hybrid cloud storage with MinIO IAM](https://blog.min.io/secure-hybrid-cloud-minio-iam/)"
+    ],
+    "video": []
   },
   "add_bucket": {
     "docs": [
@@ -41,16 +41,16 @@
       "[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)"
     ],
     "video": [
-      "[Video link - Creating Buckets and Users through the MinIO Console](https://www.youtube.com/watch?v=0PgMxz0HauA)",
-      "[Video link - Object locking and Retention](https://www.youtube.com/watch?v=Hk9Z-sltUu8)",
-      "[Video link - Console introduction - add a Bucket and a User](https://www.youtube.com/watch?v=zqjsw4O2-4U)",
-      "[Video link - Object locking and retention Lab](https://www.youtube.com/watch?v=thNus-DL1u4)",
-      "[Video link - Lifecycle management II - Versioning and Lifecycle management](https://www.youtube.com/watch?v=UuxqnUgowyg) ",
-      "[Video link - versioning](https://www.youtube.com/watch?v=-PjTSwLB8ZA)"
+      "[Creating Buckets and Users through the MinIO Console](https://www.youtube.com/watch?v=0PgMxz0HauA)",
+      "[Console Introduction - add a Bucket and a User](https://www.youtube.com/watch?v=zqjsw4O2-4U)",
+      "[Object Locking and Retention](https://www.youtube.com/watch?v=Hk9Z-sltUu8)",
+      "[Object Locking and Retention Lab](https://www.youtube.com/watch?v=thNus-DL1u4)",
+      "[Versioning and Lifecycle Management](https://www.youtube.com/watch?v=UuxqnUgowyg) ",
+      "[Versioning](https://www.youtube.com/watch?v=-PjTSwLB8ZA)"
     ],
     "blog": [
-      "[Blog - Access Control best practices](https://blog.min.io/s3-security-access-control/)",
-      "[Blog - Continuous Data protection with MinIO Versioning and Rewind](https://blog.min.io/continuous-data-protection-versioning-rewind/)"
+      "[Access Control best practices](https://blog.min.io/s3-security-access-control/)",
+      "[Continuous Data protection with MinIO Versioning and Rewind](https://blog.min.io/continuous-data-protection-versioning-rewind/)"
     ]
   },
   "ob_bucket_list": {
@@ -60,7 +60,7 @@
       "[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)"
     ],
     "video": [
-      "[Video link - Lifecycle management II - Versioning and Lifecycle management](https://www.youtube.com/watch?v=UuxqnUgowyg) "
+      "[Versioning and Lifecycle management](https://www.youtube.com/watch?v=UuxqnUgowyg) "
     ],
     "blog": []
   },
@@ -71,11 +71,12 @@
       "[Identity and Access Management](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management.html)",
       "[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)"
     ],
-    "video": [],
     "blog": [
-      "[Blog - Access Control best practices](https://blog.min.io/s3-security-access-control/)",
-      "[Blog - Securing hybrid cloud storagew with MinIO IAM](https://blog.min.io/secure-hybrid-cloud-minio-iam/)"
-    ]
+      "[Access Control best practices](https://blog.min.io/s3-security-access-control/)",
+      "[Securing hybrid cloud storagew with MinIO IAM](https://blog.min.io/secure-hybrid-cloud-minio-iam/)"
+    ],
+
+    "video": []
   },
   "add_service_account": {
     "docs": [
@@ -89,12 +90,13 @@
       "[Identity and Access Management](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management.html)",
       "[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)"
     ],
-    "video": [],
     "blog": [
-      "[Blog - Access Control best practices](https://blog.min.io/s3-security-access-control/)",
+      "[Access Control Best Practices](https://blog.min.io/s3-security-access-control/)",
 
-      "[Blog - Securing hybrid cloud storagew with MinIO IAM](https://blog.min.io/secure-hybrid-cloud-minio-iam/)"
-    ]
+      "[Securing Hybrid Cloud Storage with MinIO IAM](https://blog.min.io/secure-hybrid-cloud-minio-iam/)"
+    ],
+
+    "video": []
   },
   "add_service_account_policy": {
     "docs": [
@@ -109,8 +111,8 @@
     ],
     "video": [],
     "blog": [
-      "[Blog - Access Control best practices](https://blog.min.io/s3-security-access-control/)",
-      "[Blog - Securing hybrid cloud storagew with MinIO IAM](https://blog.min.io/secure-hybrid-cloud-minio-iam/)"
+      "[Access Control best practices](https://blog.min.io/s3-security-access-control/)",
+      "[Securing hybrid cloud storagew with MinIO IAM](https://blog.min.io/secure-hybrid-cloud-minio-iam/)"
     ]
   },
   "list-buckets": {
@@ -120,7 +122,7 @@
       "[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)"
     ],
     "video": [
-      "[Video link - Lifecycle management II - Versioning and Lifecycle management](https://www.youtube.com/watch?v=UuxqnUgowyg) "
+      "[Lifecycle management II - Versioning and Lifecycle management](https://www.youtube.com/watch?v=UuxqnUgowyg) "
     ],
     "blog": []
   },
@@ -135,49 +137,45 @@
   },
   "add-replication-sites": {
     "docs": [
-      "[Site Replication prerequisite](https://min.io/docs/minio/linux/operations/install-deploy-manage/multi-site-replication.html#prerequisites)",
+      "[Site Replication Prerequisite](https://min.io/docs/minio/linux/operations/install-deploy-manage/multi-site-replication.html#prerequisites)",
 
       "[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)"
     ],
     "video": [],
     "blog": [
-      "[Blog - Replication best practices](https://blog.min.io/minio-replication-best-practices/)",
-      "[Blog - Faster multi-site replication and Resync](https://blog.min.io/multi-site-replication-resync/)",
-      "[Blog - Multi-site Active-active replication](https://blog.min.io/minio-multi-site-active-active-replication/)",
-      "[Blog - Erasure Coding 101](https://blog.min.io/erasure-coding/)"
+      "[Replication best practices](https://blog.min.io/minio-replication-best-practices/)",
+      "[Faster multi-site replication and Resync](https://blog.min.io/multi-site-replication-resync/)",
+      "[Multi-site Active-active replication](https://blog.min.io/minio-multi-site-active-active-replication/)",
+      "[Erasure Coding 101](https://blog.min.io/erasure-coding/)"
     ]
   },
   "site-replication": {
     "docs": [
       "[Site Replication Tutorial](https://min.io/docs/minio/linux/operations/install-deploy-manage/multi-site-replication.html#tutorials)",
-      "[Site Replication prerequisite](https://min.io/docs/minio/linux/operations/install-deploy-manage/multi-site-replication.html#prerequisites)",
+      "[Site Replication Prerequisite](https://min.io/docs/minio/linux/operations/install-deploy-manage/multi-site-replication.html#prerequisites)",
       "[What is Site Replication?](https://min.io/docs/minio/linux/operations/install-deploy-manage/multi-site-replication.html)",
-      "[Site Replication Tutorial](https://min.io/docs/minio/linux/operations/install-deploy-manage/multi-site-replication.html#tutorials)",
-      "[Site Replication prerequisite](https://min.io/docs/minio/linux/operations/install-deploy-manage/multi-site-replication.html#prerequisites)",
-      "[What is Site Replication?](https://min.io/docs/minio/linux/operations/install-deploy-manage/multi-site-replication.html)",
-
       "[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)"
     ],
     "video": [],
     "blog": [
-      "[Blog - Replication best practices](https://blog.min.io/minio-replication-best-practices/)",
-      "[Blog - Faster multi-site replication and Resync](https://blog.min.io/multi-site-replication-resync/)",
-      "[Blog - Multi-site Active-active replication](https://blog.min.io/minio-multi-site-active-active-replication/)",
-      "[Blog - Erasure Coding 101](https://blog.min.io/erasure-coding/)"
+      "[Replication best practices](https://blog.min.io/minio-replication-best-practices/)",
+      "[Faster multi-site replication and Resync](https://blog.min.io/multi-site-replication-resync/)",
+      "[Multi-site Active-active replication](https://blog.min.io/minio-multi-site-active-active-replication/)",
+      "[Erasure Coding 101](https://blog.min.io/erasure-coding/)"
     ]
   },
   "site-replication-status": {
     "docs": [
-      "[Site Replication prerequisite](https://min.io/docs/minio/linux/operations/install-deploy-manage/multi-site-replication.html#prerequisites)",
+      "[Site Replication Prerequisite](https://min.io/docs/minio/linux/operations/install-deploy-manage/multi-site-replication.html#prerequisites)",
 
       "[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)"
     ],
     "video": [],
     "blog": [
-      "[Blog - Replication best practices](https://blog.min.io/minio-replication-best-practices/)",
-      "[Blog - Faster multi-site replication and Resync](https://blog.min.io/multi-site-replication-resync/)",
-      "[Blog - Multi-site Active-active replication](https://blog.min.io/minio-multi-site-active-active-replication/)",
-      "[Blog - Erasure Coding 101](https://blog.min.io/erasure-coding/)"
+      "[Replication Best Practices](https://blog.min.io/minio-replication-best-practices/)",
+      "[Faster multi-site replication and Resync](https://blog.min.io/multi-site-replication-resync/)",
+      "[Multi-site Active-active Replication](https://blog.min.io/minio-multi-site-active-active-replication/)",
+      "[Erasure Coding 101](https://blog.min.io/erasure-coding/)"
     ]
   },
   "add-tier-configuration": {
@@ -185,16 +183,16 @@
       "[Transition form MinIO to Azure](https://min.io/docs/minio/kubernetes/upstream/administration/object-management/transition-objects-to-azure.html)",
       "[Transition from MinIO to GCS](https://min.io/docs/minio/kubernetes/upstream/administration/object-management/transition-objects-to-gcs.html)",
       "[Transition from MinIO to S3](https://min.io/docs/minio/kubernetes/upstream/administration/object-management/transition-objects-to-s3.html)",
-      "[Transition to remote MinIO deployment](https://min.io/docs/minio/kubernetes/upstream/administration/object-management/transition-objects-to-minio.html#minio-lifecycle-management-transition-to-minio)",
+      "[Transition to Remote MinIO Deployment](https://min.io/docs/minio/kubernetes/upstream/administration/object-management/transition-objects-to-minio.html#minio-lifecycle-management-transition-to-minio)",
       "[Object Lifecycle Management](https://min.io/docs/minio/kubernetes/upstream/administration/object-management/object-lifecycle-management.html#object-transition-tiering)",
       "[Tiers](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#minio-policy)",
 
       "[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)"
     ],
     "video": [
-      "[Video link - Lifecycle management I - Tiers](https://www.youtube.com/watch?v=Exg2KsfzHzI)",
-      "[Video link - Lifecycle management II - Versioning and Lifecycle management](https://www.youtube.com/watch?v=UuxqnUgowyg) ",
-      "[Video link - Lifecycle Management lab](https://www.youtube.com/watch?v=5fz3rE3wjGg)"
+      "[Lifecycle management I - Tiers](https://www.youtube.com/watch?v=Exg2KsfzHzI)",
+      "[Lifecycle management II - Versioning and Lifecycle management](https://www.youtube.com/watch?v=UuxqnUgowyg) ",
+      "[Lifecycle Management Lab Demo](https://www.youtube.com/watch?v=5fz3rE3wjGg)"
     ],
     "blog": []
   },
@@ -205,9 +203,9 @@
       "[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)"
     ],
     "video": [
-      "[Video link - Lifecycle management I - Tiers](https://www.youtube.com/watch?v=Exg2KsfzHzI)",
-      "[Video link - Lifecycle management II - Versioning and Lifecycle management](https://www.youtube.com/watch?v=UuxqnUgowyg) ",
-      "[Video link - Lifecycle Management lab](https://www.youtube.com/watch?v=5fz3rE3wjGg)"
+      "[Tiers](https://www.youtube.com/watch?v=Exg2KsfzHzI)",
+      "[Versioning and Lifecycle Management](https://www.youtube.com/watch?v=UuxqnUgowyg) ",
+      "[Lifecycle Management Lab Demo](https://www.youtube.com/watch?v=5fz3rE3wjGg)"
     ],
     "blog": []
   },
@@ -216,16 +214,16 @@
       "[Transition form MinIO to Azure](https://min.io/docs/minio/kubernetes/upstream/administration/object-management/transition-objects-to-azure.html)",
       "[Transition from MinIO to GCS](https://min.io/docs/minio/kubernetes/upstream/administration/object-management/transition-objects-to-gcs.html)",
       "[Transition from MinIO to S3](https://min.io/docs/minio/kubernetes/upstream/administration/object-management/transition-objects-to-s3.html)",
-      "[Transition to remote MinIO deployment](https://min.io/docs/minio/kubernetes/upstream/administration/object-management/transition-objects-to-minio.html#minio-lifecycle-management-transition-to-minio)",
+      "[Transition to Remote MinIO Deployment](https://min.io/docs/minio/kubernetes/upstream/administration/object-management/transition-objects-to-minio.html#minio-lifecycle-management-transition-to-minio)",
       "[Object Lifecycle Management](https://min.io/docs/minio/kubernetes/upstream/administration/object-management/object-lifecycle-management.html#object-transition-tiering)",
       "[Tiers](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#minio-policy)",
 
       "[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)"
     ],
     "video": [
-      "[Video link - Lifecycle management I - Tiers](https://www.youtube.com/watch?v=Exg2KsfzHzI)",
-      "[Video link - Lifecycle management II - Versioning and Lifecycle management](https://www.youtube.com/watch?v=UuxqnUgowyg) ",
-      "[Video link - Lifecycle Management lab](https://www.youtube.com/watch?v=5fz3rE3wjGg)"
+      "[Tiers](https://www.youtube.com/watch?v=Exg2KsfzHzI)",
+      "[Versioning and Lifecycle management](https://www.youtube.com/watch?v=UuxqnUgowyg) ",
+      "[Lifecycle Management Lab Demo](https://www.youtube.com/watch?v=5fz3rE3wjGg)"
     ],
     "blog": []
   },
@@ -235,10 +233,10 @@
     ],
     "video": [],
     "blog": [
-      "[Blog - Replication best practices](https://blog.min.io/minio-replication-best-practices/)",
-      "[Blog - Faster multi-site replication and Resync](https://blog.min.io/multi-site-replication-resync/)",
-      "[Blog - Erasure Coding 101](https://blog.min.io/erasure-coding/)",
-      "[Blog - Multi-site Active-active replication](https://blog.min.io/minio-multi-site-active-active-replication/)"
+      "[Replication Best Practices](https://blog.min.io/minio-replication-best-practices/)",
+      "[Faster Multi-site Replication and Resync](https://blog.min.io/multi-site-replication-resync/)",
+      "[Erasure Coding 101](https://blog.min.io/erasure-coding/)",
+      "[Multi-site Active-active Replication](https://blog.min.io/minio-multi-site-active-active-replication/)"
     ]
   },
   "metrics": {
@@ -246,13 +244,13 @@
       "[Console Metrics Dashboard](https://min.io/docs/minio/kubernetes/upstream/operations/monitoring/metrics-and-alerts.html#minio-console-metrics-dashboard)",
       "[Available Metrics](https://min.io/docs/minio/kubernetes/upstream/operations/monitoring/metrics-and-alerts.html#available-metrics)",
       "[Metrics and Alerts](https://min.io/docs/minio/kubernetes/upstream/operations/monitoring.html)",
-      "[Prometheus metrics](https://min.io/docs/minio/kubernetes/upstream/operations/monitoring/metrics-and-alerts.html#minio-console-metrics)",
+      "[Prometheus Metrics](https://min.io/docs/minio/kubernetes/upstream/operations/monitoring/metrics-and-alerts.html#minio-console-metrics)",
 
       "[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)"
     ],
     "video": [
-      "[Video link - Monitoring with Prometheus](https://www.youtube.com/watch?v=A3vCDaFWNNs)",
-      "[Video link - Prometheus monitoring lab](https://www.youtube.com/watch?v=Oix9iXndSUY)"
+      "[Monitoring with Prometheus](https://www.youtube.com/watch?v=A3vCDaFWNNs)",
+      "[Prometheus Monitoring Lab](https://www.youtube.com/watch?v=Oix9iXndSUY)"
     ],
     "blog": []
   },
@@ -260,14 +258,14 @@
     "docs": [
       "[Identity and Access Management](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management.html)",
       "[User management](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#minio-policy)",
-      "[Groups docs](https://min.io/docs/minio/linux/administration/identity-access-management/minio-group-management.html)",
+      "[Group Management](https://min.io/docs/minio/linux/administration/identity-access-management/minio-group-management.html)",
 
       "[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)"
     ],
     "video": [],
     "blog": [
-      "[Blog - Access Control best practices](https://blog.min.io/s3-security-access-control/)",
-      "[Blog - Securing hybrid cloud storagew with MinIO IAM](https://blog.min.io/secure-hybrid-cloud-minio-iam/)"
+      "[Access Control best practices](https://blog.min.io/s3-security-access-control/)",
+      "[Securing Hybrid Cloud Storage with MinIO IAM](https://blog.min.io/secure-hybrid-cloud-minio-iam/)"
     ]
   },
   "groups": {
@@ -275,7 +273,7 @@
       "[Identity and Access Management](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management.html)",
       "[Group Management](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/minio-group-management.html)",
       "[User management](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#minio-policy)",
-      "[Groups docs](https://min.io/docs/minio/linux/administration/identity-access-management/minio-group-management.html)",
+      "[Groups](https://min.io/docs/minio/linux/administration/identity-access-management/minio-group-management.html)",
 
       "[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)"
     ],
@@ -292,13 +290,13 @@
       "[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)"
     ],
     "video": [
-      "[Video link - Site Replication Overview](https://www.youtube.com/watch?v=iCxcv4_j35M)"
+      "[Site Replication Overview](https://www.youtube.com/watch?v=iCxcv4_j35M)"
     ],
     "blog": [
-      "[Blog - Replication best practices](https://blog.min.io/minio-replication-best-practices/)",
-      "[Blog - Faster multi-site replication and Resync](https://blog.min.io/multi-site-replication-resync/)",
-      "[Blog - Erasure Coding 101](https://blog.min.io/erasure-coding/)",
-      "[Blog - Multi-site Active-active replication](https://blog.min.io/minio-multi-site-active-active-replication/)"
+      "[Replication best practices](https://blog.min.io/minio-replication-best-practices/)",
+      "[Faster multi-site replication and Resync](https://blog.min.io/multi-site-replication-resync/)",
+      "[Erasure Coding 101](https://blog.min.io/erasure-coding/)",
+      "[Multi-site Active-active replication](https://blog.min.io/minio-multi-site-active-active-replication/)"
     ]
   },
   "health_info": {
@@ -310,15 +308,15 @@
     ],
     "video": [],
     "blog": [
-      "[Blog -  Subnet healthcheck](https://blog.min.io/subnet-healthcheck-and-performance/)",
-      "[Blog - Introducing Subnet health](https://blog.min.io/introducing-subnet-health/)"
+      "[Subnet Healthcheck](https://blog.min.io/subnet-healthcheck-and-performance/)",
+      "[Introducing Subnet Health](https://blog.min.io/introducing-subnet-health/)"
     ]
   },
   "add_idp_config": {
     "docs": [
       "[Identity and Access Management](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management.html)",
       "[IDP Docs](https://min.io/docs/minio/kubernetes/upstream/operations/external-iam.html)",
-      "[User management](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#minio-policy)",
+      "[User Management](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#minio-policy)",
       "[Built-in MinIO IDP](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/minio-identity-management.html)",
       "[Active Directory / LDAP Access Management](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/ad-ldap-access-management.html)",
 
@@ -326,7 +324,7 @@
     ],
     "video": [],
     "blog": [
-      "[Blog - Access Control best practices](https://blog.min.io/s3-security-access-control/)"
+      "[Access Control best practices](https://blog.min.io/s3-security-access-control/)"
     ]
   },
   "idp_config_details": {
@@ -343,7 +341,7 @@
     ],
     "video": [],
     "blog": [
-      "[Blog - Access Control best practices](https://blog.min.io/s3-security-access-control/)"
+      "[Access Control best practices](https://blog.min.io/s3-security-access-control/)"
     ]
   },
   "idp_configs": {
@@ -361,7 +359,7 @@
     ],
     "video": [],
     "blog": [
-      "[Blog - Access Control best practices](https://blog.min.io/s3-security-access-control/)"
+      "[Access Control best practices](https://blog.min.io/s3-security-access-control/)"
     ]
   },
   "add_key": {
@@ -370,11 +368,9 @@
 
       "[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)"
     ],
-    "video": [
-      "[Video link - KMS overview](https://www.youtube.com/watch?v=XUuJZVK-Wpw)"
-    ],
+    "video": ["[KMS overview](https://www.youtube.com/watch?v=XUuJZVK-Wpw)"],
     "blog": [
-      "[Blog - Access Control best practices](https://blog.min.io/s3-security-access-control/)"
+      "[Access Control best practices](https://blog.min.io/s3-security-access-control/)"
     ]
   },
   "import_key": {
@@ -383,11 +379,9 @@
 
       "[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)"
     ],
-    "video": [
-      "[Video link - KMS overview](https://www.youtube.com/watch?v=XUuJZVK-Wpw)"
-    ],
+    "video": ["[KMS overview](https://www.youtube.com/watch?v=XUuJZVK-Wpw)"],
     "blog": [
-      "[Blog - Access Control best practices](https://blog.min.io/s3-security-access-control/)"
+      "[Access Control best practices](https://blog.min.io/s3-security-access-control/)"
     ]
   },
   "list_keys": {
@@ -396,11 +390,9 @@
 
       "[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)"
     ],
-    "video": [
-      "[Video link - KMS overview](https://www.youtube.com/watch?v=XUuJZVK-Wpw)"
-    ],
+    "video": ["[KMS overview](https://www.youtube.com/watch?v=XUuJZVK-Wpw)"],
     "blog": [
-      "[Blog - Access Control best practices](https://blog.min.io/s3-security-access-control/)"
+      "[Access Control Best Practices](https://blog.min.io/s3-security-access-control/)"
     ]
   },
   "kms_status": {
@@ -409,11 +401,9 @@
 
       "[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)"
     ],
-    "video": [
-      "[Video link - KMS overview](https://www.youtube.com/watch?v=XUuJZVK-Wpw)"
-    ],
+    "video": ["[KMS overview](https://www.youtube.com/watch?v=XUuJZVK-Wpw)"],
     "blog": [
-      "[Blog - Access Control best practices](https://blog.min.io/s3-security-access-control/)"
+      "[Access Control best practices](https://blog.min.io/s3-security-access-control/)"
     ]
   },
   "license": {
@@ -421,14 +411,12 @@
       "[Subnet registration and support](https://min.io/docs/minio/linux/administration/console/subnet-registration.html)",
       "[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)"
     ],
-    "video": [
-      "[Video link - What is Subnet?](https://www.youtube.com/watch?v=Zyc-xhNcPco)"
-    ],
+    "video": ["[What is Subnet?](https://www.youtube.com/watch?v=Zyc-xhNcPco)"],
     "blog": [
-      "[Blog -  Subnet healthcheck](https://blog.min.io/subnet-healthcheck-and-performance/)",
-      "[Blog - Direct to engineer engagement](https://blog.min.io/subnet-series-communication/)",
-      "[Blog - The Beauty of the Panic Button](https://blog.min.io/the-beauty-of-the-panic-button/)",
-      "[Blog - Supportability as Software with MinIO Subnet](https://blog.min.io/supportability-minio-subnet/)"
+      "[Subnet healthcheck](https://blog.min.io/subnet-healthcheck-and-performance/)",
+      "[Direct to engineer engagement](https://blog.min.io/subnet-series-communication/)",
+      "[The Beauty of the Panic Button](https://blog.min.io/the-beauty-of-the-panic-button/)",
+      "[Supportability as Software with MinIO Subnet](https://blog.min.io/supportability-minio-subnet/)"
     ]
   },
   "error_logs": {
@@ -452,10 +440,10 @@
     ],
     "video": [],
     "blog": [
-      "[Blog - MinIO available on GCP marketplace](https://blog.min.io/minio-gcp-marketplace/)",
-      "[Blog - MinIO available on AWS marketplace](https://blog.min.io/minio-multi-cloud-object-storage-available-on-aws-marketplace/)",
-      "[Blog - MinIO available on Azure marketplace](https://blog.min.io/minio-multi-cloud-azure-marketplace/)",
-      "[Blog - MinIO available on Red Hat marketplace](https://blog.min.io/hybrid-cloud-red-hat-openshift/)"
+      "[MinIO available on GCP marketplace](https://blog.min.io/minio-gcp-marketplace/)",
+      "[MinIO available on AWS marketplace](https://blog.min.io/minio-multi-cloud-object-storage-available-on-aws-marketplace/)",
+      "[MinIO available on Azure marketplace](https://blog.min.io/minio-multi-cloud-azure-marketplace/)",
+      "[MinIO available on Red Hat marketplace](https://blog.min.io/hybrid-cloud-red-hat-openshift/)"
     ]
   },
   "add_notification_endpoint": {
@@ -492,14 +480,14 @@
       "[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)"
     ],
     "video": [
-      "[Video link - Object locking and Retention](https://www.youtube.com/watch?v=Hk9Z-sltUu8)",
-      "[Video link - Object locking and retention Lab](https://www.youtube.com/watch?v=thNus-DL1u4)",
-      "[Video link - Manipulating Objects](https://www.youtube.com/watch?v=dLSBuVG7Y3k)",
-      "[Video link - versioning](https://www.youtube.com/watch?v=-PjTSwLB8ZA)"
+      "[Object locking and Retention](https://www.youtube.com/watch?v=Hk9Z-sltUu8)",
+      "[Object locking and retention Lab](https://www.youtube.com/watch?v=thNus-DL1u4)",
+      "[Manipulating Objects](https://www.youtube.com/watch?v=dLSBuVG7Y3k)",
+      "[Versioning](https://www.youtube.com/watch?v=-PjTSwLB8ZA)"
     ],
     "blog": [
-      "[Blog - Versioning, Metadata and Storage](https://blog.min.io/minio-versioning-metadata-deep-dive/)",
-      "[Blog - Continuous Data protection with MinIO Versioning and Rewind](https://blog.min.io/continuous-data-protection-versioning-rewind/)"
+      "[Versioning, Metadata and Storage](https://blog.min.io/minio-versioning-metadata-deep-dive/)",
+      "[Continuous Data protection with MinIO Versioning and Rewind](https://blog.min.io/continuous-data-protection-versioning-rewind/)"
     ]
   },
   "add_policy": {
@@ -513,8 +501,8 @@
     ],
     "video": [],
     "blog": [
-      "[Blog - Access Control best practices](https://blog.min.io/s3-security-access-control/)",
-      "[Blog - Securing hybrid cloud storagew with MinIO IAM](https://blog.min.io/secure-hybrid-cloud-minio-iam/)"
+      "[Access Control best practices](https://blog.min.io/s3-security-access-control/)",
+      "[Securing hybrid cloud storagew with MinIO IAM](https://blog.min.io/secure-hybrid-cloud-minio-iam/)"
     ]
   },
   "policy_details": {
@@ -527,8 +515,8 @@
     ],
     "video": [],
     "blog": [
-      "[Blog - Access Control best practices](https://blog.min.io/s3-security-access-control/)",
-      "[Blog - Securing hybrid cloud storagew with MinIO IAM](https://blog.min.io/secure-hybrid-cloud-minio-iam/)"
+      "[Access Control best practices](https://blog.min.io/s3-security-access-control/)",
+      "[Securing hybrid cloud storagew with MinIO IAM](https://blog.min.io/secure-hybrid-cloud-minio-iam/)"
     ]
   },
   "performance": {
@@ -538,13 +526,13 @@
     ],
     "video": [],
     "blog": [
-      "[Blog - Performance test](https://blog.min.io/introducing-speedtest-for-minio/)",
-      "[Blog - Versioning, Metadata and Storage](https://blog.min.io/minio-versioning-metadata-deep-dive/)"
+      "[Performance Test](https://blog.min.io/introducing-speedtest-for-minio/)",
+      "[Versioning, Metadata and Storage](https://blog.min.io/minio-versioning-metadata-deep-dive/)"
     ]
   },
   "profile": {
     "docs": [
-      "[Profile docs](https://min.io/docs/minio/linux/administration/console/subnet-registration.html#profile)",
+      "[Profile](https://min.io/docs/minio/linux/administration/console/subnet-registration.html#profile)",
       "[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)"
     ],
     "video": [],
@@ -552,24 +540,22 @@
   },
   "register": {
     "docs": [
-      "[Register docs](https://min.io/docs/minio/kubernetes/upstream/operations/troubleshooting.html#registering-your-minio-deployment-with-subnet)",
-      "[Subnet registration and support](https://min.io/docs/minio/linux/administration/console/subnet-registration.html)",
+      "[Register](https://min.io/docs/minio/kubernetes/upstream/operations/troubleshooting.html#registering-your-minio-deployment-with-subnet)",
+      "[Subnet Registration and Support](https://min.io/docs/minio/linux/administration/console/subnet-registration.html)",
 
       "[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)"
     ],
-    "video": [
-      "[Video link - What is Subnet?](https://www.youtube.com/watch?v=Zyc-xhNcPco)"
-    ],
+    "video": ["[What is Subnet?](https://www.youtube.com/watch?v=Zyc-xhNcPco)"],
     "blog": [
-      "[Blog -  Subnet healthcheck](https://blog.min.io/subnet-healthcheck-and-performance/)",
-      "[Blog - The Beauty of the Panic Button](https://blog.min.io/the-beauty-of-the-panic-button/)",
-      "[Blog - Supportability as Software with MinIO Subnet](https://blog.min.io/supportability-minio-subnet/)"
+      "[Subnet Healthcheck](https://blog.min.io/subnet-healthcheck-and-performance/)",
+      "[The Beauty of the Panic Button](https://blog.min.io/the-beauty-of-the-panic-button/)",
+      "[Supportability as Software with MinIO Subnet](https://blog.min.io/supportability-minio-subnet/)"
     ]
   },
   "inspect": {
     "docs": [
-      "[Inspect docs](https://min.io/docs/minio/linux/administration/console/subnet-registration.html#inspect)",
-      "[Encrypt inspect output](https://min.io/docs/minio/kubernetes/upstream/operations/troubleshooting/encrypting-files.html)",
+      "[Inspect](https://min.io/docs/minio/linux/administration/console/subnet-registration.html#inspect)",
+      "[Encrypt Inspect Output](https://min.io/docs/minio/kubernetes/upstream/operations/troubleshooting/encrypting-files.html)",
 
       "[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)"
     ],
@@ -591,12 +577,12 @@
       "[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)"
     ],
     "video": [
-      "[Video link - Console introduction - add a Bucket and a User](https://www.youtube.com/watch?v=zqjsw4O2-4U)",
-      "[Video link - Creating Buckets and Users through the MinIO Console](https://www.youtube.com/watch?v=0PgMxz0HauA)"
+      "[Console introduction - add a Bucket and a User](https://www.youtube.com/watch?v=zqjsw4O2-4U)",
+      "[Creating Buckets and Users through the MinIO Console](https://www.youtube.com/watch?v=0PgMxz0HauA)"
     ],
     "blog": [
-      "[Blog - Access Control best practices](https://blog.min.io/s3-security-access-control/)",
-      "[Blog - Securing hybrid cloud storagew with MinIO IAM](https://blog.min.io/secure-hybrid-cloud-minio-iam/)"
+      "[Access Control best practices](https://blog.min.io/s3-security-access-control/)",
+      "[Securing hybrid cloud storagew with MinIO IAM](https://blog.min.io/secure-hybrid-cloud-minio-iam/)"
     ]
   },
   "add_user_SA": {
@@ -609,8 +595,8 @@
     ],
     "video": [],
     "blog": [
-      "[Blog - Access Control best practices](https://blog.min.io/s3-security-access-control/)",
-      "[Blog - Securing hybrid cloud storagew with MinIO IAM](https://blog.min.io/secure-hybrid-cloud-minio-iam/)"
+      "[Access Control best practices](https://blog.min.io/s3-security-access-control/)",
+      "[Securing hybrid cloud storagew with MinIO IAM](https://blog.min.io/secure-hybrid-cloud-minio-iam/)"
     ]
   },
   "list_users": {
@@ -622,7 +608,7 @@
       "[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)"
     ],
     "video": [
-      "[Video link - Console introduction - add a Bucket and a User](https://www.youtube.com/watch?v=zqjsw4O2-4U)"
+      "[Console introduction - add a Bucket and a User](https://www.youtube.com/watch?v=zqjsw4O2-4U)"
     ],
     "blog": []
   },
@@ -647,8 +633,8 @@
     ],
     "video": [],
     "blog": [
-      "[Blog - Access Control best practices](https://blog.min.io/s3-security-access-control/)",
-      "[Blog - Securing hybrid cloud storagew with MinIO IAM](https://blog.min.io/secure-hybrid-cloud-minio-iam/)"
+      "[Access Control best practices](https://blog.min.io/s3-security-access-control/)",
+      "[Securing hybrid cloud storagew with MinIO IAM](https://blog.min.io/secure-hybrid-cloud-minio-iam/)"
     ]
   },
   "policy_Users": {
@@ -658,24 +644,24 @@
       "[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)"
     ],
     "video": [
-      "[Video link - Console introduction - add a Bucket and a User](https://www.youtube.com/watch?v=zqjsw4O2-4U)"
+      "[Console introduction - add a Bucket and a User](https://www.youtube.com/watch?v=zqjsw4O2-4U)"
     ],
     "blog": [
-      "[Blog - Access Control best practices](https://blog.min.io/s3-security-access-control/)",
-      "[Blog - Securing hybrid cloud storagew with MinIO IAM](https://blog.min.io/secure-hybrid-cloud-minio-iam/)"
+      "[Access Control best practices](https://blog.min.io/s3-security-access-control/)",
+      "[Securing hybrid cloud storagew with MinIO IAM](https://blog.min.io/secure-hybrid-cloud-minio-iam/)"
     ]
   },
   "policy_Groups": {
     "docs": [
       "[Access Managemnt](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#minio-policy-actions)",
       "[Group Management](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/minio-group-management.html)",
-      "[Groups docs](https://min.io/docs/minio/linux/administration/identity-access-management/minio-group-management.html)",
+      "[Groups](https://min.io/docs/minio/linux/administration/identity-access-management/minio-group-management.html)",
       "[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)"
     ],
     "video": [],
     "blog": [
-      "[Blog - Access Control best practices](https://blog.min.io/s3-security-access-control/)",
-      "[Blog - Securing hybrid cloud storagew with MinIO IAM](https://blog.min.io/secure-hybrid-cloud-minio-iam/)"
+      "[Access Control best practices](https://blog.min.io/s3-security-access-control/)",
+      "[Securing Hybrid Cloud Storage with MinIO IAM](https://blog.min.io/secure-hybrid-cloud-minio-iam/)"
     ]
   },
   "policy_Raw Policy": {
@@ -683,14 +669,14 @@
       "[Supported S3 Policy Condition Keys](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#supported-s3-policy-condition-keys)",
       "[Supported S3 Policy Actions](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#supported-s3-policy-actions)",
       "[Policy Document Structure](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#policy-document-structure)",
-      "[Access Managemnt](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#minio-policy-actions)",
+      "[Access Management](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#minio-policy-actions)",
 
       "[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)"
     ],
     "video": [],
     "blog": [
-      "[Blog - Access Control best practices](https://blog.min.io/s3-security-access-control/)",
-      "[Blog - Securing hybrid cloud storagew with MinIO IAM](https://blog.min.io/secure-hybrid-cloud-minio-iam/)"
+      "[Access Control best practices](https://blog.min.io/s3-security-access-control/)",
+      "[Securing Hybrid Cloud Storage with MinIO IAM](https://blog.min.io/secure-hybrid-cloud-minio-iam/)"
     ]
   },
   "user_Groups": {
@@ -701,8 +687,8 @@
     ],
     "video": [],
     "blog": [
-      "[Blog - Access Control best practices](https://blog.min.io/s3-security-access-control/)",
-      "[Blog - Securing hybrid cloud storage with MinIO IAM](https://blog.min.io/secure-hybrid-cloud-minio-iam/)"
+      "[Access Control best practices](https://blog.min.io/s3-security-access-control/)",
+      "[Securing hybrid cloud storage with MinIO IAM](https://blog.min.io/secure-hybrid-cloud-minio-iam/)"
     ]
   },
   "user_Service Accounts": {
@@ -714,8 +700,8 @@
     ],
     "video": [],
     "blog": [
-      "[Blog - Access Control best practices](https://blog.min.io/s3-security-access-control/)",
-      "[Blog - Securing hybrid cloud storagew with MinIO IAM](https://blog.min.io/secure-hybrid-cloud-minio-iam/)"
+      "[Access Control best practices](https://blog.min.io/s3-security-access-control/)",
+      "[Securing hybrid cloud storagew with MinIO IAM](https://blog.min.io/secure-hybrid-cloud-minio-iam/)"
     ]
   },
   "user_Policies": {
@@ -726,8 +712,8 @@
     ],
     "video": [],
     "blog": [
-      "[Blog - Access Control best practices](https://blog.min.io/s3-security-access-control/)",
-      "[Blog - Securing hybrid cloud storagew with MinIO IAM](https://blog.min.io/secure-hybrid-cloud-minio-iam/)"
+      "[Access Control best practices](https://blog.min.io/s3-security-access-control/)",
+      "[Securing hybrid cloud storagew with MinIO IAM](https://blog.min.io/secure-hybrid-cloud-minio-iam/)"
     ]
   },
   "group_details": {
@@ -740,8 +726,8 @@
     ],
     "video": [],
     "blog": [
-      "[Blog - Securing hybrid cloud storagew with MinIO IAM](https://blog.min.io/secure-hybrid-cloud-minio-iam/)",
-      "[Blog - Access Control best practices](https://blog.min.io/s3-security-access-control/)"
+      "[Securing hybrid cloud storagew with MinIO IAM](https://blog.min.io/secure-hybrid-cloud-minio-iam/)",
+      "[Access Control best practices](https://blog.min.io/s3-security-access-control/)"
     ]
   },
 
@@ -754,8 +740,8 @@
     ],
     "video": [],
     "blog": [
-      "[Blog - Securing hybrid cloud storagew with MinIO IAM](https://blog.min.io/secure-hybrid-cloud-minio-iam/)",
-      "[Blog - Access Control best practices](https://blog.min.io/s3-security-access-control/)"
+      "[Securing hybrid cloud storagew with MinIO IAM](https://blog.min.io/secure-hybrid-cloud-minio-iam/)",
+      "[Access Control best practices](https://blog.min.io/s3-security-access-control/)"
     ]
   },
   "group_Policies": {
@@ -767,9 +753,9 @@
     ],
     "video": [],
     "blog": [
-      "[Blog - Access Control best practices](https://blog.min.io/s3-security-access-control/)",
+      "[Access Control best practices](https://blog.min.io/s3-security-access-control/)",
 
-      "[Blog - Securing hybrid cloud storagew with MinIO IAM](https://blog.min.io/secure-hybrid-cloud-minio-iam/)"
+      "[Securing hybrid cloud storagew with MinIO IAM](https://blog.min.io/secure-hybrid-cloud-minio-iam/)"
     ]
   },
   "bucket_detail": {
@@ -794,30 +780,28 @@
       "[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)"
     ],
     "video": [
-      "[Video link - Object locking and Retention](https://www.youtube.com/watch?v=Hk9Z-sltUu8)",
-      "[Video link - Console introduction - add a Bucket and a User](https://www.youtube.com/watch?v=zqjsw4O2-4U)",
-      "[Video link - Object locking and retention Lab](https://www.youtube.com/watch?v=thNus-DL1u4)",
-      "[Video link - versioning](https://www.youtube.com/watch?v=-PjTSwLB8ZA)",
-      "[Video link - Versioning](https://www.youtube.com/watch?v=XGOiwV6Cbuk)",
-      "[Video link - Lifecycle Management lab](https://www.youtube.com/watch?v=5fz3rE3wjGg)",
-      "[Video link - Versioning lab](https://www.youtube.com/watch?v=nFUI2N5zH34)",
-      "[Video link - Creating Buckets and Users through the MinIO Console](https://www.youtube.com/watch?v=0PgMxz0HauA)",
-      "[Video link - Bucket Replication Overview](https://www.youtube.com/watch?v=G4wQZEsIxcU)",
-      "[Video link- Replication lab I](https://www.youtube.com/watch?v=89vnToCcoAw)",
-      "[Video link- replication lab II](https://www.youtube.com/watch?v=BLTlaOvVCSg)"
+      "[Object locking and Retention](https://www.youtube.com/watch?v=Hk9Z-sltUu8)",
+      "[Console introduction - add a Bucket and a User](https://www.youtube.com/watch?v=zqjsw4O2-4U)",
+      "[Object locking and retention Lab](https://www.youtube.com/watch?v=thNus-DL1u4)",
+      "[Versioning](https://www.youtube.com/watch?v=-PjTSwLB8ZA)",
+      "[Versioning](https://www.youtube.com/watch?v=XGOiwV6Cbuk)",
+      "[Lifecycle Management lab](https://www.youtube.com/watch?v=5fz3rE3wjGg)",
+      "[Versioning lab](https://www.youtube.com/watch?v=nFUI2N5zH34)",
+      "[Creating Buckets and Users through the MinIO Console](https://www.youtube.com/watch?v=0PgMxz0HauA)",
+      "[Bucket Replication Overview](https://www.youtube.com/watch?v=G4wQZEsIxcU)",
+      "[Replication lab I](https://www.youtube.com/watch?v=89vnToCcoAw)",
+      "[Replication lab II](https://www.youtube.com/watch?v=BLTlaOvVCSg)"
     ],
     "blog": [
-      "[Blog - Replication best practices](https://blog.min.io/minio-replication-best-practices/)",
-      "[Blog - Access Control best practices](https://blog.min.io/s3-security-access-control/)",
-      "[Blog - Securing hybrid cloud storagew with MinIO IAM](https://blog.min.io/secure-hybrid-cloud-minio-iam/)",
+      "[Replication best practices](https://blog.min.io/minio-replication-best-practices/)",
+      "[Access Control best practices](https://blog.min.io/s3-security-access-control/)",
+      "[Securing hybrid cloud storage \nwith MinIO IAM](https://blog.min.io/secure-hybrid-cloud-minio-iam/)",
 
-      "[Blog - Erasure Coding 101](https://blog.min.io/erasure-coding/)",
-      "[Blog - Continuous Data protection with MinIO Versioning and Rewind](https://blog.min.io/continuous-data-protection-versioning-rewind/)",
-      "[Blog - Versioning, Metadata and Storage](https://blog.min.io/minio-versioning-metadata-deep-dive/)",
-      "[Blog - Replication best practices](https://blog.min.io/minio-replication-best-practices/)",
-      "[Blog - Erasure Coding 101](https://blog.min.io/erasure-coding/)",
-      "[Blog - Access Control best practices](https://blog.min.io/s3-security-access-control/)",
-      "[Blog - Securing hybrid cloud storage with MinIO IAM](https://blog.min.io/secure-hybrid-cloud-minio-iam/)"
+      "[Erasure Coding 101](https://blog.min.io/erasure-coding/)",
+      "[Continuous Data protection \nwith MinIO Versioning and Rewind](https://blog.min.io/continuous-data-protection-versioning-rewind/)",
+      "[Versioning, Metadata and Storage](https://blog.min.io/minio-versioning-metadata-deep-dive/)",
+      "[Replication best practices](https://blog.min.io/minio-replication-best-practices/)",
+      "[Access Control best practices](https://blog.min.io/s3-security-access-control/)"
     ]
   },
 
@@ -833,23 +817,23 @@
       "[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)"
     ],
     "video": [
-      "[Video link - Object locking and Retention](https://www.youtube.com/watch?v=Hk9Z-sltUu8)",
-      "[Video link - Console introduction - add a Bucket and a User](https://www.youtube.com/watch?v=zqjsw4O2-4U)",
-      "[Video link - Object locking and retention Lab](https://www.youtube.com/watch?v=thNus-DL1u4)",
-      "[Video link - versioning](https://www.youtube.com/watch?v=-PjTSwLB8ZA)",
-      "[Video link - Versioning](https://www.youtube.com/watch?v=XGOiwV6Cbuk)",
+      "[Object locking and Retention](https://www.youtube.com/watch?v=Hk9Z-sltUu8)",
+      "[Console introduction - add a Bucket and a User](https://www.youtube.com/watch?v=zqjsw4O2-4U)",
+      "[Object locking and retention Lab](https://www.youtube.com/watch?v=thNus-DL1u4)",
+      "[Versioning](https://www.youtube.com/watch?v=-PjTSwLB8ZA)",
+      "[Versioning](https://www.youtube.com/watch?v=XGOiwV6Cbuk)",
 
-      "[Video link - Versioning lab](https://www.youtube.com/watch?v=nFUI2N5zH34)",
-      "[Video link - Creating Buckets and Users through the MinIO Console](https://www.youtube.com/watch?v=0PgMxz0HauA)"
+      "[Versioning lab](https://www.youtube.com/watch?v=nFUI2N5zH34)",
+      "[Creating Buckets and Users through the MinIO Console](https://www.youtube.com/watch?v=0PgMxz0HauA)"
     ],
     "blog": [
-      "[Blog - Replication best practices](https://blog.min.io/minio-replication-best-practices/)",
-      "[Blog - Access Control best practices](https://blog.min.io/s3-security-access-control/)",
-      "[Blog - Securing hybrid cloud storagew with MinIO IAM](https://blog.min.io/secure-hybrid-cloud-minio-iam/)",
+      "[Replication best practices](https://blog.min.io/minio-replication-best-practices/)",
+      "[Access Control best practices](https://blog.min.io/s3-security-access-control/)",
+      "[Securing hybrid cloud storagew with MinIO IAM](https://blog.min.io/secure-hybrid-cloud-minio-iam/)",
 
-      "[Blog - Erasure Coding 101](https://blog.min.io/erasure-coding/)",
-      "[Blog - Continuous Data protection with MinIO Versioning and Rewind](https://blog.min.io/continuous-data-protection-versioning-rewind/)",
-      "[Blog - Versioning, Metadata and Storage](https://blog.min.io/minio-versioning-metadata-deep-dive/)"
+      "[Erasure Coding 101](https://blog.min.io/erasure-coding/)",
+      "[Continuous Data protection with MinIO Versioning and Rewind](https://blog.min.io/continuous-data-protection-versioning-rewind/)",
+      "[Versioning, Metadata and Storage](https://blog.min.io/minio-versioning-metadata-deep-dive/)"
     ]
   },
   "bucket_Events": {
@@ -873,13 +857,13 @@
       "[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)"
     ],
     "video": [
-      "[Video link - Bucket Replication Overview](https://www.youtube.com/watch?v=G4wQZEsIxcU)",
-      "[Video link- Replication lab I](https://www.youtube.com/watch?v=89vnToCcoAw)",
-      "[Video link- replication lab II](https://www.youtube.com/watch?v=BLTlaOvVCSg)"
+      "[Bucket Replication Overview](https://www.youtube.com/watch?v=G4wQZEsIxcU)",
+      "[Replication lab I](https://www.youtube.com/watch?v=89vnToCcoAw)",
+      "[Replication lab II](https://www.youtube.com/watch?v=BLTlaOvVCSg)"
     ],
     "blog": [
-      "[Blog - Replication best practices](https://blog.min.io/minio-replication-best-practices/)",
-      "[Blog - Erasure Coding 101](https://blog.min.io/erasure-coding/)"
+      "[Replication best practices](https://blog.min.io/minio-replication-best-practices/)",
+      "[Erasure Coding 101](https://blog.min.io/erasure-coding/)"
     ]
   },
   "bucket_Lifecycle": {
@@ -889,10 +873,10 @@
       "[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)"
     ],
     "video": [
-      "[Video link - Lifecycle Management lab](https://www.youtube.com/watch?v=5fz3rE3wjGg)"
+      "[Lifecycle Management lab](https://www.youtube.com/watch?v=5fz3rE3wjGg)"
     ],
     "blog": [
-      "[Blog - Versioning, Metadata and Storage](https://blog.min.io/minio-versioning-metadata-deep-dive/)"
+      "[Versioning, Metadata and Storage](https://blog.min.io/minio-versioning-metadata-deep-dive/)"
     ]
   },
   "bucket_Access": {
@@ -904,8 +888,8 @@
     ],
     "video": [],
     "blog": [
-      "[Blog - Access Control best practices](https://blog.min.io/s3-security-access-control/)",
-      "[Blog - Securing hybrid cloud storage with MinIO IAM](https://blog.min.io/secure-hybrid-cloud-minio-iam/)"
+      "[Access Control best practices](https://blog.min.io/s3-security-access-control/)",
+      "[Securing hybrid cloud storage with MinIO IAM](https://blog.min.io/secure-hybrid-cloud-minio-iam/)"
     ]
   },
   "bucket_Anonymous": {
@@ -921,12 +905,10 @@
       "[Subnet registration and support](https://min.io/docs/minio/linux/administration/console/subnet-registration.html)",
       "[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)"
     ],
-    "video": [
-      "[Video link - What is Subnet?](https://www.youtube.com/watch?v=Zyc-xhNcPco)"
-    ],
+    "video": ["[What is Subnet?](https://www.youtube.com/watch?v=Zyc-xhNcPco)"],
     "blog": [
-      "[Blog - Subnet callhome diagnostics](https://blog.min.io/subnet-call-home-diagnostics/)",
-      "[Blog -  Subnet healthcheck](https://blog.min.io/subnet-healthcheck-and-performance/)"
+      "[Subnet callhome diagnostics](https://blog.min.io/subnet-call-home-diagnostics/)",
+      "[Subnet healthcheck](https://blog.min.io/subnet-healthcheck-and-performance/)"
     ]
   },
   "event_destinations": {
@@ -935,7 +917,11 @@
       "[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)"
     ],
     "video": [],
-    "blog": ["[Blog - Object lambda](https://blog.min.io/minio-object-lambda/)"]
+    "blog": [
+      "[FAKE BLOG](https://blog.min.io/subnet-call-home-diagnostics/)",
+      "[Subnet callhome diagnostics](https://blog.min.io/subnet-call-home-diagnostics/)",
+      "[Subnet healthcheck](https://blog.min.io/subnet-healthcheck-and-performance/)"
+    ]
   },
   "LDAP": {
     "docs": [
@@ -947,7 +933,7 @@
     ],
     "video": [],
     "blog": [
-      "[Blog - Access Control best practices](https://blog.min.io/s3-security-access-control/)"
+      "[Access Control best practices](https://blog.min.io/s3-security-access-control/)"
     ]
   },
   "login": {

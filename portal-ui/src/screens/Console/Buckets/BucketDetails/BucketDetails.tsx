@@ -292,7 +292,7 @@ const BucketDetails = ({ classes }: IBucketDetailsProps) => {
                       onClick={() => {
                         setDeleteOpen(true);
                       }}
-                      label={"Delete Bucket TEST"}
+                      label={"Delete Bucket"}
                       icon={<TrashIcon />}
                       variant={"secondary"}
                       disabled={!canDelete}

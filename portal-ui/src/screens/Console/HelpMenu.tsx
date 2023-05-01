@@ -32,6 +32,8 @@ import { Box, Button, HelpIcon } from "mds";
 import { useSelector } from "react-redux";
 import { AppState } from "../../store";
 import { TabPanel } from "../shared/tabs";
+import PanelTitle from "./Common/PanelTitle/PanelTitle";
+import { text } from "stream/consumers";
 
 const styles = (theme: Theme) =>
   createStyles({
@@ -94,11 +96,25 @@ const HelpMenu = ({ classes, helpName }: IHelpMenuProps) => {
       : assignHelpItems(helpName);
   }, [systemHelpName]);
 
-  const assignHelpItems = (boop: string) => {
+  const assignHelpItems = (helpType: string) => {
     let helpTopics = require("../Console/helpTopics.json");
-    helpTopics[boop]["docs"] && setHelpItems(helpTopics[boop]["docs"]);
-    helpTopics[boop]["blog"] && setHelpItemsBlog(helpTopics[boop]["blog"]);
-    helpTopics[boop]["video"] && setHelpItemsVideo(helpTopics[boop]["video"]);
+    helpTopics[helpType]["docs"] && setHelpItems(helpTopics[helpType]["docs"]);
+    console.log(
+      "assigned docs helpTopics[helpType][docs]: ",
+      helpTopics[helpType]["docs"]
+    );
+    helpTopics[helpType]["blog"] &&
+      setHelpItemsBlog(helpTopics[helpType]["blog"]);
+    console.log(
+      "assigned blog helpTopics[helpType][blog]: ",
+      helpTopics[helpType]["blog"]
+    );
+    helpTopics[helpType]["video"] &&
+      setHelpItemsVideo(helpTopics[helpType]["video"]);
+    console.log(
+      "assigned video helpTopics[helpType][video]: ",
+      helpTopics[helpType]["video"]
+    );
   };
 
   const helpContent = (
@@ -151,7 +167,7 @@ const HelpMenu = ({ classes, helpName }: IHelpMenuProps) => {
           }}
         >
           <Box>
-            Help Menu
+            <PanelTitle> Help Menu</PanelTitle>
             <Tabs
               value={helpTab}
               onChange={(e: React.ChangeEvent<{}>, newValue: number) => {
@@ -174,16 +190,21 @@ const HelpMenu = ({ classes, helpName }: IHelpMenuProps) => {
               )}
             </Tabs>
             <Paper>
-              <TabPanel index={0} value={helpTab}>
-                {helpContent}
-              </TabPanel>
-
-              <TabPanel index={1} value={helpTab}>
-                {helpContentVideo}
-              </TabPanel>
-              <TabPanel index={2} value={helpTab}>
-                {helpContentBlog}
-              </TabPanel>
+              {helpItems.length != 0 && (
+                <TabPanel index={0} value={helpTab}>
+                  {helpContent}
+                </TabPanel>
+              )}
+              {helpItemsVideo.length != 0 && (
+                <TabPanel index={1} value={helpTab}>
+                  {helpContentVideo}
+                </TabPanel>
+              )}
+              {helpItemsBlog.length != 0 && (
+                <TabPanel index={2} value={helpTab}>
+                  {helpContentBlog}
+                </TabPanel>
+              )}
             </Paper>
           </Box>
         </div>

@@ -62,9 +62,12 @@ const Dashboard = ({ classes }: IDashboardSimple) => {
 
   return (
     <Fragment>
-      {!hideMenu && <PageHeaderWrapper label="Metrics" />}
-      <PageHeaderWrapper label="Metrics" />
-      <PageHeader label="Metrics" actions={<HelpMenu helpName="metrics" />} />
+      {!hideMenu && (
+        <PageHeaderWrapper
+          label="Metrics"
+          actions={<HelpMenu helpName="metrics" />}
+        />
+      )}
       {loading ? (
         <Grid container>
           <Grid item xs={12} className={classes.container}>

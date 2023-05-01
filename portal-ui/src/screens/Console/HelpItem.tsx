@@ -27,6 +27,8 @@ import {
   modalStyleUtils,
   spacingUtils,
 } from "../Console/Common/FormComponents/common/styleLibrary";
+import { wrap } from "lodash";
+import { Typography } from "@mui/material";
 
 const styles = (theme: Theme) =>
   createStyles({
@@ -45,8 +47,17 @@ const HelpItem = ({ classes, helpItemMarkdown }: IHelpItemProps) => {
   return (
     <Fragment>
       <Grid container>
-        <Grid item xs={12} className={classes.modalFormScrollable}>
-          <ReactMarkdown linkTarget="_blank">{helpItemMarkdown}</ReactMarkdown>
+        <Grid
+          item
+          xs={12}
+          width={500}
+          style={{
+            overflowWrap: "break-word",
+          }}
+        >
+          <ReactMarkdown className={classes.helpMarkdown} linkTarget="_blank">
+            {helpItemMarkdown}
+          </ReactMarkdown>
         </Grid>
       </Grid>
     </Fragment>
