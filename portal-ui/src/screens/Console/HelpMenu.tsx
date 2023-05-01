@@ -26,12 +26,11 @@ import {
   modalStyleUtils,
   spacingUtils,
 } from "../Console/Common/FormComponents/common/styleLibrary";
-import { MenuItem, Select } from "@mui/material";
+import { MenuItem, Tab, Tabs } from "@mui/material";
 import HelpItem from "./HelpItem";
 import { Box, Button, HelpIcon } from "mds";
 import { useSelector } from "react-redux";
 import { AppState } from "../../store";
-import VerticalTabs from "./Common/VerticalTabs/VerticalTabs";
 
 const styles = (theme: Theme) =>
   createStyles({
@@ -47,6 +46,7 @@ interface IHelpMenuProps {
 }
 
 const HelpMenu = ({ classes, helpName }: IHelpMenuProps) => {
+  const [helpTab, setHelpTab] = useState<number>(0);
   const [helpItems, setHelpItems] = useState<string[]>([]);
   const [helpItemsVideo, setHelpItemsVideo] = useState<string[]>([]);
   const [helpItemsBlog, setHelpItemsBlog] = useState<string[]>([]);
@@ -130,6 +130,12 @@ const HelpMenu = ({ classes, helpName }: IHelpMenuProps) => {
         ))}
     </React.Fragment>
   );
+  function a11yProps(index: any) {
+    return {
+      id: `simple-tab-${index}`,
+      "aria-controls": `simple-tabpanel-${index}`,
+    };
+  }
 
   return (
     <Fragment>
@@ -145,29 +151,27 @@ const HelpMenu = ({ classes, helpName }: IHelpMenuProps) => {
         >
           <Box>
             Help Menu
-            <VerticalTabs>
-              {{
-                tabConfig: {
-                  label: "Documents",
-                  disabled: helpItems.length === 0,
-                },
-                content: helpContent,
+            <Tabs
+              value={helpTab}
+              onChange={(e: React.ChangeEvent<{}>, newValue: number) => {
+                setHelpTab(newValue);
               }}
-              {{
-                tabConfig: {
-                  label: "Video",
-                  disabled: helpItemsVideo.length === 0,
-                },
-                content: helpContentVideo,
-              }}
-              {{
-                tabConfig: {
-                  label: "Blogs",
-                  disabled: helpItemsBlog.length === 0,
-                },
-                content: helpContentBlog,
-              }}
-            </VerticalTabs>
+              indicatorColor="primary"
+              textColor="primary"
+              aria-label="cluster-tabs"
+              variant="scrollable"
+              scrollButtons="auto"
+            >
+              {helpItems.length != 0 && (
+                <Tab label="Documentation" {...a11yProps(0)} />
+              )}
+              {helpItemsVideo.length != 0 && (
+                <Tab label="Video" {...a11yProps(1)} />
+              )}
+              {helpItemsBlog.length != 0 && (
+                <Tab label="Blog" {...a11yProps(2)} />
+              )}
+            </Tabs>
           </Box>
         </div>
       )}
