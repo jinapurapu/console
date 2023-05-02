@@ -98,13 +98,18 @@ const HelpMenu = ({ classes, helpName }: IHelpMenuProps) => {
 
   const assignHelpItems = (helpType: string) => {
     let helpTopics = require("../Console/helpTopics.json");
-    helpTopics[helpType]["docs"] && setHelpItems(helpTopics[helpType]["docs"]);
+    if (helpTopics[helpType]) {
+      helpTopics[helpType]["docs"] &&
+        setHelpItems(helpTopics[helpType]["docs"]);
 
-    helpTopics[helpType]["blog"] &&
-      setHelpItemsBlog(helpTopics[helpType]["blog"]);
+      helpTopics[helpType]["blog"] &&
+        setHelpItemsBlog(helpTopics[helpType]["blog"]);
 
-    helpTopics[helpType]["video"] &&
-      setHelpItemsVideo(helpTopics[helpType]["video"]);
+      helpTopics[helpType]["video"] &&
+        setHelpItemsVideo(helpTopics[helpType]["video"]);
+    } else {
+      setHelpItems(helpTopics["help"]["docs"]);
+    }
   };
 
   const helpContent = (

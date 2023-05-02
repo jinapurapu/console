@@ -44,6 +44,7 @@ export interface SystemState {
   overrideStyles: null | IEmbeddedCustomStyles;
   anonymousMode: boolean;
   helpName: string;
+  helpTabName: string;
 }
 
 const initialState: SystemState = {
@@ -74,6 +75,7 @@ const initialState: SystemState = {
   overrideStyles: null,
   anonymousMode: false,
   helpName: "help",
+  helpTabName: "0",
 };
 
 export const systemSlice = createSlice({
@@ -155,6 +157,9 @@ export const systemSlice = createSlice({
     setHelpName: (state, action: PayloadAction<string>) => {
       state.helpName = action.payload;
     },
+    setHelpTabName: (state, action: PayloadAction<string>) => {
+      state.helpTabName = action.payload;
+    },
     setOverrideStyles: (
       state,
       action: PayloadAction<IEmbeddedCustomStyles>
@@ -192,6 +197,7 @@ export const {
   resetSystem,
   configurationIsLoading,
   setHelpName,
+  setHelpTabName,
 } = systemSlice.actions;
 
 export const selDistSet = (state: AppState) => state.system.distributedSetup;

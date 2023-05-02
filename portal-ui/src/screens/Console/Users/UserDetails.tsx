@@ -235,6 +235,10 @@ const UserDetails = ({ classes }: IUserDetailsProps) => {
     (state: AppState) => state.system.helpName
   );
 
+  const systemHelpTabName = useSelector(
+    (state: AppState) => state.system.helpTabName
+  );
+
   const firstUpdate = useRef(true);
   useEffect(() => {
     firstUpdate.current = true;
@@ -246,8 +250,8 @@ const UserDetails = ({ classes }: IUserDetailsProps) => {
       setHelpTopicName("Groups");
       firstUpdate.current = false;
     }
-    setHelpTopicName(systemHelpName);
-  }, [systemHelpName]);
+    setHelpTopicName("user_" + systemHelpTabName);
+  }, [systemHelpTabName]);
 
   const groupTableActions = [
     {
@@ -268,15 +272,7 @@ const UserDetails = ({ classes }: IUserDetailsProps) => {
             />
           </Fragment>
         }
-        actions={
-          <HelpMenu
-            helpName={
-              firstUpdate.current
-                ? `user_${helpTopicName}`
-                : `user_${systemHelpName}`
-            }
-          />
-        }
+        actions={<HelpMenu helpName={helpTopicName} />}
       />
       {addGroupOpen && (
         <ChangeUserGroups
