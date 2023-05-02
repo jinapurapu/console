@@ -99,22 +99,12 @@ const HelpMenu = ({ classes, helpName }: IHelpMenuProps) => {
   const assignHelpItems = (helpType: string) => {
     let helpTopics = require("../Console/helpTopics.json");
     helpTopics[helpType]["docs"] && setHelpItems(helpTopics[helpType]["docs"]);
-    console.log(
-      "assigned docs helpTopics[helpType][docs]: ",
-      helpTopics[helpType]["docs"]
-    );
+
     helpTopics[helpType]["blog"] &&
       setHelpItemsBlog(helpTopics[helpType]["blog"]);
-    console.log(
-      "assigned blog helpTopics[helpType][blog]: ",
-      helpTopics[helpType]["blog"]
-    );
+
     helpTopics[helpType]["video"] &&
       setHelpItemsVideo(helpTopics[helpType]["video"]);
-    console.log(
-      "assigned video helpTopics[helpType][video]: ",
-      helpTopics[helpType]["video"]
-    );
   };
 
   const helpContent = (
@@ -201,7 +191,10 @@ const HelpMenu = ({ classes, helpName }: IHelpMenuProps) => {
                 </TabPanel>
               )}
               {helpItemsBlog.length != 0 && (
-                <TabPanel index={2} value={helpTab}>
+                <TabPanel
+                  index={helpItemsVideo.length != 0 ? 2 : 1}
+                  value={helpTab}
+                >
                   {helpContentBlog}
                 </TabPanel>
               )}
