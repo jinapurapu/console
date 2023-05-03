@@ -43,21 +43,34 @@ interface IHelpItemProps {
   helpItemMarkdown: string;
 }
 
+
 const HelpItem = ({ classes, helpItemMarkdown }: IHelpItemProps) => {
-  return (
+
+  const linkURL = helpItemMarkdown.slice(helpItemMarkdown.indexOf("("), helpItemMarkdown.indexOf(")"))
+  const imgURL =  helpItemMarkdown.slice(0, helpItemMarkdown.indexOf("["))  
+  const altText = helpItemMarkdown.slice(helpItemMarkdown.indexOf("[")+1, helpItemMarkdown.indexOf("]")) 
+const markdownText = helpItemMarkdown.slice(helpItemMarkdown.indexOf("["))
+
+  return ( 
     <Fragment>
-      <Grid container>
+      <Grid container alignItems={"center"} display={"flex"}>
+        <Grid item xs={4}>
+          <a href={linkURL}>
+          <img src={imgURL} alt={altText} width="160" height="90" / > 
+        </a>
+        </Grid>
         <Grid
           item
-          xs={12}
-          width={500}
+          xs={8}
+          width={400}
           style={{
             overflowWrap: "break-word",
           }}
+         
         >
-          <ReactMarkdown className={classes.helpMarkdown} linkTarget="_blank">
-            {helpItemMarkdown}
-          </ReactMarkdown>
+          <ReactMarkdown 
+          linkTarget="_blank" children={markdownText} />
+            
         </Grid>
       </Grid>
     </Fragment>

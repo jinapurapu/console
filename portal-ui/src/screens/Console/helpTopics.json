@@ -601,14 +601,14 @@
   },
   "list_users": {
     "docs": [
-      "[User management](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#minio-policy{:target='_blank'})",
-      "[Identity and Access Management](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management.html)",
-      "[Users help link here](https://min.io/docs/minio/linux/administration/identity-access-management/minio-user-management.html#)",
+      "https://blog.min.io/content/images/size/w1000/2023/03/faststreaming-03.jpg[User management](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#minio-policy{:target='_blank'})  \n Text snippet for Docs on user management",
+      "https://blog.min.io/content/images/size/w1000/2023/03/faststreaming-03.jpg[Identity and Access Management](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management.html)  \n Text snippet",
+      "https://blog.min.io/content/images/size/w1000/2023/03/faststreaming-03.jpg[Users help link here](https://min.io/docs/minio/linux/administration/identity-access-management/minio-user-management.html#)  \n Text snippet",
 
-      "[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)"
+      "https://blog.min.io/content/images/size/w1000/2023/03/faststreaming-03.jpg[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)  \n Still need help? Check out more options here!"
     ],
     "video": [
-      "[Console introduction - add a Bucket and a User](https://www.youtube.com/watch?v=zqjsw4O2-4U)"
+      "https://i.ytimg.com/vi/zqjsw4O2-4U/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLDdKQS4ydVogrlzeyFn1-MEWsvLew[Console introduction - add a Bucket and a User](https://www.youtube.com/watch?v=zqjsw4O2-4U)"
     ],
     "blog": []
   },
