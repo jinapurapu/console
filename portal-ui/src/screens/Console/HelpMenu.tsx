@@ -162,7 +162,18 @@ const HelpMenu = ({ classes, helpName }: IHelpMenuProps) => {
           }}
         >
           <Box>
-            <PanelTitle> Help Menu</PanelTitle>
+            <Grid container>
+              <Grid item
+              paddingLeft={3}
+              paddingTop={3}>
+                <HelpIcon />
+              </Grid>
+              <Grid item
+              paddingLeft={3}
+              paddingTop={3}>
+                <PanelTitle> Help Menu</PanelTitle>
+              </Grid>
+            </Grid>
             <Tabs
               value={helpTab}
               onChange={(e: React.ChangeEvent<{}>, newValue: number) => {
