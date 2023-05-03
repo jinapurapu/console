@@ -55,7 +55,7 @@ const markdownText = helpItemMarkdown.slice(helpItemMarkdown.indexOf("["))
     <Fragment>
       <Grid container alignItems={"center"} display={"flex"}>
         <Grid item xs={4}>
-          <a href={linkURL}>
+          <a href={linkURL} >
           <img src={imgURL} alt={altText} width="160" height="90" / > 
         </a>
         </Grid>
