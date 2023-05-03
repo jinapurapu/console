@@ -16,7 +16,7 @@
     ],
     "video": [
       "[Console Demo add a Bucket and a User](https://www.youtube.com/watch?v=zqjsw4O2-4U)",
-      "[Creating Buckets and Users through the MinIO Console](https://www.youtube.com/watch?v=0PgMxz0HauA)"
+      "https://i.ytimg.com/vi/zqjsw4O2-4U/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLDdKQS4ydVogrlzeyFn1-MEWsvLew[Creating Buckets and Users through the MinIO Console](https://www.youtube.com/watch?v=0PgMxz0HauA)"
     ],
     "blog": []
   },
@@ -41,12 +41,12 @@
       "https://blog.min.io/content/images/size/w1000/2020/12/pay_banner-01-01-01-01-01.png[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)"
     ],
     "video": [
-      "[Creating Buckets and Users through the MinIO Console](https://www.youtube.com/watch?v=0PgMxz0HauA)",
-      "[Console Introduction - add a Bucket and a User](https://www.youtube.com/watch?v=zqjsw4O2-4U)",
-      "[Object Locking and Retention](https://www.youtube.com/watch?v=Hk9Z-sltUu8)",
-      "[Object Locking and Retention Lab](https://www.youtube.com/watch?v=thNus-DL1u4)",
-      "[Versioning and Lifecycle Management](https://www.youtube.com/watch?v=UuxqnUgowyg) ",
-      "[Versioning](https://www.youtube.com/watch?v=-PjTSwLB8ZA)"
+      "https://i.ytimg.com/vi/zqjsw4O2-4U/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLDdKQS4ydVogrlzeyFn1-MEWsvLew[Creating Buckets and Users through the MinIO Console](https://www.youtube.com/watch?v=0PgMxz0HauA)",
+      "https://i.ytimg.com/vi/0PgMxz0HauA/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLDgAZSkEL56bvBaGB9HNi1UgpsBQQ[Console Introduction - add a Bucket and a User](https://www.youtube.com/watch?v=zqjsw4O2-4U)",
+      "https://i.ytimg.com/vi/Hk9Z-sltUu8/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLAnxtUWHwe93YJS3rnR5hAJXQexqA[Object Locking and Retention](https://www.youtube.com/watch?v=Hk9Z-sltUu8)",
+      "https://i.ytimg.com/vi/thNus-DL1u4/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLCtIxX-yp6lRqXlAsL9ReZ3Hw1TrA[Object Locking and Retention Lab](https://www.youtube.com/watch?v=thNus-DL1u4)",
+      "https://i.ytimg.com/vi/UuxqnUgowyg/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLA8R19exGswOv_yP8ZmSy1K6zmCbw[Versioning and Lifecycle Management](https://www.youtube.com/watch?v=UuxqnUgowyg) ",
+      "https://i.ytimg.com/vi/-PjTSwLB8ZA/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLAFOggpFKrODT6Wi5ZZVRpudjVAWg[Versioning](https://www.youtube.com/watch?v=-PjTSwLB8ZA)"
     ],
     "blog": [
       "https://blog.min.io/content/images/size/w1000/2022/12/Screen-Shot-2022-12-16-at-2.13.42-PM.png[Access Control best practices](https://blog.min.io/s3-security-access-control/)",
@@ -60,7 +60,7 @@
       "https://blog.min.io/content/images/size/w1000/2020/12/pay_banner-01-01-01-01-01.png[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)"
     ],
     "video": [
-      "[Versioning and Lifecycle management](https://www.youtube.com/watch?v=UuxqnUgowyg) "
+      "https://i.ytimg.com/vi/UuxqnUgowyg/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLA8R19exGswOv_yP8ZmSy1K6zmCbw[Versioning and Lifecycle management](https://www.youtube.com/watch?v=UuxqnUgowyg) "
     ],
     "blog": []
   },
@@ -122,7 +122,7 @@
       "https://blog.min.io/content/images/size/w1000/2020/12/pay_banner-01-01-01-01-01.png[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)"
     ],
     "video": [
-      "[Lifecycle management II - Versioning and Lifecycle management](https://www.youtube.com/watch?v=UuxqnUgowyg) "
+      "https://i.ytimg.com/vi/Exg2KsfzHzI/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLD62meNdv1khzGt61nGwddj7L3oww[Lifecycle management II - Versioning and Lifecycle management](https://www.youtube.com/watch?v=UuxqnUgowyg) "
     ],
     "blog": []
   },
@@ -190,9 +190,9 @@
       "https://blog.min.io/content/images/size/w1000/2020/12/pay_banner-01-01-01-01-01.png[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)"
     ],
     "video": [
-      "[Lifecycle management I - Tiers](https://www.youtube.com/watch?v=Exg2KsfzHzI)",
-      "[Lifecycle management II - Versioning and Lifecycle management](https://www.youtube.com/watch?v=UuxqnUgowyg) ",
-      "[Lifecycle Management Lab Demo](https://www.youtube.com/watch?v=5fz3rE3wjGg)"
+      "https://i.ytimg.com/vi/Exg2KsfzHzI/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLD62meNdv1khzGt61nGwddj7L3oww[Lifecycle management I - Tiers](https://www.youtube.com/watch?v=Exg2KsfzHzI)",
+      "https://i.ytimg.com/vi/UuxqnUgowyg/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLA8R19exGswOv_yP8ZmSy1K6zmCbw[Lifecycle management II - Versioning and Lifecycle management](https://www.youtube.com/watch?v=UuxqnUgowyg) ",
+      "https://i.ytimg.com/vi/5fz3rE3wjGg/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLCq8mxi_s8tron8E3TPgTMfUbiiDw[Lifecycle Management Lab Demo](https://www.youtube.com/watch?v=5fz3rE3wjGg)"
     ],
     "blog": []
   },
@@ -203,9 +203,9 @@
       "https://blog.min.io/content/images/size/w1000/2020/12/pay_banner-01-01-01-01-01.png[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)"
     ],
     "video": [
-      "[Tiers](https://www.youtube.com/watch?v=Exg2KsfzHzI)",
-      "[Versioning and Lifecycle Management](https://www.youtube.com/watch?v=UuxqnUgowyg) ",
-      "[Lifecycle Management Lab Demo](https://www.youtube.com/watch?v=5fz3rE3wjGg)"
+      "https://i.ytimg.com/vi/Exg2KsfzHzI/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLD62meNdv1khzGt61nGwddj7L3oww[Tiers](https://www.youtube.com/watch?v=Exg2KsfzHzI)",
+      "https://i.ytimg.com/vi/UuxqnUgowyg/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLA8R19exGswOv_yP8ZmSy1K6zmCbw[Versioning and Lifecycle Management](https://www.youtube.com/watch?v=UuxqnUgowyg) ",
+      "https://i.ytimg.com/vi/5fz3rE3wjGg/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLCq8mxi_s8tron8E3TPgTMfUbiiDw[Lifecycle Management Lab Demo](https://www.youtube.com/watch?v=5fz3rE3wjGg)"
     ],
     "blog": []
   },
@@ -221,9 +221,9 @@
       "https://blog.min.io/content/images/size/w1000/2020/12/pay_banner-01-01-01-01-01.png[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)"
     ],
     "video": [
-      "[Tiers](https://www.youtube.com/watch?v=Exg2KsfzHzI)",
-      "[Versioning and Lifecycle management](https://www.youtube.com/watch?v=UuxqnUgowyg) ",
-      "[Lifecycle Management Lab Demo](https://www.youtube.com/watch?v=5fz3rE3wjGg)"
+      "https://i.ytimg.com/vi/Exg2KsfzHzI/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLD62meNdv1khzGt61nGwddj7L3oww[Tiers](https://www.youtube.com/watch?v=Exg2KsfzHzI)",
+      "https://i.ytimg.com/vi/UuxqnUgowyg/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLA8R19exGswOv_yP8ZmSy1K6zmCbw[Versioning and Lifecycle management](https://www.youtube.com/watch?v=UuxqnUgowyg) ",
+      "https://i.ytimg.com/vi/5fz3rE3wjGg/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLCq8mxi_s8tron8E3TPgTMfUbiiDw[Lifecycle Management Lab Demo](https://www.youtube.com/watch?v=5fz3rE3wjGg)"
     ],
     "blog": []
   },
@@ -249,8 +249,8 @@
       "https://blog.min.io/content/images/size/w1000/2020/12/pay_banner-01-01-01-01-01.png[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)"
     ],
     "video": [
-      "[Monitoring with Prometheus](https://www.youtube.com/watch?v=A3vCDaFWNNs)",
-      "[Prometheus Monitoring Lab](https://www.youtube.com/watch?v=Oix9iXndSUY)"
+      "https://i.ytimg.com/vi/A3vCDaFWNNs/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLDNZIxjC6AhnkRsTCMmoWrJIWmc6A[Monitoring with Prometheus](https://www.youtube.com/watch?v=A3vCDaFWNNs)",
+      "https://i.ytimg.com/vi/Oix9iXndSUY/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLBlfESoCxf6YVxS5nO34Me793cFPw[Prometheus Monitoring Lab](https://www.youtube.com/watch?v=Oix9iXndSUY)"
     ],
     "blog": []
   },
@@ -290,7 +290,7 @@
       "https://blog.min.io/content/images/size/w1000/2020/12/pay_banner-01-01-01-01-01.png[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)"
     ],
     "video": [
-      "[Site Replication Overview](https://www.youtube.com/watch?v=iCxcv4_j35M)"
+      "https://i.ytimg.com/vi/iCxcv4_j35M/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLCF_UC_Dp6W7do6nGdHBB5uSOVC0w[Site Replication Overview](https://www.youtube.com/watch?v=iCxcv4_j35M)"
     ],
     "blog": [
       "https://blog.min.io/content/images/size/w1000/2022/12/replication-bestpractices.jpg[Replication best practices](https://blog.min.io/minio-replication-best-practices/)",
@@ -481,10 +481,10 @@
       "https://blog.min.io/content/images/size/w1000/2020/12/pay_banner-01-01-01-01-01.png[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)"
     ],
     "video": [
-      "[Object locking and Retention](https://www.youtube.com/watch?v=Hk9Z-sltUu8)",
-      "[Object locking and retention Lab](https://www.youtube.com/watch?v=thNus-DL1u4)",
-      "[Manipulating Objects](https://www.youtube.com/watch?v=dLSBuVG7Y3k)",
-      "[Versioning](https://www.youtube.com/watch?v=-PjTSwLB8ZA)"
+      "https://i.ytimg.com/vi/Hk9Z-sltUu8/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLAnxtUWHwe93YJS3rnR5hAJXQexqA[Object locking and Retention](https://www.youtube.com/watch?v=Hk9Z-sltUu8)",
+      "https://i.ytimg.com/vi/thNus-DL1u4/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLCtIxX-yp6lRqXlAsL9ReZ3Hw1TrA[Object locking and retention Lab](https://www.youtube.com/watch?v=thNus-DL1u4)",
+      "https://i.ytimg.com/vi/dLSBuVG7Y3k/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLCxb6seCAJL-Q4P2zYMm-rV71X0fA[Manipulating Objects](https://www.youtube.com/watch?v=dLSBuVG7Y3k)",
+      "https://i.ytimg.com/vi/-PjTSwLB8ZA/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLAFOggpFKrODT6Wi5ZZVRpudjVAWg[Versioning](https://www.youtube.com/watch?v=-PjTSwLB8ZA)"
     ],
     "blog": [
       "https://images.unsplash.com/photo-1611783569248-a82ec2e72c67?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDIxfHxzcGVlZHxlbnwwfHx8fDE2NDEyMjY2MDI&ixlib=rb-1.2.1&q=80&w=1000[Versioning, Metadata and Storage](https://blog.min.io/minio-versioning-metadata-deep-dive/)",
@@ -578,8 +578,8 @@
       "https://blog.min.io/content/images/size/w1000/2020/12/pay_banner-01-01-01-01-01.png[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)"
     ],
     "video": [
-      "[Console introduction - add a Bucket and a User](https://www.youtube.com/watch?v=zqjsw4O2-4U)",
-      "[Creating Buckets and Users through the MinIO Console](https://www.youtube.com/watch?v=0PgMxz0HauA)"
+      "https://i.ytimg.com/vi/0PgMxz0HauA/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLDgAZSkEL56bvBaGB9HNi1UgpsBQQ[Console introduction - add a Bucket and a User](https://www.youtube.com/watch?v=zqjsw4O2-4U)",
+      "https://i.ytimg.com/vi/zqjsw4O2-4U/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLDdKQS4ydVogrlzeyFn1-MEWsvLew[Creating Buckets and Users through the MinIO Console](https://www.youtube.com/watch?v=0PgMxz0HauA)"
     ],
     "blog": [
       "https://blog.min.io/content/images/size/w1000/2022/12/Screen-Shot-2022-12-16-at-2.13.42-PM.png[Access Control best practices](https://blog.min.io/s3-security-access-control/)",
@@ -645,7 +645,7 @@
       "https://blog.min.io/content/images/size/w1000/2020/12/pay_banner-01-01-01-01-01.png[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)"
     ],
     "video": [
-      "[Console introduction - add a Bucket and a User](https://www.youtube.com/watch?v=zqjsw4O2-4U)"
+      "https://i.ytimg.com/vi/0PgMxz0HauA/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLDgAZSkEL56bvBaGB9HNi1UgpsBQQ[Console introduction - add a Bucket and a User](https://www.youtube.com/watch?v=zqjsw4O2-4U)"
     ],
     "blog": [
       "https://blog.min.io/content/images/size/w1000/2022/12/Screen-Shot-2022-12-16-at-2.13.42-PM.png[Access Control best practices](https://blog.min.io/s3-security-access-control/)",
@@ -781,17 +781,17 @@
       "https://blog.min.io/content/images/size/w1000/2020/12/pay_banner-01-01-01-01-01.png[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)"
     ],
     "video": [
-      "[Object locking and Retention](https://www.youtube.com/watch?v=Hk9Z-sltUu8)",
-      "[Console introduction - add a Bucket and a User](https://www.youtube.com/watch?v=zqjsw4O2-4U)",
-      "[Object locking and retention Lab](https://www.youtube.com/watch?v=thNus-DL1u4)",
-      "[Versioning](https://www.youtube.com/watch?v=-PjTSwLB8ZA)",
-      "[Versioning](https://www.youtube.com/watch?v=XGOiwV6Cbuk)",
-      "[Lifecycle Management lab](https://www.youtube.com/watch?v=5fz3rE3wjGg)",
-      "[Versioning lab](https://www.youtube.com/watch?v=nFUI2N5zH34)",
-      "[Creating Buckets and Users through the MinIO Console](https://www.youtube.com/watch?v=0PgMxz0HauA)",
-      "[Bucket Replication Overview](https://www.youtube.com/watch?v=G4wQZEsIxcU)",
-      "[Replication lab I](https://www.youtube.com/watch?v=89vnToCcoAw)",
-      "[Replication lab II](https://www.youtube.com/watch?v=BLTlaOvVCSg)"
+      "https://i.ytimg.com/vi/Hk9Z-sltUu8/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLAnxtUWHwe93YJS3rnR5hAJXQexqA[Object locking and Retention](https://www.youtube.com/watch?v=Hk9Z-sltUu8)",
+      "https://i.ytimg.com/vi/0PgMxz0HauA/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLDgAZSkEL56bvBaGB9HNi1UgpsBQQ[Console introduction - add a Bucket and a User](https://www.youtube.com/watch?v=zqjsw4O2-4U)",
+      "https://i.ytimg.com/vi/thNus-DL1u4/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLCtIxX-yp6lRqXlAsL9ReZ3Hw1TrA[Object locking and retention Lab](https://www.youtube.com/watch?v=thNus-DL1u4)",
+      "https://i.ytimg.com/vi/-PjTSwLB8ZA/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLAFOggpFKrODT6Wi5ZZVRpudjVAWg[Versioning](https://www.youtube.com/watch?v=-PjTSwLB8ZA)",
+      "https://i.ytimg.com/vi/XGOiwV6Cbuk/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLAfFQVDOavKWeCyg1x2IyGGXnh3RA[Versioning](https://www.youtube.com/watch?v=XGOiwV6Cbuk)",
+      "https://i.ytimg.com/vi/5fz3rE3wjGg/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLCq8mxi_s8tron8E3TPgTMfUbiiDw[Lifecycle Management lab](https://www.youtube.com/watch?v=5fz3rE3wjGg)",
+      "https://i.ytimg.com/vi/nFUI2N5zH34/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLC_nUVd3J_KbOkN_UqG0Bm_yBOpsg[Versioning lab](https://www.youtube.com/watch?v=nFUI2N5zH34)",
+      "https://i.ytimg.com/vi/zqjsw4O2-4U/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLDdKQS4ydVogrlzeyFn1-MEWsvLew[Creating Buckets and Users through the MinIO Console](https://www.youtube.com/watch?v=0PgMxz0HauA)",
+      "https://i.ytimg.com/vi/G4wQZEsIxcU/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLBHX5cQQvmiteaVU2oss8f98nyo7A[Bucket Replication Overview](https://www.youtube.com/watch?v=G4wQZEsIxcU)",
+      "https://i.ytimg.com/vi/89vnToCcoAw/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLC3R83rf_utwscOsIfYZZHHwRTWFA[Replication lab I](https://www.youtube.com/watch?v=89vnToCcoAw)",
+      "https://i.ytimg.com/vi/BLTlaOvVCSg/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLCskzZ4BMVvnLUIcqtrR6qgJmamwg[Replication lab II](https://www.youtube.com/watch?v=BLTlaOvVCSg)"
     ],
     "blog": [
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Securing hybrid cloud storage with MinIO IAM](https://blog.min.io/secure-hybrid-cloud-minio-iam/)",
@@ -816,14 +816,14 @@
       "https://blog.min.io/content/images/size/w1000/2020/12/pay_banner-01-01-01-01-01.png[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)"
     ],
     "video": [
-      "[Object locking and Retention](https://www.youtube.com/watch?v=Hk9Z-sltUu8)",
-      "[Console introduction - add a Bucket and a User](https://www.youtube.com/watch?v=zqjsw4O2-4U)",
-      "[Object locking and retention Lab](https://www.youtube.com/watch?v=thNus-DL1u4)",
-      "[Versioning](https://www.youtube.com/watch?v=-PjTSwLB8ZA)",
-      "[Versioning](https://www.youtube.com/watch?v=XGOiwV6Cbuk)",
+      "https://i.ytimg.com/vi/Hk9Z-sltUu8/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLAnxtUWHwe93YJS3rnR5hAJXQexqA[Object locking and Retention](https://www.youtube.com/watch?v=Hk9Z-sltUu8)",
+      "https://i.ytimg.com/vi/0PgMxz0HauA/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLDgAZSkEL56bvBaGB9HNi1UgpsBQQ[Console introduction - add a Bucket and a User](https://www.youtube.com/watch?v=zqjsw4O2-4U)",
+      "https://i.ytimg.com/vi/thNus-DL1u4/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLCtIxX-yp6lRqXlAsL9ReZ3Hw1TrA[Object locking and retention Lab](https://www.youtube.com/watch?v=thNus-DL1u4)",
+      "https://i.ytimg.com/vi/-PjTSwLB8ZA/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLAFOggpFKrODT6Wi5ZZVRpudjVAWg[Versioning](https://www.youtube.com/watch?v=-PjTSwLB8ZA)",
+      "https://i.ytimg.com/vi/XGOiwV6Cbuk/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLAfFQVDOavKWeCyg1x2IyGGXnh3RA[Versioning](https://www.youtube.com/watch?v=XGOiwV6Cbuk)",
 
-      "[Versioning lab](https://www.youtube.com/watch?v=nFUI2N5zH34)",
-      "[Creating Buckets and Users through the MinIO Console](https://www.youtube.com/watch?v=0PgMxz0HauA)"
+      "https://i.ytimg.com/vi/nFUI2N5zH34/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLC_nUVd3J_KbOkN_UqG0Bm_yBOpsg[Versioning lab](https://www.youtube.com/watch?v=nFUI2N5zH34)",
+      "https://i.ytimg.com/vi/zqjsw4O2-4U/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLDdKQS4ydVogrlzeyFn1-MEWsvLew[Creating Buckets and Users through the MinIO Console](https://www.youtube.com/watch?v=0PgMxz0HauA)"
     ],
     "blog": [
       "https://blog.min.io/content/images/size/w1000/2022/12/replication-bestpractices.jpg[Replication best practices](https://blog.min.io/minio-replication-best-practices/)",
@@ -872,7 +872,7 @@
       "https://blog.min.io/content/images/size/w1000/2020/12/pay_banner-01-01-01-01-01.png[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)"
     ],
     "video": [
-      "[Lifecycle Management lab](https://www.youtube.com/watch?v=5fz3rE3wjGg)"
+      "https://i.ytimg.com/vi/5fz3rE3wjGg/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLCq8mxi_s8tron8E3TPgTMfUbiiDw[Lifecycle Management lab](https://www.youtube.com/watch?v=5fz3rE3wjGg)"
     ],
     "blog": [
       "https://images.unsplash.com/photo-1611783569248-a82ec2e72c67?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDIxfHxzcGVlZHxlbnwwfHx8fDE2NDEyMjY2MDI&ixlib=rb-1.2.1&q=80&w=1000[Versioning, Metadata and Storage](https://blog.min.io/minio-versioning-metadata-deep-dive/)"
