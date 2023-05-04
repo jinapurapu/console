@@ -411,7 +411,9 @@
       "https://blog.min.io/content/images/size/w1000/2020/12/pay_banner-01-01-01-01-01.png[Subnet registration and support](https://min.io/docs/minio/linux/administration/console/subnet-registration.html)",
       "https://blog.min.io/content/images/size/w1000/2020/12/pay_banner-01-01-01-01-01.png[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)"
     ],
-    "video": ["https://i.ytimg.com/an_webp/Zyc-xhNcPco/mqdefault_6s.webp?du=3000&sqp=CNKby6IG&rs=AOn4CLBb47uG6Tw6SNaFW5_tmc7eAVqOtg[What is Subnet?](https://www.youtube.com/watch?v=Zyc-xhNcPco)"],
+    "video": [
+      "https://i.ytimg.com/an_webp/Zyc-xhNcPco/mqdefault_6s.webp?du=3000&sqp=CNKby6IG&rs=AOn4CLBb47uG6Tw6SNaFW5_tmc7eAVqOtg[What is Subnet?](https://www.youtube.com/watch?v=Zyc-xhNcPco)"
+    ],
     "blog": [
       "https://blog.min.io/content/images/size/w1000/2023/03/SUBNET-Healthcheck-and-Performance.jpg[Subnet healthcheck](https://blog.min.io/subnet-healthcheck-and-performance/)",
       "https://blog.min.io/content/images/size/w1000/2023/02/Understanding-the-MinIO-Subscription-Network---Direct-to-Engineer-Engagement--copy--1-.png[Direct to engineer engagement](https://blog.min.io/subnet-series-communication/)",
@@ -546,7 +548,9 @@
 
       "https://blog.min.io/content/images/size/w1000/2020/12/pay_banner-01-01-01-01-01.png[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)"
     ],
-    "video": ["https://i.ytimg.com/an_webp/Zyc-xhNcPco/mqdefault_6s.webp?du=3000&sqp=CNKby6IG&rs=AOn4CLBb47uG6Tw6SNaFW5_tmc7eAVqOtg[What is Subnet?](https://www.youtube.com/watch?v=Zyc-xhNcPco)"],
+    "video": [
+      "https://i.ytimg.com/an_webp/Zyc-xhNcPco/mqdefault_6s.webp?du=3000&sqp=CNKby6IG&rs=AOn4CLBb47uG6Tw6SNaFW5_tmc7eAVqOtg[What is Subnet?](https://www.youtube.com/watch?v=Zyc-xhNcPco)"
+    ],
     "blog": [
       "https://blog.min.io/content/images/size/w1000/2023/03/SUBNET-Healthcheck-and-Performance.jpg[Subnet Healthcheck](https://blog.min.io/subnet-healthcheck-and-performance/)",
       "https://blog.min.io/content/images/size/w1000/2022/09/Screen-Shot-2022-09-30-at-3.58.52-PM.png[The Beauty of the Panic Button](https://blog.min.io/the-beauty-of-the-panic-button/)",
@@ -759,8 +763,9 @@
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Securing hybrid cloud storage with MinIO IAM](https://blog.min.io/secure-hybrid-cloud-minio-iam/)"
     ]
   },
-  "bucket_detail": {
+  "bucket_detail_0": {
     "docs": [
+      "BUCKET DETAIL HELP 0",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Object Locking](https://min.io/docs/minio/kubernetes/upstream/administration/object-management/object-retention.html)",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Encryption](https://min.io/docs/minio/kubernetes/upstream/administration/server-side-encryption.html)",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Bucket Versioning](https://min.io/docs/minio/kubernetes/upstream/administration/object-management/object-versioning.html#minio-bucket-versioning)",
@@ -804,8 +809,9 @@
     ]
   },
 
-  "bucket_Summary": {
+  "bucket_detail_summary": {
     "docs": [
+      "BUCKET DETAIL SUMMARY HELP",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Object Locking](https://min.io/docs/minio/kubernetes/upstream/administration/object-management/object-retention.html)",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Encryption](https://min.io/docs/minio/kubernetes/upstream/administration/server-side-encryption.html)",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Bucket Versioning](https://min.io/docs/minio/kubernetes/upstream/administration/object-management/object-versioning.html#minio-bucket-versioning)",
@@ -835,8 +841,9 @@
       "https://images.unsplash.com/photo-1611783569248-a82ec2e72c67?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDIxfHxzcGVlZHxlbnwwfHx8fDE2NDEyMjY2MDI&ixlib=rb-1.2.1&q=80&w=1000[Versioning, Metadata and Storage](https://blog.min.io/minio-versioning-metadata-deep-dive/)"
     ]
   },
-  "bucket_Events": {
+  "bucket_detail_events": {
     "docs": [
+      "BUCKET EVENT HELP",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Object Lambda](https://min.io/docs/minio/linux/developers/transforms-with-object-lambda.html?ref=docs)",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Bucket Notifications](https://min.io/docs/minio/kubernetes/upstream/administration/monitoring/bucket-notifications.html#minio-bucket-notifications)",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Buckets](https://min.io/docs/minio/kubernetes/upstream/administration/console/managing-objects.html#buckets)",
@@ -845,8 +852,9 @@
     "video": [],
     "blog": []
   },
-  "bucket_Replication": {
+  "bucket_detail_replication": {
     "docs": [
+      "BUCKET REPLICATION HELP",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Bucket Replication requirements](https://min.io/docs/minio/kubernetes/upstream/administration/bucket-replication/bucket-replication-requirements.html)",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Bucket Replication](https://min.io/docs/minio/kubernetes/upstream/administration/bucket-replication.html#minio-bucket-replication-serverside)",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Buckets](https://min.io/docs/minio/kubernetes/upstream/administration/console/managing-objects.html#buckets)",
@@ -865,8 +873,9 @@
       "https://images.unsplash.com/photo-1523961131990-5ea7c61b2107?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDExfHxkYXRhJTIwY2VudGVyfGVufDB8fHx8MTY1MDY3MTUwMw&ixlib=rb-1.2.1&q=80&w=1000[Erasure Coding 101](https://blog.min.io/erasure-coding/)"
     ]
   },
-  "bucket_Lifecycle": {
+  "bucket_detail_lifecycle": {
     "docs": [
+      "BUCKET LIFECYCLE HELP",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Object Lifecycle Management](https://min.io/docs/minio/kubernetes/upstream/administration/object-management/object-lifecycle-management.html#minio-lifecycle-management)",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Buckets](https://min.io/docs/minio/kubernetes/upstream/administration/console/managing-objects.html#buckets)",
       "https://blog.min.io/content/images/size/w1000/2020/12/pay_banner-01-01-01-01-01.png[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)"
@@ -878,8 +887,9 @@
       "https://images.unsplash.com/photo-1611783569248-a82ec2e72c67?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDIxfHxzcGVlZHxlbnwwfHx8fDE2NDEyMjY2MDI&ixlib=rb-1.2.1&q=80&w=1000[Versioning, Metadata and Storage](https://blog.min.io/minio-versioning-metadata-deep-dive/)"
     ]
   },
-  "bucket_Access": {
+  "bucket_detail_access": {
     "docs": [
+      "BUCKET ACCESS HELP",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Access management](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#minio-policy)",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[User management](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#minio-policy)",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Buckets](https://min.io/docs/minio/kubernetes/upstream/administration/console/managing-objects.html#buckets)",
@@ -891,8 +901,9 @@
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Securing hybrid cloud storage with MinIO IAM](https://blog.min.io/secure-hybrid-cloud-minio-iam/)"
     ]
   },
-  "bucket_Anonymous": {
+  "bucket_detail_prefix": {
     "docs": [
+      "BUCKET ANON HELP",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Buckets](https://min.io/docs/minio/kubernetes/upstream/administration/console/managing-objects.html#buckets)",
       "https://blog.min.io/content/images/size/w1000/2020/12/pay_banner-01-01-01-01-01.png[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)"
     ],
@@ -904,7 +915,9 @@
       "https://blog.min.io/content/images/size/w1000/2020/12/pay_banner-01-01-01-01-01.png[Subnet registration and support](https://min.io/docs/minio/linux/administration/console/subnet-registration.html)",
       "https://blog.min.io/content/images/size/w1000/2020/12/pay_banner-01-01-01-01-01.png[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)"
     ],
-    "video": ["https://i.ytimg.com/an_webp/Zyc-xhNcPco/mqdefault_6s.webp?du=3000&sqp=CNKby6IG&rs=AOn4CLBb47uG6Tw6SNaFW5_tmc7eAVqOtg[What is Subnet?](https://www.youtube.com/watch?v=Zyc-xhNcPco)"],
+    "video": [
+      "https://i.ytimg.com/an_webp/Zyc-xhNcPco/mqdefault_6s.webp?du=3000&sqp=CNKby6IG&rs=AOn4CLBb47uG6Tw6SNaFW5_tmc7eAVqOtg[What is Subnet?](https://www.youtube.com/watch?v=Zyc-xhNcPco)"
+    ],
     "blog": [
       "https://blog.min.io/content/images/size/w1000/2023/03/SUBNET-call-home.jpg[Subnet callhome diagnostics](https://blog.min.io/subnet-call-home-diagnostics/)",
       "https://blog.min.io/content/images/size/w1000/2023/03/SUBNET-Healthcheck-and-Performance.jpg[Subnet healthcheck](https://blog.min.io/subnet-healthcheck-and-performance/)"

@@ -43,21 +43,25 @@ interface IHelpItemProps {
   helpItemMarkdown: string;
 }
 
-
 const HelpItem = ({ classes, helpItemMarkdown }: IHelpItemProps) => {
+  const linkURL = helpItemMarkdown.slice(
+    helpItemMarkdown.indexOf("("),
+    helpItemMarkdown.indexOf(")")
+  );
+  const imgURL = helpItemMarkdown.slice(0, helpItemMarkdown.indexOf("["));
+  const altText = helpItemMarkdown.slice(
+    helpItemMarkdown.indexOf("[") + 1,
+    helpItemMarkdown.indexOf("]")
+  );
+  const markdownText = helpItemMarkdown.slice(helpItemMarkdown.indexOf("["));
 
-  const linkURL = helpItemMarkdown.slice(helpItemMarkdown.indexOf("("), helpItemMarkdown.indexOf(")"))
-  const imgURL =  helpItemMarkdown.slice(0, helpItemMarkdown.indexOf("["))  
-  const altText = helpItemMarkdown.slice(helpItemMarkdown.indexOf("[")+1, helpItemMarkdown.indexOf("]")) 
-const markdownText = helpItemMarkdown.slice(helpItemMarkdown.indexOf("["))
-
-  return ( 
+  return (
     <Fragment>
       <Grid container alignItems={"center"} display={"flex"}>
         <Grid item xs={4}>
-          <a href={linkURL} >
-          <img src={imgURL} alt={altText} width="160" height="90" / > 
-        </a>
+          <a href={linkURL}>
+            <img src={imgURL} alt={altText} width="160" height="90" />
+          </a>
         </Grid>
         <Grid
           item
@@ -66,11 +70,8 @@ const markdownText = helpItemMarkdown.slice(helpItemMarkdown.indexOf("["))
           style={{
             overflowWrap: "break-word",
           }}
-         
         >
-          <ReactMarkdown 
-          linkTarget="_blank" children={markdownText} />
-            
+          <ReactMarkdown linkTarget="_blank" children={markdownText} />
         </Grid>
       </Grid>
     </Fragment>

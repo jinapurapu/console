@@ -290,7 +290,7 @@ const LogsSearchMain = ({ classes }: ILogSearchProps) => {
         label="Audit Logs"
         actions={<HelpMenu helpName="audit_logs" />}
       />
-     
+
       <PageLayout>
         {!logSearchEnabled ? (
           <MissingIntegration

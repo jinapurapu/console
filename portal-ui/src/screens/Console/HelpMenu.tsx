@@ -58,6 +58,9 @@ const HelpMenu = ({ classes, helpName }: IHelpMenuProps) => {
   const systemHelpName = useSelector(
     (state: AppState) => state.system.helpName
   );
+  
+
+  const helpTabName = useSelector((state: AppState) => state.system.helpTabName)
 
   const toggleHelpMenu = () => {
     setHelpMenuOpen(!helpMenuOpen);
@@ -81,7 +84,7 @@ const HelpMenu = ({ classes, helpName }: IHelpMenuProps) => {
   useOutsideAlerter(wrapperRef);
   useEffect(() => {
     let helpTopics = require("../Console/helpTopics.json");
-    !helpName
+   !helpName
       ? systemHelpName
         ? setHelpItems(helpTopics[systemHelpName])
         : setHelpItems(helpTopics[0])
@@ -97,22 +100,27 @@ const HelpMenu = ({ classes, helpName }: IHelpMenuProps) => {
   }, [systemHelpName]);
 
   const assignHelpItems = (helpType: string) => {
+    console.log("systemhelpname: ", systemHelpName)
     let helpTopics = require("../Console/helpTopics.json");
-    if (helpTopics[helpType]) {
-      helpTopics[helpType]["docs"] &&
-        setHelpItems(helpTopics[helpType]["docs"]);
+ 
+    if (helpTopics[systemHelpName]) {
+      helpTopics[systemHelpName]["docs"] &&
+        setHelpItems(helpTopics[systemHelpName]["docs"]);
 
-      helpTopics[helpType]["blog"] &&
-        setHelpItemsBlog(helpTopics[helpType]["blog"]);
+      helpTopics[systemHelpName]["blog"] &&
+        setHelpItemsBlog(helpTopics[systemHelpName]["blog"]);
 
-      helpTopics[helpType]["video"] &&
-        setHelpItemsVideo(helpTopics[helpType]["video"]);
+      helpTopics[systemHelpName]["video"] &&
+        setHelpItemsVideo(helpTopics[systemHelpName]["video"]);
     } else {
       setHelpItems(helpTopics["help"]["docs"]);
     }
+  
   };
 
-  
+  useEffect( () => {
+console.log("helpItems: ", helpItems)
+  }, [helpItems])
 
   const helpContent = (
     <React.Fragment>
@@ -165,36 +173,33 @@ const HelpMenu = ({ classes, helpName }: IHelpMenuProps) => {
         >
           <Box>
             <Grid container alignItems={"center"}>
-              <Grid item
-              paddingLeft={3}
-              >
+              <Grid item paddingLeft={3}>
                 <HelpIcon />
               </Grid>
-             
-           <Grid item paddingLeft={3}
-              >
-            <Tabs
-              value={helpTab}
-              onChange={(e: React.ChangeEvent<{}>, newValue: number) => {
-                setHelpTab(newValue);
-              }}
-              indicatorColor="primary"
-              textColor="primary"
-              aria-label="cluster-tabs"
-              variant="scrollable"
-              scrollButtons="auto"
-            >
-              {helpItems.length != 0 && (
-                <Tab label="Documentation" {...a11yProps(0)} />
-              )}
-              {helpItemsVideo.length != 0 && (
-                <Tab label="Video" {...a11yProps(1)} />
-              )}
-              {helpItemsBlog.length != 0 && (
-                <Tab label="Blog" {...a11yProps(2)} />
-              )}
-            </Tabs>
-            </Grid>
+help name {helpName}
+              <Grid item paddingLeft={3}>
+                <Tabs
+                  value={helpTab}
+                  onChange={(e: React.ChangeEvent<{}>, newValue: number) => {
+                    setHelpTab(newValue);
+                  }}
+                  indicatorColor="primary"
+                  textColor="primary"
+                  aria-label="cluster-tabs"
+                  variant="scrollable"
+                  scrollButtons="auto"
+                >
+                  {helpItems.length != 0 && (
+                    <Tab label="Documentation" {...a11yProps(0)} />
+                  )}
+                  {helpItemsVideo.length != 0 && (
+                    <Tab label="Video" {...a11yProps(1)} />
+                  )}
+                  {helpItemsBlog.length != 0 && (
+                    <Tab label="Blog" {...a11yProps(2)} />
+                  )}
+                </Tabs>
+              </Grid>
             </Grid>
             <Paper>
               {helpItems.length != 0 && (

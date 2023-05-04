@@ -40,7 +40,7 @@ import {
 import { IAM_SCOPES } from "../../../../common/SecureComponent/permissions";
 
 import withSuspense from "../../Common/Components/withSuspense";
-import { setErrorSnackMessage } from "../../../../systemSlice";
+import { setErrorSnackMessage, setHelpName } from "../../../../systemSlice";
 import { selBucketDetailsLoading } from "./bucketDetailsSlice";
 import { useAppDispatch } from "../../../../store";
 import TooltipWrapper from "../../Common/TooltipWrapper/TooltipWrapper";
@@ -85,6 +85,9 @@ const BucketEventsPanel = ({ classes }: IBucketEventsProps) => {
       setLoadingEvents(true);
     }
   }, [loadingBucket, setLoadingEvents]);
+
+
+  useEffect(()=> {dispatch(setHelpName("bucket_detail_events"))},[])
 
   useEffect(() => {
     if (loadingEvents) {
