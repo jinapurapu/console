@@ -61,7 +61,6 @@ const HelpItem = ({ classes, helpItemMarkdown }: IHelpItemProps) => {
         <Grid item xs={3}>
           <a href={linkURL}>
             <img src={imgURL} alt={altText} width="160" height="90" />
-            linkURL {linkURL}
           </a>
         </Grid>
         <Grid
