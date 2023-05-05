@@ -1,17 +1,20 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useEffect } from "react";
 import { IAM_PAGES } from "../../../common/SecureComponent/permissions";
 import { BackLink } from "mds";
 import { useNavigate } from "react-router-dom";
 import PageHeaderWrapper from "../Common/PageHeaderWrapper/PageHeaderWrapper";
 import HelpMenu from "../HelpMenu";
 import { useSelector } from "react-redux";
-import { AppState } from "../../../store";
+import { AppState, useAppDispatch } from "../../../store";
+import { setHelpName } from "../../../systemSlice";
 
 const GroupDetailsHeader = () => {
   const navigate = useNavigate();
-  const systemHelpName = useSelector(
-    (state: AppState) => state.system.helpName
-  );
+  
+  const dispatch = useAppDispatch();
+  useEffect(() => {
+    dispatch(setHelpName("group_details"))
+  }, []);
   return (
     <PageHeaderWrapper
       label={
@@ -22,7 +25,7 @@ const GroupDetailsHeader = () => {
           />
         </Fragment>
       }
-      actions={<HelpMenu helpName={`group_details`} />}
+      actions={<HelpMenu  />}
     />
   );
 };

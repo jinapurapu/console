@@ -31,6 +31,7 @@ import StrategyForm from "./StrategyForm";
 import { redirectRules } from "../../utils/sortFunctions";
 import { getLogoVar } from "../../config";
 import HelpMenu from "../Console/HelpMenu";
+import { setHelpName } from "../../systemSlice";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -344,6 +345,10 @@ const Login = () => {
     docsURL =
       "https://min.io/docs/minio/kubernetes/upstream/index.html?ref=con";
   }
+  
+  useEffect(() => {
+    dispatch(setHelpName("login"))
+  }, []);
 
   return (
     <Fragment>
@@ -380,7 +385,8 @@ const Login = () => {
             >
               Download
             </a>
-            <HelpMenu helpName="login" />
+            <span className={classes.separator}>|</span>
+            <HelpMenu  />
           </Fragment>
         }
         promoHeader={

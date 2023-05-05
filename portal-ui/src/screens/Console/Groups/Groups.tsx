@@ -64,7 +64,7 @@ import withSuspense from "../Common/Components/withSuspense";
 
 import { encodeURLString } from "../../../common/utils";
 
-import { setErrorSnackMessage } from "../../../systemSlice";
+import { setErrorSnackMessage, setHelpName } from "../../../systemSlice";
 import { useAppDispatch } from "../../../store";
 import TooltipWrapper from "../Common/TooltipWrapper/TooltipWrapper";
 import PageHeaderWrapper from "../Common/PageHeaderWrapper/PageHeaderWrapper";
@@ -111,6 +111,10 @@ const Groups = ({ classes }: IGroupsProps) => {
 
   useEffect(() => {
     isLoading(true);
+  }, []);
+
+  useEffect(() => {
+    dispatch(setHelpName("groups"))
   }, []);
 
   const displayGroups = hasPermission(
@@ -204,6 +208,9 @@ const Groups = ({ classes }: IGroupsProps) => {
     },
   ];
 
+  
+ 
+
   return (
     <Fragment>
       {deleteOpen && (
@@ -225,7 +232,7 @@ const Groups = ({ classes }: IGroupsProps) => {
       )}
       <PageHeaderWrapper
         label={"Groups"}
-        actions={<HelpMenu helpName="groups" />}
+        actions={<HelpMenu  />}
       />
 
       <PageLayout>

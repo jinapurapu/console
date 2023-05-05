@@ -154,8 +154,7 @@ const AddServiceAccount = ({ classes }: IAddServiceAccountProps) => {
           }
           actions={
             <HelpMenu
-              helpName={ "add_service_account"
-              }
+             
             />
           }
         />

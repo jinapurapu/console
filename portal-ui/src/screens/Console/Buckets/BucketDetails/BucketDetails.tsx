@@ -150,7 +150,7 @@ const BucketDetails = ({ classes }: IBucketDetailsProps) => {
 
   useEffect(() => {
     dispatch(setHelpName("bucket_details"))
-  }, [selTab]);
+  }, []);
 
   useEffect(() => {
    console.log(`bucket_detail_`+helpTabName)
@@ -251,7 +251,7 @@ const BucketDetails = ({ classes }: IBucketDetailsProps) => {
                 disabled={!canBrowse}
               />
             </TooltipWrapper>
-            <HelpMenu helpName={bucketDetailHelpName} />
+            <HelpMenu  />
           </Fragment>
         }
       />

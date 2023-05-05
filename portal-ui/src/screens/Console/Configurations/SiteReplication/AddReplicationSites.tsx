@@ -24,6 +24,7 @@ import { IAM_PAGES } from "../../../../common/SecureComponent/permissions";
 import SectionTitle from "../../Common/SectionTitle";
 import {
   setErrorSnackMessage,
+  setHelpName,
   setSnackBarMessage,
 } from "../../../../systemSlice";
 import { useAppDispatch } from "../../../../store";
@@ -161,6 +162,10 @@ const AddReplicationSites = () => {
   useEffect(() => {
     getSites();
     // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  useEffect(() => {
+    dispatch(setHelpName("add-replication-sites"))
   }, []);
 
   const existingEndPointsValidity = existingSites.reduce(

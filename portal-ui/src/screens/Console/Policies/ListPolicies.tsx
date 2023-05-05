@@ -49,7 +49,7 @@ import SearchBox from "../Common/SearchBox";
 import withSuspense from "../Common/Components/withSuspense";
 
 import { encodeURLString } from "../../../common/utils";
-import { setErrorSnackMessage } from "../../../systemSlice";
+import { setErrorSnackMessage, setHelpName } from "../../../systemSlice";
 import { useAppDispatch } from "../../../store";
 import TooltipWrapper from "../Common/TooltipWrapper/TooltipWrapper";
 import PageHeaderWrapper from "../Common/PageHeaderWrapper/PageHeaderWrapper";
@@ -188,6 +188,10 @@ const ListPolicies = ({ classes }: IPoliciesProps) => {
     elementItem.name?.includes(filterPolicies)
   );
 
+  useEffect(() => {
+    dispatch(setHelpName("list_policies"))
+  }, []);
+
   return (
     <React.Fragment>
       {deleteOpen && (
@@ -199,7 +203,7 @@ const ListPolicies = ({ classes }: IPoliciesProps) => {
       )}
       <PageHeaderWrapper
         label="IAM Policies"
-        actions={<HelpMenu helpName="list_policies" />}
+        actions={<HelpMenu  />}
       />
 
       <PageLayout className={classes.pageContainer}>

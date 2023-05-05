@@ -14,7 +14,7 @@
 // You should have received a copy of the GNU Affero General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-import React, { Fragment } from "react";
+import React, { Fragment, useEffect } from "react";
 import { Theme } from "@mui/material/styles";
 import createStyles from "@mui/styles/createStyles";
 import withStyles from "@mui/styles/withStyles";
@@ -37,6 +37,8 @@ import ExportConfigButton from "./ExportConfigButton";
 import ImportConfigButton from "./ImportConfigButton";
 import { Box } from "@mui/material";
 import HelpMenu from "../../HelpMenu";
+import { setHelpName } from "../../../../systemSlice";
+import { useAppDispatch } from "../../../../store";
 
 interface IConfigurationOptions {
   classes: any;
@@ -67,6 +69,10 @@ const ConfigurationOptions = ({ classes }: IConfigurationOptions) => {
 
   let selConfigTab = pathname.substring(pathname.lastIndexOf("/") + 1);
   selConfigTab = selConfigTab === "settings" ? "region" : selConfigTab;
+  const dispatch = useAppDispatch();
+  useEffect(() => {
+    dispatch(setHelpName("settings"))
+  }, []);
 
   return (
     <Fragment>

@@ -28,6 +28,8 @@ import withSuspense from "../Common/Components/withSuspense";
 import { getLicenseConsent } from "./utils";
 import PageHeaderWrapper from "../Common/PageHeaderWrapper/PageHeaderWrapper";
 import HelpMenu from "../HelpMenu";
+import { setHelpName } from "../../../systemSlice";
+import { useAppDispatch } from "../../../store";
 
 const LicenseConsentModal = withSuspense(
   React.lazy(() => import("./LicenseConsentModal"))
@@ -53,6 +55,11 @@ const License = () => {
     setActivateProductModal(false);
     fetchLicenseInfo();
   };
+
+  const dispatch = useAppDispatch();
+  useEffect(() => {
+    dispatch(setHelpName("license"))
+  }, []);
 
   const isRegistered = licenseInfo && clusterRegistered;
 
@@ -114,6 +121,7 @@ const License = () => {
     );
   }
 
+
   return (
     <Fragment>
       <PageHeaderWrapper
@@ -136,7 +144,7 @@ const License = () => {
                 Register your cluster
               </Button>
             )}
-            <HelpMenu helpName="license" />
+            <HelpMenu  />
           </Fragment>
         }
       />

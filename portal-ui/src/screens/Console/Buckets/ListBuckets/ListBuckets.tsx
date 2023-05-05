@@ -53,7 +53,7 @@ import SearchBox from "../../Common/SearchBox";
 import VirtualizedList from "../../Common/VirtualizedList/VirtualizedList";
 import BulkLifecycleModal from "./BulkLifecycleModal";
 import hasPermission from "../../../../common/SecureComponent/accessControl";
-import { setErrorSnackMessage } from "../../../../systemSlice";
+import { setErrorSnackMessage, setHelpName } from "../../../../systemSlice";
 import { useAppDispatch } from "../../../../store";
 import { useSelector } from "react-redux";
 import { selFeatures } from "../../consoleSlice";
@@ -109,6 +109,11 @@ const ListBuckets = () => {
 
   const features = useSelector(selFeatures);
   const obOnly = !!features?.includes("object-browser-only");
+
+
+  useEffect(() => {
+    dispatch(setHelpName("ob_bucket_list"))
+  }, []);
 
   useEffect(() => {
     if (loading) {
@@ -240,7 +245,7 @@ const ListBuckets = () => {
       {!obOnly && (
         <PageHeaderWrapper
           label={"Buckets TEST"}
-          actions={<HelpMenu helpName="list-buckets" />}
+          actions={<HelpMenu  />}
         />
       )}
 

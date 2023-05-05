@@ -42,6 +42,7 @@ import {
   selDistSet,
   selSiteRep,
   setErrorSnackMessage,
+  setHelpName,
 } from "../../../../../systemSlice";
 import InputUnitMenu from "../../../Common/FormComponents/InputUnitMenu/InputUnitMenu";
 import TooltipWrapper from "../../../Common/TooltipWrapper/TooltipWrapper";
@@ -239,13 +240,17 @@ const AddBucket = () => {
     }
   }, [navigateTo, navigate, dispatch]);
 
+  useEffect(() => {
+    dispatch(setHelpName("add_bucket"))
+  }, []);
+
   return (
     <Fragment>
       <PageHeaderWrapper
         label={
           <BackLink label={"Buckets"} onClick={() => navigate("/buckets")} />
         }
-        actions={<HelpMenu helpName="add_bucket" />}
+        actions={<HelpMenu  />}
       />
       <PageLayout>
         <FormLayout

@@ -14,22 +14,29 @@
 // You should have received a copy of the GNU Affero General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-import React, { Fragment } from "react";
+import React, { Fragment, useEffect } from "react";
 
 import withSuspense from "../Common/Components/withSuspense";
 import PageHeaderWrapper from "../Common/PageHeaderWrapper/PageHeaderWrapper";
 import HelpMenu from "../HelpMenu";
+import { setHelpName } from "../../../systemSlice";
+import { useAppDispatch } from "../../../store";
 
 const ListNotificationEndpoints = withSuspense(
   React.lazy(() => import("./ListEventDestinations"))
 );
 
+
 const EventDestinations = () => {
+  const dispatch = useAppDispatch();
+  useEffect(() => {
+    dispatch(setHelpName("event_destinations"))
+  }, []);
   return (
     <Fragment>
       <PageHeaderWrapper
         label="Event Destinations"
-        actions={<HelpMenu helpName="event_destinations" />}
+        actions={<HelpMenu  />}
       />
       <ListNotificationEndpoints />
     </Fragment>

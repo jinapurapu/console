@@ -36,6 +36,7 @@ import ConfirmDialog from "../../Common/ModalWrapper/ConfirmDialog";
 import { IAM_PAGES } from "../../../../common/SecureComponent/permissions";
 import {
   setErrorSnackMessage,
+  setHelpName,
   setSnackBarMessage,
 } from "../../../../systemSlice";
 import AButton from "../../Common/AButton/AButton";
@@ -110,12 +111,16 @@ const SiteReplication = () => {
   }, []);
 
   const hasSites = sites?.length;
+ 
+  useEffect(() => {
+    dispatch(setHelpName("site-replication"))
+  }, []);
 
   return (
     <Fragment>
       <PageHeaderWrapper
         label={"Site Replication"}
-        actions={<HelpMenu helpName="site-replication" />}
+        actions={<HelpMenu  />}
       />
 
       <PageLayout>

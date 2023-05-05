@@ -47,6 +47,7 @@ import {
 import makeStyles from "@mui/styles/makeStyles";
 import PageHeaderWrapper from "../../Common/PageHeaderWrapper/PageHeaderWrapper";
 import HelpMenu from "../../HelpMenu";
+import { setHelpName } from "../../../../systemSlice";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -232,11 +233,15 @@ const ErrorLogs = () => {
       });
   }, []);
 
+  useEffect(() => {
+    dispatch(setHelpName("error_logs"))
+  }, []);
+
   return (
     <Fragment>
       <PageHeaderWrapper
         label="Logs"
-        actions={<HelpMenu helpName="error_logs" />}
+        actions={<HelpMenu  />}
       />
 
       <PageLayout>

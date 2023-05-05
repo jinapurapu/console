@@ -44,7 +44,7 @@ import {
 } from "../../../common/SecureComponent/permissions";
 import SearchBox from "../Common/SearchBox";
 import hasPermission from "../../../common/SecureComponent/accessControl";
-import { setErrorSnackMessage } from "../../../systemSlice";
+import { setErrorSnackMessage, setHelpName } from "../../../systemSlice";
 import { useAppDispatch } from "../../../store";
 import { useSelector } from "react-redux";
 import { selFeatures } from "../consoleSlice";
@@ -144,12 +144,16 @@ const OBListBuckets = () => {
     },
   ];
 
+  useEffect(() => {
+    dispatch(setHelpName("ob_bucket_list"))
+  }, []);
+
   return (
     <Fragment>
       {!obOnly && (
         <PageHeaderWrapper
           label={"Object Browser"}
-          actions={<HelpMenu helpName="ob_bucket_list" />}
+          actions={<HelpMenu />}
         />
       )}
 

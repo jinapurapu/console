@@ -48,7 +48,7 @@ import CheckboxWrapper from "../Common/FormComponents/CheckboxWrapper/CheckboxWr
 import api from "../../../common/api";
 import { SecureComponent } from "../../../common/SecureComponent";
 import DistributedOnly from "../Common/DistributedOnly/DistributedOnly";
-import { selDistSet } from "../../../systemSlice";
+import { selDistSet, setHelpName } from "../../../systemSlice";
 import makeStyles from "@mui/styles/makeStyles";
 import PageHeaderWrapper from "../Common/PageHeaderWrapper/PageHeaderWrapper";
 import {
@@ -62,6 +62,7 @@ import {
 } from "recharts";
 import { Legend } from "recharts";
 import HelpMenu from "../HelpMenu";
+import { useAppDispatch } from "../../../store";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -266,12 +267,16 @@ const Heal = () => {
     label: bucketName.name,
     value: bucketName.name,
   }));
+  const dispatch = useAppDispatch();
+  useEffect(() => {
+    dispatch(setHelpName("heal"))
+  }, []);
 
   return (
     <Fragment>
       <PageHeaderWrapper
         label="Drives"
-        actions={<HelpMenu helpName="heal" />}
+        actions={<HelpMenu  />}
       />
 
       <PageLayout>

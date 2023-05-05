@@ -31,7 +31,7 @@ import {
 } from "../../../common/SecureComponent";
 import api from "../../../common/api";
 import { ErrorResponseHandler } from "../../../common/types";
-import { setErrorSnackMessage } from "../../../systemSlice";
+import { setErrorSnackMessage, setHelpName } from "../../../systemSlice";
 import { containerForHeader } from "../Common/FormComponents/common/styleLibrary";
 import { Grid } from "@mui/material";
 import TooltipWrapper from "../Common/TooltipWrapper/TooltipWrapper";
@@ -138,6 +138,10 @@ const IDPConfigurations = ({ classes, idpType }: IDPConfigurationsProps) => {
     },
   ];
 
+  useEffect(() => {
+    dispatch(setHelpName("idp_configs"))
+  }, []);
+
   return (
     <Fragment>
       {deleteOpen && (
@@ -150,7 +154,7 @@ const IDPConfigurations = ({ classes, idpType }: IDPConfigurationsProps) => {
       )}
       <PageHeaderWrapper
         label={`${idpType.toUpperCase()} Configurations`}
-        actions={<HelpMenu helpName="idp_configs" />}
+        actions={<HelpMenu  />}
       />
 
       <PageLayout className={classes.pageContainer}>

@@ -46,7 +46,7 @@ import {
 } from "../Common/FormComponents/common/styleLibrary";
 
 import TestWrapper from "../Common/TestWrapper/TestWrapper";
-import { setServerDiagStat } from "../../../systemSlice";
+import { setHelpName, setServerDiagStat } from "../../../systemSlice";
 import {
   healthInfoMessageReceived,
   healthInfoResetMessage,
@@ -255,12 +255,16 @@ const HealthInfo = ({ classes }: IHealthInfo) => {
     }
     setStartDiagnostic(true);
   };
+ 
+  useEffect(() => {
+    dispatch(setHelpName("health_info"))
+  }, []);
 
   return (
     <Fragment>
       <PageHeaderWrapper
         label="Health"
-        actions={<HelpMenu helpName="health_info" />}
+        actions={<HelpMenu  />}
       />
 
       <PageLayout>

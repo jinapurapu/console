@@ -25,7 +25,7 @@ import {
   IAM_SCOPES,
 } from "../../../common/SecureComponent/permissions";
 
-import { setErrorSnackMessage } from "../../../systemSlice";
+import { setErrorSnackMessage, setHelpName } from "../../../systemSlice";
 import { useAppDispatch } from "../../../store";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
@@ -350,11 +350,15 @@ const Status = () => {
     </Fragment>
   );
 
+  useEffect(() => {
+    dispatch(setHelpName("kms_status"))
+  }, []);
+
   return (
     <Fragment>
       <PageHeaderWrapper
         label="Key Management Service"
-        actions={<HelpMenu helpName="kms_status" />}
+        actions={<HelpMenu  />}
       />
 
       <PageLayout>

@@ -44,6 +44,7 @@ import withSuspense from "../Common/Components/withSuspense";
 import { IAM_PAGES } from "../../../common/SecureComponent/permissions";
 import {
   setErrorSnackMessage,
+  setHelpName,
   setServerNeedsRestart,
 } from "../../../systemSlice";
 import { useNavigate, useParams } from "react-router-dom";
@@ -180,6 +181,11 @@ const AddEventDestination = ({
     (element) => element.actionTrigger === service
   );
 
+  
+  useEffect(() => {
+    dispatch(setHelpName("add_notification_endpoint"))
+  }, []);
+
   return (
     <Fragment>
       <PageHeaderWrapper
@@ -191,7 +197,7 @@ const AddEventDestination = ({
             />
           </Fragment>
         }
-        actions={<HelpMenu helpName="add_notification_endpoint" />}
+        actions={<HelpMenu  />}
       />
 
       <PageLayout>

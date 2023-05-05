@@ -20,7 +20,7 @@ import { Button, CallHomeMenuIcon, HelpBox, Loader, PageLayout } from "mds";
 import { Link, useNavigate } from "react-router-dom";
 import api from "../../../common/api";
 import { ErrorResponseHandler } from "../../../common/types";
-import { setErrorSnackMessage } from "../../../systemSlice";
+import { setErrorSnackMessage, setHelpName } from "../../../systemSlice";
 import { useAppDispatch } from "../../../store";
 import { ICallHomeResponse } from "./types";
 import { registeredCluster } from "../../../config";
@@ -105,6 +105,10 @@ const CallHome = () => {
     mainVariant = "callAction";
   }
 
+  useEffect(() => {
+    dispatch(setHelpName("call_home"))
+  }, []);
+
   return (
     <Fragment>
       {showConfirmation && (
@@ -118,7 +122,7 @@ const CallHome = () => {
       )}
       <PageHeaderWrapper
         label="Call Home"
-        actions={<HelpMenu helpName="call_home" />}
+        actions={<HelpMenu  />}
       />
       <PageLayout>
         {!clusterRegistered && <RegisterCluster compactMode />}

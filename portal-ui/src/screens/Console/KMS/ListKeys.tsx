@@ -31,7 +31,7 @@ import {
 } from "../../../common/SecureComponent/permissions";
 import { ErrorResponseHandler } from "../../../common/types";
 import { useAppDispatch } from "../../../store";
-import { setErrorSnackMessage } from "../../../systemSlice";
+import { setErrorSnackMessage, setHelpName } from "../../../systemSlice";
 import withSuspense from "../Common/Components/withSuspense";
 import {
   containerForHeader,
@@ -129,6 +129,10 @@ const ListKeys = ({ classes }: IKeysProps) => {
     },
   ];
 
+  useEffect(() => {
+    dispatch(setHelpName("list_keys"))
+  }, []);
+
   return (
     <React.Fragment>
       {deleteOpen && (
@@ -142,7 +146,7 @@ const ListKeys = ({ classes }: IKeysProps) => {
       )}
       <PageHeaderWrapper
         label="Key Management Service Keys"
-        actions={<HelpMenu helpName="list_keys" />}
+        actions={<HelpMenu  />}
       />
 
       <PageLayout className={classes.pageContainer}>

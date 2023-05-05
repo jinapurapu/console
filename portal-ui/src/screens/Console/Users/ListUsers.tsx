@@ -62,7 +62,7 @@ import {
   hasPermission,
   SecureComponent,
 } from "../../../common/SecureComponent";
-import { setErrorSnackMessage } from "../../../systemSlice";
+import { setErrorSnackMessage, setHelpName } from "../../../systemSlice";
 import { useAppDispatch } from "../../../store";
 import TooltipWrapper from "../Common/TooltipWrapper/TooltipWrapper";
 import PageHeaderWrapper from "../Common/PageHeaderWrapper/PageHeaderWrapper";
@@ -190,6 +190,10 @@ const ListUsers = ({ classes }: IUsersProps) => {
     },
   ];
 
+  useEffect(() => {
+    dispatch(setHelpName("list_users"))
+  }, []);
+
   return (
     <Fragment>
       {deleteOpen && (
@@ -212,7 +216,7 @@ const ListUsers = ({ classes }: IUsersProps) => {
       )}
       <PageHeaderWrapper
         label={"Users"}
-        actions={<HelpMenu helpName="list_users" />}
+        actions={<HelpMenu />}
       />
 
       <PageLayout>

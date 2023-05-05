@@ -104,6 +104,10 @@ const Account = () => {
     fetchRecords();
   }, []);
 
+  useEffect(() => {
+    dispatch(setHelpName("accessKeys"))
+  }, []);
+
 
   useEffect(()=> {dispatch(setHelpName("accessKeys"))},[])
 

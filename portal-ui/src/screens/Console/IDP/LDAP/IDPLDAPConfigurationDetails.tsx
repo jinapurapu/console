@@ -30,6 +30,7 @@ import { ErrorResponseHandler } from "../../../../common/types";
 import { useAppDispatch } from "../../../../store";
 import {
   setErrorSnackMessage,
+  setHelpName,
   setServerNeedsRestart,
   setSnackBarMessage,
 } from "../../../../systemSlice";
@@ -255,6 +256,10 @@ const IDPLDAPConfigurationDetails = () => {
     }
   };
 
+  useEffect(() => {
+    dispatch(setHelpName("LDAP"))
+  }, []);
+
   return (
     <Grid item xs={12}>
       {resetOpen && (
@@ -266,7 +271,7 @@ const IDPLDAPConfigurationDetails = () => {
       )}
       <PageHeaderWrapper
         label={"LDAP"}
-        actions={<HelpMenu helpName="LDAP" />}
+        actions={<HelpMenu  />}
       />
       <PageLayout variant={"constrained"}>
         <TabSelector

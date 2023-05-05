@@ -37,6 +37,8 @@ import TooltipWrapper from "../../Common/TooltipWrapper/TooltipWrapper";
 import { useNavigate } from "react-router-dom";
 import PageHeaderWrapper from "../../Common/PageHeaderWrapper/PageHeaderWrapper";
 import HelpMenu from "../../HelpMenu";
+import { useAppDispatch } from "../../../../store";
+import { setHelpName } from "../../../../systemSlice";
 
 export type StatsResponseType = {
   maxBuckets?: number;
@@ -119,6 +121,11 @@ const SiteReplicationStatus = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  const dispatch = useAppDispatch();
+  useEffect(() => {
+    dispatch(setHelpName("replication_status"))
+  }, []);
+
   return (
     <Fragment>
       <PageHeaderWrapper
@@ -128,7 +135,7 @@ const SiteReplicationStatus = () => {
             onClick={() => navigate(IAM_PAGES.SITE_REPLICATION)}
           />
         }
-        actions={<HelpMenu helpName="replication_status" />}
+        actions={<HelpMenu  />}
       />
 
       <PageLayout>

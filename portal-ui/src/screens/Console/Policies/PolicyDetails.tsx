@@ -76,7 +76,7 @@ import {
   setSnackBarMessage,
 } from "../../../systemSlice";
 import { selFeatures } from "../consoleSlice";
-import { AppState, useAppDispatch } from "../../../store";
+import {  useAppDispatch } from "../../../store";
 import TooltipWrapper from "../Common/TooltipWrapper/TooltipWrapper";
 import PageHeaderWrapper from "../Common/PageHeaderWrapper/PageHeaderWrapper";
 import {
@@ -136,7 +136,6 @@ const PolicyDetails = ({ classes }: IPolicyDetailsProps) => {
   const [policyDefinition, setPolicyDefinition] = useState<string>("");
   const [loadingPolicy, setLoadingPolicy] = useState<boolean>(true);
   const [filterUsers, setFilterUsers] = useState<string>("");
-  const [helpTopicName, setHelpTopicName] = useState<string>("Summary");
   const [loadingUsers, setLoadingUsers] = useState<boolean>(true);
   const [filterGroups, setFilterGroups] = useState<string>("");
   const [loadingGroups, setLoadingGroups] = useState<boolean>(true);
@@ -346,39 +345,20 @@ const PolicyDetails = ({ classes }: IPolicyDetailsProps) => {
   const filteredGroups = groupList.filter((elementItem) =>
     elementItem.includes(filterGroups)
   );
-  const systemHelpName = useSelector(
-    (state: AppState) => state.system.helpName
-  );
 
-  const firstUpdate = useRef(true);
-  useEffect(() => {
-    firstUpdate.current = true;
-    setHelpTopicName("Summary");
-  }, []);
 
-  useEffect(() => {
-    if (firstUpdate.current) {
-      setHelpTopicName("Summary");
-      firstUpdate.current = false;
-      console.log(
-        "first time through PolicyDetails helpTopicName: ",
-        helpTopicName
-      );
-    }
-    setHelpTopicName(systemHelpName);
-    console.log(
-      "update PolicyDetails helpTopicName: ",
-      helpTopicName,
-      "systemHelpName: ",
-      systemHelpName
-    );
-  }, [systemHelpName]);
+
+ 
 
   const refreshPolicyDetails = () => {
     setLoadingUsers(true);
     setLoadingGroups(true);
     setLoadingPolicy(true);
   };
+
+  useEffect(() => {
+    dispatch(setHelpName("policy_details"))
+  }, []);
 
   return (
     <Fragment>
@@ -400,11 +380,7 @@ const PolicyDetails = ({ classes }: IPolicyDetailsProps) => {
         }
         actions={
           <HelpMenu
-            helpName={
-              firstUpdate.current
-                ? `policy_${helpTopicName}`
-                : `policy_${systemHelpName}`
-            }
+            
           />
         }
       />

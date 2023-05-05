@@ -25,7 +25,7 @@ import api from "../../../common/api";
 import { SubnetRegTokenResponse } from "../License/types";
 import { ErrorResponseHandler } from "../../../common/types";
 import { useSelector } from "react-redux";
-import { setErrorSnackMessage } from "../../../systemSlice";
+import { setErrorSnackMessage, setHelpName } from "../../../systemSlice";
 import { AppState, useAppDispatch } from "../../../store";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
@@ -183,11 +183,15 @@ const Register = ({ classes }: IRegister) => {
   const loadingUi = <div>Loading..</div>;
   const uiToShow = loadingLicenseInfo ? loadingUi : regUi;
 
+  useEffect(() => {
+    dispatch(setHelpName("register"))
+  }, []);
+
   return (
     <Fragment>
       <PageHeaderWrapper
         label="Register to MinIO Subscription Network"
-        actions={<HelpMenu helpName="register" />}
+        actions={<HelpMenu />}
       />
 
       <PageLayout>

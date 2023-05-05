@@ -43,7 +43,7 @@ import {
 } from "../../../common/utils";
 import DistributedOnly from "../Common/DistributedOnly/DistributedOnly";
 import KeyRevealer from "./KeyRevealer";
-import { selDistSet, setErrorSnackMessage } from "../../../systemSlice";
+import { selDistSet, setErrorSnackMessage, setHelpName } from "../../../systemSlice";
 import { useAppDispatch } from "../../../store";
 import RegisterCluster from "../Support/RegisterCluster";
 import { registeredCluster } from "../../../config";
@@ -197,11 +197,15 @@ const Inspect = ({ classes }: { classes: any }) => {
     resetForm();
   };
 
+  useEffect(() => {
+    dispatch(setHelpName("inspect"))
+  }, []);
+
   return (
     <Fragment>
       <PageHeaderWrapper
         label={"Inspect"}
-        actions={<HelpMenu helpName="inspect" />}
+        actions={<HelpMenu  />}
       />
 
       <PageLayout>

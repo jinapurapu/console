@@ -45,6 +45,7 @@ import makeStyles from "@mui/styles/makeStyles";
 import { watchMessageReceived, watchResetMessages } from "./watchSlice";
 import PageHeaderWrapper from "../Common/PageHeaderWrapper/PageHeaderWrapper";
 import HelpMenu from "../HelpMenu";
+import { setHelpName } from "../../../systemSlice";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -171,11 +172,15 @@ const Watch = () => {
     value: bucketName.name,
   }));
 
+  useEffect(() => {
+    dispatch(setHelpName("watch"))
+  }, []);
+
   return (
     <React.Fragment>
       <PageHeaderWrapper
         label="Watch"
-        actions={<HelpMenu helpName="watch" />}
+        actions={<HelpMenu  />}
       />
 
       <PageLayout>

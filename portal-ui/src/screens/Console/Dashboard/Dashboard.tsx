@@ -29,6 +29,7 @@ import PageHeaderWrapper from "../Common/PageHeaderWrapper/PageHeaderWrapper";
 import { selFeatures } from "../consoleSlice";
 import { PageHeader } from "mds";
 import HelpMenu from "../HelpMenu";
+import { setHelpName } from "../../../systemSlice";
 
 interface IDashboardSimple {
   classes: any;
@@ -60,12 +61,16 @@ const Dashboard = ({ classes }: IDashboardSimple) => {
     }
   }, [loading, dispatch]);
 
+  useEffect(() => {
+    dispatch(setHelpName("metrics"))
+  }, []);
+
   return (
     <Fragment>
       {!hideMenu && (
         <PageHeaderWrapper
           label="Metrics"
-          actions={<HelpMenu helpName="metrics" />}
+          actions={<HelpMenu  />}
         />
       )}
       {loading ? (

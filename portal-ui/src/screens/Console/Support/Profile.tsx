@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import { IMessageEvent, w3cwebsocket as W3CWebSocket } from "websocket";
 import { Theme } from "@mui/material/styles";
 import { Button, PageLayout } from "mds";
@@ -17,6 +17,8 @@ import RegisterCluster from "./RegisterCluster";
 import { registeredCluster } from "../../../config";
 import PageHeaderWrapper from "../Common/PageHeaderWrapper/PageHeaderWrapper";
 import HelpMenu from "../HelpMenu";
+import { useAppDispatch } from "../../../store";
+import { setHelpName } from "../../../systemSlice";
 
 const styles = (theme: Theme) =>
   createStyles({
@@ -139,11 +141,16 @@ const Profile = ({ classes }: IProfileProps) => {
     setProfilingStarted(false);
   };
 
+  const dispatch = useAppDispatch();
+  useEffect(() => {
+    dispatch(setHelpName("profile"))
+  }, []);
+
   return (
     <Fragment>
       <PageHeaderWrapper
         label="Profile"
-        actions={<HelpMenu helpName="profile" />}
+        actions={<HelpMenu  />}
       />
 
       <PageLayout>

@@ -45,7 +45,7 @@ import {
 import { IAM_PAGES } from "../../../../common/SecureComponent/permissions";
 
 import RegionSelectWrapper from "./RegionSelectWrapper";
-import { setErrorSnackMessage } from "../../../../systemSlice";
+import { setErrorSnackMessage, setHelpName } from "../../../../systemSlice";
 import { useAppDispatch } from "../../../../store";
 import PageHeaderWrapper from "../../Common/PageHeaderWrapper/PageHeaderWrapper";
 import HelpMenu from "../../HelpMenu";
@@ -310,6 +310,11 @@ const AddTierConfiguration = ({ classes }: IAddNotificationEndpointProps) => {
 
   const targetElement = tierTypes.find((item) => item.serviceName === type);
 
+ 
+  useEffect(() => {
+    dispatch(setHelpName("add-tier-configuration"))
+  }, []);
+  
   return (
     <Fragment>
       <PageHeaderWrapper
@@ -321,7 +326,7 @@ const AddTierConfiguration = ({ classes }: IAddNotificationEndpointProps) => {
             />
           </Fragment>
         }
-        actions={<HelpMenu helpName="add-tier-configuration" />}
+        actions={<HelpMenu  />}
       />
 
       <PageLayout>

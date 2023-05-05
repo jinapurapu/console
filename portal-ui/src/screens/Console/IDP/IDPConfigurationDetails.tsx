@@ -40,6 +40,7 @@ import { ErrorResponseHandler } from "../../../common/types";
 import { useAppDispatch } from "../../../store";
 import {
   setErrorSnackMessage,
+  setHelpName,
   setServerNeedsRestart,
 } from "../../../systemSlice";
 import useApi from "../Common/Hooks/useApi";
@@ -364,6 +365,10 @@ const IDPConfigurationDetails = ({
     );
   };
 
+  useEffect(() => {
+    dispatch(setHelpName("idp_config"))
+  }, []);
+
   return (
     <Grid item xs={12}>
       {deleteOpen && configurationName && (
@@ -376,7 +381,7 @@ const IDPConfigurationDetails = ({
       )}
       <PageHeaderWrapper
         label={<BackLink onClick={() => navigate(backLink)} label={header} />}
-        actions={<HelpMenu helpName="idp_config_details" />}
+        actions={<HelpMenu  />}
       />
       <PageLayout className={classes.pageContainer}>
         <Box>

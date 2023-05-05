@@ -44,7 +44,7 @@ import {
 } from "../../../../common/SecureComponent/permissions";
 import { SecureComponent } from "../../../../common/SecureComponent";
 import MissingIntegration from "../../Common/MissingIntegration/MissingIntegration";
-import { setErrorSnackMessage } from "../../../../systemSlice";
+import { setErrorSnackMessage, setHelpName } from "../../../../systemSlice";
 import { selFeatures } from "../../consoleSlice";
 import { useAppDispatch } from "../../../../store";
 import PageHeaderWrapper from "../../Common/PageHeaderWrapper/PageHeaderWrapper";
@@ -276,6 +276,10 @@ const LogsSearchMain = ({ classes }: ILogSearchProps) => {
     setLogSearchExtrasOpen(false);
   };
 
+  useEffect(() => {
+    dispatch(setHelpName("audit_logs"))
+  }, []);
+
   return (
     <Fragment>
       {logSearchExtrasOpen && selectedItem !== null && (
@@ -288,7 +292,7 @@ const LogsSearchMain = ({ classes }: ILogSearchProps) => {
 
       <PageHeaderWrapper
         label="Audit Logs"
-        actions={<HelpMenu helpName="audit_logs" />}
+        actions={<HelpMenu  />}
       />
 
       <PageLayout>

@@ -117,7 +117,7 @@ const UserDetails = ({ classes }: IUserDetailsProps) => {
   const [addGroupOpen, setAddGroupOpen] = useState<boolean>(false);
   const [policyOpen, setPolicyOpen] = useState<boolean>(false);
   const [addLoading, setAddLoading] = useState<boolean>(false);
-  const [helpTopicName, setHelpTopicName] = useState<string>("Groups");
+  const [helpTopicName, setHelpTopicName] = useState<string>("");
   const [enabled, setEnabled] = useState<boolean>(false);
   const [selectedGroups, setSelectedGroups] = useState<string[]>([]);
   const [currentGroups, setCurrentGroups] = useState<IGroupItem[]>([]);
@@ -217,7 +217,7 @@ const UserDetails = ({ classes }: IUserDetailsProps) => {
   };
 
   useEffect(() => {
-    dispatch(setHelpName("user"))
+    dispatch(setHelpName("user_details"))
   }, []);
 
 
@@ -256,7 +256,7 @@ const UserDetails = ({ classes }: IUserDetailsProps) => {
             />
           </Fragment>
         }
-        actions={<HelpMenu helpName={helpTopicName} />}
+        actions={<HelpMenu  />}
       />
       {addGroupOpen && (
         <ChangeUserGroups

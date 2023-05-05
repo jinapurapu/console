@@ -1,6 +1,7 @@
 {
   "help": {
     "docs": [
+      "DEFAULT HELP",
       "https://blog.min.io/content/images/size/w1000/2020/12/pay_banner-01-01-01-01-01.png[Subnet registration and support](https://min.io/docs/minio/linux/administration/console/subnet-registration.html)",
       "https://blog.min.io/content/images/size/w1000/2020/12/pay_banner-01-01-01-01-01.png[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)"
     ],
@@ -10,6 +11,7 @@
 
   "Users": {
     "docs": [
+      "USERS - IS THIS EVER USED?",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[User management](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#minio-policy)",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Identity and Access Management](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management.html)",
       "https://blog.min.io/content/images/size/w1000/2020/12/pay_banner-01-01-01-01-01.png[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)"
@@ -22,6 +24,7 @@
   },
   "list_policies": {
     "docs": [
+      "LIST_POLICIES",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Identity and Access Management](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management.html)",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Policy based access control](https://min.io/docs/minio/linux/administration/identity-access-management/policy-based-access-control.html#)",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[IAM Policies](https://min.io/docs/minio/linux/administration/identity-access-management.html#minio-authentication-and-identity-management)",
@@ -35,6 +38,7 @@
   },
   "add_bucket": {
     "docs": [
+      "ADD BUCKET",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Bucket Versioning](https://min.io/docs/minio/kubernetes/upstream/administration/object-management/object-versioning.html#minio-bucket-versioning)",
 
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Buckets](https://min.io/docs/minio/kubernetes/upstream/administration/console/managing-objects.html#buckets)",
@@ -55,6 +59,7 @@
   },
   "ob_bucket_list": {
     "docs": [
+      "OB_BUCKET_LIST",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Bucket Versioning](https://min.io/docs/minio/kubernetes/upstream/administration/object-management/object-versioning.html#minio-bucket-versioning)",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Buckets](https://min.io/docs/minio/kubernetes/upstream/administration/console/managing-objects.html#buckets)",
       "https://blog.min.io/content/images/size/w1000/2020/12/pay_banner-01-01-01-01-01.png[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)"
@@ -66,6 +71,7 @@
   },
   "accessKeys": {
     "docs": [
+      "ACCESSKEYS",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Policy Document Structure](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#policy-document-structure)",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Access Keys](https://min.io/docs/minio/linux/administration/console/security-and-access.html#minio-console-user-access-keys)",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Identity and Access Management](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management.html)",
@@ -80,6 +86,7 @@
   },
   "add_service_account": {
     "docs": [
+      "ADD_SERVICE_ACCOUNT",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Identity and Access Management](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management.html)",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Policy Variables](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#policy-variables)",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[mc admin Policy Action Keys](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#mc-admin-policy-action-keys)",
@@ -100,6 +107,7 @@
   },
   "add_service_account_policy": {
     "docs": [
+      "ADD_SERVICE_ACCOUNT_POLICY - IS THIS USED?",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Policy Variables](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#policy-variables)",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[mc admin Policy Action Keys](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#mc-admin-policy-action-keys)",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[mc admin Policy Condition Keys](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#mc-admin-policy-condition-keys)",
@@ -117,6 +125,7 @@
   },
   "list-buckets": {
     "docs": [
+      "LIST BUCKETS",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Bucket Versioning](https://min.io/docs/minio/kubernetes/upstream/administration/object-management/object-versioning.html#minio-bucket-versioning)",
 
       "https://blog.min.io/content/images/size/w1000/2020/12/pay_banner-01-01-01-01-01.png[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)"
@@ -128,6 +137,7 @@
   },
   "settings": {
     "docs": [
+      "SETTINGS - EXPAND TO TABS",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Configuration](https://min.io/docs/minio/kubernetes/upstream/operations/troubleshooting/encrypting-files.html)",
 
       "https://blog.min.io/content/images/size/w1000/2020/12/pay_banner-01-01-01-01-01.png[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)"
@@ -137,6 +147,7 @@
   },
   "add-replication-sites": {
     "docs": [
+      "ADD REPLICATION SITES",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Site Replication Prerequisite](https://min.io/docs/minio/linux/operations/install-deploy-manage/multi-site-replication.html#prerequisites)",
 
       "https://blog.min.io/content/images/size/w1000/2020/12/pay_banner-01-01-01-01-01.png[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)"
@@ -151,6 +162,7 @@
   },
   "site-replication": {
     "docs": [
+      "SITE REPLICATION",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Site Replication Tutorial](https://min.io/docs/minio/linux/operations/install-deploy-manage/multi-site-replication.html#tutorials)",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Site Replication Prerequisite](https://min.io/docs/minio/linux/operations/install-deploy-manage/multi-site-replication.html#prerequisites)",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[What is Site Replication?](https://min.io/docs/minio/linux/operations/install-deploy-manage/multi-site-replication.html)",
@@ -166,6 +178,7 @@
   },
   "site-replication-status": {
     "docs": [
+      "SITE REPLICATION STATUS",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Site Replication Prerequisite](https://min.io/docs/minio/linux/operations/install-deploy-manage/multi-site-replication.html#prerequisites)",
 
       "https://blog.min.io/content/images/size/w1000/2020/12/pay_banner-01-01-01-01-01.png[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)"
@@ -180,6 +193,7 @@
   },
   "add-tier-configuration": {
     "docs": [
+      "ADD TIER CONFIGURATION",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Transition form MinIO to Azure](https://min.io/docs/minio/kubernetes/upstream/administration/object-management/transition-objects-to-azure.html)",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Transition from MinIO to GCS](https://min.io/docs/minio/kubernetes/upstream/administration/object-management/transition-objects-to-gcs.html)",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Transition from MinIO to S3](https://min.io/docs/minio/kubernetes/upstream/administration/object-management/transition-objects-to-s3.html)",
@@ -198,6 +212,7 @@
   },
   "list-tiers-configuration": {
     "docs": [
+      "LIST TIERS CONFIGURATION - CHANGE TO USE _",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Object Lifecycle Management](https://min.io/docs/minio/linux/administration/object-management/object-lifecycle-management.html#)",
 
       "https://blog.min.io/content/images/size/w1000/2020/12/pay_banner-01-01-01-01-01.png[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)"
@@ -211,6 +226,7 @@
   },
   "tier-type-selector": {
     "docs": [
+      "TIER TYPE SELECTOR",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Transition form MinIO to Azure](https://min.io/docs/minio/kubernetes/upstream/administration/object-management/transition-objects-to-azure.html)",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Transition from MinIO to GCS](https://min.io/docs/minio/kubernetes/upstream/administration/object-management/transition-objects-to-gcs.html)",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Transition from MinIO to S3](https://min.io/docs/minio/kubernetes/upstream/administration/object-management/transition-objects-to-s3.html)",
@@ -229,6 +245,7 @@
   },
   "replication_status": {
     "docs": [
+      "REPLICATION STATUS",
       "https://blog.min.io/content/images/size/w1000/2020/12/pay_banner-01-01-01-01-01.png[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)"
     ],
     "video": [],
@@ -241,6 +258,7 @@
   },
   "metrics": {
     "docs": [
+      "METRICS",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Console Metrics Dashboard](https://min.io/docs/minio/kubernetes/upstream/operations/monitoring/metrics-and-alerts.html#minio-console-metrics-dashboard)",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Available Metrics](https://min.io/docs/minio/kubernetes/upstream/operations/monitoring/metrics-and-alerts.html#available-metrics)",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Metrics and Alerts](https://min.io/docs/minio/kubernetes/upstream/operations/monitoring.html)",
@@ -256,6 +274,7 @@
   },
   "add_group": {
     "docs": [
+      "ADD GROUP",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Identity and Access Management](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management.html)",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[User management](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#minio-policy)",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Group Management](https://min.io/docs/minio/linux/administration/identity-access-management/minio-group-management.html)",
@@ -270,6 +289,7 @@
   },
   "groups": {
     "docs": [
+      "GROUPS",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Identity and Access Management](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management.html)",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Group Management](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/minio-group-management.html)",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[User management](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#minio-policy)",
@@ -282,6 +302,7 @@
   },
   "heal": {
     "docs": [
+      "HEAL",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[What is Drive Healing?](https://min.io/docs/minio/kubernetes/upstream/administration/console/managing-deployment.html#drives)",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Erasure Coding](https://min.io/docs/minio/kubernetes/upstream/operations/concepts/erasure-coding.html#)",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Site Healing](https://min.io/docs/minio/kubernetes/upstream/operations/install-deploy-manage/multi-site-replication.html#site-healing)",
@@ -301,6 +322,7 @@
   },
   "health_info": {
     "docs": [
+      "HEALTH INFO",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Health docs](https://min.io/docs/minio/linux/administration/console/subnet-registration.html#health)",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Healing](https://min.io/docs/minio/kubernetes/upstream/operations/concepts.html#minio-automatically-heals-corrupt-or-missing-data-on-the-fly)",
 
@@ -314,6 +336,7 @@
   },
   "add_idp_config": {
     "docs": [
+      "ADD IDP CONFIG",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Identity and Access Management](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management.html)",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[IDP Docs](https://min.io/docs/minio/kubernetes/upstream/operations/external-iam.html)",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[User Management](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#minio-policy)",
@@ -327,8 +350,9 @@
       "https://blog.min.io/content/images/size/w1000/2022/12/Screen-Shot-2022-12-16-at-2.13.42-PM.png[Access Control best practices](https://blog.min.io/s3-security-access-control/)"
     ]
   },
-  "idp_config_details": {
+  "idp_config": {
     "docs": [
+      "IDP CONFIG ",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Built-in MinIO IDP](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/minio-identity-management.html)",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Identity and Access Management](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management.html)",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[IDP Docs](https://min.io/docs/minio/kubernetes/upstream/operations/external-iam.html)",
@@ -346,6 +370,7 @@
   },
   "idp_configs": {
     "docs": [
+      "IDP CONFIGS",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Built-in MinIO IDP](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/minio-identity-management.html)",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Identity and Access Management](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management.html)",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[IDP Docs](https://min.io/docs/minio/kubernetes/upstream/operations/external-iam.html)",
@@ -364,6 +389,7 @@
   },
   "add_key": {
     "docs": [
+      "ADD KEY",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Identity and Access Management](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management.html)",
 
       "https://blog.min.io/content/images/size/w1000/2020/12/pay_banner-01-01-01-01-01.png[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)"
@@ -375,6 +401,7 @@
   },
   "import_key": {
     "docs": [
+      "IMPORT KEY",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Identity and Access Management](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management.html)",
 
       "https://blog.min.io/content/images/size/w1000/2020/12/pay_banner-01-01-01-01-01.png[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)"
@@ -386,6 +413,7 @@
   },
   "list_keys": {
     "docs": [
+      "LIST KEYS",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Identity and Access Management](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management.html)",
 
       "https://blog.min.io/content/images/size/w1000/2020/12/pay_banner-01-01-01-01-01.png[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)"
@@ -397,6 +425,7 @@
   },
   "kms_status": {
     "docs": [
+      "KMS STATUS",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Identity and Access Management](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management.html)",
 
       "https://blog.min.io/content/images/size/w1000/2020/12/pay_banner-01-01-01-01-01.png[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)"
@@ -408,6 +437,7 @@
   },
   "license": {
     "docs": [
+      "LICENSE",
       "https://blog.min.io/content/images/size/w1000/2020/12/pay_banner-01-01-01-01-01.png[Subnet registration and support](https://min.io/docs/minio/linux/administration/console/subnet-registration.html)",
       "https://blog.min.io/content/images/size/w1000/2020/12/pay_banner-01-01-01-01-01.png[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)"
     ],
@@ -424,6 +454,7 @@
   },
   "error_logs": {
     "docs": [
+      "ERROR LOGS",
       "https://blog.min.io/content/images/size/w1000/2020/12/pay_banner-01-01-01-01-01.png[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)"
     ],
     "video": [],
@@ -431,6 +462,7 @@
   },
   "audit_logs": {
     "docs": [
+      "AUDIT LOGS",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Audit Logs](https://min.io/docs/minio/kubernetes/upstream/operations/monitoring/minio-logging.html)",
       "https://blog.min.io/content/images/size/w1000/2020/12/pay_banner-01-01-01-01-01.png[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)"
     ],
@@ -439,6 +471,7 @@
   },
   "marketplace": {
     "docs": [
+      "MARKETPLACE",
       "https://blog.min.io/content/images/size/w1000/2020/12/pay_banner-01-01-01-01-01.png[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)"
     ],
     "video": [],
@@ -451,6 +484,7 @@
   },
   "add_notification_endpoint": {
     "docs": [
+      "ADD NOTIFICATION ENDPOINT",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Object Lambda](https://min.io/docs/minio/linux/developers/transforms-with-object-lambda.html?ref=docs)",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Bucket Notifications](https://min.io/docs/minio/kubernetes/upstream/administration/monitoring.html)",
       "https://blog.min.io/content/images/size/w1000/2020/12/pay_banner-01-01-01-01-01.png[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)"
@@ -460,6 +494,7 @@
   },
   "notification_endpoints": {
     "docs": [
+      "NOTIFICATION ENDPOINTS",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Object Lambda](https://min.io/docs/minio/linux/developers/transforms-with-object-lambda.html)",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Bucket Notifications](https://min.io/docs/minio/kubernetes/upstream/administration/monitoring.html)",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)"
@@ -469,6 +504,7 @@
   },
   "notification_type_selector": {
     "docs": [
+      "NOTIFICATION TYPE SELECTOR",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Object Lambda](https://min.io/docs/minio/linux/developers/transforms-with-object-lambda.html)",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Bucket Notifications](https://min.io/docs/minio/kubernetes/upstream/administration/monitoring.html)",
       "https://blog.min.io/content/images/size/w1000/2020/12/pay_banner-01-01-01-01-01.png[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)"
@@ -478,6 +514,7 @@
   },
   "object_browser": {
     "docs": [
+      "OBJECT BROWSER",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[What are Objects?](https://min.io/docs/minio/linux/administration/object-management.html)",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Managing Objects](https://min.io/docs/minio/kubernetes/upstream/administration/console/managing-objects.html#minio-console-managing-objects)",
       "https://blog.min.io/content/images/size/w1000/2020/12/pay_banner-01-01-01-01-01.png[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)"
@@ -495,6 +532,7 @@
   },
   "add_policy": {
     "docs": [
+      "ADD POLICY",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Supported S3 Policy Condition Keys](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#supported-s3-policy-condition-keys)",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Supported S3 Policy Actions](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#supported-s3-policy-actions)",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Policy Document Structure](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#policy-document-structure)",
@@ -510,6 +548,7 @@
   },
   "policy_details": {
     "docs": [
+      "POLICY DETAILS",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Supported S3 Policy Condition Keys](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#supported-s3-policy-condition-keys)",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Supported S3 Policy Actions](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#supported-s3-policy-actions)",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Policy Document Structure](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#policy-document-structure)",
@@ -524,6 +563,7 @@
   },
   "performance": {
     "docs": [
+      "PERFORMANCE",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Performance docs](https://min.io/docs/minio/linux/administration/console/subnet-registration.html#performance)",
       "https://blog.min.io/content/images/size/w1000/2020/12/pay_banner-01-01-01-01-01.png[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)"
     ],
@@ -535,6 +575,7 @@
   },
   "profile": {
     "docs": [
+      "PROFILE",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Profile](https://min.io/docs/minio/linux/administration/console/subnet-registration.html#profile)",
       "https://blog.min.io/content/images/size/w1000/2020/12/pay_banner-01-01-01-01-01.png[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)"
     ],
@@ -543,6 +584,7 @@
   },
   "register": {
     "docs": [
+      "REGISTER",
       "https://blog.min.io/content/images/size/w1000/2020/12/pay_banner-01-01-01-01-01.png[Register](https://min.io/docs/minio/kubernetes/upstream/operations/troubleshooting.html#registering-your-minio-deployment-with-subnet)",
       "https://blog.min.io/content/images/size/w1000/2020/12/pay_banner-01-01-01-01-01.png[Subnet Registration and Support](https://min.io/docs/minio/linux/administration/console/subnet-registration.html)",
 
@@ -559,6 +601,7 @@
   },
   "inspect": {
     "docs": [
+      "INSPECT",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Inspect](https://min.io/docs/minio/linux/administration/console/subnet-registration.html#inspect)",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Encrypt Inspect Output](https://min.io/docs/minio/kubernetes/upstream/operations/troubleshooting/encrypting-files.html)",
 
@@ -569,6 +612,7 @@
   },
   "trace": {
     "docs": [
+      "TRACE",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[What is Trace?](https://min.io/docs/minio/kubernetes/upstream/administration/console/managing-deployment.html#trace)",
       "https://blog.min.io/content/images/size/w1000/2020/12/pay_banner-01-01-01-01-01.png[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)"
     ],
@@ -577,6 +621,7 @@
   },
   "add_user": {
     "docs": [
+      "ADD USER",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Identity and Access Management](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management.html)",
 
       "https://blog.min.io/content/images/size/w1000/2020/12/pay_banner-01-01-01-01-01.png[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)"
@@ -592,6 +637,7 @@
   },
   "add_user_SA": {
     "docs": [
+      "ADD USER SA",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Supported S3 Policy Condition Keys](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#supported-s3-policy-condition-keys)",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Supported S3 Policy Actions](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#supported-s3-policy-actions)",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Policy Document Structure](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#policy-document-structure)",
@@ -606,6 +652,7 @@
   },
   "list_users": {
     "docs": [
+      "LIST USERS",
       "https://blog.min.io/content/images/size/w1000/2023/03/faststreaming-03.jpg[User management](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#minio-policy{:target='_blank'})  \n Text snippet for Docs on user management",
       "https://blog.min.io/content/images/size/w1000/2023/03/faststreaming-03.jpg[Identity and Access Management](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management.html)  \n Text snippet",
       "https://blog.min.io/content/images/size/w1000/2023/03/faststreaming-03.jpg[Users help link here](https://min.io/docs/minio/linux/administration/identity-access-management/minio-user-management.html#)  \n Text snippet",
@@ -619,6 +666,7 @@
   },
   "watch": {
     "docs": [
+      "WATCH",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[What is Watch?](https://min.io/docs/minio/kubernetes/upstream/administration/console/managing-deployment.html#watch)",
       "https://blog.min.io/content/images/size/w1000/2020/12/pay_banner-01-01-01-01-01.png[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)"
     ],
@@ -627,6 +675,7 @@
   },
   "policy_Summary": {
     "docs": [
+      "POLICY SUMMARY",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Supported S3 Policy Condition Keys](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#supported-s3-policy-condition-keys)",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Supported S3 Policy Actions](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#supported-s3-policy-actions)",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Policy Document Structure](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#policy-document-structure)",
@@ -644,6 +693,7 @@
   },
   "policy_Users": {
     "docs": [
+      "POLICY USERS",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Access Managemnt](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#minio-policy-actions)",
 
       "https://blog.min.io/content/images/size/w1000/2020/12/pay_banner-01-01-01-01-01.png[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)"
@@ -658,6 +708,7 @@
   },
   "policy_Groups": {
     "docs": [
+      "POLICY GROUPS",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Access Managemnt](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#minio-policy-actions)",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Group Management](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/minio-group-management.html)",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Groups](https://min.io/docs/minio/linux/administration/identity-access-management/minio-group-management.html)",
@@ -671,6 +722,7 @@
   },
   "policy_Raw Policy": {
     "docs": [
+      "POLICY RAW POLICY",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Supported S3 Policy Condition Keys](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#supported-s3-policy-condition-keys)",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Supported S3 Policy Actions](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#supported-s3-policy-actions)",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Policy Document Structure](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#policy-document-structure)",
@@ -686,6 +738,7 @@
   },
   "user": {
     "docs": [
+      "USER",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Group Management](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/minio-group-management.html)",
 
       "https://blog.min.io/content/images/size/w1000/2020/12/pay_banner-01-01-01-01-01.png[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)"
@@ -698,6 +751,7 @@
   },
   "user0": {
     "docs": [
+      "USER0",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Group Management](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/minio-group-management.html)",
 
       "https://blog.min.io/content/images/size/w1000/2020/12/pay_banner-01-01-01-01-01.png[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)"
@@ -710,6 +764,7 @@
   },
   "user1": {
     "docs": [
+      "USER1",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Supported S3 Policy Actions](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#supported-s3-policy-actions)",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Policy Document Structure](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#policy-document-structure)",
 
@@ -723,6 +778,7 @@
   },
   "user2": {
     "docs": [
+      "USER2",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Access Managemnt](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#minio-policy-actions)",
 
       "https://blog.min.io/content/images/size/w1000/2020/12/pay_banner-01-01-01-01-01.png[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)"
@@ -733,36 +789,9 @@
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Securing hybrid cloud storagew with MinIO IAM](https://blog.min.io/secure-hybrid-cloud-minio-iam/)"
     ]
   },
-  "group_details": {
+  "group_details0": {
     "docs": [
-      "https://min.io/resources/img/logo/MINIO_wordmark.png[Group Management](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/minio-group-management.html)",
-      "https://min.io/resources/img/logo/MINIO_wordmark.png[Access Managemnt](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#minio-policy-actions)",
-
-      "https://min.io/resources/img/logo/MINIO_wordmark.png[Groups docs](https://min.io/docs/minio/linux/administration/identity-access-management/minio-group-management.html)",
-      "https://blog.min.io/content/images/size/w1000/2020/12/pay_banner-01-01-01-01-01.png[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)"
-    ],
-    "video": [],
-    "blog": [
-      "https://min.io/resources/img/logo/MINIO_wordmark.png[Securing hybrid cloud storagew with MinIO IAM](https://blog.min.io/secure-hybrid-cloud-minio-iam/)",
-      "https://blog.min.io/content/images/size/w1000/2022/12/Screen-Shot-2022-12-16-at-2.13.42-PM.png[Access Control best practices](https://blog.min.io/s3-security-access-control/)"
-    ]
-  },
-
-  "group_Members": {
-    "docs": [
-      "https://min.io/resources/img/logo/MINIO_wordmark.png[Group Management](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/minio-group-management.html)",
-
-      "https://min.io/resources/img/logo/MINIO_wordmark.png[Groups](https://min.io/docs/minio/linux/administration/identity-access-management/minio-group-management.html)",
-      "https://blog.min.io/content/images/size/w1000/2020/12/pay_banner-01-01-01-01-01.png[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)"
-    ],
-    "video": [],
-    "blog": [
-      "https://min.io/resources/img/logo/MINIO_wordmark.png[Securing hybrid cloud storage with MinIO IAM](https://blog.min.io/secure-hybrid-cloud-minio-iam/)",
-      "https://blog.min.io/content/images/size/w1000/2022/12/Screen-Shot-2022-12-16-at-2.13.42-PM.png[Access Control best practices](https://blog.min.io/s3-security-access-control/)"
-    ]
-  },
-  "group_Policies": {
-    "docs": [
+      "GROUP_DETAILS0",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Access Managemnt](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#minio-policy-actions)",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Groups docs](https://min.io/docs/minio/linux/administration/identity-access-management/minio-group-management.html)",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Group Management](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/minio-group-management.html)",
@@ -775,9 +804,27 @@
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Securing hybrid cloud storage with MinIO IAM](https://blog.min.io/secure-hybrid-cloud-minio-iam/)"
     ]
   },
+
+  "group_details1": {
+
+    "docs": [
+      "GROUP_DETAILS1",
+      "https://min.io/resources/img/logo/MINIO_wordmark.png[Access Managemnt](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#minio-policy-actions)",
+      "https://min.io/resources/img/logo/MINIO_wordmark.png[Groups docs](https://min.io/docs/minio/linux/administration/identity-access-management/minio-group-management.html)",
+      "https://min.io/resources/img/logo/MINIO_wordmark.png[Group Management](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/minio-group-management.html)",
+      "https://blog.min.io/content/images/size/w1000/2020/12/pay_banner-01-01-01-01-01.png[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)"
+    ],
+    "video": [],
+    "blog": [
+      "https://blog.min.io/content/images/size/w1000/2022/12/Screen-Shot-2022-12-16-at-2.13.42-PM.png[Access Control best practices](https://blog.min.io/s3-security-access-control/)",
+
+      "https://min.io/resources/img/logo/MINIO_wordmark.png[Securing hybrid cloud storage with MinIO IAM](https://blog.min.io/secure-hybrid-cloud-minio-iam/)"
+    ]
+  },
+ 
   "bucket_detail_0": {
     "docs": [
-      "BUCKET DETAIL HELP 0",
+      "BUCKET_DETAIL_0",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Object Locking](https://min.io/docs/minio/kubernetes/upstream/administration/object-management/object-retention.html)",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Encryption](https://min.io/docs/minio/kubernetes/upstream/administration/server-side-encryption.html)",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Bucket Versioning](https://min.io/docs/minio/kubernetes/upstream/administration/object-management/object-versioning.html#minio-bucket-versioning)",
@@ -823,7 +870,7 @@
 
   "bucket_detail_summary": {
     "docs": [
-      "BUCKET DETAIL SUMMARY HELP",
+      "BUCKET DETAIL SUMMARY ",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Object Locking](https://min.io/docs/minio/kubernetes/upstream/administration/object-management/object-retention.html)",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Encryption](https://min.io/docs/minio/kubernetes/upstream/administration/server-side-encryption.html)",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Bucket Versioning](https://min.io/docs/minio/kubernetes/upstream/administration/object-management/object-versioning.html#minio-bucket-versioning)",
@@ -855,7 +902,7 @@
   },
   "bucket_detail_events": {
     "docs": [
-      "BUCKET EVENT HELP",
+      "BUCKET DETAIL EVENT ",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Object Lambda](https://min.io/docs/minio/linux/developers/transforms-with-object-lambda.html?ref=docs)",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Bucket Notifications](https://min.io/docs/minio/kubernetes/upstream/administration/monitoring/bucket-notifications.html#minio-bucket-notifications)",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Buckets](https://min.io/docs/minio/kubernetes/upstream/administration/console/managing-objects.html#buckets)",
@@ -866,7 +913,7 @@
   },
   "bucket_detail_replication": {
     "docs": [
-      "BUCKET REPLICATION HELP",
+      "BUCKET DETAIL REPLICATION",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Bucket Replication requirements](https://min.io/docs/minio/kubernetes/upstream/administration/bucket-replication/bucket-replication-requirements.html)",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Bucket Replication](https://min.io/docs/minio/kubernetes/upstream/administration/bucket-replication.html#minio-bucket-replication-serverside)",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Buckets](https://min.io/docs/minio/kubernetes/upstream/administration/console/managing-objects.html#buckets)",
@@ -887,7 +934,7 @@
   },
   "bucket_detail_lifecycle": {
     "docs": [
-      "BUCKET LIFECYCLE HELP",
+      "BUCKET DETAIL LIFECYCLE ",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Object Lifecycle Management](https://min.io/docs/minio/kubernetes/upstream/administration/object-management/object-lifecycle-management.html#minio-lifecycle-management)",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Buckets](https://min.io/docs/minio/kubernetes/upstream/administration/console/managing-objects.html#buckets)",
       "https://blog.min.io/content/images/size/w1000/2020/12/pay_banner-01-01-01-01-01.png[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)"
@@ -901,7 +948,7 @@
   },
   "bucket_detail_access": {
     "docs": [
-      "BUCKET ACCESS HELP",
+      "BUCKET DETAIL ACCESS ",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Access management](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#minio-policy)",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[User management](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#minio-policy)",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Buckets](https://min.io/docs/minio/kubernetes/upstream/administration/console/managing-objects.html#buckets)",
@@ -915,7 +962,7 @@
   },
   "bucket_detail_prefix": {
     "docs": [
-      "BUCKET ANON HELP",
+      "BUCKET DETAIL PREFIX",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Buckets](https://min.io/docs/minio/kubernetes/upstream/administration/console/managing-objects.html#buckets)",
       "https://blog.min.io/content/images/size/w1000/2020/12/pay_banner-01-01-01-01-01.png[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)"
     ],
@@ -924,6 +971,7 @@
   },
   "call_home": {
     "docs": [
+      "CALL HOME",
       "https://blog.min.io/content/images/size/w1000/2020/12/pay_banner-01-01-01-01-01.png[Subnet registration and support](https://min.io/docs/minio/linux/administration/console/subnet-registration.html)",
       "https://blog.min.io/content/images/size/w1000/2020/12/pay_banner-01-01-01-01-01.png[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)"
     ],
@@ -937,6 +985,7 @@
   },
   "event_destinations": {
     "docs": [
+      "EVENT DETINATIONS",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Object Lambda](https://min.io/docs/minio/linux/developers/transforms-with-object-lambda.html)",
       "https://blog.min.io/content/images/size/w1000/2020/12/pay_banner-01-01-01-01-01.png[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)"
     ],
@@ -948,6 +997,7 @@
   },
   "LDAP": {
     "docs": [
+      "LDAP",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Active Directory / LDAP Access Management](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/ad-ldap-access-management.html)",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[IDP Docs](https://min.io/docs/minio/kubernetes/upstream/operations/external-iam.html)",
 
@@ -961,6 +1011,7 @@
   },
   "login": {
     "docs": [
+      "LOGIN",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Login help](https://min.io/docs/minio/kubernetes/upstream/administration/minio-console.html#logging-in)",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Subnet registration and support](https://min.io/docs/minio/linux/administration/console/subnet-registration.html)",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Login help](https://min.io/docs/minio/kubernetes/upstream/administration/minio-console.html#configuration)",

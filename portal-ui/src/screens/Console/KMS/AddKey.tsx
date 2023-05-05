@@ -14,12 +14,12 @@
 // You should have received a copy of the GNU Affero General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-import React, { Fragment } from "react";
+import React, { Fragment, useEffect } from "react";
 
 import Grid from "@mui/material/Grid";
 import { IAM_PAGES } from "../../../common/SecureComponent/permissions";
 import { ErrorResponseHandler } from "../../../common/types";
-import { setErrorSnackMessage } from "../../../systemSlice";
+import { setErrorSnackMessage, setHelpName } from "../../../systemSlice";
 import { useNavigate } from "react-router-dom";
 import { useAppDispatch } from "../../../store";
 import AddKeyForm from "./AddKeyForm";
@@ -35,6 +35,11 @@ const AddKey = () => {
 
   const onError = (err: ErrorResponseHandler) =>
     dispatch(setErrorSnackMessage(err));
+
+    
+  useEffect(() => {
+    dispatch(setHelpName("add_key"))
+  }, []);
 
   return (
     <Fragment>

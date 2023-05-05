@@ -83,14 +83,6 @@ const HelpMenu = ({ classes, helpName }: IHelpMenuProps) => {
   const wrapperRef = useRef(null);
   useOutsideAlerter(wrapperRef);
 
-// useEffect(() => {
- //   let helpTopics = require("../Console/helpTopics.json");
- //  !helpName
-  //    ? systemHelpName
- //       ? setHelpItems(helpTopics[systemHelpName])
- //       : setHelpItems(helpTopics[0])
- //     : setHelpItems(helpTopics[helpName]);
- // }, [systemHelpName]);
 
   useEffect(() => {
          assignHelpItems(systemHelpName)
@@ -99,8 +91,7 @@ const HelpMenu = ({ classes, helpName }: IHelpMenuProps) => {
   const assignHelpItems = (helpType: string) => {
     console.log("systemhelpname: ", helpType)
     let helpTopics = require("../Console/helpTopics.json");
-if (helpType.startsWith("user")){
-  console.log("it's user details! helpTabName: ", helpTabName, " systemHelpName+helpTabName: ",helpType+helpTabName)
+if (helpType.includes("details") ){
   if (helpTopics[helpType+helpTabName]) {
     console.log("it's here! helpTopics[systemHelpName+helpTabName]['docs']: ",helpTopics[helpType+helpTabName]["docs"])
     helpTopics[helpType+helpTabName]["docs"] &&
@@ -133,7 +124,9 @@ if (helpType.startsWith("user")){
   };
 
 
-
+  useEffect( () => {
+    console.log("systemHelpName: ", systemHelpName, " helpTabName: ", helpTabName)
+      }, [systemHelpName, helpTabName])
 
 
   useEffect( () => {
