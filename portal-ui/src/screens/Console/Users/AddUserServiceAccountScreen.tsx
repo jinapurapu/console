@@ -154,7 +154,7 @@ const AddServiceAccount = ({ classes }: IAddServiceAccountProps) => {
   };
 
   useEffect(() => {
-    dispatch(setHelpName("add_user_SA"))
+    dispatch(setHelpName("add_user_SA"));
   }, []);
 
   return (
@@ -179,7 +179,7 @@ const AddServiceAccount = ({ classes }: IAddServiceAccountProps) => {
               label={"User Details - " + userName}
             />
           }
-          actions={<HelpMenu  />}
+          actions={<HelpMenu />}
         />
         <PageLayout>
           <Box

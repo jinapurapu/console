@@ -133,8 +133,9 @@ const AccessDetails = () => {
     }
   }, [loadingUsers, dispatch, bucketName, displayUsersList]);
 
-  
-  useEffect(()=> {dispatch(setHelpName("bucket_detail_access"))},[])
+  useEffect(() => {
+    dispatch(setHelpName("bucket_detail_access"));
+  }, []);
 
   useEffect(() => {
     if (loadingPolicies) {

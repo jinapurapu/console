@@ -36,9 +36,8 @@ const AddKey = () => {
   const onError = (err: ErrorResponseHandler) =>
     dispatch(setErrorSnackMessage(err));
 
-    
   useEffect(() => {
-    dispatch(setHelpName("add_key"))
+    dispatch(setHelpName("add_key"));
   }, []);
 
   return (

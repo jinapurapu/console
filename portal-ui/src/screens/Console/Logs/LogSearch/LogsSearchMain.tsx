@@ -277,7 +277,7 @@ const LogsSearchMain = ({ classes }: ILogSearchProps) => {
   };
 
   useEffect(() => {
-    dispatch(setHelpName("audit_logs"))
+    dispatch(setHelpName("audit_logs"));
   }, []);
 
   return (
@@ -290,10 +290,7 @@ const LogsSearchMain = ({ classes }: ILogSearchProps) => {
         />
       )}
 
-      <PageHeaderWrapper
-        label="Audit Logs"
-        actions={<HelpMenu  />}
-      />
+      <PageHeaderWrapper label="Audit Logs" actions={<HelpMenu />} />
 
       <PageLayout>
         {!logSearchEnabled ? (

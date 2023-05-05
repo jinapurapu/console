@@ -45,7 +45,11 @@ import {
 } from "../../../common/SecureComponent/permissions";
 import { SecureComponent } from "../../../common/SecureComponent";
 import { encodeURLString } from "../../../common/utils";
-import { setErrorSnackMessage, setHelpName, setSnackBarMessage } from "../../../systemSlice";
+import {
+  setErrorSnackMessage,
+  setHelpName,
+  setSnackBarMessage,
+} from "../../../systemSlice";
 import { useAppDispatch } from "../../../store";
 import TooltipWrapper from "../Common/TooltipWrapper/TooltipWrapper";
 
@@ -90,9 +94,6 @@ const UserServiceAccountsPanel = ({
   useEffect(() => {
     fetchRecords();
   }, []);
-
- 
-
 
   useEffect(() => {
     if (loading) {

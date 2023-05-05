@@ -111,17 +111,14 @@ const SiteReplication = () => {
   }, []);
 
   const hasSites = sites?.length;
- 
+
   useEffect(() => {
-    dispatch(setHelpName("site-replication"))
+    dispatch(setHelpName("site-replication"));
   }, []);
 
   return (
     <Fragment>
-      <PageHeaderWrapper
-        label={"Site Replication"}
-        actions={<HelpMenu  />}
-      />
+      <PageHeaderWrapper label={"Site Replication"} actions={<HelpMenu />} />
 
       <PageLayout>
         <Box

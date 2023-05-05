@@ -29,15 +29,12 @@ const ComponentsScreen = () => {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    dispatch(setHelpName("components"))
+    dispatch(setHelpName("components"));
   }, []);
 
   return (
     <Fragment>
-      <PageHeaderWrapper
-        label={"Components"}
-        actions={<HelpMenu  />}
-      />
+      <PageHeaderWrapper label={"Components"} actions={<HelpMenu />} />
 
       <PageLayout>
         <Grid container spacing={1}>

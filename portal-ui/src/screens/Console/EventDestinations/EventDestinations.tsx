@@ -26,18 +26,14 @@ const ListNotificationEndpoints = withSuspense(
   React.lazy(() => import("./ListEventDestinations"))
 );
 
-
 const EventDestinations = () => {
   const dispatch = useAppDispatch();
   useEffect(() => {
-    dispatch(setHelpName("event_destinations"))
+    dispatch(setHelpName("event_destinations"));
   }, []);
   return (
     <Fragment>
-      <PageHeaderWrapper
-        label="Event Destinations"
-        actions={<HelpMenu  />}
-      />
+      <PageHeaderWrapper label="Event Destinations" actions={<HelpMenu />} />
       <ListNotificationEndpoints />
     </Fragment>
   );

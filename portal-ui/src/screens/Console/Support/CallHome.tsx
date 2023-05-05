@@ -106,7 +106,7 @@ const CallHome = () => {
   }
 
   useEffect(() => {
-    dispatch(setHelpName("call_home"))
+    dispatch(setHelpName("call_home"));
   }, []);
 
   return (
@@ -120,10 +120,7 @@ const CallHome = () => {
           disable={disableMode}
         />
       )}
-      <PageHeaderWrapper
-        label="Call Home"
-        actions={<HelpMenu  />}
-      />
+      <PageHeaderWrapper label="Call Home" actions={<HelpMenu />} />
       <PageLayout>
         {!clusterRegistered && <RegisterCluster compactMode />}
         <Box

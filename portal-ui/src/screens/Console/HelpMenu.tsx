@@ -58,9 +58,10 @@ const HelpMenu = ({ classes }: IHelpMenuProps) => {
   const systemHelpName = useSelector(
     (state: AppState) => state.system.helpName
   );
-  
 
-  const helpTabName = useSelector((state: AppState) => state.system.helpTabName)
+  const helpTabName = useSelector(
+    (state: AppState) => state.system.helpTabName
+  );
 
   const toggleHelpMenu = () => {
     setHelpMenuOpen(!helpMenuOpen);
@@ -83,43 +84,40 @@ const HelpMenu = ({ classes }: IHelpMenuProps) => {
   const wrapperRef = useRef(null);
   useOutsideAlerter(wrapperRef);
 
-
   useEffect(() => {
-         assignHelpItems(systemHelpName)
+    assignHelpItems(systemHelpName);
   }, [systemHelpName, helpTabName]);
 
   const assignHelpItems = (helpType: string) => {
     let helpTopics = require("../Console/helpTopics.json");
-if (helpType.includes("details") ){
-  if (helpTopics[helpType+helpTabName]) {
-    helpTopics[helpType+helpTabName]["docs"] &&
-      setHelpItems(helpTopics[helpType+helpTabName]["docs"]);
+    if (helpType.includes("details")) {
+      if (helpTopics[helpType + helpTabName]) {
+        helpTopics[helpType + helpTabName]["docs"] &&
+          setHelpItems(helpTopics[helpType + helpTabName]["docs"]);
 
-    helpTopics[helpType+helpTabName]["blog"] &&
-      setHelpItemsBlog(helpTopics[helpType+helpTabName]["blog"]);
+        helpTopics[helpType + helpTabName]["blog"] &&
+          setHelpItemsBlog(helpTopics[helpType + helpTabName]["blog"]);
 
-    helpTopics[helpType+helpTabName]["video"] &&
-      setHelpItemsVideo(helpTopics[helpType+helpTabName]["video"]);
-  } else {
-    setHelpItems(helpTopics["help"]["docs"]);
-  }
-} else {
-    if (helpTopics[helpType]) {
-      helpTopics[helpType]["docs"] &&
-        setHelpItems(helpTopics[helpType]["docs"]);
-
-      helpTopics[helpType]["blog"] &&
-        setHelpItemsBlog(helpTopics[helpType]["blog"]);
-
-      helpTopics[helpType]["video"] &&
-        setHelpItemsVideo(helpTopics[helpType]["video"]);
+        helpTopics[helpType + helpTabName]["video"] &&
+          setHelpItemsVideo(helpTopics[helpType + helpTabName]["video"]);
+      } else {
+        setHelpItems(helpTopics["help"]["docs"]);
+      }
     } else {
-      setHelpItems(helpTopics["help"]["docs"]);
+      if (helpTopics[helpType]) {
+        helpTopics[helpType]["docs"] &&
+          setHelpItems(helpTopics[helpType]["docs"]);
+
+        helpTopics[helpType]["blog"] &&
+          setHelpItemsBlog(helpTopics[helpType]["blog"]);
+
+        helpTopics[helpType]["video"] &&
+          setHelpItemsVideo(helpTopics[helpType]["video"]);
+      } else {
+        setHelpItems(helpTopics["help"]["docs"]);
+      }
     }
-}
   };
-
-
 
   const helpContent = (
     <React.Fragment>

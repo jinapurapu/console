@@ -255,17 +255,14 @@ const HealthInfo = ({ classes }: IHealthInfo) => {
     }
     setStartDiagnostic(true);
   };
- 
+
   useEffect(() => {
-    dispatch(setHelpName("health_info"))
+    dispatch(setHelpName("health_info"));
   }, []);
 
   return (
     <Fragment>
-      <PageHeaderWrapper
-        label="Health"
-        actions={<HelpMenu  />}
-      />
+      <PageHeaderWrapper label="Health" actions={<HelpMenu />} />
 
       <PageLayout>
         {!clusterRegistered && <RegisterCluster compactMode />}

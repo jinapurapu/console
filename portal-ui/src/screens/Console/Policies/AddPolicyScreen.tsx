@@ -90,9 +90,8 @@ const AddPolicyScreen = () => {
     policyName.indexOf(" ") === -1 &&
     policyDefinition.trim() !== "";
 
-
   useEffect(() => {
-    dispatch(setHelpName("add_policy"))
+    dispatch(setHelpName("add_policy"));
   }, []);
   return (
     <Fragment>
@@ -104,7 +103,7 @@ const AddPolicyScreen = () => {
               onClick={() => navigate(IAM_PAGES.POLICIES)}
             />
           }
-          actions={<HelpMenu  />}
+          actions={<HelpMenu />}
         />
         <PageLayout>
           <FormLayout

@@ -168,15 +168,12 @@ const Trace = ({ classes }: ITrace) => {
   };
 
   useEffect(() => {
-    dispatch(setHelpName("trace"))
+    dispatch(setHelpName("trace"));
   }, []);
 
   return (
     <Fragment>
-      <PageHeaderWrapper
-        label={"Trace"}
-        actions={<HelpMenu  />}
-      />
+      <PageHeaderWrapper label={"Trace"} actions={<HelpMenu />} />
 
       <PageLayout>
         <Grid container spacing={1} className={classes.formBox}>

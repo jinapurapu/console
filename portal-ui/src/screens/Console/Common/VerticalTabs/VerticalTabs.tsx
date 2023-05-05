@@ -126,7 +126,7 @@ const VerticalTabs = ({
   const handleChange = (event: React.SyntheticEvent, newValue: string) => {
     setValue(newValue);
     dispatch(setHelpTabName(newValue));
-    console.log("reset helpTabName: ",newValue)
+    console.log("reset helpTabName: ", newValue);
   };
 
   return (

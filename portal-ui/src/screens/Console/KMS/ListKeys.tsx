@@ -130,7 +130,7 @@ const ListKeys = ({ classes }: IKeysProps) => {
   ];
 
   useEffect(() => {
-    dispatch(setHelpName("list_keys"))
+    dispatch(setHelpName("list_keys"));
   }, []);
 
   return (
@@ -146,7 +146,7 @@ const ListKeys = ({ classes }: IKeysProps) => {
       )}
       <PageHeaderWrapper
         label="Key Management Service Keys"
-        actions={<HelpMenu  />}
+        actions={<HelpMenu />}
       />
 
       <PageLayout className={classes.pageContainer}>

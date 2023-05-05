@@ -34,7 +34,7 @@ const TierTypeSelector = () => {
   };
   const dispatch = useAppDispatch();
   useEffect(() => {
-    dispatch(setHelpName("tier-type-selector"))
+    dispatch(setHelpName("tier-type-selector"));
   }, []);
 
   return (

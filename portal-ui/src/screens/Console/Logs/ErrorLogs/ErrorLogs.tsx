@@ -234,15 +234,12 @@ const ErrorLogs = () => {
   }, []);
 
   useEffect(() => {
-    dispatch(setHelpName("error_logs"))
+    dispatch(setHelpName("error_logs"));
   }, []);
 
   return (
     <Fragment>
-      <PageHeaderWrapper
-        label="Logs"
-        actions={<HelpMenu  />}
-      />
+      <PageHeaderWrapper label="Logs" actions={<HelpMenu />} />
 
       <PageLayout>
         <Grid container spacing={1}>

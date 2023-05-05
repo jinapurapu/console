@@ -165,16 +165,16 @@ const AddIDPConfiguration = ({
         );
     }
   };
- 
+
   useEffect(() => {
-    dispatch(setHelpName("add_idp_config"))
+    dispatch(setHelpName("add_idp_config"));
   }, []);
 
   return (
     <Grid item xs={12}>
       <PageHeaderWrapper
         label={<BackLink onClick={() => navigate(backLink)} label={header} />}
-        actions={<HelpMenu  />}
+        actions={<HelpMenu />}
       />
       <PageLayout>
         <Box

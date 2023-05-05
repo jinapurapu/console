@@ -60,7 +60,7 @@ const EventTypeSelector = ({ classes }: INotificationTypeSelector) => {
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
   useEffect(() => {
-    dispatch(setHelpName("notification_type_selector"))
+    dispatch(setHelpName("notification_type_selector"));
   }, []);
   return (
     <Fragment>
@@ -73,7 +73,7 @@ const EventTypeSelector = ({ classes }: INotificationTypeSelector) => {
             />
           </Fragment>
         }
-        actions={<HelpMenu  />}
+        actions={<HelpMenu />}
       />
       <PageLayout>
         <Box

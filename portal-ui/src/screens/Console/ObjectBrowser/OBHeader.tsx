@@ -110,7 +110,7 @@ const OBHeader = ({ bucketName }: IOBHeader) => {
   );
 
   useEffect(() => {
-    dispatch(setHelpName("object_browser"))
+    dispatch(setHelpName("object_browser"));
   }, []);
 
   return (
@@ -157,7 +157,7 @@ const OBHeader = ({ bucketName }: IOBHeader) => {
                   />
                 </TooltipWrapper>
               </SecureComponent>
-              <HelpMenu  />
+              <HelpMenu />
             </Fragment>
           }
           middleComponent={searchBar}

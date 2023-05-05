@@ -62,16 +62,13 @@ const Dashboard = ({ classes }: IDashboardSimple) => {
   }, [loading, dispatch]);
 
   useEffect(() => {
-    dispatch(setHelpName("metrics"))
+    dispatch(setHelpName("metrics"));
   }, []);
 
   return (
     <Fragment>
       {!hideMenu && (
-        <PageHeaderWrapper
-          label="Metrics"
-          actions={<HelpMenu  />}
-        />
+        <PageHeaderWrapper label="Metrics" actions={<HelpMenu />} />
       )}
       {loading ? (
         <Grid container>

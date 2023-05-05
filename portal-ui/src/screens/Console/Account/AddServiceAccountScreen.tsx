@@ -79,8 +79,9 @@ const AddServiceAccount = ({ classes }: IAddServiceAccountProps) => {
   const [showPassword, setShowPassword] = useState<boolean>(false);
   const [policyJSON, setPolicyJSON] = useState<string>("");
 
-
-  useEffect(()=> {dispatch(setHelpName("add_service_account"))},[])
+  useEffect(() => {
+    dispatch(setHelpName("add_service_account"));
+  }, []);
 
   useEffect(() => {
     if (addSending) {
@@ -152,11 +153,7 @@ const AddServiceAccount = ({ classes }: IAddServiceAccountProps) => {
               onClick={() => navigate(IAM_PAGES.ACCOUNT)}
             />
           }
-          actions={
-            <HelpMenu
-             
-            />
-          }
+          actions={<HelpMenu />}
         />
         <PageLayout>
           <Box

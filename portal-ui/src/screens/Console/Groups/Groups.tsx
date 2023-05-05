@@ -114,7 +114,7 @@ const Groups = ({ classes }: IGroupsProps) => {
   }, []);
 
   useEffect(() => {
-    dispatch(setHelpName("groups"))
+    dispatch(setHelpName("groups"));
   }, []);
 
   const displayGroups = hasPermission(
@@ -208,9 +208,6 @@ const Groups = ({ classes }: IGroupsProps) => {
     },
   ];
 
-  
- 
-
   return (
     <Fragment>
       {deleteOpen && (
@@ -230,10 +227,7 @@ const Groups = ({ classes }: IGroupsProps) => {
           }}
         />
       )}
-      <PageHeaderWrapper
-        label={"Groups"}
-        actions={<HelpMenu  />}
-      />
+      <PageHeaderWrapper label={"Groups"} actions={<HelpMenu />} />
 
       <PageLayout>
         <Grid container spacing={1}>

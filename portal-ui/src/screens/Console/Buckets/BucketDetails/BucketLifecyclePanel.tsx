@@ -86,8 +86,9 @@ const BucketLifecyclePanel = ({ classes }: IBucketLifecyclePanelProps) => {
     }
   }, [loadingBucket, setLoadingLifecycle]);
 
-
-  useEffect(()=> {dispatch(setHelpName("bucket_detail_lifecycle"))},[])
+  useEffect(() => {
+    dispatch(setHelpName("bucket_detail_lifecycle"));
+  }, []);
 
   useEffect(() => {
     if (loadingLifecycle) {

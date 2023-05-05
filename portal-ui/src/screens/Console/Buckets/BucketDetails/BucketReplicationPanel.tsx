@@ -95,8 +95,9 @@ const BucketReplicationPanel = ({ classes }: IBucketReplicationProps) => {
     IAM_SCOPES.S3_GET_ACTIONS,
   ]);
 
-
-  useEffect(()=> {dispatch(setHelpName("bucket_detail_replication"))},[])
+  useEffect(() => {
+    dispatch(setHelpName("bucket_detail_replication"));
+  }, []);
 
   useEffect(() => {
     if (loadingBucket) {

@@ -72,7 +72,7 @@ const ImportKey = () => {
   const validSave = keyName.trim() !== "" && keyName.indexOf(" ") === -1;
 
   useEffect(() => {
-    dispatch(setHelpName("import_key"))
+    dispatch(setHelpName("import_key"));
   }, []);
 
   return (
@@ -85,7 +85,7 @@ const ImportKey = () => {
               label={"Keys"}
             />
           }
-          actions={<HelpMenu  />}
+          actions={<HelpMenu />}
         />
         <PageLayout>
           <FormLayout

@@ -139,7 +139,7 @@ const IDPConfigurations = ({ classes, idpType }: IDPConfigurationsProps) => {
   ];
 
   useEffect(() => {
-    dispatch(setHelpName("idp_configs"))
+    dispatch(setHelpName("idp_configs"));
   }, []);
 
   return (
@@ -154,7 +154,7 @@ const IDPConfigurations = ({ classes, idpType }: IDPConfigurationsProps) => {
       )}
       <PageHeaderWrapper
         label={`${idpType.toUpperCase()} Configurations`}
-        actions={<HelpMenu  />}
+        actions={<HelpMenu />}
       />
 
       <PageLayout className={classes.pageContainer}>

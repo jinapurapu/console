@@ -208,15 +208,12 @@ const Speedtest = () => {
 
   const dispatch = useAppDispatch();
   useEffect(() => {
-    dispatch(setHelpName("performance"))
+    dispatch(setHelpName("performance"));
   }, []);
 
   return (
     <Fragment>
-      <PageHeaderWrapper
-        label="Performance"
-        actions={<HelpMenu  />}
-      />
+      <PageHeaderWrapper label="Performance" actions={<HelpMenu />} />
 
       <PageLayout>
         {!clusterRegistered && <RegisterCluster compactMode />}

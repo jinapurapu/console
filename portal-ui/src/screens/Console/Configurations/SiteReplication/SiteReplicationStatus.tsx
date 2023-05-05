@@ -123,7 +123,7 @@ const SiteReplicationStatus = () => {
 
   const dispatch = useAppDispatch();
   useEffect(() => {
-    dispatch(setHelpName("replication_status"))
+    dispatch(setHelpName("replication_status"));
   }, []);
 
   return (
@@ -135,7 +135,7 @@ const SiteReplicationStatus = () => {
             onClick={() => navigate(IAM_PAGES.SITE_REPLICATION)}
           />
         }
-        actions={<HelpMenu  />}
+        actions={<HelpMenu />}
       />
 
       <PageLayout>

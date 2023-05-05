@@ -269,15 +269,12 @@ const Heal = () => {
   }));
   const dispatch = useAppDispatch();
   useEffect(() => {
-    dispatch(setHelpName("heal"))
+    dispatch(setHelpName("heal"));
   }, []);
 
   return (
     <Fragment>
-      <PageHeaderWrapper
-        label="Drives"
-        actions={<HelpMenu  />}
-      />
+      <PageHeaderWrapper label="Drives" actions={<HelpMenu />} />
 
       <PageLayout>
         {!distributedSetup ? (

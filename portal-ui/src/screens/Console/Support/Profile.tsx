@@ -143,15 +143,12 @@ const Profile = ({ classes }: IProfileProps) => {
 
   const dispatch = useAppDispatch();
   useEffect(() => {
-    dispatch(setHelpName("profile"))
+    dispatch(setHelpName("profile"));
   }, []);
 
   return (
     <Fragment>
-      <PageHeaderWrapper
-        label="Profile"
-        actions={<HelpMenu  />}
-      />
+      <PageHeaderWrapper label="Profile" actions={<HelpMenu />} />
 
       <PageLayout>
         {!clusterRegistered && <RegisterCluster compactMode />}

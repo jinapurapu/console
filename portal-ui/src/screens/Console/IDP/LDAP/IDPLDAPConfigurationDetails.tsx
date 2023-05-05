@@ -257,7 +257,7 @@ const IDPLDAPConfigurationDetails = () => {
   };
 
   useEffect(() => {
-    dispatch(setHelpName("LDAP"))
+    dispatch(setHelpName("LDAP"));
   }, []);
 
   return (
@@ -269,10 +269,7 @@ const IDPLDAPConfigurationDetails = () => {
           resetOpen={resetOpen}
         />
       )}
-      <PageHeaderWrapper
-        label={"LDAP"}
-        actions={<HelpMenu  />}
-      />
+      <PageHeaderWrapper label={"LDAP"} actions={<HelpMenu />} />
       <PageLayout variant={"constrained"}>
         <TabSelector
           selectedTab={curTab}

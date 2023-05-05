@@ -145,16 +145,13 @@ const OBListBuckets = () => {
   ];
 
   useEffect(() => {
-    dispatch(setHelpName("ob_bucket_list"))
+    dispatch(setHelpName("ob_bucket_list"));
   }, []);
 
   return (
     <Fragment>
       {!obOnly && (
-        <PageHeaderWrapper
-          label={"Object Browser"}
-          actions={<HelpMenu />}
-        />
+        <PageHeaderWrapper label={"Object Browser"} actions={<HelpMenu />} />
       )}
 
       <PageLayout>

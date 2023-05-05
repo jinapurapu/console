@@ -340,7 +340,9 @@
 
       "https://blog.min.io/content/images/size/w1000/2020/12/pay_banner-01-01-01-01-01.png[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)  \n Text snippet that will be relevant to the user will  \ngo here  made to look nice in the helpitem size  \non two-three lines"
     ],
-    "video": ["[KMS overview](https://www.youtube.com/watch?v=XUuJZVK-Wpw)  \n Text snippet that will be relevant to the user will  \ngo here  made to look nice in the helpitem size  \non two-three lines"],
+    "video": [
+      "[KMS overview](https://www.youtube.com/watch?v=XUuJZVK-Wpw)  \n Text snippet that will be relevant to the user will  \ngo here  made to look nice in the helpitem size  \non two-three lines"
+    ],
     "blog": [
       "https://blog.min.io/content/images/size/w1000/2022/12/Screen-Shot-2022-12-16-at-2.13.42-PM.png[Access Control best practices](https://blog.min.io/s3-security-access-control/)  \n Text snippet that will be relevant to the user will  \ngo here  made to look nice in the helpitem size  \non two-three lines"
     ]
@@ -351,7 +353,9 @@
 
       "https://blog.min.io/content/images/size/w1000/2020/12/pay_banner-01-01-01-01-01.png[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)  \n Text snippet that will be relevant to the user will  \ngo here  made to look nice in the helpitem size  \non two-three lines"
     ],
-    "video": ["[KMS overview](https://www.youtube.com/watch?v=XUuJZVK-Wpw)  \n Text snippet that will be relevant to the user will  \ngo here  made to look nice in the helpitem size  \non two-three lines"],
+    "video": [
+      "[KMS overview](https://www.youtube.com/watch?v=XUuJZVK-Wpw)  \n Text snippet that will be relevant to the user will  \ngo here  made to look nice in the helpitem size  \non two-three lines"
+    ],
     "blog": [
       "https://blog.min.io/content/images/size/w1000/2022/12/Screen-Shot-2022-12-16-at-2.13.42-PM.png[Access Control best practices](https://blog.min.io/s3-security-access-control/)  \n Text snippet that will be relevant to the user will  \ngo here  made to look nice in the helpitem size  \non two-three lines"
     ]
@@ -362,7 +366,9 @@
 
       "https://blog.min.io/content/images/size/w1000/2020/12/pay_banner-01-01-01-01-01.png[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)  \n Text snippet that will be relevant to the user will  \ngo here  made to look nice in the helpitem size  \non two-three lines"
     ],
-    "video": ["[KMS overview](https://www.youtube.com/watch?v=XUuJZVK-Wpw)  \n Text snippet that will be relevant to the user will  \ngo here  made to look nice in the helpitem size  \non two-three lines"],
+    "video": [
+      "[KMS overview](https://www.youtube.com/watch?v=XUuJZVK-Wpw)  \n Text snippet that will be relevant to the user will  \ngo here  made to look nice in the helpitem size  \non two-three lines"
+    ],
     "blog": [
       "https://blog.min.io/content/images/size/w1000/2022/12/Screen-Shot-2022-12-16-at-2.13.42-PM.png[Access Control Best Practices](https://blog.min.io/s3-security-access-control/)  \n Text snippet that will be relevant to the user will  \ngo here  made to look nice in the helpitem size  \non two-three lines"
     ]
@@ -373,7 +379,9 @@
 
       "https://blog.min.io/content/images/size/w1000/2020/12/pay_banner-01-01-01-01-01.png[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)  \n Text snippet that will be relevant to the user will  \ngo here  made to look nice in the helpitem size  \non two-three lines"
     ],
-    "video": ["[KMS overview](https://www.youtube.com/watch?v=XUuJZVK-Wpw)  \n Text snippet that will be relevant to the user will  \ngo here  made to look nice in the helpitem size  \non two-three lines"],
+    "video": [
+      "[KMS overview](https://www.youtube.com/watch?v=XUuJZVK-Wpw)  \n Text snippet that will be relevant to the user will  \ngo here  made to look nice in the helpitem size  \non two-three lines"
+    ],
     "blog": [
       "https://blog.min.io/content/images/size/w1000/2022/12/Screen-Shot-2022-12-16-at-2.13.42-PM.png[Access Control best practices](https://blog.min.io/s3-security-access-control/)  \n Text snippet that will be relevant to the user will  \ngo here  made to look nice in the helpitem size  \non two-three lines"
     ]
@@ -692,7 +700,6 @@
   },
 
   "group_details1": {
-
     "docs": [
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Access Managemnt](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#minio-policy-actions)  \n Text snippet that will be relevant to the user will  \ngo here  made to look nice in the helpitem size  \non two-three lines",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Groups docs](https://min.io/docs/minio/linux/administration/identity-access-management/minio-group-management.html)  \n Text snippet that will be relevant to the user will  \ngo here  made to look nice in the helpitem size  \non two-three lines",
@@ -706,7 +713,7 @@
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Securing hybrid cloud storage with MinIO IAM](https://blog.min.io/secure-hybrid-cloud-minio-iam/)  \n Text snippet that will be relevant to the user will  \ngo here  made to look nice in the helpitem size  \non two-three lines"
     ]
   },
- 
+
   "bucket_detail_0": {
     "docs": [
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Object Locking](https://min.io/docs/minio/kubernetes/upstream/administration/object-management/object-retention.html)  \n Text snippet that will be relevant to the user will  \ngo here  made to look nice in the helpitem size  \non two-three lines",

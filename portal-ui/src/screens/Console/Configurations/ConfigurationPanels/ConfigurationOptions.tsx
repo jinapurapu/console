@@ -71,7 +71,7 @@ const ConfigurationOptions = ({ classes }: IConfigurationOptions) => {
   selConfigTab = selConfigTab === "settings" ? "region" : selConfigTab;
   const dispatch = useAppDispatch();
   useEffect(() => {
-    dispatch(setHelpName("settings"))
+    dispatch(setHelpName("settings"));
   }, []);
 
   return (

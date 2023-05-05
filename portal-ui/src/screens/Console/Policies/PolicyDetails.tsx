@@ -77,7 +77,7 @@ import {
   setSnackBarMessage,
 } from "../../../systemSlice";
 import { selFeatures } from "../consoleSlice";
-import {  useAppDispatch } from "../../../store";
+import { useAppDispatch } from "../../../store";
 import TooltipWrapper from "../Common/TooltipWrapper/TooltipWrapper";
 import PageHeaderWrapper from "../Common/PageHeaderWrapper/PageHeaderWrapper";
 import {
@@ -347,10 +347,6 @@ const PolicyDetails = ({ classes }: IPolicyDetailsProps) => {
     elementItem.includes(filterGroups)
   );
 
-
-
- 
-
   const refreshPolicyDetails = () => {
     setLoadingUsers(true);
     setLoadingGroups(true);
@@ -358,8 +354,8 @@ const PolicyDetails = ({ classes }: IPolicyDetailsProps) => {
   };
 
   useEffect(() => {
-    dispatch(setHelpName("policy_details"))
-    dispatch(setHelpTabName("0"))
+    dispatch(setHelpName("policy_details"));
+    dispatch(setHelpTabName("0"));
   }, []);
 
   return (
@@ -380,11 +376,7 @@ const PolicyDetails = ({ classes }: IPolicyDetailsProps) => {
             />
           </Fragment>
         }
-        actions={
-          <HelpMenu
-            
-          />
-        }
+        actions={<HelpMenu />}
       />
 
       <PageLayout className={classes.pageContainer}>

@@ -173,15 +173,12 @@ const Watch = () => {
   }));
 
   useEffect(() => {
-    dispatch(setHelpName("watch"))
+    dispatch(setHelpName("watch"));
   }, []);
 
   return (
     <React.Fragment>
-      <PageHeaderWrapper
-        label="Watch"
-        actions={<HelpMenu  />}
-      />
+      <PageHeaderWrapper label="Watch" actions={<HelpMenu />} />
 
       <PageLayout>
         <Grid container spacing={1} item xs={12}>

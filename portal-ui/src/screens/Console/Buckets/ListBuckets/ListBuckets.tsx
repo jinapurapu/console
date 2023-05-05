@@ -110,9 +110,8 @@ const ListBuckets = () => {
   const features = useSelector(selFeatures);
   const obOnly = !!features?.includes("object-browser-only");
 
-
   useEffect(() => {
-    dispatch(setHelpName("ob_bucket_list"))
+    dispatch(setHelpName("ob_bucket_list"));
   }, []);
 
   useEffect(() => {
@@ -243,10 +242,7 @@ const ListBuckets = () => {
         />
       )}
       {!obOnly && (
-        <PageHeaderWrapper
-          label={"Buckets TEST"}
-          actions={<HelpMenu  />}
-        />
+        <PageHeaderWrapper label={"Buckets TEST"} actions={<HelpMenu />} />
       )}
 
       <PageLayout>

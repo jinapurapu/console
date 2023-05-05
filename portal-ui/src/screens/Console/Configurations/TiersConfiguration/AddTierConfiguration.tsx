@@ -310,11 +310,10 @@ const AddTierConfiguration = ({ classes }: IAddNotificationEndpointProps) => {
 
   const targetElement = tierTypes.find((item) => item.serviceName === type);
 
- 
   useEffect(() => {
-    dispatch(setHelpName("add-tier-configuration"))
+    dispatch(setHelpName("add-tier-configuration"));
   }, []);
-  
+
   return (
     <Fragment>
       <PageHeaderWrapper
@@ -326,7 +325,7 @@ const AddTierConfiguration = ({ classes }: IAddNotificationEndpointProps) => {
             />
           </Fragment>
         }
-        actions={<HelpMenu  />}
+        actions={<HelpMenu />}
       />
 
       <PageLayout>

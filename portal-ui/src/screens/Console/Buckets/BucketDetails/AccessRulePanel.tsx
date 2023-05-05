@@ -133,9 +133,9 @@ const AccessRule = () => {
     },
   ];
 
-
-  useEffect(()=> {dispatch(setHelpName("bucket_detail_prefix"))},[])
-
+  useEffect(() => {
+    dispatch(setHelpName("bucket_detail_prefix"));
+  }, []);
 
   useEffect(() => {
     if (loadingAccessRules) {

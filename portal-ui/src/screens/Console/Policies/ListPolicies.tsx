@@ -189,7 +189,7 @@ const ListPolicies = ({ classes }: IPoliciesProps) => {
   );
 
   useEffect(() => {
-    dispatch(setHelpName("list_policies"))
+    dispatch(setHelpName("list_policies"));
   }, []);
 
   return (
@@ -201,10 +201,7 @@ const ListPolicies = ({ classes }: IPoliciesProps) => {
           closeDeleteModalAndRefresh={closeDeleteModalAndRefresh}
         />
       )}
-      <PageHeaderWrapper
-        label="IAM Policies"
-        actions={<HelpMenu  />}
-      />
+      <PageHeaderWrapper label="IAM Policies" actions={<HelpMenu />} />
 
       <PageLayout className={classes.pageContainer}>
         <Grid container spacing={1}>

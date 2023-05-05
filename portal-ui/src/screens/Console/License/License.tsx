@@ -58,7 +58,7 @@ const License = () => {
 
   const dispatch = useAppDispatch();
   useEffect(() => {
-    dispatch(setHelpName("license"))
+    dispatch(setHelpName("license"));
   }, []);
 
   const isRegistered = licenseInfo && clusterRegistered;
@@ -121,7 +121,6 @@ const License = () => {
     );
   }
 
-
   return (
     <Fragment>
       <PageHeaderWrapper
@@ -144,7 +143,7 @@ const License = () => {
                 Register your cluster
               </Button>
             )}
-            <HelpMenu  />
+            <HelpMenu />
           </Fragment>
         }
       />

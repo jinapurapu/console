@@ -181,9 +181,8 @@ const AddEventDestination = ({
     (element) => element.actionTrigger === service
   );
 
-  
   useEffect(() => {
-    dispatch(setHelpName("add_notification_endpoint"))
+    dispatch(setHelpName("add_notification_endpoint"));
   }, []);
 
   return (
@@ -197,7 +196,7 @@ const AddEventDestination = ({
             />
           </Fragment>
         }
-        actions={<HelpMenu  />}
+        actions={<HelpMenu />}
       />
 
       <PageLayout>

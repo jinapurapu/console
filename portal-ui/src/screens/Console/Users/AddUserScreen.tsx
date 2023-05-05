@@ -99,7 +99,7 @@ const AddUser = ({ classes }: IAddUserProps) => {
   };
 
   useEffect(() => {
-    dispatch(setHelpName("add_user"))
+    dispatch(setHelpName("add_user"));
   }, []);
 
   return (
@@ -112,7 +112,7 @@ const AddUser = ({ classes }: IAddUserProps) => {
               onClick={() => navigate(IAM_PAGES.USERS)}
             />
           }
-          actions={<HelpMenu  />}
+          actions={<HelpMenu />}
         />
         <PageLayout>
           <FormLayout

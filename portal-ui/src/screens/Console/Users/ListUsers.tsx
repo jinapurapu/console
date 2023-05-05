@@ -191,7 +191,7 @@ const ListUsers = ({ classes }: IUsersProps) => {
   ];
 
   useEffect(() => {
-    dispatch(setHelpName("list_users"))
+    dispatch(setHelpName("list_users"));
   }, []);
 
   return (
@@ -214,10 +214,7 @@ const ListUsers = ({ classes }: IUsersProps) => {
           }}
         />
       )}
-      <PageHeaderWrapper
-        label={"Users"}
-        actions={<HelpMenu />}
-      />
+      <PageHeaderWrapper label={"Users"} actions={<HelpMenu />} />
 
       <PageLayout>
         <Grid container spacing={1}>

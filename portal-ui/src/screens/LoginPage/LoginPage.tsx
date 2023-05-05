@@ -345,9 +345,9 @@ const Login = () => {
     docsURL =
       "https://min.io/docs/minio/kubernetes/upstream/index.html?ref=con";
   }
-  
+
   useEffect(() => {
-    dispatch(setHelpName("login"))
+    dispatch(setHelpName("login"));
   }, []);
 
   return (
@@ -386,7 +386,7 @@ const Login = () => {
               Download
             </a>
             <span className={classes.separator}>|</span>
-            <HelpMenu  />
+            <HelpMenu />
           </Fragment>
         }
         promoHeader={

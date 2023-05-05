@@ -10,10 +10,10 @@ import { setHelpName } from "../../../systemSlice";
 
 const GroupDetailsHeader = () => {
   const navigate = useNavigate();
-  
+
   const dispatch = useAppDispatch();
   useEffect(() => {
-    dispatch(setHelpName("group_details"))
+    dispatch(setHelpName("group_details"));
   }, []);
   return (
     <PageHeaderWrapper
@@ -25,7 +25,7 @@ const GroupDetailsHeader = () => {
           />
         </Fragment>
       }
-      actions={<HelpMenu  />}
+      actions={<HelpMenu />}
     />
   );
 };

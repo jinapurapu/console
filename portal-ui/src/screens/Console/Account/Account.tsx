@@ -53,7 +53,11 @@ import { SecureComponent } from "../../../common/SecureComponent";
 import { selectSAs } from "../Configurations/utils";
 import DeleteMultipleServiceAccounts from "../Users/DeleteMultipleServiceAccounts";
 import ServiceAccountPolicy from "./ServiceAccountPolicy";
-import { setErrorSnackMessage, setHelpName, setSnackBarMessage } from "../../../systemSlice";
+import {
+  setErrorSnackMessage,
+  setHelpName,
+  setSnackBarMessage,
+} from "../../../systemSlice";
 import makeStyles from "@mui/styles/makeStyles";
 import { selFeatures } from "../consoleSlice";
 import { useAppDispatch } from "../../../store";
@@ -105,11 +109,12 @@ const Account = () => {
   }, []);
 
   useEffect(() => {
-    dispatch(setHelpName("accessKeys"))
+    dispatch(setHelpName("accessKeys"));
   }, []);
 
-
-  useEffect(()=> {dispatch(setHelpName("accessKeys"))},[])
+  useEffect(() => {
+    dispatch(setHelpName("accessKeys"));
+  }, []);
 
   useEffect(() => {
     if (loading) {

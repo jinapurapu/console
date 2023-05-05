@@ -58,14 +58,15 @@ const HelpItem = ({ classes, helpItemMarkdown }: IHelpItemProps) => {
   return (
     <Fragment>
       <Grid container alignItems={"center"} display={"flex"}>
-        <Grid item xs={4}>
+        <Grid item xs={3}>
           <a href={linkURL}>
             <img src={imgURL} alt={altText} width="160" height="90" />
+            linkURL {linkURL}
           </a>
         </Grid>
         <Grid
           item
-          xs={8}
+          xs={7}
           width={400}
           style={{
             overflowWrap: "break-word",

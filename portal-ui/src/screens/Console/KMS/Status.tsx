@@ -351,14 +351,14 @@ const Status = () => {
   );
 
   useEffect(() => {
-    dispatch(setHelpName("kms_status"))
+    dispatch(setHelpName("kms_status"));
   }, []);
 
   return (
     <Fragment>
       <PageHeaderWrapper
         label="Key Management Service"
-        actions={<HelpMenu  />}
+        actions={<HelpMenu />}
       />
 
       <PageLayout>

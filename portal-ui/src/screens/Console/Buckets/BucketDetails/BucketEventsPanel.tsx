@@ -86,8 +86,9 @@ const BucketEventsPanel = ({ classes }: IBucketEventsProps) => {
     }
   }, [loadingBucket, setLoadingEvents]);
 
-
-  useEffect(()=> {dispatch(setHelpName("bucket_detail_events"))},[])
+  useEffect(() => {
+    dispatch(setHelpName("bucket_detail_events"));
+  }, []);
 
   useEffect(() => {
     if (loadingEvents) {

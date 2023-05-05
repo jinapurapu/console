@@ -366,7 +366,7 @@ const IDPConfigurationDetails = ({
   };
 
   useEffect(() => {
-    dispatch(setHelpName("idp_config"))
+    dispatch(setHelpName("idp_config"));
   }, []);
 
   return (
@@ -381,7 +381,7 @@ const IDPConfigurationDetails = ({
       )}
       <PageHeaderWrapper
         label={<BackLink onClick={() => navigate(backLink)} label={header} />}
-        actions={<HelpMenu  />}
+        actions={<HelpMenu />}
       />
       <PageLayout className={classes.pageContainer}>
         <Box>

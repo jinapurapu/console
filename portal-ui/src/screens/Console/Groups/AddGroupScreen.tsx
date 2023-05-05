@@ -95,7 +95,7 @@ const AddGroupScreen = ({ classes }: IAddGroupProps) => {
   };
 
   useEffect(() => {
-    dispatch(setHelpName("add_group"))
+    dispatch(setHelpName("add_group"));
   }, []);
 
   return (
@@ -108,7 +108,7 @@ const AddGroupScreen = ({ classes }: IAddGroupProps) => {
               onClick={() => navigate(IAM_PAGES.GROUPS)}
             />
           }
-          actions={<HelpMenu  />}
+          actions={<HelpMenu />}
         />
         <PageLayout>
           <FormLayout

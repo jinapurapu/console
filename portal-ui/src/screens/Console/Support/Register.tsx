@@ -184,7 +184,7 @@ const Register = ({ classes }: IRegister) => {
   const uiToShow = loadingLicenseInfo ? loadingUi : regUi;
 
   useEffect(() => {
-    dispatch(setHelpName("register"))
+    dispatch(setHelpName("register"));
   }, []);
 
   return (

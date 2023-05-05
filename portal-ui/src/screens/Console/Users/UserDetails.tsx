@@ -217,9 +217,8 @@ const UserDetails = ({ classes }: IUserDetailsProps) => {
   };
 
   useEffect(() => {
-    dispatch(setHelpName("user_details"))
+    dispatch(setHelpName("user_details"));
   }, []);
-
 
   useEffect(() => {
     getUserInformation();
@@ -235,7 +234,6 @@ const UserDetails = ({ classes }: IUserDetailsProps) => {
   const groupViewAction = (group: any) => {
     navigate(`${IAM_PAGES.GROUPS}/${encodeURLString(group.group)}`);
   };
-
 
   const groupTableActions = [
     {
@@ -256,7 +254,7 @@ const UserDetails = ({ classes }: IUserDetailsProps) => {
             />
           </Fragment>
         }
-        actions={<HelpMenu  />}
+        actions={<HelpMenu />}
       />
       {addGroupOpen && (
         <ChangeUserGroups

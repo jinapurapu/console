@@ -43,7 +43,11 @@ import {
 } from "../../../common/utils";
 import DistributedOnly from "../Common/DistributedOnly/DistributedOnly";
 import KeyRevealer from "./KeyRevealer";
-import { selDistSet, setErrorSnackMessage, setHelpName } from "../../../systemSlice";
+import {
+  selDistSet,
+  setErrorSnackMessage,
+  setHelpName,
+} from "../../../systemSlice";
 import { useAppDispatch } from "../../../store";
 import RegisterCluster from "../Support/RegisterCluster";
 import { registeredCluster } from "../../../config";
@@ -198,15 +202,12 @@ const Inspect = ({ classes }: { classes: any }) => {
   };
 
   useEffect(() => {
-    dispatch(setHelpName("inspect"))
+    dispatch(setHelpName("inspect"));
   }, []);
 
   return (
     <Fragment>
-      <PageHeaderWrapper
-        label={"Inspect"}
-        actions={<HelpMenu  />}
-      />
+      <PageHeaderWrapper label={"Inspect"} actions={<HelpMenu />} />
 
       <PageLayout>
         {!clusterRegistered && <RegisterCluster compactMode />}

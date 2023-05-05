@@ -62,7 +62,11 @@ import {
 } from "../../../../common/SecureComponent";
 import { tierTypes } from "./utils";
 
-import { selDistSet, setErrorSnackMessage, setHelpName } from "../../../../systemSlice";
+import {
+  selDistSet,
+  setErrorSnackMessage,
+  setHelpName,
+} from "../../../../systemSlice";
 import { useNavigate } from "react-router-dom";
 import { useAppDispatch } from "../../../../store";
 import TooltipWrapper from "../../Common/TooltipWrapper/TooltipWrapper";
@@ -303,9 +307,8 @@ const ListTiersConfiguration = ({ classes }: IListTiersConfig) => {
     setUpdateCredentialsOpen(false);
   };
 
- 
   useEffect(() => {
-    dispatch(setHelpName("list-tiers-configuration"))
+    dispatch(setHelpName("list-tiers-configuration"));
   }, []);
 
   return (
@@ -317,10 +320,7 @@ const ListTiersConfiguration = ({ classes }: IListTiersConfig) => {
           closeModalAndRefresh={closeTierCredentials}
         />
       )}
-      <PageHeaderWrapper
-        label="Tiers"
-        actions={<HelpMenu  />}
-      />
+      <PageHeaderWrapper label="Tiers" actions={<HelpMenu />} />
 
       <PageLayout>
         {!distributedSetup ? (

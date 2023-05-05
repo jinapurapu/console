@@ -165,7 +165,7 @@ const AddReplicationSites = () => {
   }, []);
 
   useEffect(() => {
-    dispatch(setHelpName("add-replication-sites"))
+    dispatch(setHelpName("add-replication-sites"));
   }, []);
 
   const existingEndPointsValidity = existingSites.reduce(

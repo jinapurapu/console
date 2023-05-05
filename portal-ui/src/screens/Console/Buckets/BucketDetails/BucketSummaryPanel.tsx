@@ -54,7 +54,11 @@ import EditablePropertyItem from "./SummaryItems/EditablePropertyItem";
 import ReportedUsage from "./SummaryItems/ReportedUsage";
 import BucketQuotaSize from "./SummaryItems/BucketQuotaSize";
 import SectionTitle from "../../Common/SectionTitle";
-import { selDistSet, setErrorSnackMessage, setHelpName } from "../../../../systemSlice";
+import {
+  selDistSet,
+  setErrorSnackMessage,
+  setHelpName,
+} from "../../../../systemSlice";
 import {
   selBucketDetailsInfo,
   selBucketDetailsLoading,
@@ -138,7 +142,9 @@ const BucketSummary = ({ classes }: IBucketSummaryProps) => {
   const [enableVersioningOpen, setEnableVersioningOpen] =
     useState<boolean>(false);
 
-    useEffect(()=> {dispatch(setHelpName("bucket_detail_summary"))},[])
+  useEffect(() => {
+    dispatch(setHelpName("bucket_detail_summary"));
+  }, []);
 
   const bucketName = params.bucketName || "";
 

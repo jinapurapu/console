@@ -241,7 +241,7 @@ const AddBucket = () => {
   }, [navigateTo, navigate, dispatch]);
 
   useEffect(() => {
-    dispatch(setHelpName("add_bucket"))
+    dispatch(setHelpName("add_bucket"));
   }, []);
 
   return (
@@ -250,7 +250,7 @@ const AddBucket = () => {
         label={
           <BackLink label={"Buckets"} onClick={() => navigate("/buckets")} />
         }
-        actions={<HelpMenu  />}
+        actions={<HelpMenu />}
       />
       <PageLayout>
         <FormLayout
