@@ -48,7 +48,7 @@ interface IHelpMenuProps {
   helpName?: string;
 }
 
-const HelpMenu = ({ classes, helpName }: IHelpMenuProps) => {
+const HelpMenu = ({ classes }: IHelpMenuProps) => {
   const [helpTab, setHelpTab] = useState<number>(0);
   const [helpItems, setHelpItems] = useState<string[]>([]);
   const [helpItemsVideo, setHelpItemsVideo] = useState<string[]>([]);
@@ -89,11 +89,9 @@ const HelpMenu = ({ classes, helpName }: IHelpMenuProps) => {
   }, [systemHelpName, helpTabName]);
 
   const assignHelpItems = (helpType: string) => {
-    console.log("systemhelpname: ", helpType)
     let helpTopics = require("../Console/helpTopics.json");
 if (helpType.includes("details") ){
   if (helpTopics[helpType+helpTabName]) {
-    console.log("it's here! helpTopics[systemHelpName+helpTabName]['docs']: ",helpTopics[helpType+helpTabName]["docs"])
     helpTopics[helpType+helpTabName]["docs"] &&
       setHelpItems(helpTopics[helpType+helpTabName]["docs"]);
 
@@ -106,8 +104,6 @@ if (helpType.includes("details") ){
     setHelpItems(helpTopics["help"]["docs"]);
   }
 } else {
-
- 
     if (helpTopics[helpType]) {
       helpTopics[helpType]["docs"] &&
         setHelpItems(helpTopics[helpType]["docs"]);
@@ -124,14 +120,6 @@ if (helpType.includes("details") ){
   };
 
 
-  useEffect( () => {
-    console.log("systemHelpName: ", systemHelpName, " helpTabName: ", helpTabName)
-      }, [systemHelpName, helpTabName])
-
-
-  useEffect( () => {
-console.log("helpItems: ", helpItems)
-  }, [helpItems])
 
   const helpContent = (
     <React.Fragment>

@@ -73,6 +73,7 @@ import { decodeURLString, encodeURLString } from "../../../common/utils";
 import {
   setErrorSnackMessage,
   setHelpName,
+  setHelpTabName,
   setSnackBarMessage,
 } from "../../../systemSlice";
 import { selFeatures } from "../consoleSlice";
@@ -358,6 +359,7 @@ const PolicyDetails = ({ classes }: IPolicyDetailsProps) => {
 
   useEffect(() => {
     dispatch(setHelpName("policy_details"))
+    dispatch(setHelpTabName("0"))
   }, []);
 
   return (

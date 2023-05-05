@@ -52,7 +52,7 @@ import {
 import GroupDetailsHeader from "./GroupDetailsHeader";
 
 import { decodeURLString, encodeURLString } from "../../../common/utils";
-import { setHelpName, setModalErrorSnackMessage } from "../../../systemSlice";
+import { setHelpName, setHelpTabName, setModalErrorSnackMessage } from "../../../systemSlice";
 import { useAppDispatch } from "../../../store";
 import { setSelectedPolicies } from "../Users/AddUsersSlice";
 import TooltipWrapper from "../Common/TooltipWrapper/TooltipWrapper";
@@ -147,6 +147,7 @@ const GroupsDetails = ({ classes }: IGroupDetailsProps) => {
 
   useEffect(() => {
     dispatch(setHelpName("group_details"))
+    dispatch(setHelpTabName("0"))
   }, []);
 
   useEffect(() => {
