@@ -684,7 +684,7 @@
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Securing Hybrid Cloud Storage with MinIO IAM](https://blog.min.io/secure-hybrid-cloud-minio-iam/)"
     ]
   },
-  "user_Groups": {
+  "user": {
     "docs": [
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Group Management](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/minio-group-management.html)",
 
@@ -696,7 +696,19 @@
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Securing hybrid cloud storage with MinIO IAM](https://blog.min.io/secure-hybrid-cloud-minio-iam/)"
     ]
   },
-  "user_Service Accounts": {
+  "user0": {
+    "docs": [
+      "https://min.io/resources/img/logo/MINIO_wordmark.png[Group Management](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/minio-group-management.html)",
+
+      "https://blog.min.io/content/images/size/w1000/2020/12/pay_banner-01-01-01-01-01.png[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)"
+    ],
+    "video": [],
+    "blog": [
+      "https://blog.min.io/content/images/size/w1000/2022/12/Screen-Shot-2022-12-16-at-2.13.42-PM.png[Access Control best practices](https://blog.min.io/s3-security-access-control/)",
+      "https://min.io/resources/img/logo/MINIO_wordmark.png[Securing hybrid cloud storage with MinIO IAM](https://blog.min.io/secure-hybrid-cloud-minio-iam/)"
+    ]
+  },
+  "user1": {
     "docs": [
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Supported S3 Policy Actions](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#supported-s3-policy-actions)",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Policy Document Structure](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#policy-document-structure)",
@@ -709,7 +721,7 @@
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Securing hybrid cloud storagew with MinIO IAM](https://blog.min.io/secure-hybrid-cloud-minio-iam/)"
     ]
   },
-  "user_Policies": {
+  "user2": {
     "docs": [
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Access Managemnt](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#minio-policy-actions)",
 

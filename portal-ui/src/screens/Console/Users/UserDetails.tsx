@@ -217,6 +217,11 @@ const UserDetails = ({ classes }: IUserDetailsProps) => {
   };
 
   useEffect(() => {
+    dispatch(setHelpName("user"))
+  }, []);
+
+
+  useEffect(() => {
     getUserInformation();
   }, [getUserInformation]);
 
@@ -231,27 +236,6 @@ const UserDetails = ({ classes }: IUserDetailsProps) => {
     navigate(`${IAM_PAGES.GROUPS}/${encodeURLString(group.group)}`);
   };
 
-  const systemHelpName = useSelector(
-    (state: AppState) => state.system.helpName
-  );
-
-  const systemHelpTabName = useSelector(
-    (state: AppState) => state.system.helpTabName
-  );
-
-  const firstUpdate = useRef(true);
-  useEffect(() => {
-    firstUpdate.current = true;
-    setHelpTopicName("Summary");
-  }, []);
-
-  useEffect(() => {
-    if (firstUpdate.current) {
-      setHelpTopicName("Groups");
-      firstUpdate.current = false;
-    }
-    setHelpTopicName("user_" + systemHelpTabName);
-  }, [systemHelpTabName]);
 
   const groupTableActions = [
     {

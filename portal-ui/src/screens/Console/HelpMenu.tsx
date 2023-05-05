@@ -82,41 +82,59 @@ const HelpMenu = ({ classes, helpName }: IHelpMenuProps) => {
 
   const wrapperRef = useRef(null);
   useOutsideAlerter(wrapperRef);
-  useEffect(() => {
-    let helpTopics = require("../Console/helpTopics.json");
-   !helpName
-      ? systemHelpName
-        ? setHelpItems(helpTopics[systemHelpName])
-        : setHelpItems(helpTopics[0])
-      : setHelpItems(helpTopics[helpName]);
-  }, [systemHelpName]);
+
+// useEffect(() => {
+ //   let helpTopics = require("../Console/helpTopics.json");
+ //  !helpName
+  //    ? systemHelpName
+ //       ? setHelpItems(helpTopics[systemHelpName])
+ //       : setHelpItems(helpTopics[0])
+ //     : setHelpItems(helpTopics[helpName]);
+ // }, [systemHelpName]);
 
   useEffect(() => {
-    !helpName
-      ? systemHelpName
-        ? assignHelpItems(systemHelpName)
-        : assignHelpItems("help")
-      : assignHelpItems(helpName);
-  }, [systemHelpName]);
+         assignHelpItems(systemHelpName)
+  }, [systemHelpName, helpTabName]);
 
   const assignHelpItems = (helpType: string) => {
-    console.log("systemhelpname: ", systemHelpName)
+    console.log("systemhelpname: ", helpType)
     let helpTopics = require("../Console/helpTopics.json");
+if (helpType.startsWith("user")){
+  console.log("it's user details! helpTabName: ", helpTabName, " systemHelpName+helpTabName: ",helpType+helpTabName)
+  if (helpTopics[helpType+helpTabName]) {
+    console.log("it's here! helpTopics[systemHelpName+helpTabName]['docs']: ",helpTopics[helpType+helpTabName]["docs"])
+    helpTopics[helpType+helpTabName]["docs"] &&
+      setHelpItems(helpTopics[helpType+helpTabName]["docs"]);
+
+    helpTopics[helpType+helpTabName]["blog"] &&
+      setHelpItemsBlog(helpTopics[helpType+helpTabName]["blog"]);
+
+    helpTopics[helpType+helpTabName]["video"] &&
+      setHelpItemsVideo(helpTopics[helpType+helpTabName]["video"]);
+  } else {
+    setHelpItems(helpTopics["help"]["docs"]);
+  }
+} else {
+
  
-    if (helpTopics[systemHelpName]) {
-      helpTopics[systemHelpName]["docs"] &&
-        setHelpItems(helpTopics[systemHelpName]["docs"]);
+    if (helpTopics[helpType]) {
+      helpTopics[helpType]["docs"] &&
+        setHelpItems(helpTopics[helpType]["docs"]);
 
-      helpTopics[systemHelpName]["blog"] &&
-        setHelpItemsBlog(helpTopics[systemHelpName]["blog"]);
+      helpTopics[helpType]["blog"] &&
+        setHelpItemsBlog(helpTopics[helpType]["blog"]);
 
-      helpTopics[systemHelpName]["video"] &&
-        setHelpItemsVideo(helpTopics[systemHelpName]["video"]);
+      helpTopics[helpType]["video"] &&
+        setHelpItemsVideo(helpTopics[helpType]["video"]);
     } else {
       setHelpItems(helpTopics["help"]["docs"]);
     }
-  
+}
   };
+
+
+
+
 
   useEffect( () => {
 console.log("helpItems: ", helpItems)
@@ -176,7 +194,6 @@ console.log("helpItems: ", helpItems)
               <Grid item paddingLeft={3}>
                 <HelpIcon />
               </Grid>
-help name {helpName}
               <Grid item paddingLeft={3}>
                 <Tabs
                   value={helpTab}

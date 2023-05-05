@@ -49,7 +49,7 @@ import CredentialsPrompt from "../Common/CredentialsPrompt/CredentialsPrompt";
 import SectionTitle from "../Common/SectionTitle";
 import PanelTitle from "../Common/PanelTitle/PanelTitle";
 
-import { setErrorSnackMessage } from "../../../systemSlice";
+import { setErrorSnackMessage, setHelpName } from "../../../systemSlice";
 import { useAppDispatch } from "../../../store";
 import PageHeaderWrapper from "../Common/PageHeaderWrapper/PageHeaderWrapper";
 import { getRandomString } from "../../../common/utils";
@@ -78,6 +78,9 @@ const AddServiceAccount = ({ classes }: IAddServiceAccountProps) => {
     useState<NewServiceAccount | null>(null);
   const [showPassword, setShowPassword] = useState<boolean>(false);
   const [policyJSON, setPolicyJSON] = useState<string>("");
+
+
+  useEffect(()=> {dispatch(setHelpName("add_service_account"))},[])
 
   useEffect(() => {
     if (addSending) {
@@ -151,10 +154,7 @@ const AddServiceAccount = ({ classes }: IAddServiceAccountProps) => {
           }
           actions={
             <HelpMenu
-              helpName={
-                isRestrictedByPolicy
-                  ? "add_service_account_policy"
-                  : "add_service_account"
+              helpName={ "add_service_account"
               }
             />
           }
