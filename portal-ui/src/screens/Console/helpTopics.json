@@ -9,14 +9,13 @@
   },
   "list_policies": {
     "docs": [
-      "https://min.io/resources/img/logo/MINIO_wordmark.png[Identity and Access Management](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management.html)  \n Text snippet that will be relevant to the user will  \ngo here  made to look nice in the helpitem size  \non two-three lines",
-      "https://min.io/resources/img/logo/MINIO_wordmark.png[Policy based access control](https://min.io/docs/minio/linux/administration/identity-access-management/policy-based-access-control.html#)  \n Text snippet that will be relevant to the user will  \ngo here  made to look nice in the helpitem size  \non two-three lines",
-      "https://min.io/resources/img/logo/MINIO_wordmark.png[IAM Policies](https://min.io/docs/minio/linux/administration/identity-access-management.html#minio-authentication-and-identity-management)  \n Text snippet that will be relevant to the user will  \ngo here  made to look nice in the helpitem size  \non two-three lines",
-      "https://blog.min.io/content/images/size/w1000/2020/12/pay_banner-01-01-01-01-01.png[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)  \n Text snippet that will be relevant to the user will  \ngo here  made to look nice in the helpitem size  \non two-three lines"
+      "https://min.io/resources/img/logo/MINIO_wordmark.png[Identity and Access Management](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management.html)  \nLearn how MinIO manages Authentication and  \nAuthorization to protect data against  \nunwanted access ",
+      "https://min.io/resources/img/logo/MINIO_wordmark.png[Policy based access control](https://min.io/docs/minio/linux/administration/identity-access-management/policy-based-access-control.html#)  \n Learn how Policy-Based Access Control (PBAC)  \nis used to define the authorized actions and resources  \nto which an authenticated user has access",
+      "https://blog.min.io/content/images/size/w1000/2020/12/pay_banner-01-01-01-01-01.png[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)  \n Need more help?  \nCheckout additional Troubleshooting options"
     ],
     "blog": [
-      "https://blog.min.io/content/images/size/w1000/2022/12/Screen-Shot-2022-12-16-at-2.13.42-PM.png[Access Control best practices](https://blog.min.io/s3-security-access-control/)  \n Text snippet that will be relevant to the user will  \ngo here  made to look nice in the helpitem size  \non two-three lines",
-      "https://min.io/resources/img/logo/MINIO_wordmark.png[Securing hybrid cloud storage with MinIO IAM](https://blog.min.io/secure-hybrid-cloud-minio-iam/)  \n Text snippet that will be relevant to the user will  \ngo here  made to look nice in the helpitem size  \non two-three lines"
+      "https://blog.min.io/content/images/size/w1000/2022/12/Screen-Shot-2022-12-16-at-2.13.42-PM.png[Access Control best practices](https://blog.min.io/s3-security-access-control/)  \nLearn about MinIO best practices with respect  \nto S3 security and access controls.",
+      "https://min.io/resources/img/logo/MINIO_wordmark.png[Securing hybrid cloud storage with MinIO IAM](https://blog.min.io/secure-hybrid-cloud-minio-iam/)  \n Learn how to use Identity Access Management (IAM)  \nto secure your data on the hybrid cloud "
     ],
     "video": []
   },
