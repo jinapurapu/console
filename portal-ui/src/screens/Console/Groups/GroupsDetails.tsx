@@ -152,6 +152,7 @@ const GroupsDetails = ({ classes }: IGroupDetailsProps) => {
   useEffect(() => {
     dispatch(setHelpName("group_details"));
     dispatch(setHelpTabName("0"));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {

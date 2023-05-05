@@ -73,6 +73,7 @@ const ImportKey = () => {
 
   useEffect(() => {
     dispatch(setHelpName("import_key"));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

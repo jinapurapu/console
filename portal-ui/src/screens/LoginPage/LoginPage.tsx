@@ -348,6 +348,7 @@ const Login = () => {
 
   useEffect(() => {
     dispatch(setHelpName("login"));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

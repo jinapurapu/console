@@ -183,6 +183,7 @@ const AddEventDestination = ({
 
   useEffect(() => {
     dispatch(setHelpName("add_notification_endpoint"));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

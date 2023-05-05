@@ -312,6 +312,7 @@ const AddTierConfiguration = ({ classes }: IAddNotificationEndpointProps) => {
 
   useEffect(() => {
     dispatch(setHelpName("add-tier-configuration"));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

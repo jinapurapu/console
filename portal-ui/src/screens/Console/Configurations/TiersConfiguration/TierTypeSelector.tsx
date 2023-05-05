@@ -35,6 +35,7 @@ const TierTypeSelector = () => {
   const dispatch = useAppDispatch();
   useEffect(() => {
     dispatch(setHelpName("tier-type-selector"));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

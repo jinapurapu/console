@@ -72,6 +72,7 @@ const ConfigurationOptions = ({ classes }: IConfigurationOptions) => {
   const dispatch = useAppDispatch();
   useEffect(() => {
     dispatch(setHelpName("settings"));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

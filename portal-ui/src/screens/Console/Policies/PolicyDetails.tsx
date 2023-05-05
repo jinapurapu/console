@@ -13,7 +13,7 @@
 // You should have received a copy of the GNU Affero General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-import React, { Fragment, useEffect, useRef, useState } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import { IAMPolicy, IAMStatement } from "./types";
 import { useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
@@ -356,6 +356,7 @@ const PolicyDetails = ({ classes }: IPolicyDetailsProps) => {
   useEffect(() => {
     dispatch(setHelpName("policy_details"));
     dispatch(setHelpTabName("0"));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

@@ -114,6 +114,7 @@ const SiteReplication = () => {
 
   useEffect(() => {
     dispatch(setHelpName("site-replication"));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

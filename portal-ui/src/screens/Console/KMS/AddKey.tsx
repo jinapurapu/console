@@ -24,7 +24,7 @@ import { useNavigate } from "react-router-dom";
 import { useAppDispatch } from "../../../store";
 import AddKeyForm from "./AddKeyForm";
 import PageHeaderWrapper from "../Common/PageHeaderWrapper/PageHeaderWrapper";
-import { BackLink, PageHeader } from "mds";
+import { BackLink } from "mds";
 import HelpMenu from "../HelpMenu";
 
 const AddKey = () => {
@@ -38,6 +38,7 @@ const AddKey = () => {
 
   useEffect(() => {
     dispatch(setHelpName("add_key"));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

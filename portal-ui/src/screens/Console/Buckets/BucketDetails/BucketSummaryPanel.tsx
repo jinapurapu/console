@@ -144,6 +144,7 @@ const BucketSummary = ({ classes }: IBucketSummaryProps) => {
 
   useEffect(() => {
     dispatch(setHelpName("bucket_detail_summary"));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const bucketName = params.bucketName || "";

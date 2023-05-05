@@ -169,6 +169,7 @@ const Trace = ({ classes }: ITrace) => {
 
   useEffect(() => {
     dispatch(setHelpName("trace"));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

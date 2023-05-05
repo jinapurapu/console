@@ -32,8 +32,6 @@ import { Box, Button, HelpIcon } from "mds";
 import { useSelector } from "react-redux";
 import { AppState } from "../../store";
 import { TabPanel } from "../shared/tabs";
-import PanelTitle from "./Common/PanelTitle/PanelTitle";
-import { text } from "stream/consumers";
 
 const styles = (theme: Theme) =>
   createStyles({
@@ -86,6 +84,7 @@ const HelpMenu = ({ classes }: IHelpMenuProps) => {
 
   useEffect(() => {
     assignHelpItems(systemHelpName);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [systemHelpName, helpTabName]);
 
   const assignHelpItems = (helpType: string) => {
@@ -185,32 +184,32 @@ const HelpMenu = ({ classes }: IHelpMenuProps) => {
                   variant="scrollable"
                   scrollButtons="auto"
                 >
-                  {helpItems.length != 0 && (
+                  {helpItems.length !== 0 && (
                     <Tab label="Documentation" {...a11yProps(0)} />
                   )}
-                  {helpItemsVideo.length != 0 && (
+                  {helpItemsVideo.length !== 0 && (
                     <Tab label="Video" {...a11yProps(1)} />
                   )}
-                  {helpItemsBlog.length != 0 && (
+                  {helpItemsBlog.length !== 0 && (
                     <Tab label="Blog" {...a11yProps(2)} />
                   )}
                 </Tabs>
               </Grid>
             </Grid>
             <Paper>
-              {helpItems.length != 0 && (
+              {helpItems.length !== 0 && (
                 <TabPanel index={0} value={helpTab}>
                   {helpContent}
                 </TabPanel>
               )}
-              {helpItemsVideo.length != 0 && (
+              {helpItemsVideo.length !== 0 && (
                 <TabPanel index={1} value={helpTab}>
                   {helpContentVideo}
                 </TabPanel>
               )}
-              {helpItemsBlog.length != 0 && (
+              {helpItemsBlog.length !== 0 && (
                 <TabPanel
-                  index={helpItemsVideo.length != 0 ? 2 : 1}
+                  index={helpItemsVideo.length !== 0 ? 2 : 1}
                   value={helpTab}
                 >
                   {helpContentBlog}

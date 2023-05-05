@@ -166,6 +166,7 @@ const AddReplicationSites = () => {
 
   useEffect(() => {
     dispatch(setHelpName("add-replication-sites"));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const existingEndPointsValidity = existingSites.reduce(

@@ -97,6 +97,7 @@ const BucketReplicationPanel = ({ classes }: IBucketReplicationProps) => {
 
   useEffect(() => {
     dispatch(setHelpName("bucket_detail_replication"));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {

@@ -185,6 +185,7 @@ const Register = ({ classes }: IRegister) => {
 
   useEffect(() => {
     dispatch(setHelpName("register"));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

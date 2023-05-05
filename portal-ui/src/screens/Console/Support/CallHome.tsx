@@ -107,6 +107,7 @@ const CallHome = () => {
 
   useEffect(() => {
     dispatch(setHelpName("call_home"));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

@@ -75,7 +75,7 @@ import {
   setBucketDetailsLoad,
   setBucketInfo,
 } from "./bucketDetailsSlice";
-import { AppState, useAppDispatch } from "../../../../store";
+import { useAppDispatch } from "../../../../store";
 import TooltipWrapper from "../../Common/TooltipWrapper/TooltipWrapper";
 import PageHeaderWrapper from "../../Common/PageHeaderWrapper/PageHeaderWrapper";
 import HelpMenu from "../../HelpMenu";
@@ -128,14 +128,9 @@ const BucketDetails = ({ classes }: IBucketDetailsProps) => {
   const loadingBucket = useSelector(selBucketDetailsLoading);
   const bucketInfo = useSelector(selBucketDetailsInfo);
   const siteReplicationInfo = useSelector(selSiteRep);
-  const helpTabName = useSelector(
-    (state: AppState) => state.system.helpTabName
-  );
 
   const [iniLoad, setIniLoad] = useState<boolean>(false);
   const [deleteOpen, setDeleteOpen] = useState<boolean>(false);
-  const [bucketDetailHelpName, setBucketDetailHelpName] =
-    useState<string>("bucket_detail_0");
   const bucketName = params.bucketName || "";
 
   let selTab = params["0"] || "";
@@ -151,12 +146,8 @@ const BucketDetails = ({ classes }: IBucketDetailsProps) => {
 
   useEffect(() => {
     dispatch(setHelpName("bucket_details"));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
-  useEffect(() => {
-    console.log(`bucket_detail_` + helpTabName);
-    setBucketDetailHelpName(`bucket_detail_` + helpTabName);
-  }, [helpTabName, dispatch]);
 
   useEffect(() => {
     if (!iniLoad) {

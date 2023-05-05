@@ -59,6 +59,7 @@ const License = () => {
   const dispatch = useAppDispatch();
   useEffect(() => {
     dispatch(setHelpName("license"));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const isRegistered = licenseInfo && clusterRegistered;

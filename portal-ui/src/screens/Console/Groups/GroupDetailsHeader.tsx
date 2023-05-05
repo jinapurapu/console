@@ -4,8 +4,7 @@ import { BackLink } from "mds";
 import { useNavigate } from "react-router-dom";
 import PageHeaderWrapper from "../Common/PageHeaderWrapper/PageHeaderWrapper";
 import HelpMenu from "../HelpMenu";
-import { useSelector } from "react-redux";
-import { AppState, useAppDispatch } from "../../../store";
+import { useAppDispatch } from "../../../store";
 import { setHelpName } from "../../../systemSlice";
 
 const GroupDetailsHeader = () => {
@@ -14,6 +13,7 @@ const GroupDetailsHeader = () => {
   const dispatch = useAppDispatch();
   useEffect(() => {
     dispatch(setHelpName("group_details"));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
     <PageHeaderWrapper

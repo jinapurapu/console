@@ -192,6 +192,7 @@ const ListUsers = ({ classes }: IUsersProps) => {
 
   useEffect(() => {
     dispatch(setHelpName("list_users"));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

@@ -27,7 +27,6 @@ import { getUsageAsync } from "./dashboardThunks";
 import { useSelector } from "react-redux";
 import PageHeaderWrapper from "../Common/PageHeaderWrapper/PageHeaderWrapper";
 import { selFeatures } from "../consoleSlice";
-import { PageHeader } from "mds";
 import HelpMenu from "../HelpMenu";
 import { setHelpName } from "../../../systemSlice";
 
@@ -63,6 +62,7 @@ const Dashboard = ({ classes }: IDashboardSimple) => {
 
   useEffect(() => {
     dispatch(setHelpName("metrics"));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

@@ -61,6 +61,7 @@ const EventTypeSelector = ({ classes }: INotificationTypeSelector) => {
   const dispatch = useAppDispatch();
   useEffect(() => {
     dispatch(setHelpName("notification_type_selector"));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
     <Fragment>

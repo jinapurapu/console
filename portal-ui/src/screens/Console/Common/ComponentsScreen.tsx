@@ -30,6 +30,7 @@ const ComponentsScreen = () => {
 
   useEffect(() => {
     dispatch(setHelpName("components"));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

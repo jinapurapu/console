@@ -352,6 +352,7 @@ const Status = () => {
 
   useEffect(() => {
     dispatch(setHelpName("kms_status"));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

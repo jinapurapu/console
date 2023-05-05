@@ -111,6 +111,7 @@ const OBHeader = ({ bucketName }: IOBHeader) => {
 
   useEffect(() => {
     dispatch(setHelpName("object_browser"));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

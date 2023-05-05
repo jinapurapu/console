@@ -27,8 +27,6 @@ import {
   modalStyleUtils,
   spacingUtils,
 } from "../Console/Common/FormComponents/common/styleLibrary";
-import { wrap } from "lodash";
-import { Typography } from "@mui/material";
 
 const styles = (theme: Theme) =>
   createStyles({

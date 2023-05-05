@@ -258,7 +258,7 @@ const HealthInfo = ({ classes }: IHealthInfo) => {
 
   useEffect(() => {
     dispatch(setHelpName("health_info"));
-  }, []);
+  }, [dispatch]);
 
   return (
     <Fragment>

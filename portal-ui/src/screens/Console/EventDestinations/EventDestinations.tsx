@@ -30,6 +30,7 @@ const EventDestinations = () => {
   const dispatch = useAppDispatch();
   useEffect(() => {
     dispatch(setHelpName("event_destinations"));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
     <Fragment>

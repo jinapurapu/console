@@ -144,6 +144,7 @@ const Profile = ({ classes }: IProfileProps) => {
   const dispatch = useAppDispatch();
   useEffect(() => {
     dispatch(setHelpName("profile"));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

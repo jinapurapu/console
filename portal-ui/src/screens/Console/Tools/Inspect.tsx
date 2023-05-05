@@ -203,6 +203,7 @@ const Inspect = ({ classes }: { classes: any }) => {
 
   useEffect(() => {
     dispatch(setHelpName("inspect"));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

@@ -309,6 +309,7 @@ const ListTiersConfiguration = ({ classes }: IListTiersConfig) => {
 
   useEffect(() => {
     dispatch(setHelpName("list-tiers-configuration"));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

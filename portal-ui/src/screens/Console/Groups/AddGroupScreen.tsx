@@ -96,6 +96,7 @@ const AddGroupScreen = ({ classes }: IAddGroupProps) => {
 
   useEffect(() => {
     dispatch(setHelpName("add_group"));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

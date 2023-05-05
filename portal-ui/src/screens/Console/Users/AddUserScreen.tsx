@@ -100,6 +100,7 @@ const AddUser = ({ classes }: IAddUserProps) => {
 
   useEffect(() => {
     dispatch(setHelpName("add_user"));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

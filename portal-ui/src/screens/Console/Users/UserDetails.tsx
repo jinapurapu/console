@@ -14,13 +14,7 @@
 // You should have received a copy of the GNU Affero General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-import React, {
-  Fragment,
-  useCallback,
-  useEffect,
-  useRef,
-  useState,
-} from "react";
+import React, { Fragment, useCallback, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { Theme } from "@mui/material/styles";
 import {
@@ -58,7 +52,11 @@ import VerticalTabs from "../Common/VerticalTabs/VerticalTabs";
 import FormSwitchWrapper from "../Common/FormComponents/FormSwitchWrapper/FormSwitchWrapper";
 
 import { decodeURLString, encodeURLString } from "../../../common/utils";
-import { setHelpName, setModalErrorSnackMessage } from "../../../systemSlice";
+import {
+  setHelpName,
+  setHelpTabName,
+  setModalErrorSnackMessage,
+} from "../../../systemSlice";
 import {
   assignGroupPermissions,
   assignIAMPolicyPermissions,
@@ -73,12 +71,11 @@ import {
   permissionTooltipHelper,
 } from "../../../common/SecureComponent/permissions";
 import { hasPermission } from "../../../common/SecureComponent";
-import { AppState, useAppDispatch } from "../../../store";
+import { useAppDispatch } from "../../../store";
 import { policyDetailsSort } from "../../../utils/sortFunctions";
 import TooltipWrapper from "../Common/TooltipWrapper/TooltipWrapper";
 import PageHeaderWrapper from "../Common/PageHeaderWrapper/PageHeaderWrapper";
 import HelpMenu from "../HelpMenu";
-import { useSelector } from "react-redux";
 
 const styles = (theme: Theme) =>
   createStyles({
@@ -117,7 +114,6 @@ const UserDetails = ({ classes }: IUserDetailsProps) => {
   const [addGroupOpen, setAddGroupOpen] = useState<boolean>(false);
   const [policyOpen, setPolicyOpen] = useState<boolean>(false);
   const [addLoading, setAddLoading] = useState<boolean>(false);
-  const [helpTopicName, setHelpTopicName] = useState<string>("");
   const [enabled, setEnabled] = useState<boolean>(false);
   const [selectedGroups, setSelectedGroups] = useState<string[]>([]);
   const [currentGroups, setCurrentGroups] = useState<IGroupItem[]>([]);
@@ -218,6 +214,8 @@ const UserDetails = ({ classes }: IUserDetailsProps) => {
 
   useEffect(() => {
     dispatch(setHelpName("user_details"));
+    dispatch(setHelpTabName("0"));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {

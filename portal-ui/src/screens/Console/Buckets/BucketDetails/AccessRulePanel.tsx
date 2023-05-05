@@ -135,6 +135,7 @@ const AccessRule = () => {
 
   useEffect(() => {
     dispatch(setHelpName("bucket_detail_prefix"));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {

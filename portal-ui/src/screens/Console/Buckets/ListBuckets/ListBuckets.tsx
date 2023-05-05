@@ -112,6 +112,7 @@ const ListBuckets = () => {
 
   useEffect(() => {
     dispatch(setHelpName("ob_bucket_list"));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
@@ -242,7 +243,7 @@ const ListBuckets = () => {
         />
       )}
       {!obOnly && (
-        <PageHeaderWrapper label={"Buckets TEST"} actions={<HelpMenu />} />
+        <PageHeaderWrapper label={"Buckets"} actions={<HelpMenu />} />
       )}
 
       <PageLayout>

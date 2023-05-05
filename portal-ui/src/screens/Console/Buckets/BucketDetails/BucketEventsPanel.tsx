@@ -88,6 +88,7 @@ const BucketEventsPanel = ({ classes }: IBucketEventsProps) => {
 
   useEffect(() => {
     dispatch(setHelpName("bucket_detail_events"));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {

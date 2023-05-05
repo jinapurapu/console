@@ -278,6 +278,7 @@ const LogsSearchMain = ({ classes }: ILogSearchProps) => {
 
   useEffect(() => {
     dispatch(setHelpName("audit_logs"));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

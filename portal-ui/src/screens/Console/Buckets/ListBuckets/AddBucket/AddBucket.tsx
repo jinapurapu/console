@@ -242,6 +242,7 @@ const AddBucket = () => {
 
   useEffect(() => {
     dispatch(setHelpName("add_bucket"));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

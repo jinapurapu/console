@@ -110,10 +110,7 @@ const Account = () => {
 
   useEffect(() => {
     dispatch(setHelpName("accessKeys"));
-  }, []);
-
-  useEffect(() => {
-    dispatch(setHelpName("accessKeys"));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {

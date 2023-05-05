@@ -140,6 +140,7 @@ const IDPConfigurations = ({ classes, idpType }: IDPConfigurationsProps) => {
 
   useEffect(() => {
     dispatch(setHelpName("idp_configs"));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

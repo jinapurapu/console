@@ -235,6 +235,7 @@ const ErrorLogs = () => {
 
   useEffect(() => {
     dispatch(setHelpName("error_logs"));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

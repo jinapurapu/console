@@ -81,6 +81,7 @@ const AddServiceAccount = ({ classes }: IAddServiceAccountProps) => {
 
   useEffect(() => {
     dispatch(setHelpName("add_service_account"));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {

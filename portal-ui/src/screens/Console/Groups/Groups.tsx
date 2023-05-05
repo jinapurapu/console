@@ -115,6 +115,7 @@ const Groups = ({ classes }: IGroupsProps) => {
 
   useEffect(() => {
     dispatch(setHelpName("groups"));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const displayGroups = hasPermission(

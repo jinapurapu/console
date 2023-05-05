@@ -124,6 +124,7 @@ const SiteReplicationStatus = () => {
   const dispatch = useAppDispatch();
   useEffect(() => {
     dispatch(setHelpName("replication_status"));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

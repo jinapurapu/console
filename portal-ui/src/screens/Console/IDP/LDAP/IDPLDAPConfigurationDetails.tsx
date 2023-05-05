@@ -258,6 +258,7 @@ const IDPLDAPConfigurationDetails = () => {
 
   useEffect(() => {
     dispatch(setHelpName("LDAP"));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

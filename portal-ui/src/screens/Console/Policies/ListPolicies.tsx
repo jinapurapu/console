@@ -190,6 +190,7 @@ const ListPolicies = ({ classes }: IPoliciesProps) => {
 
   useEffect(() => {
     dispatch(setHelpName("list_policies"));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

@@ -209,6 +209,7 @@ const Speedtest = () => {
   const dispatch = useAppDispatch();
   useEffect(() => {
     dispatch(setHelpName("performance"));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

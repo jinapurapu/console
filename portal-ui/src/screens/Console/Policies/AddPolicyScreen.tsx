@@ -92,6 +92,7 @@ const AddPolicyScreen = () => {
 
   useEffect(() => {
     dispatch(setHelpName("add_policy"));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
     <Fragment>

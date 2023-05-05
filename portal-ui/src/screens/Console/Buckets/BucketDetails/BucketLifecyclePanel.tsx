@@ -88,6 +88,7 @@ const BucketLifecyclePanel = ({ classes }: IBucketLifecyclePanelProps) => {
 
   useEffect(() => {
     dispatch(setHelpName("bucket_detail_lifecycle"));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {

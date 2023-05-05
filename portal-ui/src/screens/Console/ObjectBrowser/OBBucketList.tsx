@@ -146,6 +146,7 @@ const OBListBuckets = () => {
 
   useEffect(() => {
     dispatch(setHelpName("ob_bucket_list"));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

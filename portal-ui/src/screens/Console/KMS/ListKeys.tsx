@@ -131,7 +131,7 @@ const ListKeys = ({ classes }: IKeysProps) => {
 
   useEffect(() => {
     dispatch(setHelpName("list_keys"));
-  }, []);
+  }, [dispatch]);
 
   return (
     <React.Fragment>
