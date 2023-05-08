@@ -48,7 +48,6 @@ interface IHelpMenuProps {
 }
 
 const HelpMenu = ({ classes }: IHelpMenuProps) => {
-  const [helpTab, setHelpTab] = useState<number>(0);
   const [helpItems, setHelpItems] = useState<string[]>([]);
   const [helpItemsVideo, setHelpItemsVideo] = useState<string[]>([]);
   const [helpItemsBlog, setHelpItemsBlog] = useState<string[]>([]);

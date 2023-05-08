@@ -67,13 +67,7 @@ const getRoutePath = (path: string) => {
 
 const ConfigurationOptions = ({ classes }: IConfigurationOptions) => {
   const { pathname = "" } = useLocation();
-  const systemHelpName = useSelector(
-    (state: AppState) => state.system.helpName
-  );
-  const systemHelpTabName = useSelector(
-    (state: AppState) => state.system.helpTabName
-  );
-
+  
   let selConfigTab = pathname.substring(pathname.lastIndexOf("/") + 1);
   selConfigTab = selConfigTab === "settings" ? "region" : selConfigTab;
   const dispatch = useAppDispatch();
