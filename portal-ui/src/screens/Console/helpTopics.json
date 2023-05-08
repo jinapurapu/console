@@ -614,7 +614,6 @@
   },
   "policy_details0": {
     "docs": [
-      "policy details 0 - summary",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Supported S3 Policy Condition Keys](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#supported-s3-policy-condition-keys)  \nLearn about IAM conditional statements",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Supported S3 Policy Actions](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#supported-s3-policy-actions)  \n Text snippet that will be relevant to the user will  \ngo here  made to look nice in the helpitem size  \non two-three lines",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Policy Document Structure](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#policy-document-structure)  \n Text snippet that will be relevant to the user will  \ngo here  made to look nice in the helpitem size  \non two-three lines",
@@ -629,7 +628,6 @@
   },
   "policy_details1": {
     "docs": [
-      "policy details 1 - users",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Identity and Access Management](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management.html)  \nLearn how authentication and authorization  \nare used to protect access to your data",
 
       "https://blog.min.io/content/images/size/w1000/2020/12/pay_banner-01-01-01-01-01.png[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)  \n Need more help?  \nCheck out additional Troubleshooting options"
@@ -642,7 +640,6 @@
   },
   "policy_details2": {
     "docs": [
-      "policy details 2 - groups",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Identity and Access Management](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management.html)  \nLearn how authentication and authorization  \nare used to protect access to your data",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Group Management](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/minio-group-management.html)  \n Text snippet that will be relevant to the user will  \ngo here  made to look nice in the helpitem size  \non two-three lines",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Groups](https://min.io/docs/minio/linux/administration/identity-access-management/minio-group-management.html)  \n Text snippet that will be relevant to the user will  \ngo here  made to look nice in the helpitem size  \non two-three lines",
@@ -657,7 +654,6 @@
   },
   "policy_details3": {
     "docs": [
-      "policy details 3 - raw policy",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Example Policy - Bucket Resource Access](https://min.io/docs/minio/kubernetes/upstream/operations/external-iam/configure-openid-external-identity-management.html#assign-policies-to-oidc-users)  \nAn example policy demonstrating authorization  \nlimited to a named bucket",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Supported S3 Policy Condition Keys](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#supported-s3-policy-condition-keys)  \n Text snippet that will be relevant to the user will  \ngo here  made to look nice in the helpitem size  \non two-three lines",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Supported S3 Policy Actions](https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#supported-s3-policy-actions)  \n Text snippet that will be relevant to the user will  \ngo here  made to look nice in the helpitem size  \non two-three lines",

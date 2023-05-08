@@ -38,7 +38,7 @@ import ImportConfigButton from "./ImportConfigButton";
 import { Box } from "@mui/material";
 import HelpMenu from "../../HelpMenu";
 import { setHelpName, setHelpTabName } from "../../../../systemSlice";
-import {  useAppDispatch } from "../../../../store";
+import { useAppDispatch } from "../../../../store";
 
 interface IConfigurationOptions {
   classes: any;
@@ -66,7 +66,7 @@ const getRoutePath = (path: string) => {
 
 const ConfigurationOptions = ({ classes }: IConfigurationOptions) => {
   const { pathname = "" } = useLocation();
-  
+
   let selConfigTab = pathname.substring(pathname.lastIndexOf("/") + 1);
   selConfigTab = selConfigTab === "settings" ? "region" : selConfigTab;
   const dispatch = useAppDispatch();
