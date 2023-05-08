@@ -97,19 +97,20 @@
   },
   "settings_detailsregion": {
     "docs": [
-      "settings_detailsregion - EXPAND TO TABS",
-      "https://min.io/resources/img/logo/MINIO_wordmark.png[Configuration](https://min.io/docs/minio/kubernetes/upstream/operations/troubleshooting/encrypting-files.html)  \n Need more help?  \nCheck out additional Troubleshooting options",
-
+      "https://min.io/resources/img/logo/MINIO_wordmark.png[Creating a New Bucket in a Specific Region](https://min.io/docs/minio/linux/reference/minio-mc/mc-mb.html#create-a-new-bucket-in-a-specific-region)",
+    "https://min.io/resources/img/logo/MINIO_wordmark.png[What are Settings and Configurations?](https://min.io/docs/minio/windows/administration/console/managing-deployment.html#minio-console-settings)",
       "https://blog.min.io/content/images/size/w1000/2020/12/pay_banner-01-01-01-01-01.png[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)  \n Need more help?  \nCheck out additional Troubleshooting options"
     ],
     "video": [],
-    "blog": []
+    "blog": [
+      "https://blog.min.io/content/images/size/w2000/2021/09/denys-nevozhai-7nrsVjvALnA-unsplash.jpg[Multi-site Active-Active Replication](https://blog.min.io/minio-multi-site-active-active-replication/)"
+    ]
   },
   "settings_detailsconfigurations": {
     "docs": [
-      "settings_detailsconfigurations - EXPAND TO TABS",
-      "https://min.io/resources/img/logo/MINIO_wordmark.png[Configuration](https://min.io/docs/minio/kubernetes/upstream/operations/troubleshooting/encrypting-files.html)  \n Need more help?  \nCheck out additional Troubleshooting options",
-
+      "https://min.io/resources/img/logo/MINIO_wordmark.png[Creating a New Bucket in a Specific Region](https://min.io/docs/minio/linux/reference/minio-mc/mc-mb.html#create-a-new-bucket-in-a-specific-region)",
+      "https://min.io/resources/img/logo/MINIO_wordmark.png[What are Settings and Configurations?](https://min.io/docs/minio/windows/administration/console/managing-deployment.html#minio-console-settings)",
+    
       "https://blog.min.io/content/images/size/w1000/2020/12/pay_banner-01-01-01-01-01.png[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)  \n Need more help?  \nCheck out additional Troubleshooting options"
     ],
     "video": [],
@@ -117,19 +118,22 @@
   },
   "settings_detailscompression": {
     "docs": [
-      "SETTINGS1 - EXPAND TO TABS",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Configuration](https://min.io/docs/minio/kubernetes/upstream/operations/troubleshooting/encrypting-files.html)  \n Need more help?  \nCheck out additional Troubleshooting options",
-
+      "https://min.io/resources/img/logo/MINIO_wordmark.png[What are Settings and Configurations?](https://min.io/docs/minio/windows/administration/console/managing-deployment.html#minio-console-settings)",
+    
       "https://blog.min.io/content/images/size/w1000/2020/12/pay_banner-01-01-01-01-01.png[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)  \n Need more help?  \nCheck out additional Troubleshooting options"
     ],
     "video": [],
-    "blog": []
+    "blog": ["https://images.unsplash.com/photo-1522932753915-9ee97e43e3d9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDYxfHxjb21wcmVzc2lvbiUyMGFic3RyYWN0JTIwfGVufDB8fHx8MTY1NzgxNzg4OA&ixlib=rb-1.2.1&q=80&w=2000[Transparent Data Compression on MinIO](https://blog.min.io/transparent-data-compression/)",
+  "https://blog.min.io/content/images/size/w2000/2019/05/Screenshot-at-May-15-15-27-18.png[Compression Encryption](https://blog.min.io/c-e-compression-encryption/)"]
   },
   "settings_detailsapi": {
     "docs": [
-      "SETTINGS2 - EXPAND TO TABS",
+      "https://min.io/resources/img/logo/MINIO_wordmark.png[How is failed replication handled?](https://min.io/docs/minio/kubernetes/upstream/administration/bucket-replication.html#minio-replication-process)",
+      "https://min.io/resources/img/logo/MINIO_wordmark.png[What are Replication Workers?](https://min.io/docs/minio/windows/administration/bucket-replication.html#minio-replication-process)",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Configuration](https://min.io/docs/minio/kubernetes/upstream/operations/troubleshooting/encrypting-files.html)  \n Need more help?  \nCheck out additional Troubleshooting options",
-
+      "https://min.io/resources/img/logo/MINIO_wordmark.png[What are Settings and Configurations?](https://min.io/docs/minio/windows/administration/console/managing-deployment.html#minio-console-settings)",
+    
       "https://blog.min.io/content/images/size/w1000/2020/12/pay_banner-01-01-01-01-01.png[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)  \n Need more help?  \nCheck out additional Troubleshooting options"
     ],
     "video": [],
@@ -137,9 +141,17 @@
   },
   "settings_detailsheal": {
     "docs": [
-      "SETTINGS3 - EXPAND TO TABS",
+      "https://min.io/resources/img/logo/MINIO_wordmark.png[Where can I see current Heal status?](https://min.io/docs/minio/windows/administration/console/managing-deployment.html#drives)",
+      "https://min.io/resources/img/logo/MINIO_wordmark.png[How is Erasure Coding used to Protect Data?](https://min.io/docs/minio/macos/operations/install-deploy-manage/deploy-minio-multi-node-multi-drive.html#erasure-coding-parity)",
+      "https://min.io/resources/img/logo/MINIO_wordmark.png[Recover After Hardware failure](https://min.io/docs/minio/windows/operations/data-recovery.html#minio-restore-hardware-failure)",
+      "https://min.io/resources/img/logo/MINIO_wordmark.png[Site Failure Recovery](https://min.io/docs/minio/windows/operations/data-recovery/recover-after-site-failure.html#minio-restore-hardware-failure-site)",
+      "https://min.io/resources/img/logo/MINIO_wordmark.png[Node Failure Recovery](https://min.io/docs/minio/windows/operations/data-recovery/recover-after-node-failure.html#minio-restore-hardware-failure-node)",
+      "https://min.io/resources/img/logo/MINIO_wordmark.png[What is MinIO Healing?](https://min.io/docs/minio/windows/operations/concepts.html#minio-automatically-heals-corrupt-or-missing-data-on-the-fly)",
+      "https://min.io/resources/img/logo/MINIO_wordmark.png[Understand MinIO Healing Using mc](https://min.io/docs/minio/linux/reference/minio-mc-admin/mc-admin-heal.html#description)",
+      "https://min.io/resources/img/logo/MINIO_wordmark.png[What is Bit Rot?](https://min.io/docs/minio/kubernetes/upstream/glossary.html#term-bit-rot)",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Configuration](https://min.io/docs/minio/kubernetes/upstream/operations/troubleshooting/encrypting-files.html)  \n Need more help?  \nCheck out additional Troubleshooting options",
-
+      "https://min.io/resources/img/logo/MINIO_wordmark.png[What are Settings and Configurations?](https://min.io/docs/minio/windows/administration/console/managing-deployment.html#minio-console-settings)",
+    
       "https://blog.min.io/content/images/size/w1000/2020/12/pay_banner-01-01-01-01-01.png[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)  \n Need more help?  \nCheck out additional Troubleshooting options"
     ],
     "video": [],
@@ -147,19 +159,24 @@
   },
   "settings_detailsscanner": {
     "docs": [
-      "SETTINGS4 - EXPAND TO TABS",
+      "https://min.io/resources/img/logo/MINIO_wordmark.png[What is the Scanner?](https://min.io/docs/minio/linux/glossary.html#term-scanner)",
+      "https://min.io/resources/img/logo/MINIO_wordmark.png[Lifecycle Management Object Scanner](https://min.io/docs/minio/windows/administration/object-management/transition-objects-to-gcs.html#lifecycle-management-object-scanner)",
+      "https://min.io/resources/img/logo/MINIO_wordmark.png[Object Scanner](https://min.io/docs/minio/windows/administration/object-management/object-lifecycle-management.html#minio-lifecycle-management-scanner)",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Configuration](https://min.io/docs/minio/kubernetes/upstream/operations/troubleshooting/encrypting-files.html)  \n Need more help?  \nCheck out additional Troubleshooting options",
-
+      "https://min.io/resources/img/logo/MINIO_wordmark.png[What are Settings and Configurations?](https://min.io/docs/minio/windows/administration/console/managing-deployment.html#minio-console-settings)",
+    
       "https://blog.min.io/content/images/size/w1000/2020/12/pay_banner-01-01-01-01-01.png[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)  \n Need more help?  \nCheck out additional Troubleshooting options"
     ],
-    "video": [],
+    "video": [  "https://i.ytimg.com/vi/5fz3rE3wjGg/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLCq8mxi_s8tron8E3TPgTMfUbiiDw[Lifecycle Management lab](https://www.youtube.com/watch?v=5fz3rE3wjGg)  \n Text snippet that will be relevant to the user will  \ngo here  made to look nice in the helpitem size  \non two-three lines",
+    "https://i.ytimg.com/vi/UuxqnUgowyg/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLA8R19exGswOv_yP8ZmSy1K6zmCbw[Versioning and Lifecycle management](https://www.youtube.com/watch?v=UuxqnUgowyg)  \nIn this video, we will focus on versioning  \nand lifecycle management. "
+  ],
     "blog": []
   },
   "settings_detailsetcd": {
     "docs": [
-      "SETTINGS5 - EXPAND TO TABS",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Configuration](https://min.io/docs/minio/kubernetes/upstream/operations/troubleshooting/encrypting-files.html)  \n Need more help?  \nCheck out additional Troubleshooting options",
-
+      "https://min.io/resources/img/logo/MINIO_wordmark.png[What are Settings and Configurations?](https://min.io/docs/minio/windows/administration/console/managing-deployment.html#minio-console-settings)",
+    
       "https://blog.min.io/content/images/size/w1000/2020/12/pay_banner-01-01-01-01-01.png[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)  \n Need more help?  \nCheck out additional Troubleshooting options"
     ],
     "video": [],
@@ -167,19 +184,25 @@
   },
   "settings_detailslogger_webhook": {
     "docs": [
-      "SETTINGS6 - EXPAND TO TABS",
+      "https://min.io/resources/img/logo/MINIO_wordmark.png[What is the logger_webhook environment variable?](https://min.io/docs/minio/linux/reference/minio-mc-admin/mc-admin-config.html#minio-server-config-logging-logs)",
+      "https://min.io/resources/img/logo/MINIO_wordmark.png[Publish Server Logs to HTTP Webhook](https://min.io/docs/minio/linux/operations/monitoring/minio-logging.html#minio-logging-publish-server-logs)",
+      "https://min.io/resources/img/logo/MINIO_wordmark.png[Monitoring Logs](https://min.io/docs/minio/linux/operations/monitoring.html#logging)",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Configuration](https://min.io/docs/minio/kubernetes/upstream/operations/troubleshooting/encrypting-files.html)  \n Need more help?  \nCheck out additional Troubleshooting options",
-
+      "https://min.io/resources/img/logo/MINIO_wordmark.png[What are Settings and Configurations?](https://min.io/docs/minio/windows/administration/console/managing-deployment.html#minio-console-settings)",
+    
       "https://blog.min.io/content/images/size/w1000/2020/12/pay_banner-01-01-01-01-01.png[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)  \n Need more help?  \nCheck out additional Troubleshooting options"
     ],
-    "video": [],
+    "video": [ "https://i.ytimg.com/vi/A3vCDaFWNNs/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLDNZIxjC6AhnkRsTCMmoWrJIWmc6A[Monitoring with Prometheus](https://www.youtube.com/watch?v=A3vCDaFWNNs)  \n Text snippet that will be relevant to the user will  \ngo here  made to look nice in the helpitem size  \non two-three lines",
+    "https://i.ytimg.com/vi/Oix9iXndSUY/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLBlfESoCxf6YVxS5nO34Me793cFPw[Prometheus Monitoring Lab](https://www.youtube.com/watch?v=Oix9iXndSUY)  \n Text snippet that will be relevant to the user will  \ngo here  made to look nice in the helpitem size  \non two-three lines"
+ ],
     "blog": []
   },
   "settings_detailsaudit_webhook": {
     "docs": [
-      "SETTINGS7 - EXPAND TO TABS",
+      "https://min.io/resources/img/logo/MINIO_wordmark.png[Publish Audit Logs to an HTTP webhook](https://min.io/docs/minio/linux/reference/minio-server/minio-server.html#minio-sever-envvar-logging-audit)",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Configuration](https://min.io/docs/minio/kubernetes/upstream/operations/troubleshooting/encrypting-files.html)  \n Need more help?  \nCheck out additional Troubleshooting options",
-
+      "https://min.io/resources/img/logo/MINIO_wordmark.png[What are Settings and Configurations?](https://min.io/docs/minio/windows/administration/console/managing-deployment.html#minio-console-settings)",
+    
       "https://blog.min.io/content/images/size/w1000/2020/12/pay_banner-01-01-01-01-01.png[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)  \n Need more help?  \nCheck out additional Troubleshooting options"
     ],
     "video": [],
@@ -187,13 +210,21 @@
   },
   "settings_detailsaudit_kafka": {
     "docs": [
-      "SETTINGS8 - EXPAND TO TABS",
+      "https://min.io/resources/img/logo/MINIO_wordmark.png[Kafka Service for Bucket Notifications](https://min.io/docs/minio/linux/reference/minio-server/minio-server.html#minio-server-envvar-bucket-notification-kafka)",
+      "https://min.io/resources/img/logo/MINIO_wordmark.png[Kafka Service for Bucket Notifications](https://min.io/docs/minio/linux/reference/minio-mc-admin/mc-admin-config.html#minio-server-config-bucket-notification-kafka)",
+      "https://min.io/resources/img/logo/MINIO_wordmark.png[Publish Events to Kafka](https://min.io/docs/minio/linux/administration/monitoring/publish-events-to-kafka.html)",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Configuration](https://min.io/docs/minio/kubernetes/upstream/operations/troubleshooting/encrypting-files.html)  \n Need more help?  \nCheck out additional Troubleshooting options",
-
-      "https://blog.min.io/content/images/size/w1000/2020/12/pay_banner-01-01-01-01-01.png[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)  \n Need more help?  \nCheck out additional Troubleshooting options"
+      "https://min.io/resources/img/logo/MINIO_wordmark.png[What are Settings and Configurations?](https://min.io/docs/minio/windows/administration/console/managing-deployment.html#minio-console-settings)",
+    "https://min.io/resources/img/logo/MINIO_wordmark.png[Supported Bucket Notification Targets](https://min.io/docs/minio/linux/administration/monitoring/bucket-notifications.html#supported-notification-targets)",
+    "https://min.io/resources/img/logo/MINIO_wordmark.png[Bucket Notifications](https://min.io/docs/minio/linux/administration/monitoring.html#bucket-notifications)", 
+    "https://blog.min.io/content/images/size/w1000/2020/12/pay_banner-01-01-01-01-01.png[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)  \n Need more help?  \nCheck out additional Troubleshooting options"
     ],
     "video": [],
-    "blog": []
+    "blog": [
+      "https://blog.min.io/content/images/size/w2000/2021/09/1_kqpVTzo8b0e2oKdOjWQxZA.png[Publish from Kafka, Persist on MinIO](https://blog.min.io/kafka_and_minio/)",
+      "https://blog.min.io/content/images/size/w1000/2023/04/Screen-Shot-2023-04-24-at-4.34.43-PM.png[How to Set up Kafka and Strem Data to MinIO  \non Kubernetes](https://blog.min.io/tag/apache-kafka/)",
+      "https://blog.min.io/content/images/size/w2000/2022/08/minioKafka-blogheader.png[Orchestrate Complex Workflows Using Apache Kafka and MinIO](https://blog.min.io/complex-workflows-apache-kafka-minio/)"
+    ]
   },
   "add-replication-sites": {
     "docs": [

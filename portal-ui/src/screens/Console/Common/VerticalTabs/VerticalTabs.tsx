@@ -6,7 +6,7 @@ import { Theme, useTheme } from "@mui/material/styles";
 import createStyles from "@mui/styles/createStyles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { useLocation } from "react-router-dom";
-import { setHelpTabName } from "../../../../systemSlice";
+import { setHelpMenuType, setHelpTabName } from "../../../../systemSlice";
 import { useAppDispatch } from "../../../../store";
 
 export type TabItemProps = {
@@ -126,7 +126,7 @@ const VerticalTabs = ({
   const handleChange = (event: React.SyntheticEvent, newValue: string) => {
     setValue(newValue);
     dispatch(setHelpTabName(newValue));
-    console.log("reset helpTabName: ", newValue);
+    dispatch(setHelpMenuType("0"))
   };
 
   return (

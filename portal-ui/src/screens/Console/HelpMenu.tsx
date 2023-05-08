@@ -30,8 +30,9 @@ import { MenuItem, Paper, Tab, Tabs } from "@mui/material";
 import HelpItem from "./HelpItem";
 import { Box, Button, HelpIcon } from "mds";
 import { useSelector } from "react-redux";
-import { AppState } from "../../store";
+import { AppState, useAppDispatch } from "../../store";
 import { TabPanel } from "../shared/tabs";
+import { setHelpMenuType } from "../../systemSlice";
 
 const styles = (theme: Theme) =>
   createStyles({
@@ -61,9 +62,14 @@ const HelpMenu = ({ classes }: IHelpMenuProps) => {
     (state: AppState) => state.system.helpTabName
   );
 
+  const helpMenuType = useSelector(
+    (state: AppState) => state.system.helpMenuType
+  );
+
   const toggleHelpMenu = () => {
     setHelpMenuOpen(!helpMenuOpen);
   };
+  const dispatch = useAppDispatch();
 
   function useOutsideAlerter(ref: any) {
     useEffect(() => {
@@ -81,6 +87,7 @@ const HelpMenu = ({ classes }: IHelpMenuProps) => {
 
   const wrapperRef = useRef(null);
   useOutsideAlerter(wrapperRef);
+  
 
   useEffect(() => {
     assignHelpItems(systemHelpName);
@@ -174,9 +181,10 @@ const HelpMenu = ({ classes }: IHelpMenuProps) => {
               </Grid>
               <Grid item paddingLeft={3}>
                 <Tabs
-                  value={helpTab}
+                  value={parseInt(helpMenuType)}
                   onChange={(e: React.ChangeEvent<{}>, newValue: number) => {
-                    setHelpTab(newValue);
+                    console.log("Do the thing! newValue.tostring(): ",newValue.toString(), ' helpmenutype: ', helpMenuType)
+                    dispatch(setHelpMenuType(newValue.toString()));
                   }}
                   indicatorColor="primary"
                   textColor="primary"
@@ -198,19 +206,19 @@ const HelpMenu = ({ classes }: IHelpMenuProps) => {
             </Grid>
             <Paper>
               {helpItems.length !== 0 && (
-                <TabPanel index={0} value={helpTab}>
+                <TabPanel index={0} value={parseInt(helpMenuType)}>
                   {helpContent}
                 </TabPanel>
               )}
               {helpItemsVideo.length !== 0 && (
-                <TabPanel index={1} value={helpTab}>
+                <TabPanel index={1} value={parseInt(helpMenuType)}>
                   {helpContentVideo}
                 </TabPanel>
               )}
               {helpItemsBlog.length !== 0 && (
                 <TabPanel
                   index={helpItemsVideo.length !== 0 ? 2 : 1}
-                  value={helpTab}
+                  value={parseInt(helpMenuType)}
                 >
                   {helpContentBlog}
                 </TabPanel>

@@ -45,6 +45,7 @@ export interface SystemState {
   anonymousMode: boolean;
   helpName: string;
   helpTabName: string;
+  helpMenuType: string;
 }
 
 const initialState: SystemState = {
@@ -76,6 +77,7 @@ const initialState: SystemState = {
   anonymousMode: false,
   helpName: "help",
   helpTabName: "0",
+  helpMenuType: "0"
 };
 
 export const systemSlice = createSlice({
@@ -155,10 +157,15 @@ export const systemSlice = createSlice({
       state.licenseInfo = action.payload;
     },
     setHelpName: (state, action: PayloadAction<string>) => {
+      console.log("setting helpName: ", action.payload)
       state.helpName = action.payload;
     },
     setHelpTabName: (state, action: PayloadAction<string>) => {
       state.helpTabName = action.payload;
+    },
+    setHelpMenuType: (state, action: PayloadAction<string>) => {
+      console.log("setting helpMenuType: ", action.payload)
+      state.helpMenuType = action.payload;
     },
     setOverrideStyles: (
       state,
@@ -198,6 +205,7 @@ export const {
   configurationIsLoading,
   setHelpName,
   setHelpTabName,
+  setHelpMenuType
 } = systemSlice.actions;
 
 export const selDistSet = (state: AppState) => state.system.distributedSetup;
