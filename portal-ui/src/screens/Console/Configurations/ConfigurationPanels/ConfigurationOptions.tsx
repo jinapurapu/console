@@ -37,8 +37,9 @@ import ExportConfigButton from "./ExportConfigButton";
 import ImportConfigButton from "./ImportConfigButton";
 import { Box } from "@mui/material";
 import HelpMenu from "../../HelpMenu";
-import { setHelpName } from "../../../../systemSlice";
-import { useAppDispatch } from "../../../../store";
+import { setHelpName, setHelpTabName } from "../../../../systemSlice";
+import { AppState, useAppDispatch } from "../../../../store";
+import { useSelector } from "react-redux";
 
 interface IConfigurationOptions {
   classes: any;
@@ -66,12 +67,17 @@ const getRoutePath = (path: string) => {
 
 const ConfigurationOptions = ({ classes }: IConfigurationOptions) => {
   const { pathname = "" } = useLocation();
+  const systemHelpName = useSelector ((state: AppState) => state.system.helpName
+  );
+  const systemHelpTabName = useSelector ((state: AppState) => state.system.helpTabName
+  );
 
   let selConfigTab = pathname.substring(pathname.lastIndexOf("/") + 1);
   selConfigTab = selConfigTab === "settings" ? "region" : selConfigTab;
   const dispatch = useAppDispatch();
   useEffect(() => {
-    dispatch(setHelpName("settings"));
+    dispatch(setHelpName("settings_details"));
+    dispatch(setHelpTabName(selConfigTab))
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -79,9 +85,10 @@ const ConfigurationOptions = ({ classes }: IConfigurationOptions) => {
     <Fragment>
       <PageHeaderWrapper
         label={"Settings"}
-        actions={<HelpMenu helpName="settings" />}
+        actions={<HelpMenu  />}
       />
-
+<h3>helpName: {systemHelpName}</h3>
+<h3>helpTabName: {systemHelpTabName}</h3>
       <PageLayout>
         <Grid item xs={12}>
           <div

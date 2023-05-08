@@ -95,9 +95,99 @@
     ],
     "blog": []
   },
-  "settings": {
+  "settings_detailsregion": {
     "docs": [
-      "SETTINGS - EXPAND TO TABS",
+      "settings_detailsregion - EXPAND TO TABS",
+      "https://min.io/resources/img/logo/MINIO_wordmark.png[Configuration](https://min.io/docs/minio/kubernetes/upstream/operations/troubleshooting/encrypting-files.html)  \n Need more help?  \nCheck out additional Troubleshooting options",
+
+      "https://blog.min.io/content/images/size/w1000/2020/12/pay_banner-01-01-01-01-01.png[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)  \n Need more help?  \nCheck out additional Troubleshooting options"
+    ],
+    "video": [],
+    "blog": []
+  },
+  "settings_detailsconfigurations": {
+    "docs": [
+      "settings_detailsconfigurations - EXPAND TO TABS",
+      "https://min.io/resources/img/logo/MINIO_wordmark.png[Configuration](https://min.io/docs/minio/kubernetes/upstream/operations/troubleshooting/encrypting-files.html)  \n Need more help?  \nCheck out additional Troubleshooting options",
+
+      "https://blog.min.io/content/images/size/w1000/2020/12/pay_banner-01-01-01-01-01.png[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)  \n Need more help?  \nCheck out additional Troubleshooting options"
+    ],
+    "video": [],
+    "blog": []
+  },
+  "settings_detailscompression": {
+    "docs": [
+      "SETTINGS1 - EXPAND TO TABS",
+      "https://min.io/resources/img/logo/MINIO_wordmark.png[Configuration](https://min.io/docs/minio/kubernetes/upstream/operations/troubleshooting/encrypting-files.html)  \n Need more help?  \nCheck out additional Troubleshooting options",
+
+      "https://blog.min.io/content/images/size/w1000/2020/12/pay_banner-01-01-01-01-01.png[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)  \n Need more help?  \nCheck out additional Troubleshooting options"
+    ],
+    "video": [],
+    "blog": []
+  },
+  "settings_detailsapi": {
+    "docs": [
+      "SETTINGS2 - EXPAND TO TABS",
+      "https://min.io/resources/img/logo/MINIO_wordmark.png[Configuration](https://min.io/docs/minio/kubernetes/upstream/operations/troubleshooting/encrypting-files.html)  \n Need more help?  \nCheck out additional Troubleshooting options",
+
+      "https://blog.min.io/content/images/size/w1000/2020/12/pay_banner-01-01-01-01-01.png[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)  \n Need more help?  \nCheck out additional Troubleshooting options"
+    ],
+    "video": [],
+    "blog": []
+  },
+  "settings_detailsheal": {
+    "docs": [
+      "SETTINGS3 - EXPAND TO TABS",
+      "https://min.io/resources/img/logo/MINIO_wordmark.png[Configuration](https://min.io/docs/minio/kubernetes/upstream/operations/troubleshooting/encrypting-files.html)  \n Need more help?  \nCheck out additional Troubleshooting options",
+
+      "https://blog.min.io/content/images/size/w1000/2020/12/pay_banner-01-01-01-01-01.png[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)  \n Need more help?  \nCheck out additional Troubleshooting options"
+    ],
+    "video": [],
+    "blog": []
+  },
+  "settings_detailsscanner": {
+    "docs": [
+      "SETTINGS4 - EXPAND TO TABS",
+      "https://min.io/resources/img/logo/MINIO_wordmark.png[Configuration](https://min.io/docs/minio/kubernetes/upstream/operations/troubleshooting/encrypting-files.html)  \n Need more help?  \nCheck out additional Troubleshooting options",
+
+      "https://blog.min.io/content/images/size/w1000/2020/12/pay_banner-01-01-01-01-01.png[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)  \n Need more help?  \nCheck out additional Troubleshooting options"
+    ],
+    "video": [],
+    "blog": []
+  },
+  "settings_detailsetcd": {
+    "docs": [
+      "SETTINGS5 - EXPAND TO TABS",
+      "https://min.io/resources/img/logo/MINIO_wordmark.png[Configuration](https://min.io/docs/minio/kubernetes/upstream/operations/troubleshooting/encrypting-files.html)  \n Need more help?  \nCheck out additional Troubleshooting options",
+
+      "https://blog.min.io/content/images/size/w1000/2020/12/pay_banner-01-01-01-01-01.png[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)  \n Need more help?  \nCheck out additional Troubleshooting options"
+    ],
+    "video": [],
+    "blog": []
+  },
+  "settings_detailslogger_webhook": {
+    "docs": [
+      "SETTINGS6 - EXPAND TO TABS",
+      "https://min.io/resources/img/logo/MINIO_wordmark.png[Configuration](https://min.io/docs/minio/kubernetes/upstream/operations/troubleshooting/encrypting-files.html)  \n Need more help?  \nCheck out additional Troubleshooting options",
+
+      "https://blog.min.io/content/images/size/w1000/2020/12/pay_banner-01-01-01-01-01.png[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)  \n Need more help?  \nCheck out additional Troubleshooting options"
+    ],
+    "video": [],
+    "blog": []
+  },
+  "settings_detailsaudit_webhook": {
+    "docs": [
+      "SETTINGS7 - EXPAND TO TABS",
+      "https://min.io/resources/img/logo/MINIO_wordmark.png[Configuration](https://min.io/docs/minio/kubernetes/upstream/operations/troubleshooting/encrypting-files.html)  \n Need more help?  \nCheck out additional Troubleshooting options",
+
+      "https://blog.min.io/content/images/size/w1000/2020/12/pay_banner-01-01-01-01-01.png[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)  \n Need more help?  \nCheck out additional Troubleshooting options"
+    ],
+    "video": [],
+    "blog": []
+  },
+  "settings_detailsaudit_kafka": {
+    "docs": [
+      "SETTINGS8 - EXPAND TO TABS",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Configuration](https://min.io/docs/minio/kubernetes/upstream/operations/troubleshooting/encrypting-files.html)  \n Need more help?  \nCheck out additional Troubleshooting options",
 
       "https://blog.min.io/content/images/size/w1000/2020/12/pay_banner-01-01-01-01-01.png[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)  \n Need more help?  \nCheck out additional Troubleshooting options"
