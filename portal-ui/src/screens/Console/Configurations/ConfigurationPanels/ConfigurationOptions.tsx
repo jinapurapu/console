@@ -67,9 +67,11 @@ const getRoutePath = (path: string) => {
 
 const ConfigurationOptions = ({ classes }: IConfigurationOptions) => {
   const { pathname = "" } = useLocation();
-  const systemHelpName = useSelector ((state: AppState) => state.system.helpName
+  const systemHelpName = useSelector(
+    (state: AppState) => state.system.helpName
   );
-  const systemHelpTabName = useSelector ((state: AppState) => state.system.helpTabName
+  const systemHelpTabName = useSelector(
+    (state: AppState) => state.system.helpTabName
   );
 
   let selConfigTab = pathname.substring(pathname.lastIndexOf("/") + 1);
@@ -77,18 +79,13 @@ const ConfigurationOptions = ({ classes }: IConfigurationOptions) => {
   const dispatch = useAppDispatch();
   useEffect(() => {
     dispatch(setHelpName("settings_details"));
-    dispatch(setHelpTabName(selConfigTab))
+    dispatch(setHelpTabName(selConfigTab));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
     <Fragment>
-      <PageHeaderWrapper
-        label={"Settings"}
-        actions={<HelpMenu  />}
-      />
-<h3>helpName: {systemHelpName}</h3>
-<h3>helpTabName: {systemHelpTabName}</h3>
+      <PageHeaderWrapper label={"Settings"} actions={<HelpMenu />} />
       <PageLayout>
         <Grid item xs={12}>
           <div

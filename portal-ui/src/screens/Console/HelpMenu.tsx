@@ -87,7 +87,6 @@ const HelpMenu = ({ classes }: IHelpMenuProps) => {
 
   const wrapperRef = useRef(null);
   useOutsideAlerter(wrapperRef);
-  
 
   useEffect(() => {
     assignHelpItems(systemHelpName);
@@ -183,7 +182,6 @@ const HelpMenu = ({ classes }: IHelpMenuProps) => {
                 <Tabs
                   value={parseInt(helpMenuType)}
                   onChange={(e: React.ChangeEvent<{}>, newValue: number) => {
-                    console.log("Do the thing! newValue.tostring(): ",newValue.toString(), ' helpmenutype: ', helpMenuType)
                     dispatch(setHelpMenuType(newValue.toString()));
                   }}
                   indicatorColor="primary"
