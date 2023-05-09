@@ -97,20 +97,20 @@
   },
   "settings_detailsregion": {
     "docs": [
-      "https://min.io/resources/img/logo/MINIO_wordmark.png[Creating a New Bucket in a Specific Region](https://min.io/docs/minio/linux/reference/minio-mc/mc-mb.html#create-a-new-bucket-in-a-specific-region)",
-      "https://min.io/resources/img/logo/MINIO_wordmark.png[What are Settings and Configurations?](https://min.io/docs/minio/windows/administration/console/managing-deployment.html#minio-console-settings)",
+      "https://min.io/resources/img/logo/MINIO_wordmark.png[Creating a New Bucket in a Specific Region](https://min.io/docs/minio/linux/reference/minio-mc/mc-mb.html#create-a-new-bucket-in-a-specific-region)  \nA Bucket can be created in a specified region",
+      "https://min.io/resources/img/logo/MINIO_wordmark.png[What are Settings and Configurations?](https://min.io/docs/minio/windows/administration/console/managing-deployment.html#minio-console-settings)  \nThese configuration settings define runtime  \nbehavior of the MinIO server process,  \ncomparable to the mc admin config command",
       "https://blog.min.io/content/images/size/w1000/2020/12/pay_banner-01-01-01-01-01.png[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)  \n Need more help?  \nCheck out additional Troubleshooting options"
     ],
     "video": [],
     "blog": [
-      "https://blog.min.io/content/images/size/w2000/2021/09/denys-nevozhai-7nrsVjvALnA-unsplash.jpg[Multi-site Active-Active Replication](https://blog.min.io/minio-multi-site-active-active-replication/)"
+      "https://blog.min.io/content/images/size/w2000/2021/09/denys-nevozhai-7nrsVjvALnA-unsplash.jpg[Multi-site Active-Active Replication](https://blog.min.io/minio-multi-site-active-active-replication/)  \nActive-Active replication is a key tool for  \norganizations looking for multi-primary topologies,  \nfast hot-hot failover, and multi-geo resiliency."
     ]
   },
   "settings_detailsconfigurations": {
-    "docs": [
+    "docs": [  "https://min.io/resources/img/logo/MINIO_wordmark.png[What are Settings and Configurations?](https://min.io/docs/minio/windows/administration/console/managing-deployment.html#minio-console-settings)  \nThese configuration settings define runtime  \nbehavior of the MinIO server process,  \ncomparable to the mc admin config command",
+     
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Creating a New Bucket in a Specific Region](https://min.io/docs/minio/linux/reference/minio-mc/mc-mb.html#create-a-new-bucket-in-a-specific-region)",
-      "https://min.io/resources/img/logo/MINIO_wordmark.png[What are Settings and Configurations?](https://min.io/docs/minio/windows/administration/console/managing-deployment.html#minio-console-settings)",
-
+    
       "https://blog.min.io/content/images/size/w1000/2020/12/pay_banner-01-01-01-01-01.png[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)  \n Need more help?  \nCheck out additional Troubleshooting options"
     ],
     "video": [],
@@ -118,24 +118,22 @@
   },
   "settings_detailscompression": {
     "docs": [
-      "https://min.io/resources/img/logo/MINIO_wordmark.png[Configuration](https://min.io/docs/minio/kubernetes/upstream/operations/troubleshooting/encrypting-files.html)  \n Need more help?  \nCheck out additional Troubleshooting options",
-      "https://min.io/resources/img/logo/MINIO_wordmark.png[What are Settings and Configurations?](https://min.io/docs/minio/windows/administration/console/managing-deployment.html#minio-console-settings)",
-
+      "https://min.io/resources/img/logo/MINIO_wordmark.png[What are Settings and Configurations?](https://min.io/docs/minio/windows/administration/console/managing-deployment.html#minio-console-settings)  \nThese configuration settings define runtime  \nbehavior of the MinIO server process,  \ncomparable to the mc admin config command",
+     
       "https://blog.min.io/content/images/size/w1000/2020/12/pay_banner-01-01-01-01-01.png[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)  \n Need more help?  \nCheck out additional Troubleshooting options"
     ],
     "video": [],
     "blog": [
-      "https://images.unsplash.com/photo-1522932753915-9ee97e43e3d9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDYxfHxjb21wcmVzc2lvbiUyMGFic3RyYWN0JTIwfGVufDB8fHx8MTY1NzgxNzg4OA&ixlib=rb-1.2.1&q=80&w=2000[Transparent Data Compression on MinIO](https://blog.min.io/transparent-data-compression/)",
-      "https://blog.min.io/content/images/size/w2000/2019/05/Screenshot-at-May-15-15-27-18.png[Compression Encryption](https://blog.min.io/c-e-compression-encryption/)"
+      "https://images.unsplash.com/photo-1522932753915-9ee97e43e3d9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDYxfHxjb21wcmVzc2lvbiUyMGFic3RyYWN0JTIwfGVufDB8fHx8MTY1NzgxNzg4OA&ixlib=rb-1.2.1&q=80&w=2000[Transparent Data Compression on MinIO](https://blog.min.io/transparent-data-compression/)  \nA look at the benefits of enabling compression,  \nthe transparent data compression options available  \nin MinIO, and how to fine-tune settings in MinIO.",
+      "https://blog.min.io/content/images/size/w2000/2019/05/Screenshot-at-May-15-15-27-18.png[Compression Encryption](https://blog.min.io/c-e-compression-encryption/)  \nLearn about security considerations when  \ncompressing and encrypting your data."
     ]
   },
   "settings_detailsapi": {
     "docs": [
-      "https://min.io/resources/img/logo/MINIO_wordmark.png[How is failed replication handled?](https://min.io/docs/minio/kubernetes/upstream/administration/bucket-replication.html#minio-replication-process)",
-      "https://min.io/resources/img/logo/MINIO_wordmark.png[What are Replication Workers?](https://min.io/docs/minio/windows/administration/bucket-replication.html#minio-replication-process)",
-      "https://min.io/resources/img/logo/MINIO_wordmark.png[Configuration](https://min.io/docs/minio/kubernetes/upstream/operations/troubleshooting/encrypting-files.html)  \n Need more help?  \nCheck out additional Troubleshooting options",
-      "https://min.io/resources/img/logo/MINIO_wordmark.png[What are Settings and Configurations?](https://min.io/docs/minio/windows/administration/console/managing-deployment.html#minio-console-settings)",
-
+      "https://min.io/resources/img/logo/MINIO_wordmark.png[How is failed replication handled?](https://min.io/docs/minio/kubernetes/upstream/administration/bucket-replication.html#minio-replication-process)  \nMinIO queues failed replication operations and  \nretries those operations until replication succeeds.",
+      "https://min.io/resources/img/logo/MINIO_wordmark.png[What are Replication Workers?](https://min.io/docs/minio/windows/administration/bucket-replication.html#minio-replication-process)  \nMinIO uses a replication queuing system with  \nmultiple concurrent replication workers operating  \non that queue.",
+     "https://min.io/resources/img/logo/MINIO_wordmark.png[What are Settings and Configurations?](https://min.io/docs/minio/windows/administration/console/managing-deployment.html#minio-console-settings)  \nThese configuration settings define runtime  \nbehavior of the MinIO server process,  \ncomparable to the mc admin config command",
+     
       "https://blog.min.io/content/images/size/w1000/2020/12/pay_banner-01-01-01-01-01.png[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)  \n Need more help?  \nCheck out additional Troubleshooting options"
     ],
     "video": [],
@@ -143,43 +141,51 @@
   },
   "settings_detailsheal": {
     "docs": [
-      "https://min.io/resources/img/logo/MINIO_wordmark.png[Where can I see current Heal status?](https://min.io/docs/minio/windows/administration/console/managing-deployment.html#drives)",
-      "https://min.io/resources/img/logo/MINIO_wordmark.png[How is Erasure Coding used to Protect Data?](https://min.io/docs/minio/macos/operations/install-deploy-manage/deploy-minio-multi-node-multi-drive.html#erasure-coding-parity)",
-      "https://min.io/resources/img/logo/MINIO_wordmark.png[Recover After Hardware failure](https://min.io/docs/minio/windows/operations/data-recovery.html#minio-restore-hardware-failure)",
-      "https://min.io/resources/img/logo/MINIO_wordmark.png[Site Failure Recovery](https://min.io/docs/minio/windows/operations/data-recovery/recover-after-site-failure.html#minio-restore-hardware-failure-site)",
-      "https://min.io/resources/img/logo/MINIO_wordmark.png[Node Failure Recovery](https://min.io/docs/minio/windows/operations/data-recovery/recover-after-node-failure.html#minio-restore-hardware-failure-node)",
-      "https://min.io/resources/img/logo/MINIO_wordmark.png[What is MinIO Healing?](https://min.io/docs/minio/windows/operations/concepts.html#minio-automatically-heals-corrupt-or-missing-data-on-the-fly)",
-      "https://min.io/resources/img/logo/MINIO_wordmark.png[Understand MinIO Healing Using mc](https://min.io/docs/minio/linux/reference/minio-mc-admin/mc-admin-heal.html#description)",
-      "https://min.io/resources/img/logo/MINIO_wordmark.png[What is Bit Rot?](https://min.io/docs/minio/kubernetes/upstream/glossary.html#term-bit-rot)",
-      "https://min.io/resources/img/logo/MINIO_wordmark.png[Configuration](https://min.io/docs/minio/kubernetes/upstream/operations/troubleshooting/encrypting-files.html)  \n Need more help?  \nCheck out additional Troubleshooting options",
-      "https://min.io/resources/img/logo/MINIO_wordmark.png[What are Settings and Configurations?](https://min.io/docs/minio/windows/administration/console/managing-deployment.html#minio-console-settings)",
-
+      "https://min.io/resources/img/logo/MINIO_wordmark.png[Where can I see current Heal status?](https://min.io/docs/minio/windows/administration/console/managing-deployment.html#drives)  \nCheck under Monitoring/Drives on the left hand  \nmenu to see Drive and Bucket Healing status",
+      "https://min.io/resources/img/logo/MINIO_wordmark.png[How is Erasure Coding used to Protect Data?](https://min.io/docs/minio/macos/operations/install-deploy-manage/deploy-minio-multi-node-multi-drive.html#erasure-coding-parity)  \nMinIO erasure coding is a data redundancy and  \navailability feature that allows MinIO deployments to  \nautomatically reconstruct objects on-the-fly despite  \nthe loss of multiple drives or nodes in the cluster.",
+      "https://min.io/resources/img/logo/MINIO_wordmark.png[Recover After Hardware failure](https://min.io/docs/minio/windows/operations/data-recovery.html#minio-restore-hardware-failure)  \nDepending on the deployment topology and  \nselected erasure code parity, MinIO can tolerate loss  \nof up to half the drives or nodes in the deployment  \nwhile maintaining read access to objects.",
+      "https://min.io/resources/img/logo/MINIO_wordmark.png[Site Failure Recovery](https://min.io/docs/minio/windows/operations/data-recovery/recover-after-site-failure.html#minio-restore-hardware-failure-site)  \nMinIO can make the loss of an entire site, while  \nsignificant, a relatively minor incident. Site recovery  \ndepends on the replication option you use for the site.",
+      "https://min.io/resources/img/logo/MINIO_wordmark.png[Node Failure Recovery](https://min.io/docs/minio/windows/operations/data-recovery/recover-after-node-failure.html#minio-restore-hardware-failure-node)  \nIf a MinIO node suffers complete hardware failure,  \nthe node begins healing operations once it rejoins the  \ndeployment.",
+      "https://min.io/resources/img/logo/MINIO_wordmark.png[What is MinIO Healing?](https://min.io/docs/minio/windows/operations/concepts.html#minio-automatically-heals-corrupt-or-missing-data-on-the-fly)  \nHealing is MinIO’s ability to restore data after  \nsome event causes data loss. Data loss can come  \nfrom bit rot, drive loss, or node loss.",
+      "https://min.io/resources/img/logo/MINIO_wordmark.png[Understand MinIO Healing Using mc](https://min.io/docs/minio/linux/reference/minio-mc-admin/mc-admin-heal.html#description)  \nThe mc admin heal command scans for  \nobjects that are damaged or corrupted and heals  \nthose objects.",
+      "https://min.io/resources/img/logo/MINIO_wordmark.png[What is Bit Rot?](https://min.io/docs/minio/kubernetes/upstream/glossary.html#term-bit-rot)  \nBit rot is data corruption that occurs without  \nthe user’s knowledge. MinIO combats  \nbit rot with hashing and erasure coding.",
+      "https://min.io/resources/img/logo/MINIO_wordmark.png[What are Settings and Configurations?](https://min.io/docs/minio/windows/administration/console/managing-deployment.html#minio-console-settings)  \nThese configuration settings define runtime  \nbehavior of the MinIO server process,  \ncomparable to the mc admin config command",
+     
       "https://blog.min.io/content/images/size/w1000/2020/12/pay_banner-01-01-01-01-01.png[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)  \n Need more help?  \nCheck out additional Troubleshooting options"
     ],
     "video": [],
-    "blog": []
+    "blog": [
+      "https://blog.min.io/content/images/size/w1000/2022/12/replication-bestpractices.jpg[Replication best practices](https://blog.min.io/minio-replication-best-practices/)  \nMinIO includes multiple data protection mechanisms,  \nand this blog post focuses on replication best practices",
+      "https://blog.min.io/content/images/size/w2000/2021/11/josh-rose-trYl7JYATH0-unsplash-1.jpg[Data Authenticity and Integrity in MinIO](https://blog.min.io/data-authenticity-integrity/)  \nIt is critical that every party remains confident that  \nthey are working with a true dataset. This can only be  \naccomplished when data authenticity and integrity are  \nmaintained throughout the entire data lifecycle.",
+      "https://images.unsplash.com/photo-1523961131990-5ea7c61b2107?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDExfHxkYXRhJTIwY2VudGVyfGVufDB8fHx8MTY1MDY3MTUwMw&ixlib=rb-1.2.1&q=80&w=1000[Erasure Coding 101](https://blog.min.io/erasure-coding/)  \nErasure coding is a key data protection method for  \ndistributed storage systems. This blog post explains  \nhow erasure coding satisfies enterprise requirements  \nfor data protection and how it is implemented in MinIO.",
+      "https://blog.min.io/content/images/size/w2000/2021/07/pexels-shockphoto-by-szoka-sebastian-1381938.jpg[Object Storage Erasure Coding vs. Block Storage RAID](https://blog.min.io/erasure-coding-vs-raid/)  \nThis blog post compares two data protection  \ntechnologies, block-level RAID and object storage  \nerasure coding, that share some similarities  \nbut are in fact very different.",
+      "https://blog.min.io/content/images/size/w2000/2020/08/Cohasset.png[Cohasset Associates Assessment for  \nObject Locking on MinIO](https://blog.min.io/cohasset-associates-assessment-for-object-locking-on-minio/)  \nMinIO now has a positive assessment from Cohasset  \nAssociates regarding our object locking capabilities "
+    ]
   },
   "settings_detailsscanner": {
     "docs": [
-      "https://min.io/resources/img/logo/MINIO_wordmark.png[What is the Scanner?](https://min.io/docs/minio/linux/glossary.html#term-scanner)",
-      "https://min.io/resources/img/logo/MINIO_wordmark.png[Lifecycle Management Object Scanner](https://min.io/docs/minio/windows/administration/object-management/transition-objects-to-gcs.html#lifecycle-management-object-scanner)",
-      "https://min.io/resources/img/logo/MINIO_wordmark.png[Object Scanner](https://min.io/docs/minio/windows/administration/object-management/object-lifecycle-management.html#minio-lifecycle-management-scanner)",
-      "https://min.io/resources/img/logo/MINIO_wordmark.png[Configuration](https://min.io/docs/minio/kubernetes/upstream/operations/troubleshooting/encrypting-files.html)  \n Need more help?  \nCheck out additional Troubleshooting options",
-      "https://min.io/resources/img/logo/MINIO_wordmark.png[What are Settings and Configurations?](https://min.io/docs/minio/windows/administration/console/managing-deployment.html#minio-console-settings)",
-
+      "https://min.io/resources/img/logo/MINIO_wordmark.png[Object Scanner](https://min.io/docs/minio/windows/administration/object-management/object-lifecycle-management.html#minio-lifecycle-management-scanner)  \n Learn more about how the scanner checks Objects  \nfor transition and expiry based on lifecycle rules",
+     
+      "https://min.io/resources/img/logo/MINIO_wordmark.png[What is the Scanner?](https://min.io/docs/minio/linux/glossary.html#term-scanner)  \nOne of several low-priority processes MinIO runs to  \ncheck lifecycle management rules, bucket or site  \nreplication status, as well as object bit rot and healing",
+     
+      "https://min.io/resources/img/logo/MINIO_wordmark.png[Lifecycle Management Object Scanner Considerations](https://min.io/docs/minio/windows/administration/object-management/transition-objects-to-gcs.html#lifecycle-management-object-scanner)  \nMinIO uses a scanner process to check objects  \nagainst all configured lifecycle management rules.  \nHigh IO workloads or limited system resources may  \ndelay application of lifecycle management rules",
+     
+      "https://min.io/resources/img/logo/MINIO_wordmark.png[What are Settings and Configurations?](https://min.io/docs/minio/windows/administration/console/managing-deployment.html#minio-console-settings)  \nThese configuration settings define runtime  \nbehavior of the MinIO server process,  \ncomparable to the mc admin config command",
       "https://blog.min.io/content/images/size/w1000/2020/12/pay_banner-01-01-01-01-01.png[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)  \n Need more help?  \nCheck out additional Troubleshooting options"
     ],
     "video": [
-      "https://i.ytimg.com/vi/5fz3rE3wjGg/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLCq8mxi_s8tron8E3TPgTMfUbiiDw[Lifecycle Management lab](https://www.youtube.com/watch?v=5fz3rE3wjGg)  \n Text snippet that will be relevant to the user will  \ngo here  made to look nice in the helpitem size  \non two-three lines",
+      "https://i.ytimg.com/vi/5fz3rE3wjGg/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLCq8mxi_s8tron8E3TPgTMfUbiiDw[Lifecycle Management lab](https://www.youtube.com/watch?v=5fz3rE3wjGg)  \nUse mc to demonstrate the lifecycle management  \nconcepts of Object versioning, Object expiration,  \nand Object transition to an alternate storage tier",
       "https://i.ytimg.com/vi/UuxqnUgowyg/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLA8R19exGswOv_yP8ZmSy1K6zmCbw[Versioning and Lifecycle management](https://www.youtube.com/watch?v=UuxqnUgowyg)  \nIn this video, we will focus on versioning  \nand lifecycle management. "
     ],
-    "blog": []
+    "blog": [
+      "https://blog.min.io/content/images/size/w2000/2020/07/1920px-Immeuble_du_Cre-dit_Lyonnais_-sie-ge-.jpg[Object Locking, Versioning, Holds and Modes in MinIO](https://blog.min.io/object-locking-versioning-and-holds-in-minio/)  \nLearn how MinIO supports a complete object locking  \nframework supporting Lifecycle management, an  \nincreasingly critical element in the data ecosystem."
+    ]
   },
   "settings_detailsetcd": {
     "docs": [
-      "https://min.io/resources/img/logo/MINIO_wordmark.png[Configuration](https://min.io/docs/minio/kubernetes/upstream/operations/troubleshooting/encrypting-files.html)  \n Need more help?  \nCheck out additional Troubleshooting options",
-      "https://min.io/resources/img/logo/MINIO_wordmark.png[What are Settings and Configurations?](https://min.io/docs/minio/windows/administration/console/managing-deployment.html#minio-console-settings)",
-
+      "https://www.linuxfoundation.org/hs-fs/hubfs/trademark-kubernetes-icon-correct-140x140-1.png?width=124&name=trademark-kubernetes-icon-correct-140x140-1.png[What is etcd?](https://etcd.io/)  \netcd is a strongly consistent, distributed key-value  \nstore that provides a reliable way to store data that  \nneeds to be accessed by a distributed system or  \ncluster of machines.",
+      "https://min.io/resources/img/logo/MINIO_wordmark.png[What are Settings and Configurations?](https://min.io/docs/minio/windows/administration/console/managing-deployment.html#minio-console-settings)  \nThese configuration settings define runtime  \nbehavior of the MinIO server process,  \ncomparable to the mc admin config command",
+      
       "https://blog.min.io/content/images/size/w1000/2020/12/pay_banner-01-01-01-01-01.png[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)  \n Need more help?  \nCheck out additional Troubleshooting options"
     ],
     "video": [],
@@ -187,47 +193,49 @@
   },
   "settings_detailslogger_webhook": {
     "docs": [
-      "https://min.io/resources/img/logo/MINIO_wordmark.png[What is the logger_webhook environment variable?](https://min.io/docs/minio/linux/reference/minio-mc-admin/mc-admin-config.html#minio-server-config-logging-logs)",
-      "https://min.io/resources/img/logo/MINIO_wordmark.png[Publish Server Logs to HTTP Webhook](https://min.io/docs/minio/linux/operations/monitoring/minio-logging.html#minio-logging-publish-server-logs)",
-      "https://min.io/resources/img/logo/MINIO_wordmark.png[Monitoring Logs](https://min.io/docs/minio/linux/operations/monitoring.html#logging)",
-      "https://min.io/resources/img/logo/MINIO_wordmark.png[Configuration](https://min.io/docs/minio/kubernetes/upstream/operations/troubleshooting/encrypting-files.html)  \n Need more help?  \nCheck out additional Troubleshooting options",
-      "https://min.io/resources/img/logo/MINIO_wordmark.png[What are Settings and Configurations?](https://min.io/docs/minio/windows/administration/console/managing-deployment.html#minio-console-settings)",
-
+      "https://min.io/resources/img/logo/MINIO_wordmark.png[What is the logger_webhook environment variable?](https://min.io/docs/minio/linux/reference/minio-mc-admin/mc-admin-config.html#minio-server-config-logging-logs)  \nThe top-level configuration key for defining an  \nHTTP webhook target for publishing MinIO logs.",
+      "https://min.io/resources/img/logo/MINIO_wordmark.png[Publish Server Logs to HTTP Webhook](https://min.io/docs/minio/linux/operations/monitoring/minio-logging.html#minio-logging-publish-server-logs)  \nYou can configure a new HTTP webhook endpoint  \nto which MinIO publishes minio server logs using  \neither environment variables or by setting  \nruntime configuration settings.",
+      "https://min.io/resources/img/logo/MINIO_wordmark.png[Monitoring Logs](https://min.io/docs/minio/linux/operations/monitoring.html#logging)  \nMinIO supports publishing server logs  \nand audit logs to an HTTP webhook.",
+      "https://min.io/resources/img/logo/MINIO_wordmark.png[What are Settings and Configurations?](https://min.io/docs/minio/windows/administration/console/managing-deployment.html#minio-console-settings)  \nThese configuration settings define runtime  \nbehavior of the MinIO server process,  \ncomparable to the mc admin config command",
+    
       "https://blog.min.io/content/images/size/w1000/2020/12/pay_banner-01-01-01-01-01.png[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)  \n Need more help?  \nCheck out additional Troubleshooting options"
     ],
     "video": [
-      "https://i.ytimg.com/vi/A3vCDaFWNNs/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLDNZIxjC6AhnkRsTCMmoWrJIWmc6A[Monitoring with Prometheus](https://www.youtube.com/watch?v=A3vCDaFWNNs)  \n Text snippet that will be relevant to the user will  \ngo here  made to look nice in the helpitem size  \non two-three lines",
-      "https://i.ytimg.com/vi/Oix9iXndSUY/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLBlfESoCxf6YVxS5nO34Me793cFPw[Prometheus Monitoring Lab](https://www.youtube.com/watch?v=Oix9iXndSUY)  \n Text snippet that will be relevant to the user will  \ngo here  made to look nice in the helpitem size  \non two-three lines"
+      "https://i.ytimg.com/vi/A3vCDaFWNNs/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLDNZIxjC6AhnkRsTCMmoWrJIWmc6A[Monitoring with Prometheus](https://www.youtube.com/watch?v=A3vCDaFWNNs)  \nLearn about the monitoring features available  \nin your MinIO Console and how to export to  \nPrometheus and get information back so you can  \nview it in detail.",
+      "https://i.ytimg.com/vi/Oix9iXndSUY/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLBlfESoCxf6YVxS5nO34Me793cFPw[Prometheus Monitoring Lab](https://www.youtube.com/watch?v=Oix9iXndSUY)  \nLearn how to set up Prometheus and connect it  \nback to your MinIO cluster so that you can get  \ndetailed history of what's going on in your MinIO  \ncluster at any given time."
     ],
-    "blog": []
+    "blog": [
+      "https://blog.min.io/content/images/size/w1000/2023/04/PXL_20230417_154022040.jpg[Introducing Webhooks for MinIO](https://blog.min.io/introducing-webhooks-for-minio/)  \nLearn about MinIO webhook support"
+    ]
   },
   "settings_detailsaudit_webhook": {
     "docs": [
-      "https://min.io/resources/img/logo/MINIO_wordmark.png[Publish Audit Logs to an HTTP webhook](https://min.io/docs/minio/linux/reference/minio-server/minio-server.html#minio-sever-envvar-logging-audit)",
-      "https://min.io/resources/img/logo/MINIO_wordmark.png[Configuration](https://min.io/docs/minio/kubernetes/upstream/operations/troubleshooting/encrypting-files.html)  \n Need more help?  \nCheck out additional Troubleshooting options",
-      "https://min.io/resources/img/logo/MINIO_wordmark.png[What are Settings and Configurations?](https://min.io/docs/minio/windows/administration/console/managing-deployment.html#minio-console-settings)",
-
+      "https://min.io/resources/img/logo/MINIO_wordmark.png[Publish Audit Logs to an HTTP webhook](https://min.io/docs/minio/linux/reference/minio-server/minio-server.html#minio-sever-envvar-logging-audit)  \nYou can configure a new HTTP webhook endpoint  \nto which MinIO publishes audit logs using either  \nenvironment variables or by setting runtime  \nconfiguration settings",
+     "https://min.io/resources/img/logo/MINIO_wordmark.png[What are Settings and Configurations?](https://min.io/docs/minio/windows/administration/console/managing-deployment.html#minio-console-settings)  \nThese configuration settings define runtime  \nbehavior of the MinIO server process,  \ncomparable to the mc admin config command",
+    "https://min.io/resources/img/logo/MINIO_wordmark.png[Publish Audit Logs to an External Service](https://min.io/docs/minio/linux/operations/monitoring/minio-logging.html)  \nAudit logs are granular descriptions of each operation  \non the MinIO deployment supporting security  \nstandards and regulations which require  \ndetailed tracking of operations.",
       "https://blog.min.io/content/images/size/w1000/2020/12/pay_banner-01-01-01-01-01.png[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)  \n Need more help?  \nCheck out additional Troubleshooting options"
     ],
     "video": [],
-    "blog": []
+    "blog": [   "https://blog.min.io/content/images/size/w1000/2023/04/PXL_20230417_154022040.jpg[Introducing Webhooks for MinIO](https://blog.min.io/introducing-webhooks-for-minio/)  \nLearn about MinIO webhook support"
+  ]
   },
   "settings_detailsaudit_kafka": {
     "docs": [
-      "https://min.io/resources/img/logo/MINIO_wordmark.png[Kafka Service for Bucket Notifications](https://min.io/docs/minio/linux/reference/minio-server/minio-server.html#minio-server-envvar-bucket-notification-kafka)",
-      "https://min.io/resources/img/logo/MINIO_wordmark.png[Kafka Service for Bucket Notifications](https://min.io/docs/minio/linux/reference/minio-mc-admin/mc-admin-config.html#minio-server-config-bucket-notification-kafka)",
-      "https://min.io/resources/img/logo/MINIO_wordmark.png[Publish Events to Kafka](https://min.io/docs/minio/linux/administration/monitoring/publish-events-to-kafka.html)",
-      "https://min.io/resources/img/logo/MINIO_wordmark.png[Configuration](https://min.io/docs/minio/kubernetes/upstream/operations/troubleshooting/encrypting-files.html)  \n Need more help?  \nCheck out additional Troubleshooting options",
-      "https://min.io/resources/img/logo/MINIO_wordmark.png[What are Settings and Configurations?](https://min.io/docs/minio/windows/administration/console/managing-deployment.html#minio-console-settings)",
-      "https://min.io/resources/img/logo/MINIO_wordmark.png[Supported Bucket Notification Targets](https://min.io/docs/minio/linux/administration/monitoring/bucket-notifications.html#supported-notification-targets)",
-      "https://min.io/resources/img/logo/MINIO_wordmark.png[Bucket Notifications](https://min.io/docs/minio/linux/administration/monitoring.html#bucket-notifications)",
+      "https://min.io/resources/img/logo/MINIO_wordmark.png[Publish Events to Kafka](https://min.io/docs/minio/linux/administration/monitoring/publish-events-to-kafka.html)  \nMinIO supports publishing bucket notification  \nevents to a Kafka service endpoint.",
+      
+      "https://min.io/resources/img/logo/MINIO_wordmark.png[Kafka Service for Bucket Notifications](https://min.io/docs/minio/linux/reference/minio-server/minio-server.html#minio-server-envvar-bucket-notification-kafka)  \nLearn about environment variables for configuring a  \nKafka service as a target for Bucket Nofitications.",
+      "https://min.io/resources/img/logo/MINIO_wordmark.png[Kafka Service Configuration Settings](https://min.io/docs/minio/linux/reference/minio-mc-admin/mc-admin-config.html#minio-server-config-bucket-notification-kafka)  \nLearn about environment variables for configuring a  \nKafka service as a target for Bucket Nofitications.",
+   "https://min.io/resources/img/logo/MINIO_wordmark.png[Supported Bucket Notification Targets](https://min.io/docs/minio/linux/administration/monitoring/bucket-notifications.html#supported-notification-targets)  \nLearn which notification targets are  \nsupported by MinIO.",
+      "https://min.io/resources/img/logo/MINIO_wordmark.png[Bucket Notifications](https://min.io/docs/minio/linux/administration/monitoring.html#bucket-notifications)  \nMinIO bucket notifications allow administrators  \nto send notifications to supported external  \nservices on certain object or bucket events.",
+      "https://min.io/resources/img/logo/MINIO_wordmark.png[What are Settings and Configurations?](https://min.io/docs/minio/windows/administration/console/managing-deployment.html#minio-console-settings)  \nThese configuration settings define runtime  \nbehavior of the MinIO server process,  \ncomparable to the mc admin config command",
+   
       "https://blog.min.io/content/images/size/w1000/2020/12/pay_banner-01-01-01-01-01.png[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)  \n Need more help?  \nCheck out additional Troubleshooting options"
     ],
     "video": [],
     "blog": [
-      "https://blog.min.io/content/images/size/w2000/2021/09/1_kqpVTzo8b0e2oKdOjWQxZA.png[Publish from Kafka, Persist on MinIO](https://blog.min.io/kafka_and_minio/)",
-      "https://blog.min.io/content/images/size/w1000/2023/04/Screen-Shot-2023-04-24-at-4.34.43-PM.png[How to Set up Kafka and Strem Data to MinIO  \non Kubernetes](https://blog.min.io/tag/apache-kafka/)",
-      "https://blog.min.io/content/images/size/w2000/2022/08/minioKafka-blogheader.png[Orchestrate Complex Workflows Using Apache Kafka and MinIO](https://blog.min.io/complex-workflows-apache-kafka-minio/)"
+      "https://blog.min.io/content/images/size/w2000/2021/09/1_kqpVTzo8b0e2oKdOjWQxZA.png[Publish from Kafka, Persist on MinIO](https://blog.min.io/kafka_and_minio/)  \nLearn how Kafka and MinIO can be used together  \nfor ingress, management and finally storing  \nhuge volumes of streaming data.",
+      "https://blog.min.io/content/images/size/w1000/2023/04/Screen-Shot-2023-04-24-at-4.34.43-PM.png[How to Set up Kafka and Stream Data to  \nMinIO on Kubernetes](https://blog.min.io/stream-data-to-minio-using-kafka-kubernetes/)  \nSet up Kafka on Kubernetes using Strimzi,  \nthen use Kafka Connect to stream data to MinIO.",
+      "https://blog.min.io/content/images/size/w2000/2022/08/minioKafka-blogheader.png[Orchestrate Complex Workflows  \nUsing Apache Kafka and MinIO](https://blog.min.io/complex-workflows-apache-kafka-minio/)  \nBuild an example workflow using MinIO and  \nKafka for a hypothetical image resizer app."
     ]
   },
   "add-replication-sites": {
@@ -238,10 +246,10 @@
     ],
     "video": [],
     "blog": [
-      "https://blog.min.io/content/images/size/w1000/2022/12/replication-bestpractices.jpg[Replication best practices](https://blog.min.io/minio-replication-best-practices/)",
-      "https://images.unsplash.com/photo-1548197193-2c2df590e23f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDU0fHxmYXN0JTIwbW90aW9uJTIwYmx1cnxlbnwwfHx8fDE2NjkxNDY0MzM&ixlib=rb-4.0.3&q=80&w=1000[Faster multi-site replication and Resync](https://blog.min.io/multi-site-replication-resync/)  \n Text snippet that will be relevant to the user will  \ngo here  made to look nice in the helpitem size  \non two-three lines  \n Text snippet that will be relevant to the user will  \ngo here  made to look nice in the helpitem size  \non two-three lines  \n Text snippet that will be relevant to the user will  \ngo here  made to look nice in the helpitem size  \non two-three lines",
+      "https://blog.min.io/content/images/size/w1000/2022/12/replication-bestpractices.jpg[Replication best practices](https://blog.min.io/minio-replication-best-practices/)  \nMinIO includes multiple data protection mechanisms,  \nand this blog post focuses on replication best practices",
+       "https://images.unsplash.com/photo-1548197193-2c2df590e23f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDU0fHxmYXN0JTIwbW90aW9uJTIwYmx1cnxlbnwwfHx8fDE2NjkxNDY0MzM&ixlib=rb-4.0.3&q=80&w=1000[Faster multi-site replication and Resync](https://blog.min.io/multi-site-replication-resync/)  \n Text snippet that will be relevant to the user will  \ngo here  made to look nice in the helpitem size  \non two-three lines  \n Text snippet that will be relevant to the user will  \ngo here  made to look nice in the helpitem size  \non two-three lines  \n Text snippet that will be relevant to the user will  \ngo here  made to look nice in the helpitem size  \non two-three lines",
       "https://blog.min.io/content/images/size/w1000/2021/09/denys-nevozhai-7nrsVjvALnA-unsplash.jpg[Multi-site Active-active replication](https://blog.min.io/minio-multi-site-active-active-replication/)  \n Text snippet that will be relevant to the user will  \ngo here  made to look nice in the helpitem size  \non two-three lines  \n Text snippet that will be relevant to the user will  \ngo here  made to look nice in the helpitem size  \non two-three lines",
-      "https://images.unsplash.com/photo-1523961131990-5ea7c61b2107?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDExfHxkYXRhJTIwY2VudGVyfGVufDB8fHx8MTY1MDY3MTUwMw&ixlib=rb-1.2.1&q=80&w=1000[Erasure Coding 101](https://blog.min.io/erasure-coding/)  \n Text snippet that will be relevant to the user will  \ngo here  made to look nice in the helpitem size  \non two-three lines  \n Text snippet that will be relevant to the user will  \ngo here  made to look nice in the helpitem size  \non two-three lines"
+      "https://images.unsplash.com/photo-1523961131990-5ea7c61b2107?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDExfHxkYXRhJTIwY2VudGVyfGVufDB8fHx8MTY1MDY3MTUwMw&ixlib=rb-1.2.1&q=80&w=1000[Erasure Coding 101](https://blog.min.io/erasure-coding/)  \nErasure coding is a key data protection method  \nfor distributed storage systems. This blog  \npost explains how erasure coding satisfies  \nenterprise requirements for data protection and how it is implemented in MinIO."
     ]
   },
   "site-replication": {
@@ -253,8 +261,8 @@
     ],
     "video": [],
     "blog": [
-      "https://blog.min.io/content/images/size/w1000/2022/12/replication-bestpractices.jpg[Replication best practices](https://blog.min.io/minio-replication-best-practices/)  \n Text snippet that will be relevant to the user will  \ngo here  made to look nice in the helpitem size  \non two-three lines  \n Text snippet that will be relevant to the user will  \ngo here  made to look nice in the helpitem size  \non two-three lines",
-      "https://images.unsplash.com/photo-1548197193-2c2df590e23f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDU0fHxmYXN0JTIwbW90aW9uJTIwYmx1cnxlbnwwfHx8fDE2NjkxNDY0MzM&ixlib=rb-4.0.3&q=80&w=1000[Faster multi-site replication and Resync](https://blog.min.io/multi-site-replication-resync/)  \n Text snippet that will be relevant to the user will  \ngo here  made to look nice in the helpitem size  \non two-three lines  \n Text snippet that will be relevant to the user will  \ngo here  made to look nice in the helpitem size  \non two-three lines",
+      "https://blog.min.io/content/images/size/w1000/2022/12/replication-bestpractices.jpg[Replication best practices](https://blog.min.io/minio-replication-best-practices/)  \nMinIO includes multiple data protection mechanisms,  \nand this blog post focuses on replication best practices",
+       "https://images.unsplash.com/photo-1548197193-2c2df590e23f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDU0fHxmYXN0JTIwbW90aW9uJTIwYmx1cnxlbnwwfHx8fDE2NjkxNDY0MzM&ixlib=rb-4.0.3&q=80&w=1000[Faster multi-site replication and Resync](https://blog.min.io/multi-site-replication-resync/)  \n Text snippet that will be relevant to the user will  \ngo here  made to look nice in the helpitem size  \non two-three lines  \n Text snippet that will be relevant to the user will  \ngo here  made to look nice in the helpitem size  \non two-three lines",
       "https://blog.min.io/content/images/size/w1000/2021/09/denys-nevozhai-7nrsVjvALnA-unsplash.jpg[Multi-site Active-active replication](https://blog.min.io/minio-multi-site-active-active-replication/)  \n Text snippet that will be relevant to the user will  \ngo here  made to look nice in the helpitem size  \non two-three lines  \n Text snippet that will be relevant to the user will  \ngo here  made to look nice in the helpitem size  \non two-three lines",
       "https://images.unsplash.com/photo-1523961131990-5ea7c61b2107?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDExfHxkYXRhJTIwY2VudGVyfGVufDB8fHx8MTY1MDY3MTUwMw&ixlib=rb-1.2.1&q=80&w=1000[Erasure Coding 101](https://blog.min.io/erasure-coding/)  \n Text snippet that will be relevant to the user will  \ngo here  made to look nice in the helpitem size  \non two-three lines  \n Text snippet that will be relevant to the user will  \ngo here  made to look nice in the helpitem size  \non two-three lines"
     ]
@@ -267,8 +275,8 @@
     ],
     "video": [],
     "blog": [
-      "https://blog.min.io/content/images/size/w1000/2022/12/replication-bestpractices.jpg[Replication Best Practices](https://blog.min.io/minio-replication-best-practices/)  \n Text snippet that will be relevant to the user will  \ngo here  made to look nice in the helpitem size  \non two-three lines",
-      "https://images.unsplash.com/photo-1548197193-2c2df590e23f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDU0fHxmYXN0JTIwbW90aW9uJTIwYmx1cnxlbnwwfHx8fDE2NjkxNDY0MzM&ixlib=rb-4.0.3&q=80&w=1000[Faster multi-site replication and Resync](https://blog.min.io/multi-site-replication-resync/)  \n Text snippet that will be relevant to the user will  \ngo here  made to look nice in the helpitem size  \non two-three lines",
+      "https://blog.min.io/content/images/size/w1000/2022/12/replication-bestpractices.jpg[Replication best practices](https://blog.min.io/minio-replication-best-practices/)  \nMinIO includes multiple data protection mechanisms,  \nand this blog post focuses on replication best practices",
+       "https://images.unsplash.com/photo-1548197193-2c2df590e23f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDU0fHxmYXN0JTIwbW90aW9uJTIwYmx1cnxlbnwwfHx8fDE2NjkxNDY0MzM&ixlib=rb-4.0.3&q=80&w=1000[Faster multi-site replication and Resync](https://blog.min.io/multi-site-replication-resync/)  \n Text snippet that will be relevant to the user will  \ngo here  made to look nice in the helpitem size  \non two-three lines",
       "https://blog.min.io/content/images/size/w1000/2021/09/denys-nevozhai-7nrsVjvALnA-unsplash.jpg[Multi-site Active-active Replication](https://blog.min.io/minio-multi-site-active-active-replication/)  \n Text snippet that will be relevant to the user will  \ngo here  made to look nice in the helpitem size  \non two-three lines",
       "https://images.unsplash.com/photo-1523961131990-5ea7c61b2107?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDExfHxkYXRhJTIwY2VudGVyfGVufDB8fHx8MTY1MDY3MTUwMw&ixlib=rb-1.2.1&q=80&w=1000[Erasure Coding 101](https://blog.min.io/erasure-coding/)  \n Text snippet that will be relevant to the user will  \ngo here  made to look nice in the helpitem size  \non two-three lines"
     ]
@@ -328,7 +336,7 @@
     ],
     "video": [],
     "blog": [
-      "https://blog.min.io/content/images/size/w1000/2022/12/replication-bestpractices.jpg[Replication Best Practices](https://blog.min.io/minio-replication-best-practices/)  \n Text snippet that will be relevant to the user will  \ngo here  made to look nice in the helpitem size  \non two-three lines",
+      "https://blog.min.io/content/images/size/w1000/2022/12/replication-bestpractices.jpg[Replication best practices](https://blog.min.io/minio-replication-best-practices/)  \nMinIO includes multiple data protection mechanisms,  \nand this blog post focuses on replication best practices",
       "https://images.unsplash.com/photo-1548197193-2c2df590e23f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDU0fHxmYXN0JTIwbW90aW9uJTIwYmx1cnxlbnwwfHx8fDE2NjkxNDY0MzM&ixlib=rb-4.0.3&q=80&w=1000[Faster Multi-site Replication and Resync](https://blog.min.io/multi-site-replication-resync/)  \n Text snippet that will be relevant to the user will  \ngo here  made to look nice in the helpitem size  \non two-three lines",
       "https://images.unsplash.com/photo-1523961131990-5ea7c61b2107?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDExfHxkYXRhJTIwY2VudGVyfGVufDB8fHx8MTY1MDY3MTUwMw&ixlib=rb-1.2.1&q=80&w=1000[Erasure Coding 101](https://blog.min.io/erasure-coding/)  \n Text snippet that will be relevant to the user will  \ngo here  made to look nice in the helpitem size  \non two-three lines",
       "https://blog.min.io/content/images/size/w1000/2021/09/denys-nevozhai-7nrsVjvALnA-unsplash.jpg[Multi-site Active-active Replication](https://blog.min.io/minio-multi-site-active-active-replication/)  \n Text snippet that will be relevant to the user will  \ngo here  made to look nice in the helpitem size  \non two-three lines"
@@ -344,8 +352,8 @@
       "https://blog.min.io/content/images/size/w1000/2020/12/pay_banner-01-01-01-01-01.png[Troubleshooting](https://min.io/docs/minio/linux/operations/troubleshooting.html)  \n Need more help?  \nCheck out additional Troubleshooting options"
     ],
     "video": [
-      "https://i.ytimg.com/vi/A3vCDaFWNNs/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLDNZIxjC6AhnkRsTCMmoWrJIWmc6A[Monitoring with Prometheus](https://www.youtube.com/watch?v=A3vCDaFWNNs)  \n Text snippet that will be relevant to the user will  \ngo here  made to look nice in the helpitem size  \non two-three lines",
-      "https://i.ytimg.com/vi/Oix9iXndSUY/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLBlfESoCxf6YVxS5nO34Me793cFPw[Prometheus Monitoring Lab](https://www.youtube.com/watch?v=Oix9iXndSUY)  \n Text snippet that will be relevant to the user will  \ngo here  made to look nice in the helpitem size  \non two-three lines"
+      "https://i.ytimg.com/vi/A3vCDaFWNNs/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLDNZIxjC6AhnkRsTCMmoWrJIWmc6A[Monitoring with Prometheus](https://www.youtube.com/watch?v=A3vCDaFWNNs)  \nLearn about the monitoring features available  \nin your MinIO Console.",
+       "https://i.ytimg.com/vi/Oix9iXndSUY/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLBlfESoCxf6YVxS5nO34Me793cFPw[Prometheus Monitoring Lab](https://www.youtube.com/watch?v=Oix9iXndSUY)  \nLearn how to set up Prometheus and connect it  \nback to your MinIO cluster so that you can get  \ndetailed history of what's going on in your MinIO  \ncluster at any given time."
     ],
     "blog": []
   },
@@ -389,8 +397,8 @@
       "https://i.ytimg.com/vi/iCxcv4_j35M/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLCF_UC_Dp6W7do6nGdHBB5uSOVC0w[Site Replication Overview](https://www.youtube.com/watch?v=iCxcv4_j35M)  \n Text snippet that will be relevant to the user will  \ngo here  made to look nice in the helpitem size  \non two-three lines"
     ],
     "blog": [
-      "https://blog.min.io/content/images/size/w1000/2022/12/replication-bestpractices.jpg[Replication best practices](https://blog.min.io/minio-replication-best-practices/)",
-      "https://images.unsplash.com/photo-1548197193-2c2df590e23f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDU0fHxmYXN0JTIwbW90aW9uJTIwYmx1cnxlbnwwfHx8fDE2NjkxNDY0MzM&ixlib=rb-4.0.3&q=80&w=1000[Faster multi-site replication and Resync](https://blog.min.io/multi-site-replication-resync/)  \n Text snippet that will be relevant to the user will  \ngo here  made to look nice in the helpitem size  \non two-three lines",
+      "https://blog.min.io/content/images/size/w1000/2022/12/replication-bestpractices.jpg[Replication best practices](https://blog.min.io/minio-replication-best-practices/)  \nMinIO includes multiple data protection mechanisms,  \nand this blog post focuses on replication best practices",
+       "https://images.unsplash.com/photo-1548197193-2c2df590e23f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDU0fHxmYXN0JTIwbW90aW9uJTIwYmx1cnxlbnwwfHx8fDE2NjkxNDY0MzM&ixlib=rb-4.0.3&q=80&w=1000[Faster multi-site replication and Resync](https://blog.min.io/multi-site-replication-resync/)  \n Text snippet that will be relevant to the user will  \ngo here  made to look nice in the helpitem size  \non two-three lines",
       "https://images.unsplash.com/photo-1523961131990-5ea7c61b2107?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDExfHxkYXRhJTIwY2VudGVyfGVufDB8fHx8MTY1MDY3MTUwMw&ixlib=rb-1.2.1&q=80&w=1000[Erasure Coding 101](https://blog.min.io/erasure-coding/)  \n Text snippet that will be relevant to the user will  \ngo here  made to look nice in the helpitem size  \non two-three lines",
       "https://blog.min.io/content/images/size/w1000/2021/09/denys-nevozhai-7nrsVjvALnA-unsplash.jpg[Multi-site Active-active replication](https://blog.min.io/minio-multi-site-active-active-replication/)  \n Text snippet that will be relevant to the user will  \ngo here  made to look nice in the helpitem size  \non two-three lines"
     ]
@@ -877,7 +885,7 @@
       "https://images.unsplash.com/photo-1523961131990-5ea7c61b2107?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDExfHxkYXRhJTIwY2VudGVyfGVufDB8fHx8MTY1MDY3MTUwMw&ixlib=rb-1.2.1&q=80&w=1000[Erasure Coding 101](https://blog.min.io/erasure-coding/)  \n Text snippet that will be relevant to the user will  \ngo here  made to look nice in the helpitem size  \non two-three lines",
       "https://images.unsplash.com/photo-1428660285748-340f4e33d608?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDMzfHx0aW1lJTIwcmV3aW5kfGVufDB8fHx8MTYzMDM0NjAzMg&ixlib=rb-1.2.1&q=80&w=1000[Continuous Data protection with MinIO Versioning and Rewind](https://blog.min.io/continuous-data-protection-versioning-rewind/)  \n Text snippet that will be relevant to the user will  \ngo here  made to look nice in the helpitem size  \non two-three lines",
       "https://images.unsplash.com/photo-1611783569248-a82ec2e72c67?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDIxfHxzcGVlZHxlbnwwfHx8fDE2NDEyMjY2MDI&ixlib=rb-1.2.1&q=80&w=1000[Versioning, Metadata and Storage](https://blog.min.io/minio-versioning-metadata-deep-dive/)  \n Text snippet that will be relevant to the user will  \ngo here  made to look nice in the helpitem size  \non two-three lines",
-      "https://blog.min.io/content/images/size/w1000/2022/12/replication-bestpractices.jpg[Replication best practices](https://blog.min.io/minio-replication-best-practices/)  \n Text snippet that will be relevant to the user will  \ngo here  made to look nice in the helpitem size  \non two-three lines",
+      "https://blog.min.io/content/images/size/w1000/2022/12/replication-bestpractices.jpg[Replication best practices](https://blog.min.io/minio-replication-best-practices/)  \nMinIO includes multiple data protection mechanisms,  \nand this blog post focuses on replication best practices",
       "https://blog.min.io/content/images/size/w1000/2022/12/Screen-Shot-2022-12-16-at-2.13.42-PM.png[Access Control best practices](https://blog.min.io/s3-security-access-control/)  \n Text snippet that will be relevant to the user will  \ngo here  made to look nice in the helpitem size  \non two-three lines"
     ]
   },
@@ -904,7 +912,7 @@
       "https://i.ytimg.com/vi/zqjsw4O2-4U/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLDdKQS4ydVogrlzeyFn1-MEWsvLew[Creating Buckets and Users through the MinIO Console](https://www.youtube.com/watch?v=0PgMxz0HauA)  \n Text snippet that will be relevant to the user will  \ngo here  made to look nice in the helpitem size  \non two-three lines"
     ],
     "blog": [
-      "https://blog.min.io/content/images/size/w1000/2022/12/replication-bestpractices.jpg[Replication best practices](https://blog.min.io/minio-replication-best-practices/)  \n Text snippet that will be relevant to the user will  \ngo here  made to look nice in the helpitem size  \non two-three lines",
+      "https://blog.min.io/content/images/size/w1000/2022/12/replication-bestpractices.jpg[Replication best practices](https://blog.min.io/minio-replication-best-practices/)  \nMinIO includes multiple data protection mechanisms,  \nand this blog post focuses on replication best practices",
       "https://blog.min.io/content/images/size/w1000/2022/12/Screen-Shot-2022-12-16-at-2.13.42-PM.png[Access Control best practices](https://blog.min.io/s3-security-access-control/)  \n Text snippet that will be relevant to the user will  \ngo here  made to look nice in the helpitem size  \non two-three lines",
       "https://min.io/resources/img/logo/MINIO_wordmark.png[Securing hybrid cloud storagew with MinIO IAM](https://blog.min.io/secure-hybrid-cloud-minio-iam/)  \n Text snippet that will be relevant to the user will  \ngo here  made to look nice in the helpitem size  \non two-three lines",
 
@@ -939,7 +947,7 @@
       "[Replication lab II](https://www.youtube.com/watch?v=BLTlaOvVCSg)  \n Text snippet that will be relevant to the user will  \ngo here  made to look nice in the helpitem size  \non two-three lines"
     ],
     "blog": [
-      "https://blog.min.io/content/images/size/w1000/2022/12/replication-bestpractices.jpg[Replication best practices](https://blog.min.io/minio-replication-best-practices/)  \n Text snippet that will be relevant to the user will  \ngo here  made to look nice in the helpitem size  \non two-three lines",
+      "https://blog.min.io/content/images/size/w1000/2022/12/replication-bestpractices.jpg[Replication best practices](https://blog.min.io/minio-replication-best-practices/)  \nMinIO includes multiple data protection mechanisms,  \nand this blog post focuses on replication best practices",
       "https://images.unsplash.com/photo-1523961131990-5ea7c61b2107?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDExfHxkYXRhJTIwY2VudGVyfGVufDB8fHx8MTY1MDY3MTUwMw&ixlib=rb-1.2.1&q=80&w=1000[Erasure Coding 101](https://blog.min.io/erasure-coding/)  \n Text snippet that will be relevant to the user will  \ngo here  made to look nice in the helpitem size  \non two-three lines"
     ]
   },
