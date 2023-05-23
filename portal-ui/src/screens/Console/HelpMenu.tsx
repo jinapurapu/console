@@ -102,27 +102,27 @@ const HelpMenu = () => {
       let autoSelect = "docs";
       let hadToFlip = false;
       // if no docs, eval video o blog
-      if (docsTotal === 0 && helpTabName === "docs") {
+      if (docsTotal === 0 && headerDocs === null && helpTabName === "docs") {
         // if no blog, default video?
-        if (videoTotal !== 0) {
+        if (videoTotal !== 0 || headerVideo !== null) {
           autoSelect = "video";
         } else {
           autoSelect = "blog";
         }
         hadToFlip = true;
       }
-      if (videoTotal === 0 && helpTabName === "video") {
+      if (videoTotal === 0 && headerVideo === null && helpTabName === "video") {
         // if no blog, default video?
-        if (docsTotal !== 0) {
+        if (docsTotal !== 0 || headerDocs !== null) {
           autoSelect = "docs";
         } else {
           autoSelect = "blog";
         }
         hadToFlip = true;
       }
-      if (blogTotal === 0 && helpTabName === "blog") {
+      if (blogTotal === 0 && headerBlog === null && helpTabName === "blog") {
         // if no blog, default video?
-        if (docsTotal !== 0) {
+        if (docsTotal !== 0 || headerDocs !== null) {
           autoSelect = "docs";
         } else {
           autoSelect = "video";
@@ -303,6 +303,7 @@ const HelpMenu = () => {
                 overflowY: "auto",
               }}
             >
+              {systemHelpName}
               {helpItems.length !== 0 && (
                 <TabPanel index={"docs"} value={helpTabName}>
                   {helpContent}
