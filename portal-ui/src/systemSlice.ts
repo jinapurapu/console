@@ -45,7 +45,6 @@ export interface SystemState {
   anonymousMode: boolean;
   helpName: string;
   helpTabName: string;
-  helpMenuType: string;
 }
 
 const initialState: SystemState = {
@@ -76,8 +75,7 @@ const initialState: SystemState = {
   overrideStyles: null,
   anonymousMode: false,
   helpName: "help",
-  helpTabName: "0",
-  helpMenuType: "0",
+  helpTabName: "docs",
 };
 
 export const systemSlice = createSlice({
@@ -163,10 +161,7 @@ export const systemSlice = createSlice({
     setHelpTabName: (state, action: PayloadAction<string>) => {
       state.helpTabName = action.payload;
     },
-    setHelpMenuType: (state, action: PayloadAction<string>) => {
-      console.log("setting helpMenuType: ", action.payload);
-      state.helpMenuType = action.payload;
-    },
+
     setOverrideStyles: (
       state,
       action: PayloadAction<IEmbeddedCustomStyles>
@@ -205,7 +200,6 @@ export const {
   configurationIsLoading,
   setHelpName,
   setHelpTabName,
-  setHelpMenuType,
 } = systemSlice.actions;
 
 export const selDistSet = (state: AppState) => state.system.distributedSetup;

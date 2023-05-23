@@ -331,7 +331,7 @@ const AddBucket = () => {
                   </Fragment>
                 )}
               </Grid>
-              <Grid item xs={12} spacing={2}>
+              <Grid item xs={12}>
                 {siteReplicationInfo.enabled && (
                   <Fragment>
                     <br />

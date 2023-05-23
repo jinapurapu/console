@@ -406,7 +406,7 @@ const AddReplicationSites = () => {
             onClick={() => navigate(IAM_PAGES.SITE_REPLICATION)}
           />
         }
-        actions={<HelpMenu helpName="add-replication-sites" />}
+        actions={<HelpMenu />}
       />
       <PageLayout>
         <Box

@@ -367,8 +367,7 @@ const IDPConfigurationDetails = ({
 
   useEffect(() => {
     dispatch(setHelpName("idp_config"));
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [dispatch]);
 
   return (
     <Grid item xs={12}>

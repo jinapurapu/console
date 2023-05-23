@@ -6,8 +6,6 @@ import { Theme, useTheme } from "@mui/material/styles";
 import createStyles from "@mui/styles/createStyles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { useLocation } from "react-router-dom";
-import { setHelpMenuType, setHelpTabName } from "../../../../systemSlice";
-import { useAppDispatch } from "../../../../store";
 
 export type TabItemProps = {
   tabConfig: TabProps | any;
@@ -103,7 +101,6 @@ const VerticalTabs = ({
 
   const headerList: TabProps[] = [];
   const contentList: React.ReactNode[] = [];
-  const dispatch = useAppDispatch();
   useEffect(() => {
     if (isRouteTabs) {
       const tabConfigElement = children.find(
@@ -125,8 +122,6 @@ const VerticalTabs = ({
 
   const handleChange = (event: React.SyntheticEvent, newValue: string) => {
     setValue(newValue);
-    dispatch(setHelpTabName(newValue));
-    dispatch(setHelpMenuType("0"));
   };
 
   return (

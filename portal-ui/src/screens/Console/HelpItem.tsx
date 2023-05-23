@@ -15,65 +15,78 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import React, { Fragment } from "react";
-import { Theme } from "@mui/material/styles";
-import createStyles from "@mui/styles/createStyles";
-import withStyles from "@mui/styles/withStyles";
-import Grid from "@mui/material/Grid";
-import ReactMarkdown from "react-markdown";
-
-import {
-  containerForHeader,
-  formFieldStyles,
-  modalStyleUtils,
-  spacingUtils,
-} from "../Console/Common/FormComponents/common/styleLibrary";
-
-const styles = (theme: Theme) =>
-  createStyles({
-    ...modalStyleUtils,
-    ...formFieldStyles,
-    ...spacingUtils,
-    ...containerForHeader,
-  });
+import { DocItem } from "./HelpMenu.types";
+import MoreLink from "../../common/MoreLink";
 
 interface IHelpItemProps {
-  classes: any;
-  helpItemMarkdown: string;
+  item: DocItem;
+  displayImage?: boolean;
 }
 
-const HelpItem = ({ classes, helpItemMarkdown }: IHelpItemProps) => {
-  const linkURL = helpItemMarkdown.slice(
-    helpItemMarkdown.indexOf("("),
-    helpItemMarkdown.indexOf(")")
-  );
-  const imgURL = helpItemMarkdown.slice(0, helpItemMarkdown.indexOf("["));
-  const altText = helpItemMarkdown.slice(
-    helpItemMarkdown.indexOf("[") + 1,
-    helpItemMarkdown.indexOf("]")
-  );
-  const markdownText = helpItemMarkdown.slice(helpItemMarkdown.indexOf("["));
-
+const HelpItem = ({ item, displayImage = true }: IHelpItemProps) => {
   return (
     <Fragment>
-      <Grid container alignItems={"center"} display={"flex"}>
-        <Grid item xs={4} width={200}>
-          <a href={linkURL}>
-            <img src={imgURL} alt={altText} width="160" height="90" />
-          </a>
-        </Grid>
-        <Grid
-          item
-          xs={8}
-          width={400}
-          style={{
-            overflowWrap: "break-word",
-          }}
-        >
-          <ReactMarkdown linkTarget="_blank" children={markdownText} />
-        </Grid>
-      </Grid>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          flexWrap: "nowrap",
+          marginBottom: 20,
+        }}
+      >
+        {displayImage && (
+          <div style={{ paddingLeft: 16, paddingRight: 16 }}>
+            <a href={item.url} target={"_blank"}>
+              <div
+                style={{
+                  backgroundColor: "#dedede",
+                  width: 208,
+                  height: 62,
+                }}
+              >
+                <img
+                  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                  alt={item.title}
+                  style={{
+                    width: 208,
+                    height: 116,
+                    backgroundImage: `url(${item.img})`,
+                    backgroundPosition: "center center",
+                    backgroundSize: "cover",
+                    backgroundRepeat: "no-repeat",
+                  }}
+                />
+              </div>
+            </a>
+          </div>
+        )}
+        <div style={{ flexGrow: 1, flexBasis: "auto" }}>
+          <div
+            style={{
+              width: "100%",
+              font: "normal normal bold 16px/28px Inter",
+              whiteSpace: "pre-wrap",
+            }}
+          >
+            {item.title}
+          </div>
+          <div
+            style={{
+              width: "100%",
+              whiteSpace: "pre-line",
+              lineHeight: "1.5em",
+              height: "3em",
+              overflow: "hidden",
+              textOverflow: "ellipsis",
+            }}
+          >
+            {item.body}
+          </div>
+          <MoreLink text={"Learn more"} link={item.url} color={"#3874A6"} />
+        </div>
+      </div>
     </Fragment>
   );
 };
 
-export default withStyles(styles)(HelpItem);
+export default HelpItem;

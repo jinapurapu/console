@@ -35,8 +35,7 @@ const TierTypeSelector = () => {
   const dispatch = useAppDispatch();
   useEffect(() => {
     dispatch(setHelpName("tier-type-selector"));
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [dispatch]);
 
   return (
     <Fragment>
@@ -49,7 +48,7 @@ const TierTypeSelector = () => {
             />
           </Fragment>
         }
-        actions={<HelpMenu helpName="tier-type-selector" />}
+        actions={<HelpMenu />}
       />
 
       <PageLayout>
