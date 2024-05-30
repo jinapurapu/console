@@ -44,6 +44,7 @@ import {
   IAM_PERMISSIONS,
   IAM_ROLES,
   IAM_SCOPES,
+  S3_ALL_RESOURCES,
 } from "../../../../common/SecureComponent/permissions";
 import {
   hasPermission,
